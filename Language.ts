@@ -14,13 +14,11 @@ module Orzi_Tools {
         static path = 'asset/orzi/languages/';
         private static _language: Language;
 
-        static ON_CHANGE_LANGUAGE = 'changeLanguage';
+        static EVENT_ON_CHANGE_LANGUAGE = 'change_language';
 
         static __watcher: Function[] = [];
 
         private static __isInit = false;
-
-        private static __reg = /ol\(([\s\S]*?)\)/g;
 
         /** 当前语言 */
         local: string;
@@ -57,70 +55,6 @@ module Orzi_Tools {
                 }
                 _showOptionTemp.apply(this, arguments);
             };
-
-            const __UI_Create_Proxy__ = (obj: any, _key: string) => {
-                if (obj.__isProxy__) return obj;
-                return new Proxy(obj, {
-                    get: function(target, prop, receiver) {
-                        if (prop === '__isProxy__') return true;
-                        return target[prop];
-                    },
-                    set: function(target, prop, value, receiver) {
-                        if (target && prop === _key) {
-                            if (target.__orzi_language_temp__ !== value && (Language.getText(target.__orzi_language_temp__) !== Language.getText(value))) target.__orzi_language_temp__ = value;
-                            if (target[_key] !== Language.getText(target.__orzi_language_temp__)) target[_key] = Language.getText(target.__orzi_language_temp__);
-                        } else target[prop] = value;
-                        return true;
-                    }
-                });
-            }
-
-            const __UI__Wathcer__ = (ui: GUI_BASE) => {
-                for (let key in ui) {
-                    if (ui[key] && ui[key].type) {
-                        if (ui[key].type === 'UIString') {
-                            // ui[key] = __UI_Create_Proxy__(ui[key], 'text');
-                            let _temp = ui[key].text;
-                            ui[key].__orzi_language_temp__ = _temp;
-                            ui[key].text = Language.getText(ui[key].__orzi_language_temp__);
-                            // ui[key].text = Language.getText(ui[key].text);
-                            this.__watcher.push(() => {
-                                ui[key].text = Language.getText(ui[key].__orzi_language_temp__);
-                            })
-                        }
-                        if (ui[key].type === 'UIButton') {
-                            // ui[key] = __UI_Create_Proxy__(ui[key], 'label');
-                            let _temp = ui[key].label;
-                            ui[key].__orzi_language_temp__ = _temp;
-                            ui[key].label = Language.getText(ui[key].__orzi_language_temp__);
-                            this.__watcher.push(() => {
-                                ui[key].label = Language.getText(ui[key].__orzi_language_temp__);
-                            })
-                        }
-                        if (ui[key].type === 'UITabBox') {
-                            ui[key] = __UI_Create_Proxy__(ui[key], 'items');
-                            let _temp = ui[key].items;
-                            ui[key].__orzi_language_temp__ = _temp;
-                            ui[key].items = Language.getText(ui[key].__orzi_language_temp__);
-                            this.__watcher.push(() => {
-                                ui[key].items = Language.getText(ui[key].__orzi_language_temp__);
-                            })
-                            // if (ui[key]._childs) __UI__Wathcer__(ui[key]._childs);
-                        }
-                        // if (ui[key].type === 'UIList') {
-                        //     if (ui[key]._items) __UI__Wathcer__(ui[key]._items);
-                        // }
-                        // if (ui[key].type === 'UIRoot') {
-                        //     if (ui[key]._childs) __UI__Wathcer__(ui[key]._childs);
-                        // }
-                    }
-                }
-            }
-
-            /** UI显示时监听 */
-            // EventUtils.addEventListenerFunction(GameUI, GameUI.EVENT_CREATE_UI, (ui: GUI_BASE) => {
-            //     __UI__Wathcer__(ui);
-            // }, this);
 
             this.__isInit = true;
             return this._language;
@@ -161,7 +95,7 @@ module Orzi_Tools {
             if (Language.instance.packages[cl] === undefined) cl = (WorldData.orzi_language_packages && WorldData.orzi_language_packages.length) ? WorldData.orzi_language_packages[0] : 'zhCN';
             Language.instance.local = cl;
             (window as any).__orzi_language_local__ = cl;
-            EventUtils.happen(Orzi_Tools.Language.instance, Orzi_Tools.Language.ON_CHANGE_LANGUAGE);
+            EventUtils.happen(Orzi_Tools.Language.instance, Orzi_Tools.Language.EVENT_ON_CHANGE_LANGUAGE);
             if (os.platform === 2) {
                 FileUtils.save(cl, this.path + '_local.txt', Callback.New(() => {
                     console.log('orzi_language_local is saved!', cl);
@@ -288,64 +222,9 @@ EventUtils.addEventListenerFunction(ClientWorld, ClientWorld.EVENT_INITED, () =>
             })
             if (_num <= 0) Orzi_Tools.Language.save(_arr);
         }, this))
-        // setTimeout(() => {
-        //     Orzi_Tools.Language.save(_arr);
-        // }, 5000);
     }
 
     /** 重写监听 */
-    // 记录原函数
-    // @ts-ignore
-    // let __orzi_language_text_lang = Laya.Text.prototype.lang;
-    // // @ts-ignore
-    // let __orzi_language_text_destroy = Laya.Text.prototype.destroy;
-    // // 重写该函数
-    // // @ts-ignore
-    // Laya.Text.prototype.lang = function (text, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10) {
-    //     // 执行旧的函数，作用域和参数保证是当前调用的，可以任意修改调用的顺序，或者不执行该行时表示不执行任何旧逻辑
-    //     __orzi_language_text_lang.apply(this, arguments);
-    //     // 执行新的逻辑....
-    //     if (!this.__orzi_language_watching__) {
-    //         Orzi_Tools.Language.__watcher.push(() => {
-    //             this.text = Orzi_Tools.Language.getText(this.__orzi_language_temp__);
-    //             this.isChanged = true;
-    //             this.event("change");
-    //         });
-    //         this.__orzi_language_watching__ = true;
-    //     }
-    //     if ((this.__orzi_language_temp__ !== this.text) && (Orzi_Tools.Language.getText(this.__orzi_language_temp__) !== Orzi_Tools.Language.getText(this.text))) this.__orzi_language_temp__ = this.text;
-    //     if (this.text !== Orzi_Tools.Language.getText(this.__orzi_language_temp__)) this.text = Orzi_Tools.Language.getText(this.__orzi_language_temp__);
-    // }
-    // // @ts-ignore
-    // Laya.Text.prototype.destroy = function (destroyChild) {
-    //     __orzi_language_text_destroy.apply(this, arguments);
-    // }
-    // Object.defineProperty(Text.prototype, "text", {
-    //     get: function () {
-    //         if (!this.__orzi_language_watching__) {
-    //             Orzi_Tools.Language.__watcher.push(() => {
-    //                 this.text = Orzi_Tools.Language.getText(this.__orzi_language_temp__);
-    //                 console.log('------------------>>>>>????', this.__orzi_language_temp__, this._text, this.text);
-    //                 this.isChanged = true;
-    //                 this.event("change");
-    //             });
-    //             this.__orzi_language_watching__ = true;
-    //         }
-    //         return this._text || "";
-    //     },
-    //     set: function(value) {
-    //         console.log('set:::', value);
-    //         if (this._text !== value) {
-    //             this.lang(value + "");
-                
-    //             if ((this.__orzi_language_temp__ !== this.text) && (Orzi_Tools.Language.getText(this.__orzi_language_temp__) !== Orzi_Tools.Language.getText(this.text))) this.__orzi_language_temp__ = this.text;
-    //             if (this.text !== Orzi_Tools.Language.getText(this.__orzi_language_temp__)) this.text = Orzi_Tools.Language.getText(this.__orzi_language_temp__);
-
-    //             this.isChanged = true;
-    //             this.event("change");
-    //         }
-    //     }
-    // });
     Object.defineProperty(UIString.prototype, "text", {
         get: function () {
             if (!this.__orzi_language_watching__) {
