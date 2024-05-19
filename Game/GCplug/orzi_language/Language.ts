@@ -16,6 +16,8 @@ module Orzi_Tools {
 
         static EVENT_ON_CHANGE_LANGUAGE = 'change_language';
 
+        static PLUGIN_MODULE_TYPE_OrziLanguage: number = 2
+
         static __watcher: Function[] = [];
 
         private static __isInit = false;
@@ -92,7 +94,7 @@ module Orzi_Tools {
                 else if ((Config as any).language === 2) cl = 'en';
                 else cl = 'zhCN';
             }
-            if (Language.instance.packages[cl] === undefined) cl = (WorldData.orzi_language_packages && WorldData.orzi_language_packages.length) ? WorldData.orzi_language_packages[0] : 'zhCN';
+            if (Language.instance.packages[cl] === undefined) cl = (WorldData.orzi_language_packages && WorldData.orzi_language_packages.length) ? GameData.getModuleData(Orzi_Tools.Language.PLUGIN_MODULE_TYPE_OrziLanguage, WorldData.orzi_language_packages[0]).name : 'zhCN';
             Language.instance.local = cl;
             (window as any).__orzi_language_local__ = cl;
             EventUtils.happen(Orzi_Tools.Language.instance.packages, Orzi_Tools.Language.EVENT_ON_CHANGE_LANGUAGE);
@@ -103,22 +105,23 @@ module Orzi_Tools {
             } else {
                 LocalStorage.setItem('__orzi_language_local__', cl);
             }
-            Language.__watcher.forEach((v) => {v()});
+            Language.__watcher.forEach((v) => { v() });
         }
 
         static getPackages() {
-            
+
         }
 
         /** 重置语言包 */
         static resetPackages() {
             Language.instance.packages = {}; // 重置
             WorldData.orzi_language_packages.forEach(v => {
-                Language.instance.packages[v] = {};
-                FileUtils.exists(this.path + v + '.json', Callback.New((is_exit) => {
+                const languageName = GameData.getModuleData(Orzi_Tools.Language.PLUGIN_MODULE_TYPE_OrziLanguage, v)?.name
+                Language.instance.packages[languageName] = {};
+                FileUtils.exists(this.path + languageName + '.json', Callback.New((is_exit) => {
                     if (is_exit) {
-                        AssetManager.loadJson(this.path + v + '.json', Callback.New((data) => {
-                            if (data) Language.instance.packages[v] = data;
+                        AssetManager.loadJson(this.path + languageName + '.json', Callback.New((data) => {
+                            if (data) Language.instance.packages[languageName] = data;
                         }, this))
                     }
                 }, this))
@@ -157,9 +160,9 @@ module Orzi_Tools {
             return new Promise((resolve, reject) => {
                 let _num = 0;
                 let _date = new Date();
-                let _time = [_date.getFullYear(), _date.getMonth()+1, _date.getDate(), _date.getHours(), _date.getMinutes(), _date.getSeconds()].join('_');
+                let _time = [_date.getFullYear(), _date.getMonth() + 1, _date.getDate(), _date.getHours(), _date.getMinutes(), _date.getSeconds()].join('_');
                 let _backupPath = Language.path + `backup/${_time}`;
-                for (const c in Language.instance.packages) _num ++;
+                for (const c in Language.instance.packages) _num++;
                 FileUtils.createDirectoryForce(_backupPath, Callback.New((success: boolean, path: string) => {
                     for (const c in Language.instance.packages) {
                         FileUtils.exists(Language.path + c + '.json', Callback.New(is_exit => {
@@ -242,8 +245,9 @@ module Orzi_Tools {
 
 EventUtils.addEventListenerFunction(ClientWorld, ClientWorld.EVENT_INITED, () => {
     Orzi_Tools.Language.init();
-    trace('orzi_language is running!', WorldData.orzi_language_packages, Orzi_Tools.Language.instance.local);
-    
+    const languageName = WorldData.orzi_language_packages.map((v => GameData.getModuleData(Orzi_Tools.Language.PLUGIN_MODULE_TYPE_OrziLanguage, v)?.name))
+    trace('orzi_language is running!', languageName, Orzi_Tools.Language.instance.local);
+
     // 加载顺序问题，延迟一下
     let _timer = setTimeout(() => {
         if (os.platform === 2) {
@@ -311,7 +315,7 @@ EventUtils.addEventListenerFunction(ClientWorld, ClientWorld.EVENT_INITED, () =>
                     }
                 }
             }
-            
+
             // 不是变量再操作
             if (GameUtils.getVarID(v) === 0) {
                 // 文本变化，刷新缓存

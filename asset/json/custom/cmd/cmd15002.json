@@ -3,7 +3,7 @@
     "id": 15002,
     "blockList": [
         {
-            "name": "未命名块",
+            "name": "调试相关",
             "blockAttrs": [
                 {
                     "attr": {
@@ -42,16 +42,16 @@
                         "enumEnable_set": true
                     },
                     "attrConditions": [],
-                    "y": 20,
-                    "x": 30,
-                    "width": 200,
+                    "y": 15,
+                    "x": 15,
+                    "width": 260,
                     "height": 32
                 }
             ],
             "blockCondition": [],
-            "blockHeight": 80,
+            "blockHeight": 60,
             "autoOrder": true,
-            "cmdColor": "#e81632",
+            "cmdColor": "#ff536a",
             "hideBlockTitle": true
         }
     ],

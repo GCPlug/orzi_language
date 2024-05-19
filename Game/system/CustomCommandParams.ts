@@ -820,7 +820,7 @@ class CustomCommandParams_5008 {
 * 自定义指令 15001-多语言-设置语言
 */
 class CustomCommandParams_15001 {
-    local: string; // = ""; 游戏语言
+    local: number; // = 0; 游戏语言
 }
 /**
 * 自定义指令 15002-多语言-调试相关
