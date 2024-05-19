@@ -179,6 +179,7 @@ module Orzi_Tools {
         static save(_arr: Set<string>, type: number = 0) {
             this.backup().then(() => {
                 for (const c in Language.instance.packages) {
+                    if (c === '__evIdx2') continue;
                     let _data = Language.instance.packages[c];
                     _arr.forEach(v => {
                         if (!_data[v]) {

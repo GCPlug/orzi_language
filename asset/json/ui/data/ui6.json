@@ -2139,6 +2139,216 @@
                         "onChangeFragEvent": null
                     }
                 ]
+            },
+            {
+                "id": "158567315449_0.8693363933942735",
+                "condition": [
+                    {
+                        "type": 1,
+                        "varID": 1,
+                        "compare": 1,
+                        "value": 1
+                    }
+                ],
+                "type": "UIButton",
+                "name": "保存所有文本按钮",
+                "x": 60,
+                "y": 809,
+                "width": 270,
+                "height": 54,
+                "opacity": 1,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": true,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": false,
+                "showOnEditor": true,
+                "hasCommand": [
+                    true
+                ],
+                "isOpen": true,
+                "label": "保存所有文本",
+                "image1": "asset/image/picture/control/btn_normal.png",
+                "grid9img1": "0,0,0,0,0",
+                "image2": "asset/image/picture/control/btn_over.png",
+                "grid9img2": "0,0,0,0,0",
+                "image3": "asset/image/picture/control/btn_click.png",
+                "grid9img3": "0,0,0,0,0",
+                "fontSize": 24,
+                "color": "#ffffff",
+                "overColor": "#ffffff",
+                "clickColor": "#ffffff",
+                "bold": false,
+                "italic": false,
+                "smooth": false,
+                "align": 1,
+                "valign": 1,
+                "letterSpacing": 0,
+                "font": "Source_Han_Sans",
+                "textDx": 0,
+                "textDy": 0,
+                "textStroke": 0,
+                "textStrokeColor": "#000000"
+            },
+            {
+                "id": "158567377293_0.7245330070023477",
+                "condition": [
+                    {
+                        "type": 1,
+                        "varID": 1,
+                        "compare": 1,
+                        "value": 1
+                    }
+                ],
+                "type": "UIButton",
+                "name": "备份语言包按钮",
+                "x": 350,
+                "y": 810,
+                "width": 270,
+                "height": 54,
+                "opacity": 1,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": true,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": false,
+                "showOnEditor": true,
+                "hasCommand": [
+                    true
+                ],
+                "isOpen": true,
+                "label": "备份语言包",
+                "image1": "asset/image/picture/control/btn_normal.png",
+                "grid9img1": "0,0,0,0,0",
+                "image2": "asset/image/picture/control/btn_over.png",
+                "grid9img2": "0,0,0,0,0",
+                "image3": "asset/image/picture/control/btn_click.png",
+                "grid9img3": "0,0,0,0,0",
+                "fontSize": 24,
+                "color": "#ffffff",
+                "overColor": "#ffffff",
+                "clickColor": "#ffffff",
+                "bold": false,
+                "italic": false,
+                "smooth": false,
+                "align": 1,
+                "valign": 1,
+                "letterSpacing": 0,
+                "font": "Source_Han_Sans",
+                "textDx": 0,
+                "textDy": 0,
+                "textStroke": 0,
+                "textStrokeColor": "#000000"
+            },
+            {
+                "id": "158567413628_0.7606608654193137",
+                "condition": [],
+                "type": "UIButton",
+                "name": "切换到中文按钮",
+                "x": 760,
+                "y": 810,
+                "width": 216,
+                "height": 54,
+                "opacity": 1,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": true,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": false,
+                "showOnEditor": true,
+                "hasCommand": [
+                    true
+                ],
+                "isOpen": true,
+                "label": "切换到中文",
+                "image1": "asset/image/picture/control/btn_normal.png",
+                "grid9img1": "0,0,0,0,0",
+                "image2": "asset/image/picture/control/btn_over.png",
+                "grid9img2": "0,0,0,0,0",
+                "image3": "asset/image/picture/control/btn_click.png",
+                "grid9img3": "0,0,0,0,0",
+                "fontSize": 24,
+                "color": "#ffffff",
+                "overColor": "#ffffff",
+                "clickColor": "#ffffff",
+                "bold": false,
+                "italic": false,
+                "smooth": false,
+                "align": 1,
+                "valign": 1,
+                "letterSpacing": 0,
+                "font": "Source_Han_Sans",
+                "textDx": 0,
+                "textDy": 0,
+                "textStroke": 0,
+                "textStrokeColor": "#000000"
+            },
+            {
+                "id": "158567465223_0.6627964281205123",
+                "condition": [],
+                "type": "UIButton",
+                "name": "切换到英文按钮",
+                "x": 1030,
+                "y": 810,
+                "width": 216,
+                "height": 54,
+                "opacity": 1,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": true,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": false,
+                "showOnEditor": true,
+                "hasCommand": [
+                    true
+                ],
+                "isOpen": true,
+                "label": "切换到英文",
+                "image1": "asset/image/picture/control/btn_normal.png",
+                "grid9img1": "0,0,0,0,0",
+                "image2": "asset/image/picture/control/btn_over.png",
+                "grid9img2": "0,0,0,0,0",
+                "image3": "asset/image/picture/control/btn_click.png",
+                "grid9img3": "0,0,0,0,0",
+                "fontSize": 24,
+                "color": "#ffffff",
+                "overColor": "#ffffff",
+                "clickColor": "#ffffff",
+                "bold": false,
+                "italic": false,
+                "smooth": false,
+                "align": 1,
+                "valign": 1,
+                "letterSpacing": 0,
+                "font": "Source_Han_Sans",
+                "textDx": 0,
+                "textDy": 0,
+                "textStroke": 0,
+                "textStrokeColor": "#000000"
             }
         ]
     },

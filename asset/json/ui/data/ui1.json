@@ -54,7 +54,7 @@
                 "lock": false,
                 "showOnEditor": true,
                 "hasCommand": [],
-                "isOpen": false,
+                "isOpen": true,
                 "enabledLimitView": null,
                 "scrollShowType": 0,
                 "hScrollBar": "asset/image/picture/control/hscroll_bar.png",
@@ -121,7 +121,7 @@
                         "showOnEditor": true,
                         "hasCommand": [],
                         "isOpen": true,
-                        "text": "游戏名称",
+                        "text": "_ol[[游戏名称]]ol_",
                         "fontSize": 70,
                         "color": "#ffffff",
                         "bold": true,
@@ -445,7 +445,7 @@
                     true
                 ],
                 "isOpen": true,
-                "label": "开始游戏",
+                "label": "_ol[[开始游戏]]ol_",
                 "image1": "asset/image/picture/ui/title/element_4.png",
                 "grid9img1": "0,0,0,118,0",
                 "image2": "asset/image/picture/ui/title/element_3.png",
@@ -494,7 +494,7 @@
                     true
                 ],
                 "isOpen": true,
-                "label": "读取存档",
+                "label": "_ol[[读取存档]]ol_",
                 "image1": "asset/image/picture/ui/title/element_4.png",
                 "grid9img1": "0,0,0,118,0",
                 "image2": "asset/image/picture/ui/title/element_3.png",
@@ -543,7 +543,7 @@
                     true
                 ],
                 "isOpen": true,
-                "label": "图片鉴赏",
+                "label": "_ol[[图片鉴赏]]ol_",
                 "image1": "asset/image/picture/ui/title/element_4.png",
                 "grid9img1": "0,0,0,118,0",
                 "image2": "asset/image/picture/ui/title/element_3.png",
@@ -592,7 +592,7 @@
                     true
                 ],
                 "isOpen": true,
-                "label": "音乐鉴赏",
+                "label": "_ol[[音乐鉴赏]]ol_",
                 "image1": "asset/image/picture/ui/title/element_4.png",
                 "grid9img1": "0,0,0,118,0",
                 "image2": "asset/image/picture/ui/title/element_3.png",
@@ -641,7 +641,7 @@
                     true
                 ],
                 "isOpen": true,
-                "label": "系统设置",
+                "label": "_ol[[系统设置]]ol_",
                 "image1": "asset/image/picture/ui/title/element_4.png",
                 "grid9img1": "0,0,0,118,0",
                 "image2": "asset/image/picture/ui/title/element_3.png",
@@ -690,7 +690,7 @@
                     true
                 ],
                 "isOpen": true,
-                "label": "退出游戏",
+                "label": "_ol[[退出游戏]]ol_",
                 "image1": "asset/image/picture/ui/title/element_4.png",
                 "grid9img1": "0,0,0,118,0",
                 "image2": "asset/image/picture/ui/title/element_3.png",

@@ -1,0 +1,11 @@
+{
+    "游戏名称": "Game's Name",
+    "开始游戏": "Start",
+    "读取存档": "Load",
+    "图片鉴赏": "Picture",
+    "音乐鉴赏": "Music",
+    "系统设置": "Setting",
+    "退出游戏": "Exit",
+    "<span style='color:#FfFffF'>「欢迎来到GameCreator的世界，您当前所在的位面是AVG星之瞳。」</span>": "<span style='color:#FfFffF'>「Welcome to GameCreator's world, the plane you are currently in is the AVG star pupil.」</span>",
+    "<span style='color:#FfFffF'>「请问您的尊姓大名是？」</span>": "<span style='color:#FfFffF'>「May I ask your distinguished name?」</span>"
+}

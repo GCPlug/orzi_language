@@ -387,6 +387,21 @@
             ]
         },
         {
+            "typeName": "多语言",
+            "commandList": [
+                [
+                    160001,
+                    "多语言-设置语言",
+                    false
+                ],
+                [
+                    160002,
+                    "多语言-调试相关",
+                    false
+                ]
+            ]
+        },
+        {
             "typeName": "[#GAME_THE_PLUG-IN_COMMAND]",
             "commandList": []
         }

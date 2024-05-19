@@ -217,6 +217,10 @@ class GUI_6 extends GUI_BASE {
    关闭:UIString;
    needInputKeyPanel:UIBitmap;
    needInputKeyLabel:UIString;
+   保存所有文本按钮:UIButton;
+   备份语言包按钮:UIButton;
+   切换到中文按钮:UIButton;
+   切换到英文按钮:UIButton;
    constructor(){
       super(6);
    }
@@ -256,6 +260,7 @@ class ListItem_6 extends UIListItemData {
    关闭:string;
    needInputKeyPanel:string;
    needInputKeyLabel:string;
+
 }
 
 /**
