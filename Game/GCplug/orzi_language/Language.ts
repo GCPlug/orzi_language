@@ -96,7 +96,6 @@ module Orzi_Tools {
             }
             if (Language.instance.packages[cl] === undefined) cl = (WorldData.orzi_language_packages && WorldData.orzi_language_packages.length) ? GameData.getModuleData(Orzi_Tools.Language.PLUGIN_MODULE_TYPE_OrziLanguage, WorldData.orzi_language_packages[0]).name : 'zhCN';
             Language.instance.local = cl;
-            (window as any).__orzi_language_local__ = cl;
             EventUtils.happen(Orzi_Tools.Language.instance.packages, Orzi_Tools.Language.EVENT_ON_CHANGE_LANGUAGE);
             if (os.platform === 2) {
                 FileUtils.save(cl, this.path + '_local.txt', Callback.New(() => {
