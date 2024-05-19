@@ -1,5 +1,6 @@
 {
-    "游戏名称": "Game's Name",
+    "游戏名称": "Game Name",
+    "子标题": "Subsidiary Name",
     "开始游戏": "Start",
     "读取存档": "Load",
     "图片鉴赏": "Picture",
@@ -7,5 +8,21 @@
     "系统设置": "Setting",
     "退出游戏": "Exit",
     "<span style='color:#FfFffF'>「欢迎来到GameCreator的世界，您当前所在的位面是AVG星之瞳。」</span>": "<span style='color:#FfFffF'>「Welcome to GameCreator's world, the plane you are currently in is the AVG star pupil.」</span>",
-    "<span style='color:#FfFffF'>「请问您的尊姓大名是？」</span>": "<span style='color:#FfFffF'>「May I ask your distinguished name?」</span>"
+    "<span style='color:#FfFffF'>「请问您的尊姓大名是？」</span>": "<span style='color:#FfFffF'>「May I ask your distinguished name?」</span>",
+    "常规,键盘控制,手柄控制": "Routine,Keyboard,Handle",
+    "背景音乐音量": "BGM Volume",
+    "环境音效音量": "ESE Volume",
+    "音效音量": "SE Volume",
+    "语音音量": "Voice Volume",
+    "全屏": "Full Screen",
+    "快进已读": "Fast Forward",
+    "鼠标滚轮推进": "Mouse Wheel Push",
+    "文本框界面透明度": "Text Box Interface Transparency",
+    "这是一句对话台词。": "This is a line of dialogue.",
+    "文本播放速度": "Text Playback Speed",
+    "自动播放速度": "Auto Playback Speed",
+    "这是一段文本播放速度预览效果。": "This is a preview of the text playback speed.",
+    "关闭": "Close",
+    "<span style='color:#FfFffF'>「叮咚</span><span style='color:#ffffff'>~叮咚~</span><span style='color:#FfFffF'>」</span>": "<span style='color:#FfFffF'>「DingDong</span><span style='color:#ffffff'>~DingDong~</span><span style='color:#FfFffF'>」</span>",
+    "<span style='color:#FfFffF'>这是一段文本播放速度预览效果。</span>": "<span style='color:#FfFffF'>his is a preview of the text playback speed.</span>"
 }

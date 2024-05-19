@@ -166,7 +166,7 @@
                         "showOnEditor": true,
                         "hasCommand": [],
                         "isOpen": true,
-                        "text": "Subsidiary Name",
+                        "text": "_ol[[子标题]]ol_",
                         "fontSize": 30,
                         "color": "#ffffff",
                         "bold": true,

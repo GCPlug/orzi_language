@@ -156,22 +156,25 @@ module Orzi_Tools {
         static backup() {
             return new Promise((resolve, reject) => {
                 let _num = 0;
+                let _date = new Date();
+                let _time = [_date.getFullYear(), _date.getMonth()+1, _date.getDate(), _date.getHours(), _date.getMinutes(), _date.getSeconds()].join('_');
+                let _backupPath = Language.path + `backup/${_time}`;
                 for (const c in Language.instance.packages) _num ++;
-                for (const c in Language.instance.packages) {
-                    FileUtils.exists(Language.path + c + '.json', Callback.New(is_exit => {
-                        if (is_exit) {
-                            let _date = new Date();
-                            let _time = [_date.getFullYear(), _date.getMonth()+1, _date.getDate(), _date.getHours(), _date.getMinutes(), _date.getSeconds()].join('_');
-                            FileUtils.cloneFile(Language.path + c + '.json', Language.path + c + '_' + _time + '.json', Callback.New(() => {
-                                trace(`orzi_language:${c} is backuped! Save time: ${_time}`);
-                                _num--;
-                                if (_num <= 0) resolve(true);
-                            }, this))
-                        }
-                        _num--;
-                        if (_num <= 0) resolve(true);
-                    }, this))
-                }
+                FileUtils.createDirectoryForce(_backupPath, Callback.New((success: boolean, path: string) => {
+                    for (const c in Language.instance.packages) {
+                        FileUtils.exists(Language.path + c + '.json', Callback.New(is_exit => {
+                            if (is_exit) {
+                                FileUtils.cloneFile(Language.path + c + '.json', _backupPath + '/' + c + '.json', Callback.New((success: boolean, fromPath: string, toPath: string) => {
+                                    trace(`orzi_language:${c} is backuped! Save time: ${_time}`);
+                                    _num--;
+                                    if (_num <= 0) resolve(true);
+                                }, this))
+                            }
+                            _num--;
+                            if (_num <= 0) resolve(true);
+                        }, this))
+                    }
+                }, this));
             });
         }
 
