@@ -7,3 +7,4 @@ savedata/
 node_modules/
 
 asset/orzi/languages/_local.txt
+asset/orzi/languages/*_*.json
