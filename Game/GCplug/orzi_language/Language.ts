@@ -56,6 +56,14 @@ module Orzi_Tools {
                 return _showOptionTemp.apply(this, arguments);
             };
 
+            /** 重写UI显示 */
+            let _gameUIShowTemp = GameUI.show;
+            GameUI.show = function (uiID, ...args) {
+                // 显示前先刷新语言
+                Orzi_Tools.Language.refreshShowLanguage();
+                return _gameUIShowTemp.apply(this, arguments);
+            }
+
             this.__isInit = true;
             return this._language;
         }
@@ -94,7 +102,6 @@ module Orzi_Tools {
             }
             if (Language.instance.packages[cl] === undefined) cl = (WorldData.orzi_language_packages && WorldData.orzi_language_packages.length) ? WorldData.orzi_language_packages[0] : 'zhCN';
             Language.instance.local = cl;
-            (window as any).__orzi_language_local__ = cl;
             EventUtils.happen(Orzi_Tools.Language.instance.packages, Orzi_Tools.Language.EVENT_ON_CHANGE_LANGUAGE);
             if (os.platform === 2) {
                 FileUtils.save(cl, this.path + '_local.txt', Callback.New(() => {
@@ -103,7 +110,28 @@ module Orzi_Tools {
             } else {
                 LocalStorage.setItem('__orzi_language_local__', cl);
             }
+            Language.refreshShowLanguage();
             Language.__watcher.forEach((v) => {v()});
+        }
+
+        /** 刷新语言 */
+        static refreshShowLanguage() {
+            const allUIs = GameUI.getAllSystemGroupUIs();
+            for (const uiID in allUIs) {
+                const ui = allUIs[uiID];
+                const components = GameUI.getAllCompChildren(ui, true);
+                for (const compID in components.keyValue) {
+                    const component = components.keyValue[compID];
+                    if (component.type === 'UIList') {
+                        if ((component.__orzi_language_temp__ !== component.items) && (Orzi_Tools.Language.getText(component.__orzi_language_temp__) !== Orzi_Tools.Language.getText(component.items))) component.__orzi_language_temp__ = component.items;
+                        if (component.items !== Orzi_Tools.Language.getText(component.__orzi_language_temp__)) component.items = Orzi_Tools.Language.getText(component.__orzi_language_temp__);
+                    }
+                    if (component.type === 'UIString') {
+                        if ((component.__orzi_language_temp__ !== component.text) && (Orzi_Tools.Language.getText(component.__orzi_language_temp__) !== Orzi_Tools.Language.getText(component.text))) component.__orzi_language_temp__ = component.text;
+                        if (component.text !== Orzi_Tools.Language.getText(component.__orzi_language_temp__)) component.text = Orzi_Tools.Language.getText(component.__orzi_language_temp__);
+                    }
+                }
+            }
         }
 
         static getPackages() {
@@ -256,95 +284,4 @@ EventUtils.addEventListenerFunction(ClientWorld, ClientWorld.EVENT_INITED, () =>
         }
         clearTimeout(_timer);
     }, 300);
-
-    /** 重写监听 */
-    Object.defineProperty(UIString.prototype, "text", {
-        get: function () {
-            if (!this.__orzi_language_watching__) {
-                this.__orzi_language_watching__ = true;
-                EventUtils.addEventListenerFunction(Orzi_Tools.Language.instance.packages, Orzi_Tools.Language.EVENT_ON_CHANGE_LANGUAGE, () => {
-                    if (this._tf && GameUtils.getVarID(this.text) === 0) {
-                        this.text = Orzi_Tools.Language.getText(this.__orzi_language_temp__);
-                    } else this.text = this.__orzi_language_temp__;
-                }, this)
-            }
-            return this._tf.text;
-        },
-        set: function (v) {
-            if (this.isDisposed)
-                return;
-            if (Config.EDIT_MODE) {
-                var varID = GameUtils.getVarID(v);
-                if (varID != 0) {
-                    setText.call(this, v);
-                    return;
-                }
-            }
-            setText.call(this, v);
-            if (!Config.EDIT_MODE) {
-                var varID = GameUtils.getVarID(this.text);
-                if (varID != 0) {
-                    setText.call(this, "");
-                    if (this._lastVarID != 0)
-                        Game.player.removeListenerPlayerVariable(2, this._lastVarID, this._onVarChange);
-                    if (this.displayedInStage)
-                        Game.player.addListenerPlayerVariable(2, varID, this._onVarChange);
-                    this._lastVarID = varID;
-                }
-            }
-            function setText(v) {
-                if (this.__forceChange) {
-                    this._tf.changeText(v);
-                }
-                else {
-                    this._tf.text = v;
-                }
-                if (this._shadowEnabled) {
-                    if (this._tf.text && !this._tf2.stage)
-                        this.addChildAt(this._tf2, 0);
-                    this._tf2.color = this._shadowColor;
-                    if (this.__forceChange) {
-                        this._tf2.changeText(this._tf.text);
-                    }
-                    else {
-                        this._tf2.text = this._tf.text;
-                    }
-                }
-            }
-            
-            // 不是变量再操作
-            if (GameUtils.getVarID(v) === 0) {
-                // 文本变化，刷新缓存
-                if ((this.__orzi_language_temp__ !== this.text) && (Orzi_Tools.Language.getText(this.__orzi_language_temp__) !== Orzi_Tools.Language.getText(this.text))) this.__orzi_language_temp__ = this.text;
-                if (this.text !== Orzi_Tools.Language.getText(this.__orzi_language_temp__)) this.text = Orzi_Tools.Language.getText(this.__orzi_language_temp__);
-            } else {
-                this.__orzi_language_temp__ = v;
-            }
-        },
-        enumerable: false,
-        configurable: true
-    });
-
-    /** 重写监听 */
-    Object.defineProperty(UITabBox.prototype, "items", {
-        get: function () {
-            if (!this.__orzi_language_watching__) {
-                this.__orzi_language_watching__ = true;
-                EventUtils.addEventListenerFunction(Orzi_Tools.Language.instance.packages, Orzi_Tools.Language.EVENT_ON_CHANGE_LANGUAGE, () => {
-                    this.items = Orzi_Tools.Language.getText(this.__orzi_language_temp__);
-                }, this)
-            }
-            return this._items;
-        },
-        set: function (v) {
-            this._items = v;
-
-            if ((this.__orzi_language_temp__ !== this.items) && (Orzi_Tools.Language.getText(this.__orzi_language_temp__) !== Orzi_Tools.Language.getText(this.items))) this.__orzi_language_temp__ = this.items;
-            if (this.items !== Orzi_Tools.Language.getText(this.__orzi_language_temp__)) this.items = Orzi_Tools.Language.getText(this.__orzi_language_temp__);
-
-            this.refreshItems();
-        },
-        enumerable: false,
-        configurable: true
-    });
 }, null)
