@@ -1,0 +1,241 @@
+{
+    "root": {
+        "children": [
+            {
+                "id": "42285233300_0.010110529082863806",
+                "condition": [],
+                "type": "UISlider",
+                "name": "loadingComp",
+                "x": 395,
+                "y": 825,
+                "width": 809,
+                "height": 10,
+                "opacity": 1,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": false,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": true,
+                "showOnEditor": true,
+                "hasCommand": [],
+                "isOpen": true,
+                "image1": "asset/image/picture/control/slider_bg2.png",
+                "bgGrid9": "0,0,0,0,0",
+                "image2": "asset/image/picture/control/slider_block.png",
+                "blockGrid9": "0,0,0,0,0",
+                "image3": "asset/image/picture/control/slider_bgfill2.png",
+                "blockFillGrid9": "0,0,0,0,0",
+                "step": 0.01,
+                "min": 0,
+                "max": 100,
+                "value": 0,
+                "transverseMode": true,
+                "blockFillMode": 1,
+                "blockPosMode": 0,
+                "fillStrething": false,
+                "isBindingVarID": null,
+                "bindingVarID": null,
+                "onChangeFragEvent": null
+            },
+            {
+                "id": "77058317459_0.22645004132910307",
+                "condition": [],
+                "type": "UIRoot",
+                "name": "进度数值容器",
+                "x": 1114,
+                "y": 850,
+                "width": 86,
+                "height": 16,
+                "opacity": 1,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": true,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": false,
+                "showOnEditor": true,
+                "hasCommand": [],
+                "isOpen": true,
+                "enabledLimitView": null,
+                "scrollShowType": 0,
+                "hScrollBar": "asset/image/picture/control/hscroll_bar.png",
+                "hScrollBg": "asset/image/picture/control/hscroll_bg.png",
+                "vScrollBar": "asset/image/picture/control/vscroll_bar.png",
+                "vScrollBg": "asset/image/picture/control/vscroll_bg.png",
+                "scrollWidth": 16,
+                "slowmotionType": 2,
+                "enabledWheel": false,
+                "hScrollValue": 0,
+                "vScrollValue": 0,
+                "children": [
+                    {
+                        "id": "77058191801_0.890220839476789",
+                        "condition": [],
+                        "type": "UICustomGameNumber",
+                        "name": "进度数值",
+                        "x": 34,
+                        "y": 0,
+                        "width": 37,
+                        "height": 15,
+                        "opacity": 1,
+                        "blend": 0,
+                        "rotation": 0,
+                        "show": true,
+                        "mouseEventEnabledData": false,
+                        "materialData": [
+                            {
+                                "materials": []
+                            }
+                        ],
+                        "mouseEventEnabledInEditor": true,
+                        "lock": false,
+                        "showOnEditor": true,
+                        "hasCommand": [],
+                        "isOpen": true,
+                        "customData": [
+                            1,
+                            {
+                                "type": 1,
+                                "uiComp": {
+                                    "type": 1,
+                                    "uiID": 2006,
+                                    "compName": "loadingComp",
+                                    "compID": "42285233300_0.010110529082863806",
+                                    "attrs": [
+                                        "x:水平坐标位置",
+                                        "y:垂直坐标位置",
+                                        "width:宽度",
+                                        "height:高度",
+                                        "rotation:旋转角度",
+                                        "alpha:透明度",
+                                        "step:步进值",
+                                        "min:最小值",
+                                        "max:最大值",
+                                        "value:值",
+                                        "blockFillMode:显示模式",
+                                        "blockPosMode:初始滑块位置"
+                                    ],
+                                    "varName": "value"
+                                },
+                                "uiAttrName": "",
+                                "uiID": 1,
+                                "useVarID": 0,
+                                "uiIDVarID": 1
+                            },
+                            [
+                                {
+                                    "42668903158_0.7751461913844166": 1,
+                                    "52386741781_0.9301544034858342": {
+                                        "type": 1,
+                                        "uiID": 2006,
+                                        "compName": "loadingComp",
+                                        "compID": "42285233300_0.010110529082863806",
+                                        "attrs": [
+                                            "x:水平坐标位置",
+                                            "y:垂直坐标位置",
+                                            "width:宽度",
+                                            "height:高度",
+                                            "rotation:旋转角度",
+                                            "alpha:透明度",
+                                            "step:步进值",
+                                            "min:最小值",
+                                            "max:最大值",
+                                            "value:值",
+                                            "blockFillMode:显示模式",
+                                            "blockPosMode:初始滑块位置"
+                                        ],
+                                        "varName": "value"
+                                    },
+                                    "42669029245_0.32016014234982837": "",
+                                    "52386690335_0.8045445241617959": 1,
+                                    "52386690335_0.01140238288058204": 0,
+                                    "52386690335_0.27899378931330343": 1
+                                }
+                            ]
+                        ],
+                        "previewNum": 4,
+                        "previewFixed": 0,
+                        "fontSize": 16,
+                        "color": "#ffffff",
+                        "bold": true,
+                        "italic": false,
+                        "smooth": true,
+                        "align": 2,
+                        "valign": 0,
+                        "leading": 0,
+                        "letterSpacing": 1,
+                        "font": "Source_Han_Sans",
+                        "wordWrap": true,
+                        "overflow": 0,
+                        "shadowEnabled": null,
+                        "shadowColor": "#000000",
+                        "shadowDx": 1,
+                        "shadowDy": 1,
+                        "stroke": 0,
+                        "strokeColor": "#000000"
+                    },
+                    {
+                        "id": "77058295762_0.3328059236961354",
+                        "condition": [],
+                        "type": "UIString",
+                        "name": "进度文本",
+                        "x": 73,
+                        "y": 0,
+                        "width": 42,
+                        "height": 15,
+                        "opacity": 1,
+                        "blend": 0,
+                        "rotation": 0,
+                        "show": true,
+                        "mouseEventEnabledData": false,
+                        "materialData": [
+                            {
+                                "materials": []
+                            }
+                        ],
+                        "mouseEventEnabledInEditor": true,
+                        "lock": false,
+                        "showOnEditor": true,
+                        "hasCommand": [],
+                        "isOpen": true,
+                        "text": "%",
+                        "fontSize": 16,
+                        "color": "#ffffff",
+                        "bold": true,
+                        "italic": false,
+                        "smooth": true,
+                        "align": 0,
+                        "valign": 0,
+                        "leading": 0,
+                        "letterSpacing": 1,
+                        "font": "Source_Han_Sans",
+                        "wordWrap": true,
+                        "overflow": 0,
+                        "shadowEnabled": null,
+                        "shadowColor": "#000000",
+                        "shadowDx": 1,
+                        "shadowDy": 1,
+                        "stroke": 0,
+                        "strokeColor": "#000000",
+                        "onChangeFragEvent": null
+                    }
+                ]
+            }
+        ]
+    },
+    "id": 2006,
+    "instanceClassName": "",
+    "hasRootCommand": [],
+    "lock": true
+}

@@ -1,0 +1,12 @@
+{
+    "attrs": {
+        "CGs": {
+            "varType": 7,
+            "value": [
+                "asset/image/picture/background/Room.png"
+            ],
+            "copy": false
+        }
+    },
+    "id": 2
+}

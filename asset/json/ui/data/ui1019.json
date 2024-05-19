@@ -1,0 +1,131 @@
+{
+    "root": {
+        "children": [
+            {
+                "id": "105653176629_0.8865179623202082",
+                "condition": [],
+                "type": "UIBitmap",
+                "name": "项目背景",
+                "x": 2,
+                "y": 2,
+                "width": 1400,
+                "height": 72,
+                "opacity": 0.5,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": true,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": false,
+                "showOnEditor": true,
+                "hasCommand": [],
+                "isOpen": true,
+                "image": "asset/image/picture/control/uilistselect.png",
+                "grid9": "61,75,70,50,0",
+                "flip": null,
+                "isTile": false,
+                "pivotType": 0
+            },
+            {
+                "id": "89563201939_0.9011946914871056",
+                "condition": [],
+                "type": "UIString",
+                "name": "keyName",
+                "x": 22,
+                "y": 22,
+                "width": 275,
+                "height": 20,
+                "opacity": 1,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": false,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": true,
+                "showOnEditor": true,
+                "hasCommand": [],
+                "isOpen": true,
+                "text": "字符串",
+                "fontSize": 18,
+                "color": "#ebebec",
+                "bold": true,
+                "italic": false,
+                "smooth": true,
+                "align": 0,
+                "valign": 1,
+                "leading": 0,
+                "letterSpacing": 0,
+                "font": "Source_Han_Sans",
+                "wordWrap": true,
+                "overflow": 0,
+                "shadowEnabled": false,
+                "shadowColor": "#000000",
+                "shadowDx": 1,
+                "shadowDy": 1,
+                "stroke": 0,
+                "strokeColor": "#000000"
+            },
+            {
+                "id": "89563201939_0.9720833233706876",
+                "condition": [],
+                "type": "UIButton",
+                "name": "key1",
+                "x": 502,
+                "y": 13,
+                "width": 400,
+                "height": 38,
+                "opacity": 1,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": true,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": true,
+                "showOnEditor": true,
+                "hasCommand": [],
+                "isOpen": true,
+                "label": "J",
+                "image1": "asset/image/picture/control/btn_normal.png",
+                "grid9img1": "0,35,0,35,0",
+                "image2": "asset/image/picture/control/btn_over.png",
+                "grid9img2": "0,0,0,0,0",
+                "image3": "asset/image/picture/control/btn_click.png",
+                "grid9img3": "0,0,0,0,0",
+                "fontSize": 18,
+                "color": "#ffffff",
+                "overColor": "#ffffff",
+                "clickColor": "#ffffff",
+                "bold": true,
+                "italic": false,
+                "smooth": true,
+                "align": 1,
+                "valign": 1,
+                "letterSpacing": 0,
+                "font": "Source_Han_Sans",
+                "textDx": 0,
+                "textDy": 0,
+                "textStroke": 0,
+                "textStrokeColor": "#000000"
+            }
+        ]
+    },
+    "id": 1019,
+    "hasRootCommand": [],
+    "instanceClassName": "",
+    "lock": true
+}

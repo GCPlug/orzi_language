@@ -1,0 +1,154 @@
+{
+    "compAutoOrderLimitHeight": 0,
+    "id": 3,
+    "blockList": [
+        {
+            "name": "未命名块",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "48163992238_0.7871281715435372",
+                        "varName": "strength",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 1,
+                            "compParam": {
+                                "lowerLimit": 0,
+                                "upperLimit": 1000,
+                                "stepValue": 0.01,
+                                "limitInteger": false,
+                                "lockTextLimit": false,
+                                "xDragEnabled": true,
+                                "yDragEnabled": true,
+                                "minLimit": 0,
+                                "maxLimit": 10,
+                                "tickValue": 0.01
+                            }
+                        },
+                        "defaultValue": "0",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "强度",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 50,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 15,
+                    "width": 200,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "89381180603_0.12501668625275109",
+                        "varName": "useTime",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "false",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "时间过渡",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [],
+                    "y": 45,
+                    "x": 15,
+                    "width": 200,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "89381180604_0.6968869676030112",
+                        "varName": "time",
+                        "varType": 1,
+                        "compData": {
+                            "compType": 41,
+                            "compParam": {
+                                "loopType": true,
+                                "timeType": 1
+                            }
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "时间设定",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "89381180603_0.12501668625275109",
+                            "value": true,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 80,
+                    "x": 15,
+                    "width": 200,
+                    "height": 32
+                }
+            ],
+            "blockCondition": [],
+            "blockHeight": 132,
+            "autoOrder": true
+        }
+    ],
+    "customShader": "//======================================================================================================\n// SYSTEM START 该段注释由系统自动生成，请勿删改\n//======================================================================================================\n//------------------------------------------------------------------------------------------------------\n// 固定参数\n//------------------------------------------------------------------------------------------------------\n// varying vec2 v_texcoord; //  原始贴图UV坐标\n// uniform sampler2D texture; // 原始贴图\n// uniform float alpha; // 当前对象实际渲染的透明度\n//------------------------------------------------------------------------------------------------------\n// 该材质的自定义参数 判定该变量存在的宏：MU材质编号_变量名称\n//------------------------------------------------------------------------------------------------------\n// uniform float mu3_strength; // MU3_strength 强度\n// uniform float mu3_time; // MU3_time 时间设定\n// uniform vec2 renderTargetSize; // 渲染对象尺寸信息 x=宽度 y=高度\n//------------------------------------------------------------------------------------------------------\n// shader 代码规则：\n// 1.由于多材质合并shader代码运行，函数名必须以mf${材质ID}_开头以避免函数名称冲突，如 mf3_myFunc\n// 2.入口函数vec4 mf${材质ID}_main 如 vec4 mf3_main(){return gl_FragColor;}\n// 3.原图采样坐标获取：vec2 texCoord = getInRangeTextureCoord(v_texcoord);\n// 4.原图采样：vec4 color = getTextureColor(texCoord);\n// 5.关于自定义贴图的坐标信息：自定义贴图可能是图集中的一部分，提供了相关信息（mu材质编号_变量名_UVInfo）\n//   相对于0~1的坐标系提供了图集的映射信息 vec4 [UV宽度缩放比例, UV高度缩放比例, UV水平偏移量, UV垂直偏移量]\n// 6.变量宏（可用于判定该变量是否满足出现条件）：#ifdef MU材质编号_变量名称、#else、#endif\n// 7.系统宏 IN_GC_EDITOR=是否在编辑器中运行\n// 8.语法：C语言 更多资料请参考GLSL Shader\n//======================================================================================================\n// SYSTEM END\n//======================================================================================================\nvec4 mf3_main(){\n   #ifdef MU3_time\n      float strength = mu3_strength * mu3_time;\n   #else\n      float strength = mu3_strength;\n   #endif\n   // 如果强度为0则直接返回\n   if(strength==0.0)return gl_FragColor;\n   // 周围NxN像素，以自己为中心 blurw越大则效果越好，但越消耗性能\n   const float blurw = 19.0;\n   float blurw10 = (blurw+1.0);\n   float blurw5 = blurw10/2.0;\n   float blurw100 = blurw10*blurw10;\n   float blurw50 =  blurw100/2.0;\n   float blurwP1 = 1.0/blurw100;\n   // 获取单位像素，并根据强度进行扩散\n   float dx = 1.0/renderTargetSize.x * strength/3.0; // 100=(blurw+1)^2\n   float dy = 1.0/renderTargetSize.y * strength/3.0; // 100=(blurw+1)^2\n   // \n   vec4 vec4Color = vec4(0.0,0.0,0.0,0.0);\n   float halfDx = dx * blurw50;\n   float halfDy = dy * blurw50;\n   // 起始坐标：当前坐标点 - N/2\n   vec2 startpos=vec2(v_texcoord.x-halfDx,v_texcoord.y-halfDy);\n   vec2 ctexcoord = startpos;\n   // 分摊的颜色\n   float pColorPer = blurwP1;\n   // 采样固定偏移\n   float fixDx = halfDx - dx*blurw5;\n   float fixDy = halfDy - dy*blurw5;\n   // 采样以自己为中心采样 N x N 像素进行混合\n   for(float y = 0.0;y<=blurw; ++y) {\n\t for(float x = 0.0;x<=blurw; ++x) {\n        ctexcoord.x = startpos.x + dx*x + fixDx;\n\t    ctexcoord.y = startpos.y + dy*y + fixDy;\n\t\tfloat xPer = (1.0-abs((x-blurw5)/blurw5));\n\t\tfloat yPer = (1.0-abs((y-blurw5)/blurw5));\n\t\tvec4Color += getTextureColor(ctexcoord)*pColorPer*xPer*yPer*4.0;\n\t }\n   }\n   vec4Color.a*=alpha;\n   return vec4Color;\n}",
+    "shaderSize": true
+}

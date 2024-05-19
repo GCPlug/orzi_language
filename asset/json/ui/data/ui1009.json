@@ -1,0 +1,78 @@
+{
+    "root": {
+        "children": [
+            {
+                "id": "43129659172_0.39148685125513194",
+                "condition": [],
+                "type": "UIRoot",
+                "name": "容器",
+                "x": 0,
+                "y": 0,
+                "width": 219,
+                "height": 58,
+                "opacity": 1,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": true,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": false,
+                "showOnEditor": true,
+                "hasCommand": [],
+                "isOpen": true,
+                "enabledLimitView": false,
+                "scrollShowType": 2,
+                "hScrollBar": "asset/image/picture/control/hscroll_bar.png",
+                "hScrollBg": "asset/image/picture/control/hscroll_bg.png",
+                "vScrollBar": "asset/image/picture/control/vscroll_bar.png",
+                "vScrollBg": "asset/image/picture/control/vscroll_bg.png",
+                "scrollWidth": 16,
+                "slowmotionType": 0,
+                "enabledWheel": true,
+                "hScrollValue": 0,
+                "vScrollValue": 0,
+                "children": [
+                    {
+                        "id": "43127657033_0.3009241891260499",
+                        "condition": [],
+                        "type": "UIBitmap",
+                        "name": "target",
+                        "x": 0,
+                        "y": 0,
+                        "width": 219,
+                        "height": 58,
+                        "opacity": 0.5,
+                        "blend": 0,
+                        "rotation": 0,
+                        "show": true,
+                        "mouseEventEnabledData": true,
+                        "materialData": [
+                            {
+                                "materials": []
+                            }
+                        ],
+                        "mouseEventEnabledInEditor": true,
+                        "lock": true,
+                        "showOnEditor": true,
+                        "hasCommand": [],
+                        "isOpen": true,
+                        "image": "asset/image/picture/control/tab_selected.png",
+                        "grid9": "15,15,15,15,0",
+                        "flip": false,
+                        "isTile": false,
+                        "pivotType": 0
+                    }
+                ]
+            }
+        ]
+    },
+    "id": 1009,
+    "instanceClassName": "",
+    "hasRootCommand": [],
+    "lock": true
+}

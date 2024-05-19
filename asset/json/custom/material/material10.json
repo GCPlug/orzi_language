@@ -1,0 +1,287 @@
+{
+    "compAutoOrderLimitHeight": 0,
+    "id": 10,
+    "blockList": [
+        {
+            "name": "未命名块",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "51152508635_0.9696665466747281",
+                        "varName": "mask",
+                        "varType": 1,
+                        "compData": {
+                            "compType": 22,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "遮罩贴图",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 15,
+                    "width": 200,
+                    "height": 200
+                },
+                {
+                    "attr": {
+                        "id": "51152571665_0.8683459699474041",
+                        "varName": "useTrans",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "false",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "时间过渡",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [],
+                    "y": 215,
+                    "x": 15,
+                    "width": 200,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "51152544853_0.6825047848824792",
+                        "varName": "time",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 1,
+                            "compParam": {
+                                "minLimit": 0,
+                                "maxLimit": 1,
+                                "tickValue": 0.01,
+                                "limitInteger": false,
+                                "lockTextLimit": true
+                            }
+                        },
+                        "defaultValue": "0",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "时间",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 50,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "51152571665_0.8683459699474041",
+                            "value": false,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 246,
+                    "x": 15,
+                    "width": 200,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "51152571665_0.45593100845051393",
+                        "varName": "trans",
+                        "varType": 1,
+                        "compData": {
+                            "compType": 41,
+                            "compParam": {
+                                "loopType": true,
+                                "timeType": 1
+                            }
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "时间过渡",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "51152571665_0.8683459699474041",
+                            "value": true,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 245,
+                    "x": 15,
+                    "width": 200,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "51152544853_0.02612642208374094",
+                        "varName": "vagueness",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 1,
+                            "compParam": {
+                                "minLimit": 0,
+                                "maxLimit": 0.5,
+                                "tickValue": 0.01,
+                                "limitInteger": false,
+                                "lockTextLimit": true
+                            }
+                        },
+                        "defaultValue": "0.25",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "模糊",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 50,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [],
+                    "y": 280,
+                    "x": 15,
+                    "width": 200,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "51152550442_0.17088371688401738",
+                        "varName": "invertMask",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 1,
+                            "compParam": {
+                                "minLimit": 0,
+                                "maxLimit": 1,
+                                "tickValue": 0.01,
+                                "limitInteger": false,
+                                "lockTextLimit": false
+                            }
+                        },
+                        "defaultValue": "0",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "反转遮罩",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 50,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [],
+                    "y": 310,
+                    "x": 15,
+                    "width": 200,
+                    "height": 32
+                }
+            ],
+            "blockCondition": [],
+            "blockHeight": 345,
+            "autoOrder": true
+        }
+    ],
+    "customShader": "//======================================================================================================\n// SYSTEM START 该段注释由系统自动生成，请勿删改\n//======================================================================================================\n//------------------------------------------------------------------------------------------------------\n// 固定参数\n//------------------------------------------------------------------------------------------------------\n// varying vec2 v_texcoord; //  原始贴图UV坐标\n// uniform sampler2D texture; // 原始贴图\n// uniform float alpha; // 当前对象实际渲染的透明度\n//------------------------------------------------------------------------------------------------------\n// 该材质的自定义参数 判定该变量存在的宏：MU材质编号_变量名称\n//------------------------------------------------------------------------------------------------------\n// uniform sampler2D mu10_mask; // MU10_mask 遮罩贴图\n// uniform vec4 mu10_mask_UVInfo; // mu10_mask贴图的原始坐标信息，获取渲染坐标：vec2 a = getDrawUV(v_texcoord,mu10_mask_UVInfo);\n// uniform float mu10_time; // MU10_time 时间\n// uniform float mu10_trans; // MU10_trans 时间过渡\n// uniform float mu10_vagueness; // MU10_vagueness 模糊\n// uniform float mu10_invertMask; // MU10_invertMask 反转遮罩\n//------------------------------------------------------------------------------------------------------\n// shader 代码规则：\n// 1.由于多材质合并shader代码运行，函数名必须以mf${材质ID}_开头以避免函数名称冲突，如 mf10_myFunc\n// 2.入口函数vec4 mf${材质ID}_main 如 vec4 mf10_main(){return gl_FragColor;}\n// 3.原图采样坐标获取：vec2 texCoord = getInRangeTextureCoord(v_texcoord);\n// 4.原图采样：vec4 color = getTextureColor(texCoord);\n// 5.关于自定义贴图的坐标信息：自定义贴图可能是图集中的一部分，提供了相关信息（mu材质编号_变量名_UVInfo）\n//   相对于0~1的坐标系提供了图集的映射信息 vec4 [UV宽度缩放比例, UV高度缩放比例, UV水平偏移量, UV垂直偏移量]\n// 6.变量宏（可用于判定该变量是否满足出现条件）：#ifdef MU材质编号_变量名称、#else、#endif\n// 7.系统宏 IN_GC_EDITOR=是否在编辑器中运行\n// 8.语法：C语言 更多资料请参考GLSL Shader\n//======================================================================================================\n// SYSTEM END\n//======================================================================================================\nfloat mf10_saturate(float x){\n    if(x < 0.0){\n        x = 0.0;\n    }else if(x > 1.0){\n        x = 1.0;\n    }\n    return x;\n}\n\nfloat mf10_smoothstep(float x){\n    return x * x * (3.0 - (2.0 * x));\n}\n\nvec4 mf10_lerp(vec4 col,vec4 col2, float time){\n    return col + time*(col2-col);\n}\n\nvec4 mf10_main(){\n    vec2 texCoord = getInRangeTextureCoord(v_texcoord);\n    vec2 maskUV = getDrawUV(texCoord,mu10_mask_UVInfo);\n    float t0 = texture2D(mu10_mask, maskUV).r;\n    t0 = mu10_invertMask + t0 - 2.0 * mu10_invertMask * t0;\n    t0 = t0 * (1.0 - 2.0 * mu10_vagueness) + mu10_vagueness;\n    float slope = 0.5 / (mu10_vagueness + 0.001);\n\n    #ifdef MU10_trans\n    float mask = mf10_smoothstep(mf10_saturate(0.5 + slope * (mu10_trans - t0)));\n    #else\n    float mask = mf10_smoothstep(mf10_saturate(0.5 + slope * (mu10_time - t0)));\n    #endif\n    \n    vec4 col = mf10_lerp(getTextureColor(texCoord), vec4(0.0,0.0,0.0,0.0), mask);\n    \n    col.rgb *= col.a;\n    return col;\n}",
+    "shaderSize": false
+}

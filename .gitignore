@@ -1,2 +1,7 @@
 .VSCode
 .DS_Store
+
+out/
+savedata/
+
+node_modules/

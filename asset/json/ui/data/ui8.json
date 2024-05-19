@@ -1,0 +1,164 @@
+{
+    "root": {
+        "children": [
+            {
+                "id": "77057253287_0.8936663418996447",
+                "condition": [],
+                "type": "UIBitmap",
+                "name": "界面背景",
+                "x": 500,
+                "y": 500,
+                "width": 600,
+                "height": 73,
+                "opacity": 1,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": true,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": false,
+                "showOnEditor": true,
+                "hasCommand": [],
+                "isOpen": true,
+                "image": "asset/image/picture/control/uilistover.png",
+                "grid9": "30,30,30,30,0",
+                "flip": false,
+                "isTile": false,
+                "pivotType": 0
+            },
+            {
+                "id": "77057253288_0.7186018692955021",
+                "condition": [],
+                "type": "UIBitmap",
+                "name": "输入框背景",
+                "x": 531,
+                "y": 514,
+                "width": 400,
+                "height": 34,
+                "opacity": 1,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": true,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": false,
+                "showOnEditor": true,
+                "hasCommand": [],
+                "isOpen": true,
+                "image": "asset/image/picture/ui/menu/textInputBg.png",
+                "grid9": "0,0,0,0,0",
+                "flip": false,
+                "isTile": false,
+                "pivotType": 0,
+                "children": [
+                    {
+                        "id": "77057253288_0.8458564932138823",
+                        "condition": [],
+                        "type": "UIInput",
+                        "name": "input",
+                        "x": 9,
+                        "y": 5,
+                        "width": 380,
+                        "height": 24,
+                        "opacity": 1,
+                        "blend": 0,
+                        "rotation": 0,
+                        "show": true,
+                        "mouseEventEnabledData": true,
+                        "materialData": [
+                            {
+                                "materials": []
+                            }
+                        ],
+                        "mouseEventEnabledInEditor": true,
+                        "lock": true,
+                        "showOnEditor": true,
+                        "hasCommand": [],
+                        "isOpen": true,
+                        "text": "输入数字...",
+                        "fontSize": 16,
+                        "color": "#ffffff",
+                        "promptColor": "#d1d1d1",
+                        "bold": true,
+                        "italic": false,
+                        "smooth": false,
+                        "align": 0,
+                        "leading": 0,
+                        "font": "Source_Han_Sans",
+                        "wordWrap": true,
+                        "restrict": "",
+                        "inputMode": 2,
+                        "maxChars": 40,
+                        "shadowEnabled": false,
+                        "shadowColor": "#000000",
+                        "shadowDx": 1,
+                        "shadowDy": 1
+                    }
+                ]
+            },
+            {
+                "id": "77057253288_0.41439271225286456",
+                "condition": [],
+                "type": "UIButton",
+                "name": "提交数字输入按钮",
+                "x": 959,
+                "y": 513,
+                "width": 112,
+                "height": 35,
+                "opacity": 1,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": true,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": false,
+                "showOnEditor": true,
+                "hasCommand": [
+                    true
+                ],
+                "isOpen": true,
+                "label": "提交",
+                "image1": "asset/image/picture/control/btn_normal.png",
+                "grid9img1": "0,0,0,0,0",
+                "image2": "asset/image/picture/control/btn_over.png",
+                "grid9img2": "0,0,0,0,0",
+                "image3": "asset/image/picture/control/btn_click.png",
+                "grid9img3": "0,0,0,0,0",
+                "fontSize": 18,
+                "color": "#ffffff",
+                "overColor": "#ffffff",
+                "clickColor": "#ffffff",
+                "bold": true,
+                "italic": false,
+                "smooth": true,
+                "align": 1,
+                "valign": 1,
+                "letterSpacing": 2,
+                "font": "Source_Han_Sans",
+                "textDx": 0,
+                "textDy": 0,
+                "textStroke": 0,
+                "textStrokeColor": "#000000"
+            }
+        ]
+    },
+    "id": 8,
+    "instanceClassName": "",
+    "hasRootCommand": [],
+    "lock": true
+}

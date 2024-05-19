@@ -1,0 +1,1483 @@
+{
+    "compAutoOrderLimitHeight": 742,
+    "id": 3002,
+    "blockList": [
+        {
+            "name": "属性",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "24538808102_0.9970934946254328",
+                        "varName": "passageID",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 0,
+                            "compParam": {
+                                "lowerLimit": 1,
+                                "upperLimit": 10000,
+                                "stepValue": 1,
+                                "limitInteger": true,
+                                "lockTextLimit": true,
+                                "xDragEnabled": true,
+                                "yDragEnabled": true
+                            }
+                        },
+                        "defaultValue": "1",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "通过编号管理该显示对象：\\n1-相同的编号只允许显示一个显示对象\\n2-可通过编号来操控该显示对象",
+                        "alias": "编号",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "49612315725_0.0667574286485002",
+                            "value": false,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 12,
+                    "x": 6,
+                    "width": 122,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49612329479_0.7433565589142674",
+                        "varName": "passageIDVar",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 6,
+                            "compParam": {
+                                "lowerLimit": 1,
+                                "upperLimit": 10000,
+                                "stepValue": 1,
+                                "limitInteger": true,
+                                "lockTextLimit": true,
+                                "xDragEnabled": true,
+                                "yDragEnabled": true
+                            }
+                        },
+                        "defaultValue": "1",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "通过编号管理该显示对象：\\n1-相同的编号只允许显示一个显示对象\\n2-可通过编号来操控该显示对象",
+                        "alias": "编号",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "49612315725_0.0667574286485002",
+                            "value": true,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 12,
+                    "x": 6,
+                    "width": 122,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49541474395_0.999063634948089",
+                        "varName": "timeType",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 2,
+                            "compParam": {
+                                "items": "立即变更,渐变过渡",
+                                "showIndex": false
+                            }
+                        },
+                        "defaultValue": "1",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "变更方式",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 0,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 12,
+                    "x": 132,
+                    "width": 151,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49541474395_0.4302897217422976",
+                        "varName": "time",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 0,
+                            "compParam": {
+                                "lowerLimit": 1,
+                                "upperLimit": 1000,
+                                "stepValue": 1,
+                                "limitInteger": true,
+                                "lockTextLimit": false,
+                                "xDragEnabled": true,
+                                "yDragEnabled": true
+                            }
+                        },
+                        "defaultValue": "30",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "持续帧数",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "49541474395_0.999063634948089",
+                            "value": 1,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 11,
+                    "x": 293,
+                    "width": 110,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49541474396_0.5364167299087121",
+                        "varName": "trans",
+                        "varType": 1,
+                        "compData": {
+                            "compType": 41,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "过渡",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "49541474395_0.999063634948089",
+                            "value": 1,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 10,
+                    "x": 412,
+                    "width": 159,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49141521249_0.2965750598394892",
+                        "varName": "dpX",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 0,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "水平坐标",
+                        "alias": "x",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": false,
+                        "titleWidth": 40,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "49519399740_0.07229930251623617",
+                            "value": false,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 64,
+                    "x": 6,
+                    "width": 180,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49519573910_0.08853124862540018",
+                        "varName": "dpXVar",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 6,
+                            "compParam": {}
+                        },
+                        "defaultValue": "1",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "水平坐标",
+                        "alias": "x",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": false,
+                        "titleWidth": 40,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "49519399740_0.07229930251623617",
+                            "value": true,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 64,
+                    "x": 6,
+                    "width": 180,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49141521416_0.0884961804795068",
+                        "varName": "dpY",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 0,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "垂直坐标",
+                        "alias": "y",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": false,
+                        "titleWidth": 40,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "49519399740_0.07229930251623617",
+                            "value": false,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 65,
+                    "x": 197,
+                    "width": 180,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49519590084_0.3058131165318816",
+                        "varName": "dpYVar",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 6,
+                            "compParam": {}
+                        },
+                        "defaultValue": "1",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "垂直坐标",
+                        "alias": "y",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": false,
+                        "titleWidth": 40,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "49519399740_0.07229930251623617",
+                            "value": true,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 65,
+                    "x": 197,
+                    "width": 180,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49150249927_0.6881795527970145",
+                        "varName": "dpZ",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 0,
+                            "compParam": {
+                                "lowerLimit": 0,
+                                "upperLimit": 1000,
+                                "stepValue": 0.1,
+                                "limitInteger": false,
+                                "lockTextLimit": false,
+                                "xDragEnabled": true,
+                                "yDragEnabled": true
+                            }
+                        },
+                        "defaultValue": "100",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "深度",
+                        "alias": "z",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": false,
+                        "titleWidth": 40,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "49519475735_0.9428268094401824",
+                            "value": false,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 64,
+                    "x": 391,
+                    "width": 180,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49519636189_0.2521948025226537",
+                        "varName": "dpZVar",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 6,
+                            "compParam": {
+                                "lowerLimit": 0,
+                                "upperLimit": 1000,
+                                "stepValue": 0.1,
+                                "limitInteger": false,
+                                "lockTextLimit": false,
+                                "xDragEnabled": true,
+                                "yDragEnabled": true
+                            }
+                        },
+                        "defaultValue": "1",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "深度",
+                        "alias": "z",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": false,
+                        "titleWidth": 40,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "49519475735_0.9428268094401824",
+                            "value": true,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 64,
+                    "x": 391,
+                    "width": 180,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49232462793_0.7622411974016037",
+                        "varName": "dpWidth",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 0,
+                            "compParam": {
+                                "lowerLimit": 0,
+                                "upperLimit": 1000,
+                                "stepValue": 1,
+                                "limitInteger": false,
+                                "lockTextLimit": false,
+                                "xDragEnabled": true,
+                                "yDragEnabled": true
+                            }
+                        },
+                        "defaultValue": "100",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "图片显示的像素宽度",
+                        "alias": "宽度",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": false,
+                        "titleWidth": 40,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "49519436070_0.9418611019894294",
+                            "value": false,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 109,
+                    "x": 6,
+                    "width": 180,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49520636693_0.8404154506260593",
+                        "varName": "dpWidthVar",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 6,
+                            "compParam": {
+                                "lowerLimit": 0,
+                                "upperLimit": 1000,
+                                "stepValue": 1,
+                                "limitInteger": false,
+                                "lockTextLimit": false,
+                                "xDragEnabled": true,
+                                "yDragEnabled": true
+                            }
+                        },
+                        "defaultValue": "1",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "图片显示的像素宽度",
+                        "alias": "宽度",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": false,
+                        "titleWidth": 40,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "49519436070_0.9418611019894294",
+                            "value": true,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 109,
+                    "x": 6,
+                    "width": 180,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49232464582_0.12430969584603324",
+                        "varName": "dpHeight",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 0,
+                            "compParam": {
+                                "lowerLimit": 0,
+                                "upperLimit": 1000,
+                                "stepValue": 1,
+                                "limitInteger": false,
+                                "lockTextLimit": false,
+                                "xDragEnabled": true,
+                                "yDragEnabled": true
+                            }
+                        },
+                        "defaultValue": "100",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "图片显示的像素高度",
+                        "alias": "高度",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": false,
+                        "titleWidth": 40,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "49519436070_0.9418611019894294",
+                            "value": false,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 105,
+                    "x": 198,
+                    "width": 180,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49520744730_0.6026838995761481",
+                        "varName": "dpHeightVar",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 6,
+                            "compParam": {
+                                "lowerLimit": 0,
+                                "upperLimit": 1000,
+                                "stepValue": 1,
+                                "limitInteger": false,
+                                "lockTextLimit": false,
+                                "xDragEnabled": true,
+                                "yDragEnabled": true
+                            }
+                        },
+                        "defaultValue": "1",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "图片显示的像素高度",
+                        "alias": "高度",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": false,
+                        "titleWidth": 40,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "49519436070_0.9418611019894294",
+                            "value": true,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 105,
+                    "x": 198,
+                    "width": 180,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49232999716_0.2133484967243402",
+                        "varName": "rotation",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 0,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "旋转度",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": false,
+                        "titleWidth": 40,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "49520771123_0.27311479097864666",
+                            "value": false,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 102,
+                    "x": 393,
+                    "width": 180,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49520812848_0.5734967173507821",
+                        "varName": "rotationVar",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 6,
+                            "compParam": {}
+                        },
+                        "defaultValue": "1",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "旋转度",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": false,
+                        "titleWidth": 40,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "49520771123_0.27311479097864666",
+                            "value": true,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 102,
+                    "x": 393,
+                    "width": 180,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49234813142_0.3142568229981375",
+                        "varName": "opacity",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 1,
+                            "compParam": {
+                                "minLimit": 0,
+                                "maxLimit": 1,
+                                "tickValue": 0.01,
+                                "limitInteger": false,
+                                "lockTextLimit": true
+                            }
+                        },
+                        "defaultValue": "1",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "透明度",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "49519529748_0.519982170810438",
+                            "value": false,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 153,
+                    "x": 122,
+                    "width": 243,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49520873912_0.5927053372462527",
+                        "varName": "opacityVar",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 6,
+                            "compParam": {
+                                "minLimit": 0,
+                                "maxLimit": 1,
+                                "tickValue": 0.01,
+                                "limitInteger": false,
+                                "lockTextLimit": true
+                            }
+                        },
+                        "defaultValue": "1",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "透明度",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "49519529748_0.519982170810438",
+                            "value": true,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 152,
+                    "x": 122,
+                    "width": 243,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49249262086_0.4763525036126073",
+                        "varName": "flip",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "水平翻转",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 152,
+                    "x": 4,
+                    "width": 98,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49233147770_0.6353950190434796",
+                        "varName": "pivotType",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 2,
+                            "compParam": {
+                                "items": "原点,中心点",
+                                "showIndex": true
+                            }
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "轴心点影响以哪个点作为参考点进行缩放和旋转",
+                        "alias": "轴心点",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [],
+                    "y": 193,
+                    "x": 7,
+                    "width": 171,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49234859651_0.6035613922030387",
+                        "varName": "blendMode",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 2,
+                            "compParam": {
+                                "items": "普通,加法,叠加,滤色,正片叠底,融入",
+                                "showIndex": true
+                            }
+                        },
+                        "defaultValue": "0",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "混合模式",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 193,
+                    "x": 210,
+                    "width": 166,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49594771755_0.963684096315716",
+                        "varName": "refImageEnabled",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "当无法显示具体的图片时可使用此项来设置下模拟的参考图，以便预览时操作。",
+                        "alias": "模拟参考图",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "49612315725_0.0667574286485002",
+                            "value": false,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 256,
+                    "x": 98,
+                    "width": 109,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49518248081_0.4367396293869368",
+                        "varName": "higher",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "高级设定",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 256,
+                    "x": 3,
+                    "width": 115,
+                    "height": 32
+                }
+            ],
+            "blockCondition": [],
+            "blockHeight": 298,
+            "autoOrder": true,
+            "cmdColor": "#ffa64c",
+            "hideBlockTitle": true
+        },
+        {
+            "name": "参考图",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "49595153167_0.8002073773406164",
+                        "varName": "refImage",
+                        "varType": 1,
+                        "compData": {
+                            "compType": 22,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "参考图",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 8,
+                    "width": 200,
+                    "height": 226
+                }
+            ],
+            "blockCondition": [
+                {
+                    "attrID": "49594771755_0.963684096315716",
+                    "value": true,
+                    "isExpression": false,
+                    "jsCode": null,
+                    "tsCode": null,
+                    "codeName": null
+                },
+                {
+                    "attrID": "49612315725_0.0667574286485002",
+                    "value": false,
+                    "isExpression": false,
+                    "jsCode": null,
+                    "tsCode": null,
+                    "codeName": null
+                }
+            ],
+            "blockHeight": 254,
+            "autoOrder": true,
+            "hideBlockTitle": false
+        },
+        {
+            "name": "高级设定",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "49519399740_0.07229930251623617",
+                        "varName": "posUseVar",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "坐标使用变量",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 9,
+                    "x": 13,
+                    "width": 109,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49519436070_0.9418611019894294",
+                        "varName": "sizeUseVar",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "尺寸使用变量",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 128,
+                    "width": 126,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49519475735_0.9428268094401824",
+                        "varName": "zUseVar",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "深度使用变量",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 50,
+                    "x": 12,
+                    "width": 126,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49519529748_0.519982170810438",
+                        "varName": "opacityUseVar",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "透明度使用变量",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 53,
+                    "x": 257,
+                    "width": 126,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49520771123_0.27311479097864666",
+                        "varName": "rotationUseVar",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "旋转度使用变量",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 51,
+                    "x": 128,
+                    "width": 126,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49612315725_0.0667574286485002",
+                        "varName": "passageIDUseVar",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "使用变量作为编号的图片无法预览",
+                        "alias": "编号使用变量",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 89,
+                    "x": 11,
+                    "width": 126,
+                    "height": 32
+                }
+            ],
+            "blockCondition": [
+                {
+                    "attrID": "49518248081_0.4367396293869368",
+                    "value": true,
+                    "isExpression": false,
+                    "jsCode": null,
+                    "tsCode": null,
+                    "codeName": null
+                }
+            ],
+            "blockHeight": 133,
+            "autoOrder": true,
+            "hideBlockTitle": false
+        }
+    ],
+    "cmdPreviewTS": "//------------------------------------------------------------------------------------------------------\r\n// 编辑器预览窗口运行时提供的系统变量\r\n// 关于预览的流程：\r\n// -- 1.imageLayerPassageClear 每已使用的通道x每已使用的指令\r\n// -- 2.runCommand 每个指令按顺序执行一遍\r\n// -- 3.imageLayerPassageStart 每已使用的通道x每已使用的指令\r\n// 关于播放的流程\r\n// -- 1.imageLayerPassageClear 每已使用的通道x每已使用的指令\r\n// -- 2.runCommand 每个指令按顺序播放\r\n//------------------------------------------------------------------------------------------------------\r\n/**\r\n * 当前自定义指令的编号\r\n */\r\ndeclare var commandID: number;\r\n/**\r\n * 图像层通道数据\r\n */\r\ndeclare var imageLayerPassageData: any[];\r\n/**\r\n * 图像层显示对象容器\r\n */\r\ndeclare var imageLayer: GameImageLayer;\r\n/**\r\n * 界面层显示对象容器\r\n */\r\ndeclare var uiLayer: GameSprite;\r\n/**\r\n * 预览窗口\r\n */\r\ndeclare var previewWin: {\r\n    /**\r\n     * 清理全部事件指令产生的预览效果\r\n     */\r\n    clearData: Function;\r\n    /**\r\n     * 设置数据，刷新预览效果直到当前选中的指令行\r\n     */\r\n    setData: Function;\r\n    /**\r\n     * 当前选中的指令\r\n     */\r\n    currentSelectCmd: Command;\r\n    /**\r\n     * 视图区域是否右键移动过\r\n     */\r\n    viewAreaRightMouseMove: boolean;\r\n    /**\r\n     * 允许显示全部对象\r\n     */\r\n    allowAllDisplayObject: boolean;\r\n    /**\r\n     * 对象操作工具\r\n     */\r\n    operateObjectTool: {\r\n        // 刷新对象操作工具，比如来自其他地方更改了对象的位置或尺寸等，可使用该函数刷新\r\n        refresh: Function;\r\n        // 选中对象\r\n        selectObjects: (sp: GameSprite[]) => void;\r\n        // 需要排除缩放和旋转工具的对象\r\n        addExcludeOperactionObject: (sp: GameSprite) => void\r\n    }\r\n    /**\r\n     * 选中事件指令\r\n     * @param cmd 事件指令\r\n     * @param sendEvent 派发事件 默认=false 派发事件会刷新属性栏、预览窗口等\r\n     */\r\n    selectCmdMessageByCmd(cmd: Command, sendEvent?: boolean);\r\n    /**\r\n     * 修改指令属性\r\n     * @param cmd 需要修改的指令\r\n     * @param varName 参数变量名称\r\n     * @param newValue 新的值\r\n     */\r\n    modifyCommandParam: (cmd: Command, varName: string, newValue: any) => void;\r\n    /**\r\n     * 新增指令 默认是默认值，如果有写入参数的话则以参数为准 varNameValue\r\n     * @param customID 自定义ID\r\n     * @param varNameValue 额外的变量值，如存在则优先使用该值，否则使用自定义编辑器中的默认值，如 {dpX:100,dpY:200}\r\n     * @param selectedIndex [可选] 默认值=-2  -3=当前选中（之后） -2=当前选中（之前） -1=最尾端 0-N=自定义 \r\n     * @param refreshPreViewArea [可选] 默认值=true 刷新预览区\r\n     */\r\n    insertCustomCMD(customID: number, varNameValue: any, selectedIndex?: number, refreshPreViewArea?: boolean): Command;\r\n    /**\r\n     * 新增指令-系统\r\n     * @param cmdID \r\n     * @param params \r\n     * @return [Command] \r\n     */\r\n    insertSystemCMD(cmdID: number, params: any[], selectedIndex?: number): Command;\r\n    /**\r\n     * 更改显示层\r\n     * @param selectedIndex 0-界面层 1-图像层\r\n     */\r\n    changeLayer(selectedIndex: number): void;\r\n    /**\r\n     * 创建菜单\r\n     * var menuData:any[] = [\r\n               {\r\n                   label:\"重命名\",\r\n                   splitLine:false,// 是否显示分割线\r\n                   children:[], // 存放和本身这个对象是一样的格式\r\n                   execute:\"functionName\", // 点击后执行的方法名称\r\n                   shortcutKey:\"\", //显示的快捷键名称\r\n                   menuHotKey:\"\", //实际作用的快捷键名称 对应Laya.KeyBoard的值 如A\r\n                   enabled:true, // 是否可用，不填写表示true\r\n                   visible:true, // 是否显示，不填写表示true\r\n                   selected:true, // 如果存在则以打钩的形式选择此项\r\n                   group:\"myGroupName\" // 配合selected，如若存在则同组单选\r\n               }\r\n           ];\r\n     * @param menuData 菜单数据\r\n     * @param x 全局坐标X\r\n     * @param y 全局坐标Y\r\n     * @param executeDomain 函数作用域\r\n     */\r\n    createMenu(menuData: any[], x: number, y: number, executeDomain: any);\r\n}\r\n//------------------------------------------------------------------------------------------------------\r\n// 通道数据\r\n//------------------------------------------------------------------------------------------------------\r\ndeclare class ImagePassageData {\r\n    // ====> system 必要项\r\n    /**\r\n     * 通道编号\r\n     */\r\n    passageID: number;\r\n    /**\r\n     * 类别，一般用于区分显示对象，如图片、动画、立绘、界面都是属于不同的类别\r\n     */\r\n    type: string;\r\n    /**\r\n     * 记录关联的指令\r\n     */\r\n    cmd: Command;\r\n    /**\r\n     * 当通道覆盖时调用的函数，以便清理掉。如显示了2号图片或移动了号图片，再次显示2号图片时会清理掉此前显示的图片或移动行为\r\n     */\r\n    onCoverPassage: Function;\r\n\r\n    // ====> custom 自定义属性\r\n    passageIDUseVar: boolean;\r\n    timeFunc: Function;\r\n    image: string;\r\n    displayObject: UIBitmap;\r\n    uiBitmapFromShow: boolean; // 区分显示对象来源，是否来自显示图片，否则来自移动图片\r\n    dpX: number;\r\n    dpY: number;\r\n    dpZ: number;\r\n    dpWidth: number;\r\n    dpHeight: number;\r\n    rotation: number;\r\n    pivotType: number;\r\n    opacity: number;\r\n    blendMode: number;\r\n    flip: boolean;\r\n    refImageEnabled: boolean;\r\n    refImage: string;\r\n    lastImageCmdParams: ThisCommandParams; // 获取上一个关联指令的参数\r\n}\r\n//------------------------------------------------------------------------------------------------------\r\n// 自定义变量\r\n//------------------------------------------------------------------------------------------------------\r\nvar passageType = \"gcImage\";\r\nvar PLUGIN_CUSTOM_COMMAND_showPicture: number = 3001;\r\nvar PLUGIN_CUSTOM_COMMAND_movePicture: number = 3002;\r\nvar PLUGIN_CUSTOM_COMMAND_earsePicture: number = 3008;\r\nvar newCmdParams;\r\nvar newCmdData: ImagePassageData;\r\nvar emptyImageURL = \"editorAsset/img/ui_pic.png\";\r\n//------------------------------------------------------------------------------------------------------\r\n// [everyone used command] 逐指令行目执行\r\n//------------------------------------------------------------------------------------------------------\r\n/**\r\n * 逐指令执行：对应事件下按照从上至下的顺序逐行执行，如果是该自定义指令时则会执行该函数\r\n * 该函数用于编辑器预览和播放，如果分歧面板中筛选不经过的事件指令则不会执行该函数。\r\n * 比如事件页中有3个该指令，则按照顺序执行3次该函数\r\n * @param cmdParams 指令的自定义参数数据，根据用户设定值\r\n * @param cmd 对应的指令对象\r\n * @param isPlayMode 是否是播放模式，否则是普通的预览模式\r\n */\r\nfunction runCommand(cmdParams: ThisCommandParams, cmd: Command, isPlayMode: boolean) {\r\n    // -- 使用变量作为通道的话忽略预览效果\r\n    if (cmdParams.passageIDUseVar) {\r\n        return;\r\n    }\r\n    // -- 获取通道数据\r\n    var passageData: ImagePassageData = imageLayerPassageData[cmdParams.passageID];\r\n    // 播放模式的情况\r\n    if (isPlayMode) {\r\n        // 没有该通道或通道储存类型不匹配或无显示对象的话则忽略掉\r\n        if (!passageData || passageData.type != passageType || !passageData.displayObject) return;\r\n        // 清理掉正在执行的移动\r\n        if (passageData.timeFunc) {\r\n            os.remove_ENTERFRAME(passageData.timeFunc, this);\r\n        }\r\n        var toDpX = cmdParams.dpX;\r\n        var toDpY = cmdParams.dpY;\r\n        var toDpZ = cmdParams.dpZ;\r\n        var toDpWidth = cmdParams.dpWidth;\r\n        var toDpHeight = cmdParams.dpHeight;\r\n        var toRotation = cmdParams.rotation;\r\n        var toOpacity = cmdParams.opacity;\r\n        // 立即模式：无需清理此行为\r\n        if (cmdParams.timeType == 0) {\r\n            passageData.displayObject.dpX = toDpX;\r\n            passageData.displayObject.dpY = toDpY;\r\n            passageData.displayObject.dpZ = toDpZ;\r\n            passageData.displayObject.dpWidth = toDpWidth;\r\n            passageData.displayObject.dpHeight = toDpHeight;\r\n            passageData.displayObject.rotation1 = toRotation;\r\n            passageData.displayObject.opacity = toOpacity;\r\n            passageData.displayObject.pivotType = cmdParams.pivotType;\r\n            passageData.displayObject.blendMode = [null, \"lighter\", \"blend5-1\", \"blend4-1\", \"blend4-7\", \"blend4-4\"][cmdParams.blendMode];\r\n            passageData.displayObject.flip = cmdParams.flip;\r\n        }\r\n        // 过渡模式：由于注册了帧刷，需要清理\r\n        else {\r\n            // 下一帧开始移动 1/MAX\r\n            var m = {\r\n                time: cmdParams.time,\r\n                curTime: 1,\r\n                x: passageData.displayObject.dpX,\r\n                y: passageData.displayObject.dpY,\r\n                z: passageData.displayObject.dpZ,\r\n                width: passageData.displayObject.dpWidth,\r\n                height: passageData.displayObject.dpHeight,\r\n                rotation: passageData.displayObject.rotation1,\r\n                opacity: passageData.displayObject.opacity,\r\n\r\n                x2: toDpX - passageData.displayObject.dpX,\r\n                y2: toDpY - passageData.displayObject.dpY,\r\n                z2: toDpZ - passageData.displayObject.dpZ,\r\n                width2: toDpWidth - passageData.displayObject.dpWidth,\r\n                height2: toDpHeight - passageData.displayObject.dpHeight,\r\n                rotation2: toRotation - passageData.displayObject.rotation1,\r\n                opacity2: toOpacity - passageData.displayObject.opacity,\r\n\r\n                transData: GameUtils.getTransData(cmdParams.trans)\r\n            }\r\n            var f: Function;\r\n            os.add_ENTERFRAME(f = passageData.timeFunc = (uiBitmap: UIBitmap, cmdParams: ThisCommandParams) => {\r\n                // 首帧变化的属性\r\n                if (m.curTime == 1) {\r\n                    uiBitmap.pivotType = cmdParams.pivotType;\r\n                    uiBitmap.blendMode = [null, \"lighter\", \"blend5-1\", \"blend4-1\", \"blend4-7\", \"blend4-4\"][cmdParams.blendMode];\r\n                    uiBitmap.flip = cmdParams.flip;\r\n                }\r\n                var per = m.curTime / m.time;\r\n                var value = GameUtils.getValueByTransData(m.transData, per);\r\n                uiBitmap.dpX = m.x2 * value + m.x;\r\n                uiBitmap.dpY = m.y2 * value + m.y;\r\n                uiBitmap.dpZ = m.z2 * value + m.z;\r\n\r\n                uiBitmap.dpWidth = m.width2 * value + m.width;\r\n                uiBitmap.dpHeight = m.height2 * value + m.height;\r\n\r\n                uiBitmap.rotation1 = m.rotation2 * value + m.rotation;\r\n                uiBitmap.opacity = m.opacity2 * value + m.opacity;\r\n\r\n                m.curTime++;\r\n                if (per == 1) {\r\n                    os.remove_ENTERFRAME(arguments.callee, this);\r\n                }\r\n                uiBitmap.dpCoordToRealCoord();\r\n            }, this, [passageData.displayObject, cmdParams]);\r\n            f.apply(this, [passageData.displayObject, cmdParams]);\r\n\r\n            // 覆盖函数\r\n            var lastOnCoverPassage = passageData.onCoverPassage;\r\n            passageData.onCoverPassage = function () {\r\n                os.remove_ENTERFRAME(f, this);\r\n                if (lastOnCoverPassage) lastOnCoverPassage.apply(this, arguments);\r\n            }\r\n        }\r\n    }\r\n    else {\r\n        // 存在通道但不是该类别的话则忽略掉\r\n        if (passageData && passageData.type != passageType) return;\r\n        if (!passageData) passageData = imageLayerPassageData[cmdParams.passageID] = {} as any;\r\n        // 写入数据\r\n        passageData.passageID = cmdParams.passageID;\r\n        passageData.type = passageType;\r\n        passageData.cmd = cmd;\r\n        if (!passageData.lastImageCmdParams) {\r\n            passageData.lastImageCmdParams = cmdParams;\r\n        }\r\n        else {\r\n            ObjectUtils.clone(cmdParams, passageData.lastImageCmdParams);\r\n        }\r\n        // 属性\r\n        passageData.dpX = cmdParams.dpX;\r\n        passageData.dpY = cmdParams.dpY;\r\n        passageData.dpZ = cmdParams.dpZ;\r\n        passageData.dpWidth = cmdParams.dpWidth;\r\n        passageData.dpHeight = cmdParams.dpHeight;\r\n        passageData.rotation = cmdParams.rotation;\r\n        passageData.pivotType = cmdParams.pivotType;\r\n        passageData.opacity = cmdParams.opacity;\r\n        passageData.blendMode = cmdParams.blendMode;\r\n        passageData.flip = cmdParams.flip;\r\n        // 来自非显示图片的话\r\n        if (!passageData.uiBitmapFromShow) {\r\n            if (cmdParams.refImageEnabled) {\r\n                passageData.refImageEnabled = cmdParams.refImageEnabled;\r\n                passageData.refImage = cmdParams.refImage;\r\n            }\r\n        }\r\n    }\r\n}\r\n//------------------------------------------------------------------------------------------------------\r\n// 属性面板修改：当修改该指令的属性时，只会执行该指令对应的「指令源」的这些函数\r\n// 如A指令来自自定义指令32号，每次通过属性面板快速修改A指令的参数b时，则会执行32号指令的下面2个函数\r\n// [current used command] \r\n//------------------------------------------------------------------------------------------------------\r\n/**\r\n * 当属性面板中的属性修改前\r\n * @param cmd 对应的指令\r\n * @param cmdParams 对应指令的参数 \r\n * @param varName 修改的属性名\r\n */\r\nfunction onCommandAttributeBeforeChange(cmd: Command, cmdParams: ThisCommandParams, varName: string) {\r\n    // 修改了通道的话，清理\r\n    if (varName == \"passageID\" || varName == \"passageIDUseVar\") {\r\n        previewWin.clearData();\r\n    }\r\n}\r\n/**\r\n * 当属性面板中的属性修改后\r\n * @param cmd 对应的指令\r\n * @param cmdParams 对应指令的参数 \r\n * @param varName 修改的属性名\r\n * @param newValue 修改后的值\r\n */\r\nfunction onCommandAttributeChange(cmd: Command, cmdParams: ThisCommandParams, varName: string, newValue: any) {\r\n    // 修改了通道的话，重置所有预览显示\r\n    if (varName == \"passageID\" || varName == \"passageIDUseVar\") {\r\n        previewWin.setData(false);\r\n        return;\r\n    }\r\n    // -- 使用变量作为通道的话忽略预览效果\r\n    if (cmdParams.passageIDUseVar) {\r\n        return;\r\n    }\r\n    // 获取通道数据\r\n    var passageData: ImagePassageData = imageLayerPassageData[cmdParams.passageID];\r\n    if (!passageData) return;\r\n    // 对象类别匹配且存在显示对象的话\r\n    if (passageData.type == passageType && passageData.displayObject) {\r\n        // 混合模式，需要转换\r\n        if (varName == \"blendMode\") {\r\n            passageData.displayObject.blendMode = [null, \"lighter\", \"blend5-1\", \"blend4-1\", \"blend4-7\", \"blend4-4\"][newValue];\r\n        }\r\n        else if (varName == \"rotation\") {\r\n            passageData.displayObject.rotation1 = newValue;\r\n        }\r\n        else {\r\n            // 图片地址更换：如果是空图片的话则刷新\r\n            if (!passageData.uiBitmapFromShow && (varName == \"refImage\" || varName == \"refImageEnabled\")) {\r\n                passageData.refImageEnabled = cmdParams.refImageEnabled;\r\n                refreshImageRealShow(passageData.displayObject, cmdParams, passageData);\r\n            }\r\n            else {\r\n                passageData.displayObject[varName] = newValue;\r\n            }\r\n        }\r\n        // -- 刷新操作工具对象（延迟到下一帧）\r\n        Callback.CallLaterBeforeRender(previewWin.operateObjectTool.refresh, previewWin.operateObjectTool);\r\n    }\r\n}\r\n//------------------------------------------------------------------------------------------------------\r\n// 对象操作工具\r\n// [everyone used command type] 遍历每个执行过的自定义指令类别\r\n//------------------------------------------------------------------------------------------------------\r\n/**\r\n * 当操作工具移动对象时\r\n * @param realSelObjs 选中的对象\r\n */\r\nfunction imageLayerOnToolsChangePostion(realSelObjs: GameSprite[]): void {\r\n    imageLayerOnToolsChange(0, realSelObjs);\r\n}\r\n/**\r\n * 当操作工具缩放时\r\n * @param realSelObjs 选中的对象\r\n */\r\nfunction imageLayerOnToolsChangeSize(realSelObjs: GameSprite[]) {\r\n    imageLayerOnToolsChange(1, realSelObjs);\r\n}\r\n/**\r\n * 当操作工具旋转时\r\n * @param realSelObjs 选中的对象\r\n */\r\nfunction imageLayerOnToolsChangeRotation(realSelObjs: GameSprite[]) {\r\n    imageLayerOnToolsChange(2, realSelObjs);\r\n}\r\n/**\r\n * 当操作工具开始操作时\r\n */\r\nfunction imageLayerOnToolsChangeStart(realSelObjs: GameSprite[]) {\r\n\r\n}\r\n/**\r\n * 当操作工具结束操作时\r\n */\r\nfunction imageLayerOnToolsChangeEnd(realSelObjs: GameSprite[]) {\r\n    if (newCmdParams == null) return;\r\n    if (realSelObjs.length == 0) return;\r\n    var data: any = realSelObjs[0].data;\r\n    if (!data || data.type != passageType) return;\r\n    var newCMD = previewWin.insertCustomCMD(PLUGIN_CUSTOM_COMMAND_movePicture, newCmdParams, -2, false);\r\n    newCmdData.cmd = newCMD;\r\n    newCmdParams = null;\r\n    previewWin.setData();\r\n}\r\n/**\r\n * 当操作工具选中对象时\r\n */\r\nfunction imageLayerOnToolsSelectObject(realSelObjs: GameSprite[]) {\r\n\r\n}\r\n//------------------------------------------------------------------------------------------------------\r\n// 图像层相关 遍历每个已使用的通道，每个已使用的通道再遍历已使用的指令，调用下面的函数\r\n// [everyone passage] x [everyone used command type]\r\n//------------------------------------------------------------------------------------------------------\r\n/**\r\n * 清理函数：每次刷新前调用此函数进行清理\r\n * @param passageID 通道\r\n * @param passageData 通道储存的数据\r\n */\r\nfunction imageLayerPassageClear(passageID: number, passageData: ImagePassageData) {\r\n    // -- 判断该通道是图片的话\r\n    if (passageData.type == passageType) {\r\n        // 清理注册的移动\r\n        if (passageData.timeFunc) {\r\n            os.remove_ENTERFRAME(passageData.timeFunc, this);\r\n        }\r\n        var a: UIBitmap = passageData.displayObject;\r\n        // 存在且不是来自显示图片的话\r\n        if (a && !passageData.uiBitmapFromShow) {\r\n            a.dispose();\r\n        }\r\n    }\r\n}\r\n/**\r\n * 开始函数\r\n * @param passageID 通道\r\n * @param passageData 通道储存的数据\r\n */\r\nfunction imageLayerPassageStart(passageID: number, passageData: ImagePassageData) {\r\n    // -- 当前通道数据是图片类别的话\r\n    if (passageData.type == passageType) {\r\n        // -- 不存在图片显示对象的话，还是要显示一下图片移动\r\n        if (!passageData.displayObject) {\r\n            passageData.onCoverPassage = imageLayerPassageClear;// v0.985 upgrader\r\n\r\n            var a = new UIBitmap();\r\n            a.image = passageData.refImageEnabled ? passageData.refImage : emptyImageURL;\r\n            a.data = passageData;\r\n            a.pivotType = 0;\r\n            imageLayer.addChild(a);\r\n            a.useDPCoord = true;\r\n            a.dpX = passageData.dpX;\r\n            a.dpY = passageData.dpY;\r\n            a.dpZ = passageData.dpZ;\r\n            a.dpWidth = passageData.dpWidth;\r\n            a.dpHeight = passageData.dpHeight;\r\n            a.rotation1 = passageData.rotation;\r\n            a.pivotType = passageData.pivotType;\r\n            a.opacity = passageData.opacity;\r\n            a.flip = passageData.flip;\r\n            a.blendMode = [null, \"lighter\", \"blend5-1\", \"blend4-1\", \"blend4-7\", \"blend4-4\"][passageData.blendMode];\r\n            passageData.displayObject = a;\r\n            // -- 如果是当前指令的话则选中它\r\n            if (previewWin.currentSelectCmd == passageData.cmd) {\r\n                Callback.CallLaterBeforeRender(() => {\r\n                    previewWin.operateObjectTool.selectObjects([a]);\r\n                }, this)\r\n            }\r\n            else if (!previewWin.allowAllDisplayObject) {\r\n                a.mouseEnabled = false;\r\n                a.setTonal(0, 0, 0, 1, 0.2, 0.2, 0.2);\r\n            }\r\n            // ---\r\n            a.on(EventObject.RIGHT_MOUSE_UP, this, () => {\r\n                if (previewWin.viewAreaRightMouseMove) return;\r\n                var menuData: any[] = [\r\n                    {\r\n                        label: \"定位到对应的指令\",\r\n                        splitLine: true,// 是否显示分割线\r\n                        children: [], // 存放和本身这个对象是一样的格式\r\n                        execute: \"selectEvent\", // 点击后执行的方法名称\r\n                        shortcutKey: \"F\", //显示的快捷键名称\r\n                        menuHotKey: \"F\", //实际作用的快捷键名称 对应Laya.KeyBoard的值 如A\r\n                        enabled: true, // 是否可用，不填写表示true\r\n                        visible: true, // 是否显示，不填写表示true\r\n                    },\r\n                    {\r\n                        label: \"生成「显示图片」\",\r\n                        splitLine: false,// 是否显示分割线\r\n                        children: [], // 存放和本身这个对象是一样的格式\r\n                        execute: \"createShowImageEvent\", // 点击后执行的方法名称\r\n                        shortcutKey: \"\", //显示的快捷键名称\r\n                        menuHotKey: \"\", //实际作用的快捷键名称 对应Laya.KeyBoard的值 如A\r\n                        enabled: true, // 是否可用，不填写表示true\r\n                        visible: true, // 是否显示，不填写表示true\r\n                    },\r\n                    {\r\n                        label: \"生成「移动图片」\",\r\n                        splitLine: false,// 是否显示分割线\r\n                        children: [], // 存放和本身这个对象是一样的格式\r\n                        execute: \"createMoveImageEvent\", // 点击后执行的方法名称\r\n                        shortcutKey: \"\", //显示的快捷键名称\r\n                        menuHotKey: \"\", //实际作用的快捷键名称 对应Laya.KeyBoard的值 如A\r\n                        enabled: true, // 是否可用，不填写表示true\r\n                        visible: true, // 是否显示，不填写表示true\r\n                    },\r\n                    {\r\n                        label: \"生成「移动图片」+「等待」\",\r\n                        splitLine: false,// 是否显示分割线\r\n                        children: [], // 存放和本身这个对象是一样的格式\r\n                        execute: \"createMoveImageEvent2\", // 点击后执行的方法名称\r\n                        shortcutKey: \"\", //显示的快捷键名称\r\n                        menuHotKey: \"\", //实际作用的快捷键名称 对应Laya.KeyBoard的值 如A\r\n                        enabled: true, // 是否可用，不填写表示true\r\n                        visible: true, // 是否显示，不填写表示true\r\n                    },\r\n                    {\r\n                        label: \"消除该图片\",\r\n                        splitLine: false,// 是否显示分割线\r\n                        children: [], // 存放和本身这个对象是一样的格式\r\n                        execute: \"earseEvent\", // 点击后执行的方法名称\r\n                        shortcutKey: \"D\", //显示的快捷键名称\r\n                        menuHotKey: \"D\", //实际作用的快捷键名称 对应Laya.KeyBoard的值 如A\r\n                        enabled: true, // 是否可用，不填写表示true\r\n                        visible: true, // 是否显示，不填写表示true\r\n                    }\r\n                ];\r\n                // 关于生成的指令是插入在上方还是下方\r\n                var isinsertCMDToUp = passageData.cmd == previewWin.currentSelectCmd ? false : true;\r\n                var funcDomain = {\r\n                    selectEvent: () => {\r\n                        previewWin.selectCmdMessageByCmd(passageData.cmd, true);\r\n                    },\r\n                    createShowImageEvent: () => {\r\n                        var d = a.data as ImagePassageData;\r\n                        createImageMoveData(a, d);\r\n                        var newCMD = previewWin.insertCustomCMD(PLUGIN_CUSTOM_COMMAND_showPicture, newCmdParams, isinsertCMDToUp ? -2 : -3, false);\r\n                        newCmdData.cmd = newCMD;\r\n                        newCmdParams = null;\r\n                        previewWin.setData();\r\n                    },\r\n                    createMoveImageEvent: () => {\r\n                        var d = a.data as ImagePassageData;\r\n                        createImageMoveData(a, d);\r\n                        var newCMD = previewWin.insertCustomCMD(PLUGIN_CUSTOM_COMMAND_movePicture, newCmdParams, isinsertCMDToUp ? -2 : -3, false);\r\n                        newCmdData.cmd = newCMD;\r\n                        newCmdParams = null;\r\n                        previewWin.setData();\r\n                    },\r\n                    createMoveImageEvent2: () => {\r\n                        var d = a.data as ImagePassageData;\r\n                        createImageMoveData(a, d);\r\n                        var newCMD = previewWin.insertCustomCMD(PLUGIN_CUSTOM_COMMAND_movePicture, newCmdParams, isinsertCMDToUp ? -2 : -3, false);\r\n                        newCmdData.cmd = newCMD;\r\n                        newCmdParams = null;\r\n                        previewWin.insertSystemCMD(17, [30, 0, false, 0], -3);\r\n                        previewWin.setData();\r\n                        previewWin.selectCmdMessageByCmd(newCMD, true);\r\n                    },\r\n                    earseEvent: () => {\r\n                        var newCMD = previewWin.insertCustomCMD(PLUGIN_CUSTOM_COMMAND_earsePicture, {\r\n                            passageIDUseVar: passageData.passageIDUseVar,\r\n                            passageID: passageData.passageID\r\n                        }, isinsertCMDToUp ? -2 : -3, false);\r\n                        previewWin.setData();\r\n                    }\r\n                };\r\n                previewWin.createMenu(menuData, stage.mouseX, stage.mouseY, funcDomain);\r\n            });\r\n        }\r\n    }\r\n}\r\n//------------------------------------------------------------------------------------------------------\r\n// 自定义\r\n//------------------------------------------------------------------------------------------------------\r\nfunction createImageMoveData(sp: GameSprite, data: ImagePassageData) {\r\n    newCmdParams = ObjectUtils.depthClone(data.lastImageCmdParams);\r\n    newCmdParams.dpX = sp.dpX;\r\n    newCmdParams.dpY = sp.dpY;\r\n    newCmdParams.dpZ = sp.dpZ;\r\n    newCmdParams.rotation = sp.rotation1;\r\n    newCmdParams.dpWidth = sp.dpWidth;\r\n    newCmdParams.dpHeight = sp.dpHeight;\r\n    newCmdParams.passageID = data.passageID;\r\n    newCmdData = data;\r\n}\r\n/**\r\n * 当来自操作工具的属性修改时\r\n * @param type 类别 0-移动 1-缩放 2-旋转  \r\n * @param realSelObjs 选中的工具\r\n */\r\nfunction imageLayerOnToolsChange(type: number, realSelObjs: GameSprite[]) {\r\n    // 根据选中的数据进行获取\r\n    for (var i = 0; i < realSelObjs.length; i++) {\r\n        var sp = realSelObjs[i];\r\n        var data: ImagePassageData = sp.data;\r\n        // 如果存在数据且数据类别是当前指令的类别时\r\n        if (data && data.type == passageType && data.cmd.customID == commandID) {\r\n            // 实际坐标转化为深度坐标\r\n            var res = sp.realCoordToDPCoord(type == 0, type == 1);\r\n            // 选中的指令是当前指令时：则直接修改属性\r\n            if (previewWin.currentSelectCmd == data.cmd) {\r\n                var passageID: number = data.passageID as any;\r\n                if (type == 0) {\r\n                    previewWin.modifyCommandParam(data.cmd, \"dpX\", sp.dpX);\r\n                    previewWin.modifyCommandParam(data.cmd, \"dpY\", sp.dpY);\r\n                }\r\n                else if (type == 1) {\r\n                    previewWin.modifyCommandParam(data.cmd, \"dpWidth\", res.dpWidth);\r\n                    previewWin.modifyCommandParam(data.cmd, \"dpHeight\", res.dpHeight);\r\n                }\r\n                else {\r\n                    previewWin.modifyCommandParam(data.cmd, \"rotation\", sp.rotation);\r\n                }\r\n            }\r\n            else {\r\n                // 不存在数据时则创建\r\n                if (newCmdParams == null) {\r\n                    createImageMoveData(sp, data);\r\n                }\r\n                // 否则直接修改\r\n                else {\r\n                    if (type == 0) {\r\n                        newCmdParams.dpX = sp.dpX;\r\n                        newCmdParams.dpY = sp.dpY;\r\n                    }\r\n                    else if (type == 1) {\r\n                        newCmdParams.dpWidth = res.dpWidth;\r\n                        newCmdParams.dpHeight = res.dpHeight;\r\n                    }\r\n                    else {\r\n                        newCmdParams.rotation = sp.rotation;\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    }\r\n}\r\n/**\r\n * 刷新图片实际的显示\r\n * @param uiBitmap 图片对象\r\n * @param cmdParams 参数（可能为空）\r\n * @param passageData 通道数据\r\n * @param needSyncCMDParams [可选] 默认值=false 是否同步指令参数\r\n * @param needResizeWhenEmptyImage [可选] 默认值=false 是否重置尺寸当空图片时\r\n */\r\nfunction refreshImageRealShow(uiBitmap: UIBitmap, cmdParams: ThisCommandParams, passageData: ImagePassageData, needSyncCMDParams: boolean = false, needResizeWhenEmptyImage: boolean = false) {\r\n    var toImage: string;\r\n    var paramData = cmdParams ? cmdParams : passageData;\r\n    // 来自非显示图片的情况下\r\n    if (!passageData.uiBitmapFromShow) {\r\n        if (paramData.refImageEnabled) {\r\n            toImage = paramData.refImage ? paramData.refImage : emptyImageURL;\r\n        }\r\n        else if (passageData.refImageEnabled) {\r\n            toImage = passageData.refImage ? passageData.refImage : emptyImageURL;\r\n        }\r\n        else {\r\n            toImage = emptyImageURL;\r\n        }\r\n        // 原图是空图片的话允许重置为新图的尺寸\r\n        if (needResizeWhenEmptyImage && uiBitmap.image == emptyImageURL) {\r\n            passageData.displayObject[\"_emptyImage\"] = true;\r\n            if (needSyncCMDParams) {\r\n                passageData.displayObject.once(EventObject.LOADED, this, (passageData: ImagePassageData) => {\r\n                    previewWin.modifyCommandParam(passageData.cmd, \"dpWidth\", passageData.displayObject.dpWidth);\r\n                    previewWin.modifyCommandParam(passageData.cmd, \"dpHeight\", passageData.displayObject.dpHeight);\r\n                }, [passageData]);\r\n            }\r\n        }\r\n        uiBitmap.image = toImage;\r\n    }\r\n}",
+    "cmdPreviewJS": "var passageType = \"gcImage\";\nvar PLUGIN_CUSTOM_COMMAND_showPicture = 3001;\nvar PLUGIN_CUSTOM_COMMAND_movePicture = 3002;\nvar PLUGIN_CUSTOM_COMMAND_earsePicture = 3008;\nvar newCmdParams;\nvar newCmdData;\nvar emptyImageURL = \"editorAsset/img/ui_pic.png\";\nfunction runCommand(cmdParams, cmd, isPlayMode) {\n    var _this = this;\n    if (cmdParams.passageIDUseVar) {\n        return;\n    }\n    var passageData = imageLayerPassageData[cmdParams.passageID];\n    if (isPlayMode) {\n        if (!passageData || passageData.type != passageType || !passageData.displayObject)\n            return;\n        if (passageData.timeFunc) {\n            os.remove_ENTERFRAME(passageData.timeFunc, this);\n        }\n        var toDpX = cmdParams.dpX;\n        var toDpY = cmdParams.dpY;\n        var toDpZ = cmdParams.dpZ;\n        var toDpWidth = cmdParams.dpWidth;\n        var toDpHeight = cmdParams.dpHeight;\n        var toRotation = cmdParams.rotation;\n        var toOpacity = cmdParams.opacity;\n        if (cmdParams.timeType == 0) {\n            passageData.displayObject.dpX = toDpX;\n            passageData.displayObject.dpY = toDpY;\n            passageData.displayObject.dpZ = toDpZ;\n            passageData.displayObject.dpWidth = toDpWidth;\n            passageData.displayObject.dpHeight = toDpHeight;\n            passageData.displayObject.rotation1 = toRotation;\n            passageData.displayObject.opacity = toOpacity;\n            passageData.displayObject.pivotType = cmdParams.pivotType;\n            passageData.displayObject.blendMode = [null, \"lighter\", \"blend5-1\", \"blend4-1\", \"blend4-7\", \"blend4-4\"][cmdParams.blendMode];\n            passageData.displayObject.flip = cmdParams.flip;\n        }\n        else {\n            var m = {\n                time: cmdParams.time,\n                curTime: 1,\n                x: passageData.displayObject.dpX,\n                y: passageData.displayObject.dpY,\n                z: passageData.displayObject.dpZ,\n                width: passageData.displayObject.dpWidth,\n                height: passageData.displayObject.dpHeight,\n                rotation: passageData.displayObject.rotation1,\n                opacity: passageData.displayObject.opacity,\n                x2: toDpX - passageData.displayObject.dpX,\n                y2: toDpY - passageData.displayObject.dpY,\n                z2: toDpZ - passageData.displayObject.dpZ,\n                width2: toDpWidth - passageData.displayObject.dpWidth,\n                height2: toDpHeight - passageData.displayObject.dpHeight,\n                rotation2: toRotation - passageData.displayObject.rotation1,\n                opacity2: toOpacity - passageData.displayObject.opacity,\n                transData: GameUtils.getTransData(cmdParams.trans)\n            };\n            var f;\n            os.add_ENTERFRAME(f = passageData.timeFunc = function (uiBitmap, cmdParams) {\n                if (m.curTime == 1) {\n                    uiBitmap.pivotType = cmdParams.pivotType;\n                    uiBitmap.blendMode = [null, \"lighter\", \"blend5-1\", \"blend4-1\", \"blend4-7\", \"blend4-4\"][cmdParams.blendMode];\n                    uiBitmap.flip = cmdParams.flip;\n                }\n                var per = m.curTime / m.time;\n                var value = GameUtils.getValueByTransData(m.transData, per);\n                uiBitmap.dpX = m.x2 * value + m.x;\n                uiBitmap.dpY = m.y2 * value + m.y;\n                uiBitmap.dpZ = m.z2 * value + m.z;\n                uiBitmap.dpWidth = m.width2 * value + m.width;\n                uiBitmap.dpHeight = m.height2 * value + m.height;\n                uiBitmap.rotation1 = m.rotation2 * value + m.rotation;\n                uiBitmap.opacity = m.opacity2 * value + m.opacity;\n                m.curTime++;\n                if (per == 1) {\n                    os.remove_ENTERFRAME(arguments.callee, _this);\n                }\n                uiBitmap.dpCoordToRealCoord();\n            }, this, [passageData.displayObject, cmdParams]);\n            f.apply(this, [passageData.displayObject, cmdParams]);\n            var lastOnCoverPassage = passageData.onCoverPassage;\n            passageData.onCoverPassage = function () {\n                os.remove_ENTERFRAME(f, this);\n                if (lastOnCoverPassage)\n                    lastOnCoverPassage.apply(this, arguments);\n            };\n        }\n    }\n    else {\n        if (passageData && passageData.type != passageType)\n            return;\n        if (!passageData)\n            passageData = imageLayerPassageData[cmdParams.passageID] = {};\n        passageData.passageID = cmdParams.passageID;\n        passageData.type = passageType;\n        passageData.cmd = cmd;\n        if (!passageData.lastImageCmdParams) {\n            passageData.lastImageCmdParams = cmdParams;\n        }\n        else {\n            ObjectUtils.clone(cmdParams, passageData.lastImageCmdParams);\n        }\n        passageData.dpX = cmdParams.dpX;\n        passageData.dpY = cmdParams.dpY;\n        passageData.dpZ = cmdParams.dpZ;\n        passageData.dpWidth = cmdParams.dpWidth;\n        passageData.dpHeight = cmdParams.dpHeight;\n        passageData.rotation = cmdParams.rotation;\n        passageData.pivotType = cmdParams.pivotType;\n        passageData.opacity = cmdParams.opacity;\n        passageData.blendMode = cmdParams.blendMode;\n        passageData.flip = cmdParams.flip;\n        if (!passageData.uiBitmapFromShow) {\n            if (cmdParams.refImageEnabled) {\n                passageData.refImageEnabled = cmdParams.refImageEnabled;\n                passageData.refImage = cmdParams.refImage;\n            }\n        }\n    }\n}\nfunction onCommandAttributeBeforeChange(cmd, cmdParams, varName) {\n    if (varName == \"passageID\" || varName == \"passageIDUseVar\") {\n        previewWin.clearData();\n    }\n}\nfunction onCommandAttributeChange(cmd, cmdParams, varName, newValue) {\n    if (varName == \"passageID\" || varName == \"passageIDUseVar\") {\n        previewWin.setData(false);\n        return;\n    }\n    if (cmdParams.passageIDUseVar) {\n        return;\n    }\n    var passageData = imageLayerPassageData[cmdParams.passageID];\n    if (!passageData)\n        return;\n    if (passageData.type == passageType && passageData.displayObject) {\n        if (varName == \"blendMode\") {\n            passageData.displayObject.blendMode = [null, \"lighter\", \"blend5-1\", \"blend4-1\", \"blend4-7\", \"blend4-4\"][newValue];\n        }\n        else if (varName == \"rotation\") {\n            passageData.displayObject.rotation1 = newValue;\n        }\n        else {\n            if (!passageData.uiBitmapFromShow && (varName == \"refImage\" || varName == \"refImageEnabled\")) {\n                passageData.refImageEnabled = cmdParams.refImageEnabled;\n                refreshImageRealShow(passageData.displayObject, cmdParams, passageData);\n            }\n            else {\n                passageData.displayObject[varName] = newValue;\n            }\n        }\n        Callback.CallLaterBeforeRender(previewWin.operateObjectTool.refresh, previewWin.operateObjectTool);\n    }\n}\nfunction imageLayerOnToolsChangePostion(realSelObjs) {\n    imageLayerOnToolsChange(0, realSelObjs);\n}\nfunction imageLayerOnToolsChangeSize(realSelObjs) {\n    imageLayerOnToolsChange(1, realSelObjs);\n}\nfunction imageLayerOnToolsChangeRotation(realSelObjs) {\n    imageLayerOnToolsChange(2, realSelObjs);\n}\nfunction imageLayerOnToolsChangeStart(realSelObjs) {\n}\nfunction imageLayerOnToolsChangeEnd(realSelObjs) {\n    if (newCmdParams == null)\n        return;\n    if (realSelObjs.length == 0)\n        return;\n    var data = realSelObjs[0].data;\n    if (!data || data.type != passageType)\n        return;\n    var newCMD = previewWin.insertCustomCMD(PLUGIN_CUSTOM_COMMAND_movePicture, newCmdParams, -2, false);\n    newCmdData.cmd = newCMD;\n    newCmdParams = null;\n    previewWin.setData();\n}\nfunction imageLayerOnToolsSelectObject(realSelObjs) {\n}\nfunction imageLayerPassageClear(passageID, passageData) {\n    if (passageData.type == passageType) {\n        if (passageData.timeFunc) {\n            os.remove_ENTERFRAME(passageData.timeFunc, this);\n        }\n        var a = passageData.displayObject;\n        if (a && !passageData.uiBitmapFromShow) {\n            a.dispose();\n        }\n    }\n}\nfunction imageLayerPassageStart(passageID, passageData) {\n    if (passageData.type == passageType) {\n        if (!passageData.displayObject) {\n            passageData.onCoverPassage = imageLayerPassageClear;\n            var a = new UIBitmap();\n            a.image = passageData.refImageEnabled ? passageData.refImage : emptyImageURL;\n            a.data = passageData;\n            a.pivotType = 0;\n            imageLayer.addChild(a);\n            a.useDPCoord = true;\n            a.dpX = passageData.dpX;\n            a.dpY = passageData.dpY;\n            a.dpZ = passageData.dpZ;\n            a.dpWidth = passageData.dpWidth;\n            a.dpHeight = passageData.dpHeight;\n            a.rotation1 = passageData.rotation;\n            a.pivotType = passageData.pivotType;\n            a.opacity = passageData.opacity;\n            a.flip = passageData.flip;\n            a.blendMode = [null, \"lighter\", \"blend5-1\", \"blend4-1\", \"blend4-7\", \"blend4-4\"][passageData.blendMode];\n            passageData.displayObject = a;\n            if (previewWin.currentSelectCmd == passageData.cmd) {\n                Callback.CallLaterBeforeRender(function () {\n                    previewWin.operateObjectTool.selectObjects([a]);\n                }, this);\n            }\n            else if (!previewWin.allowAllDisplayObject) {\n                a.mouseEnabled = false;\n                a.setTonal(0, 0, 0, 1, 0.2, 0.2, 0.2);\n            }\n            a.on(EventObject.RIGHT_MOUSE_UP, this, function () {\n                if (previewWin.viewAreaRightMouseMove)\n                    return;\n                var menuData = [\n                    {\n                        label: \"定位到对应的指令\",\n                        splitLine: true,\n                        children: [],\n                        execute: \"selectEvent\",\n                        shortcutKey: \"F\",\n                        menuHotKey: \"F\",\n                        enabled: true,\n                        visible: true,\n                    },\n                    {\n                        label: \"生成「显示图片」\",\n                        splitLine: false,\n                        children: [],\n                        execute: \"createShowImageEvent\",\n                        shortcutKey: \"\",\n                        menuHotKey: \"\",\n                        enabled: true,\n                        visible: true,\n                    },\n                    {\n                        label: \"生成「移动图片」\",\n                        splitLine: false,\n                        children: [],\n                        execute: \"createMoveImageEvent\",\n                        shortcutKey: \"\",\n                        menuHotKey: \"\",\n                        enabled: true,\n                        visible: true,\n                    },\n                    {\n                        label: \"生成「移动图片」+「等待」\",\n                        splitLine: false,\n                        children: [],\n                        execute: \"createMoveImageEvent2\",\n                        shortcutKey: \"\",\n                        menuHotKey: \"\",\n                        enabled: true,\n                        visible: true,\n                    },\n                    {\n                        label: \"消除该图片\",\n                        splitLine: false,\n                        children: [],\n                        execute: \"earseEvent\",\n                        shortcutKey: \"D\",\n                        menuHotKey: \"D\",\n                        enabled: true,\n                        visible: true,\n                    }\n                ];\n                var isinsertCMDToUp = passageData.cmd == previewWin.currentSelectCmd ? false : true;\n                var funcDomain = {\n                    selectEvent: function () {\n                        previewWin.selectCmdMessageByCmd(passageData.cmd, true);\n                    },\n                    createShowImageEvent: function () {\n                        var d = a.data;\n                        createImageMoveData(a, d);\n                        var newCMD = previewWin.insertCustomCMD(PLUGIN_CUSTOM_COMMAND_showPicture, newCmdParams, isinsertCMDToUp ? -2 : -3, false);\n                        newCmdData.cmd = newCMD;\n                        newCmdParams = null;\n                        previewWin.setData();\n                    },\n                    createMoveImageEvent: function () {\n                        var d = a.data;\n                        createImageMoveData(a, d);\n                        var newCMD = previewWin.insertCustomCMD(PLUGIN_CUSTOM_COMMAND_movePicture, newCmdParams, isinsertCMDToUp ? -2 : -3, false);\n                        newCmdData.cmd = newCMD;\n                        newCmdParams = null;\n                        previewWin.setData();\n                    },\n                    createMoveImageEvent2: function () {\n                        var d = a.data;\n                        createImageMoveData(a, d);\n                        var newCMD = previewWin.insertCustomCMD(PLUGIN_CUSTOM_COMMAND_movePicture, newCmdParams, isinsertCMDToUp ? -2 : -3, false);\n                        newCmdData.cmd = newCMD;\n                        newCmdParams = null;\n                        previewWin.insertSystemCMD(17, [30, 0, false, 0], -3);\n                        previewWin.setData();\n                        previewWin.selectCmdMessageByCmd(newCMD, true);\n                    },\n                    earseEvent: function () {\n                        var newCMD = previewWin.insertCustomCMD(PLUGIN_CUSTOM_COMMAND_earsePicture, {\n                            passageIDUseVar: passageData.passageIDUseVar,\n                            passageID: passageData.passageID\n                        }, isinsertCMDToUp ? -2 : -3, false);\n                        previewWin.setData();\n                    }\n                };\n                previewWin.createMenu(menuData, stage.mouseX, stage.mouseY, funcDomain);\n            });\n        }\n    }\n}\nfunction createImageMoveData(sp, data) {\n    newCmdParams = ObjectUtils.depthClone(data.lastImageCmdParams);\n    newCmdParams.dpX = sp.dpX;\n    newCmdParams.dpY = sp.dpY;\n    newCmdParams.dpZ = sp.dpZ;\n    newCmdParams.rotation = sp.rotation1;\n    newCmdParams.dpWidth = sp.dpWidth;\n    newCmdParams.dpHeight = sp.dpHeight;\n    newCmdParams.passageID = data.passageID;\n    newCmdData = data;\n}\nfunction imageLayerOnToolsChange(type, realSelObjs) {\n    for (var i = 0; i < realSelObjs.length; i++) {\n        var sp = realSelObjs[i];\n        var data = sp.data;\n        if (data && data.type == passageType && data.cmd.customID == commandID) {\n            var res = sp.realCoordToDPCoord(type == 0, type == 1);\n            if (previewWin.currentSelectCmd == data.cmd) {\n                var passageID = data.passageID;\n                if (type == 0) {\n                    previewWin.modifyCommandParam(data.cmd, \"dpX\", sp.dpX);\n                    previewWin.modifyCommandParam(data.cmd, \"dpY\", sp.dpY);\n                }\n                else if (type == 1) {\n                    previewWin.modifyCommandParam(data.cmd, \"dpWidth\", res.dpWidth);\n                    previewWin.modifyCommandParam(data.cmd, \"dpHeight\", res.dpHeight);\n                }\n                else {\n                    previewWin.modifyCommandParam(data.cmd, \"rotation\", sp.rotation);\n                }\n            }\n            else {\n                if (newCmdParams == null) {\n                    createImageMoveData(sp, data);\n                }\n                else {\n                    if (type == 0) {\n                        newCmdParams.dpX = sp.dpX;\n                        newCmdParams.dpY = sp.dpY;\n                    }\n                    else if (type == 1) {\n                        newCmdParams.dpWidth = res.dpWidth;\n                        newCmdParams.dpHeight = res.dpHeight;\n                    }\n                    else {\n                        newCmdParams.rotation = sp.rotation;\n                    }\n                }\n            }\n        }\n    }\n}\nfunction refreshImageRealShow(uiBitmap, cmdParams, passageData, needSyncCMDParams, needResizeWhenEmptyImage) {\n    if (needSyncCMDParams === void 0) { needSyncCMDParams = false; }\n    if (needResizeWhenEmptyImage === void 0) { needResizeWhenEmptyImage = false; }\n    var toImage;\n    var paramData = cmdParams ? cmdParams : passageData;\n    if (!passageData.uiBitmapFromShow) {\n        if (paramData.refImageEnabled) {\n            toImage = paramData.refImage ? paramData.refImage : emptyImageURL;\n        }\n        else if (passageData.refImageEnabled) {\n            toImage = passageData.refImage ? passageData.refImage : emptyImageURL;\n        }\n        else {\n            toImage = emptyImageURL;\n        }\n        if (needResizeWhenEmptyImage && uiBitmap.image == emptyImageURL) {\n            passageData.displayObject[\"_emptyImage\"] = true;\n            if (needSyncCMDParams) {\n                passageData.displayObject.once(EventObject.LOADED, this, function (passageData) {\n                    previewWin.modifyCommandParam(passageData.cmd, \"dpWidth\", passageData.displayObject.dpWidth);\n                    previewWin.modifyCommandParam(passageData.cmd, \"dpHeight\", passageData.displayObject.dpHeight);\n                }, [passageData]);\n            }\n        }\n        uiBitmap.image = toImage;\n    }\n}\n",
+    "fastModifyAttribute": true,
+    "isCustomPhraseDesc": true,
+    "compAutoOrder": true,
+    "name": "移动图片",
+    "customPhraseDescTS": "// 根据属性名称值编写自定义短语描述，如：\"我的短语是\"+attrs.xxx\n// 使用下拉框组件的变量attrs.xxx有对应的attrs.xxxItems的属性以便获得标签名集合\n// 获取自定义模块的数据名称的函数：getModuleDataName(moduleID:number,dataID:number):string;\n// 获取各种列表内数据名称的函数：getTypeDataListName(typeID: number, dataID: number):string;\n// -- typeID ：0-全局变量 1-全局开关 2-全局字符串 3-玩家变量 4-玩家开关 5-玩家字符串\n//           ：6-场景列表 7-场景对象模型列表 8-图块列表 9-行走图列表 10-行走图动作列表 11-立绘列表 12-立绘表情列表\n//           ：13-公共事件 14-对话框列表 15-动画列表 16-动画信号列表 17-界面列表 18-数据结构列表 19-自定义模块列表\n//           ：20-自定义命令列表 21-自定义行为列表 22-自动元件列表 23-行走图部件列表 24-立绘部件列表\nvar str = ``;\nvar passageIDStr = attrs.passageIDUseVar ? `@${attrs.passageIDVar}-${getTypeDataListName(3, attrs.passageIDVar)}` : attrs.passageID;\nstr += `编号【${passageIDStr}】 `;\n\nstr += `${attrs.timeTypeItems[attrs.timeType]} `;\nif (attrs.timeType == 1) {\n    str += attrs.time + \"帧 \"\n}\n\n\nif (attrs.posUseVar) {\n    var xStr = `@${attrs.dpXVar}`;\n    var yStr = `@${attrs.dpYVar}`;\n}\nelse {\n    xStr = attrs.dpX as any;\n    yStr = attrs.dpY as any;\n}\nvar zStr = attrs.zUseVar ? `@${attrs.dpZVar}` : attrs.dpZ;\nif (attrs.sizeUseVar) {\n    var wStr = `@${attrs.dpWidthVar}`;\n    var hStr = `@${attrs.dpHeightVar}`;\n\n}\nelse {\n    wStr = attrs.dpWidth as any;\n    hStr = attrs.dpHeight as any;\n}\nvar roStr = attrs.rotationUseVar ? `@${attrs.rotationVar}` : attrs.rotation;\nvar alphaStr = attrs.opacityUseVar ? `@${attrs.opacityVar}` : attrs.opacity;\nstr += `坐标(${xStr},${yStr},${zStr}) 尺寸(${wStr},${hStr}) 旋转度=${roStr} 透明度=${alphaStr}`;\n\nstr += attrs.flip ? \" 水平翻转 \" : \"\";\nstr += attrs.pivotType == 1 ? \" 中心点 \" : \" 左上角 \";\nif (attrs.blendMode == 1) {\n    str += ` 加法混合 `;\n}\n\n\nstr;",
+    "customPhraseDescJS": "var str = \"\";\nvar passageIDStr = attrs.passageIDUseVar ? \"@\" + attrs.passageIDVar + \"-\" + getTypeDataListName(3, attrs.passageIDVar) : attrs.passageID;\nstr += \"\\u7F16\\u53F7\\u3010\" + passageIDStr + \"\\u3011 \";\nstr += attrs.timeTypeItems[attrs.timeType] + \" \";\nif (attrs.timeType == 1) {\n    str += attrs.time + \"帧 \";\n}\nif (attrs.posUseVar) {\n    var xStr = \"@\" + attrs.dpXVar;\n    var yStr = \"@\" + attrs.dpYVar;\n}\nelse {\n    xStr = attrs.dpX;\n    yStr = attrs.dpY;\n}\nvar zStr = attrs.zUseVar ? \"@\" + attrs.dpZVar : attrs.dpZ;\nif (attrs.sizeUseVar) {\n    var wStr = \"@\" + attrs.dpWidthVar;\n    var hStr = \"@\" + attrs.dpHeightVar;\n}\nelse {\n    wStr = attrs.dpWidth;\n    hStr = attrs.dpHeight;\n}\nvar roStr = attrs.rotationUseVar ? \"@\" + attrs.rotationVar : attrs.rotation;\nvar alphaStr = attrs.opacityUseVar ? \"@\" + attrs.opacityVar : attrs.opacity;\nstr += \"\\u5750\\u6807(\" + xStr + \",\" + yStr + \",\" + zStr + \") \\u5C3A\\u5BF8(\" + wStr + \",\" + hStr + \") \\u65CB\\u8F6C\\u5EA6=\" + roStr + \" \\u900F\\u660E\\u5EA6=\" + alphaStr;\nstr += attrs.flip ? \" 水平翻转 \" : \"\";\nstr += attrs.pivotType == 1 ? \" 中心点 \" : \" 左上角 \";\nif (attrs.blendMode == 1) {\n    str += \" \\u52A0\\u6CD5\\u6DF7\\u5408 \";\n}\nstr;\n"
+}

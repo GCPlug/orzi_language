@@ -1,0 +1,134 @@
+[
+    {
+        "typeID": 0,
+        "name": "图片",
+        "classID": 0,
+        "data": [
+            "jpg,png,jpeg",
+            "asset/image/picture"
+        ],
+        "tips": "文件资源-图片-asset/image/picture",
+        "insert": false,
+        "jsCode": "var PLUGIN_CUSTOM_COMMAND_showPicture = 3001;\nAssetManager.loadImage(value, Callback.New(function (tex) {\n    if (tex) {\n        var passageID = 1;\n        for (var i = 1; i < 9999; i++) {\n            if (!imageLayerPassageData[i]) {\n                passageID = i;\n                break;\n            }\n        }\n        previewWin.insertCustomCMD(PLUGIN_CUSTOM_COMMAND_showPicture, {\n            image: value,\n            passageID: passageID,\n            dpWidth: tex.width,\n            dpHeight: tex.height,\n            dpX: Math.floor(inImageLayerX - tex.width / 2),\n            dpY: Math.floor(inImageLayerY - tex.height / 2)\n        }, -3, true);\n        previewWin.changeLayer(1);\n    }\n}, this));\n",
+        "tsCode": "/**\n * 图像层通道数据\n */\ndeclare var imageLayerPassageData: any[];\n/**\n * 小类别 0-无 1-图片 2-音频 3-界面 4-视频 5-动画 6-自定义格式文件 7-立绘 \n */\ndeclare var classID: number;\n/**\n * 值 \n * 图片/音频/自定义格式文件 = 路径:string;\n * 界面/动画/立绘 = 编号:number;\n */\ndeclare var value: any;\n/**\n * 拖拽至图像层的坐标\n */\ndeclare var inImageLayerX: number;\ndeclare var inImageLayerY: number;\n/**\n * 预览窗口\n */\ndeclare var previewWin: {\n    /**\n     * 新增指令 默认是默认值，如果有写入参数的话则以参数为准 varNameValue\n     * @param customID 自定义ID\n     * @param varNameValue 额外的变量值，如存在则优先使用该值，否则使用自定义编辑器中的默认值，如 {dpX:100,dpY:200}\n     * @param selectedIndex [可选] 默认值=-2  -3=当前选中（之后） -2=当前选中（之前） -1=最尾端 0-N=自定义 \n     * @param refreshPreViewArea [可选] 默认值=true 刷新预览区\n     */\n    insertCustomCMD(customID: number, varNameValue: any, selectedIndex?: number, refreshPreViewArea?: boolean): Command;\n    /**\n     * 更改显示层\n     * @param selectedIndex 0-界面层 1-图像层\n     */\n    changeLayer(selectedIndex: number): void;\n}\n//------------------------------------------------------------------------------------------------------\n// 编写资源对应的插入指令逻辑\n//------------------------------------------------------------------------------------------------------\n// 对应的指令\nvar PLUGIN_CUSTOM_COMMAND_showPicture: number = 3001;\n// 加载贴图，存在的话则以该贴图原始尺寸插入对应的指令\nAssetManager.loadImage(value, Callback.New((tex: Texture) => {\n    if (tex) {\n        // 获取空的通道\n        var passageID = 1;\n        for (var i = 1; i < 9999; i++) {\n            if (!imageLayerPassageData[i]) {\n                passageID = i;\n                break;\n            }\n        }\n        // 插入代码\n        previewWin.insertCustomCMD(PLUGIN_CUSTOM_COMMAND_showPicture, {\n            image: value,\n            passageID: passageID,\n            dpWidth: tex.width,\n            dpHeight: tex.height,\n            dpX: Math.floor(inImageLayerX - tex.width / 2),\n            dpY: Math.floor(inImageLayerY - tex.height / 2)\n        }, -3, true);\n        // 切换为图像层\n        previewWin.changeLayer(1);\n    }\n}, this));"
+    },
+    {
+        "typeID": 1,
+        "name": "立绘",
+        "classID": 7,
+        "data": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+        ],
+        "tips": "GC资源-立绘-[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]",
+        "insert": false,
+        "jsCode": "var PLUGIN_CUSTOM_COMMAND_showStandAvatar = 3006;\nvar passageID = 1;\nfor (var i = 1; i < 9999; i++) {\n    if (!imageLayerPassageData[i]) {\n        passageID = i;\n        break;\n    }\n}\npreviewWin.insertCustomCMD(PLUGIN_CUSTOM_COMMAND_showStandAvatar, {\n    standAvatar: MathUtils.int(value),\n    passageID: passageID,\n    dpX: Math.floor(inImageLayerX),\n    dpY: Math.floor(inImageLayerY)\n}, -3, true);\npreviewWin.changeLayer(1);\n",
+        "tsCode": "/**\n * 图像层通道数据\n */\ndeclare var imageLayerPassageData: any[];\n/**\n * 小类别 0-无 1-图片 2-音频 3-界面 4-视频 5-动画 6-自定义格式文件 7-立绘 \n */\ndeclare var classID: number;\n/**\n * 值 \n * 图片/音频/自定义格式文件 = 路径:string;\n * 界面/动画/立绘 = 编号:number;\n */\ndeclare var value: any;\n/**\n * 拖拽至图像层的坐标\n */\ndeclare var inImageLayerX: number;\ndeclare var inImageLayerY: number;\n/**\n * 预览窗口\n */\ndeclare var previewWin: {\n    /**\n     * 新增指令 默认是默认值，如果有写入参数的话则以参数为准 varNameValue\n     * @param customID 自定义ID\n     * @param varNameValue 额外的变量值，如存在则优先使用该值，否则使用自定义编辑器中的默认值，如 {dpX:100,dpY:200}\n     * @param selectedIndex [可选] 默认值=-2  -3=当前选中（之后） -2=当前选中（之前） -1=最尾端 0-N=自定义 \n     * @param refreshPreViewArea [可选] 默认值=true 刷新预览区\n     */\n    insertCustomCMD(customID: number, varNameValue: any, selectedIndex?: number, refreshPreViewArea?: boolean): Command;\n    /**\n     * 更改显示层\n     * @param selectedIndex 0-界面层 1-图像层\n     */\n    changeLayer(selectedIndex: number): void;\n}\n//------------------------------------------------------------------------------------------------------\n// 编写资源对应的插入指令逻辑\n//------------------------------------------------------------------------------------------------------\n// 对应的指令\nvar PLUGIN_CUSTOM_COMMAND_showStandAvatar: number = 3006;\n// 加载贴图，存在的话则以该贴图原始尺寸插入对应的指令\n// 获取空的通道\nvar passageID = 1;\nfor (var i = 1; i < 9999; i++) {\n    if (!imageLayerPassageData[i]) {\n        passageID = i;\n        break;\n    }\n}\n// 插入代码\npreviewWin.insertCustomCMD(PLUGIN_CUSTOM_COMMAND_showStandAvatar, {\n    standAvatar: MathUtils.int(value),\n    passageID: passageID,\n    dpX: Math.floor(inImageLayerX),\n    dpY: Math.floor(inImageLayerY)\n}, -3, true);\n// 切换为图像层\npreviewWin.changeLayer(1);\n"
+    },
+    {
+        "typeID": 1,
+        "name": "动画",
+        "classID": 5,
+        "data": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+        ],
+        "tips": "GC资源-动画-[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]",
+        "insert": false,
+        "jsCode": "var PLUGIN_CUSTOM_COMMAND_showStandAnimation = 3004;\nvar passageID = 1;\nfor (var i = 1; i < 9999; i++) {\n    if (!imageLayerPassageData[i]) {\n        passageID = i;\n        break;\n    }\n}\npreviewWin.insertCustomCMD(PLUGIN_CUSTOM_COMMAND_showStandAnimation, {\n    animation: MathUtils.int(value),\n    passageID: passageID,\n    dpX: Math.floor(inImageLayerX),\n    dpY: Math.floor(inImageLayerY)\n}, -3, true);\npreviewWin.changeLayer(1);\n",
+        "tsCode": "/**\n * 图像层通道数据\n */\ndeclare var imageLayerPassageData: any[];\n/**\n * 小类别 0-无 1-图片 2-音频 3-界面 4-视频 5-动画 6-自定义格式文件 7-立绘 \n */\ndeclare var classID: number;\n/**\n * 值 \n * 图片/音频/自定义格式文件 = 路径:string;\n * 界面/动画/立绘 = 编号:number;\n */\ndeclare var value: any;\n/**\n * 拖拽至图像层的坐标\n */\ndeclare var inImageLayerX: number;\ndeclare var inImageLayerY: number;\n/**\n * 预览窗口\n */\ndeclare var previewWin: {\n    /**\n     * 新增指令 默认是默认值，如果有写入参数的话则以参数为准 varNameValue\n     * @param customID 自定义ID\n     * @param varNameValue 额外的变量值，如存在则优先使用该值，否则使用自定义编辑器中的默认值，如 {dpX:100,dpY:200}\n     * @param selectedIndex [可选] 默认值=-2  -3=当前选中（之后） -2=当前选中（之前） -1=最尾端 0-N=自定义 \n     * @param refreshPreViewArea [可选] 默认值=true 刷新预览区\n     */\n    insertCustomCMD(customID: number, varNameValue: any, selectedIndex?: number, refreshPreViewArea?: boolean): Command;\n    /**\n     * 更改显示层\n     * @param selectedIndex 0-界面层 1-图像层\n     */\n    changeLayer(selectedIndex: number): void;\n}\n//------------------------------------------------------------------------------------------------------\n// 编写资源对应的插入指令逻辑\n//------------------------------------------------------------------------------------------------------\n// 对应的指令\nvar PLUGIN_CUSTOM_COMMAND_showStandAnimation: number = 3004;\n// 加载贴图，存在的话则以该贴图原始尺寸插入对应的指令\n// 获取空的通道\nvar passageID = 1;\nfor (var i = 1; i < 9999; i++) {\n    if (!imageLayerPassageData[i]) {\n        passageID = i;\n        break;\n    }\n}\n// 插入代码\npreviewWin.insertCustomCMD(PLUGIN_CUSTOM_COMMAND_showStandAnimation, {\n    animation: MathUtils.int(value),\n    passageID: passageID,\n    dpX: Math.floor(inImageLayerX),\n    dpY: Math.floor(inImageLayerY)\n}, -3, true);\n// 切换为图像层\npreviewWin.changeLayer(1);\n",
+        "addGCData": {
+            "stand": [],
+            "ani": [
+                2,
+                1
+            ],
+            "ui": []
+        }
+    },
+    {
+        "typeID": 1,
+        "name": "界面",
+        "classID": 3,
+        "data": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            11,
+            10,
+            12,
+            14,
+            13,
+            15,
+            16
+        ],
+        "tips": "GC资源-界面-[4,5,6,7,8,9,11,10,12,14,13,15,16]",
+        "insert": false,
+        "jsCode": "var PLUGIN_CUSTOM_COMMAND_showUI = 3010;\nvar passageID = 1;\nfor (var i = 1; i < 9999; i++) {\n    if (!imageLayerPassageData[i]) {\n        passageID = i;\n        break;\n    }\n}\npreviewWin.insertCustomCMD(PLUGIN_CUSTOM_COMMAND_showUI, {\n    uiID: MathUtils.int(value),\n    dpX: Math.floor(inImageLayerX - Config.WINDOW_WIDTH / 2),\n    dpY: Math.floor(inImageLayerY - Config.WINDOW_HEIGHT / 2)\n}, -3, true);\npreviewWin.changeLayer(0);\n",
+        "tsCode": "/**\n * 图像层通道数据\n */\ndeclare var imageLayerPassageData: any[];\n/**\n * 小类别 0-无 1-图片 2-音频 3-界面 4-视频 5-动画 6-自定义格式文件 7-立绘 \n */\ndeclare var classID: number;\n/**\n * 值 \n * 图片/音频/自定义格式文件 = 路径:string;\n * 界面/动画/立绘 = 编号:number;\n */\ndeclare var value: any;\n/**\n * 拖拽至图像层的坐标\n */\ndeclare var inImageLayerX: number;\ndeclare var inImageLayerY: number;\n/**\n * 预览窗口\n */\ndeclare var previewWin: {\n    /**\n     * 新增指令 默认是默认值，如果有写入参数的话则以参数为准 varNameValue\n     * @param customID 自定义ID\n     * @param varNameValue 额外的变量值，如存在则优先使用该值，否则使用自定义编辑器中的默认值，如 {dpX:100,dpY:200}\n     * @param selectedIndex [可选] 默认值=-2  -3=当前选中（之后） -2=当前选中（之前） -1=最尾端 0-N=自定义 \n     * @param refreshPreViewArea [可选] 默认值=true 刷新预览区\n     */\n    insertCustomCMD(customID: number, varNameValue: any, selectedIndex?: number, refreshPreViewArea?: boolean): Command;\n    /**\n     * 更改显示层\n     * @param selectedIndex 0-界面层 1-图像层\n     */\n    changeLayer(selectedIndex: number): void;\n}\n//------------------------------------------------------------------------------------------------------\n// 编写资源对应的插入指令逻辑\n//------------------------------------------------------------------------------------------------------\n// 对应的指令\nvar PLUGIN_CUSTOM_COMMAND_showUI: number = 3010;\n// 加载贴图，存在的话则以该贴图原始尺寸插入对应的指令\n// 获取空的通道\nvar passageID = 1;\nfor (var i = 1; i < 9999; i++) {\n    if (!imageLayerPassageData[i]) {\n        passageID = i;\n        break;\n    }\n}\n// 插入代码\npreviewWin.insertCustomCMD(PLUGIN_CUSTOM_COMMAND_showUI, {\n    uiID: MathUtils.int(value),\n    dpX: Math.floor(inImageLayerX - Config.WINDOW_WIDTH / 2),\n    dpY: Math.floor(inImageLayerY - Config.WINDOW_HEIGHT / 2)\n}, -3, true);\n// 切换为界面层\npreviewWin.changeLayer(0);\n",
+        "addGCData": {
+            "stand": [],
+            "ani": [],
+            "ui": [
+                3001
+            ]
+        }
+    },
+    {
+        "typeID": 0,
+        "name": "音频",
+        "classID": 2,
+        "data": [
+            "mp3,ogg",
+            "asset/audio"
+        ],
+        "tips": "文件资源-音频-asset/audio",
+        "insert": false,
+        "jsCode": "var url = value;\nurl = url.toLocaleLowerCase();\nif (url.indexOf(\"asset/audio/bgm/\") != -1) {\n    previewWin.insertCustomCMD(5001, { bgm: url + \",1,1\" }, -3, false);\n}\nelse if (url.indexOf(\"asset/audio/bgs/\") != -1) {\n    previewWin.insertCustomCMD(5003, { bgs: url + \",1,1\" }, -3, false);\n}\nelse if (url.indexOf(\"asset/audio/ts/\") != -1) {\n    previewWin.insertCustomCMD(5007, { ts: url + \",1,1\" }, -3, false);\n}\nelse {\n    previewWin.insertCustomCMD(5005, { se: url + \",1,1\" }, -3, false);\n}\n",
+        "tsCode": "/**\n * 图像层通道数据\n */\ndeclare var imageLayerPassageData: any[];\n/**\n * 小类别 0-无 1-图片 2-音频 3-界面 4-视频 5-动画 6-自定义格式文件 7-立绘 \n */\ndeclare var classID: number;\n/**\n * 值 \n * 图片/音频/自定义格式文件 = 路径:string;\n * 界面/动画/立绘 = 编号:number;\n */\ndeclare var value: any;\n/**\n * 拖拽至图像层的坐标\n */\ndeclare var inImageLayerX: number;\ndeclare var inImageLayerY: number;\n/**\n * 预览窗口\n */\ndeclare var previewWin: {\n    /**\n     * 新增指令 默认是默认值，如果有写入参数的话则以参数为准 varNameValue\n     * @param customID 自定义ID\n     * @param varNameValue 额外的变量值，如存在则优先使用该值，否则使用自定义编辑器中的默认值，如 {dpX:100,dpY:200}\n     * @param selectedIndex [可选] 默认值=-2  -3=当前选中（之后） -2=当前选中（之前） -1=最尾端 0-N=自定义 \n     * @param refreshPreViewArea [可选] 默认值=true 刷新预览区\n     */\n    insertCustomCMD(customID: number, varNameValue: any, selectedIndex?: number, refreshPreViewArea?: boolean): Command;\n    /**\n     * 新增加系统指令\n     * @param cmdID 系统指令ID\n     * @param params 参数\n     * @param selectedIndex [可选] 默认值=-2 默认值=-2  -3=当前选中（之后） -2=当前选中（之前） -1=最尾端 0-N=自定义 \n     * @param refreshPreViewArea [可选] 默认值=false 刷新预览区\n     */\n    insertSystemCMD(cmdID: number, params: any[], selectedIndex?: number, refreshPreViewArea?: boolean): Command;\n    /**\n     * 更改显示层\n     * @param selectedIndex 0-界面层 1-图像层\n     */\n    changeLayer(selectedIndex: number): void;\n}\n//------------------------------------------------------------------------------------------------------\n// 编写资源对应的插入指令逻辑\n//------------------------------------------------------------------------------------------------------\nvar url: string = value;\nurl = url.toLocaleLowerCase();\nif (url.indexOf(\"asset/audio/bgm/\") != -1) {\n    previewWin.insertCustomCMD(5001, { bgm: url + \",1,1\" }, -3, false);\n}\nelse if (url.indexOf(\"asset/audio/bgs/\") != -1) {\n    previewWin.insertCustomCMD(5003, { bgs: url + \",1,1\" }, -3, false);\n}\nelse if (url.indexOf(\"asset/audio/ts/\") != -1) {\n    previewWin.insertCustomCMD(5007, { ts: url + \",1,1\" }, -3, false);\n}\nelse {\n    previewWin.insertCustomCMD(5005, { se: url + \",1,1\" }, -3, false);\n}"
+    },
+    {
+        "typeID": 0,
+        "name": "视频",
+        "classID": 4,
+        "data": [
+            "mp4",
+            "asset/video"
+        ],
+        "tips": "文件资源-视频-asset/video",
+        "insert": false,
+        "jsCode": "var PLUGIN_CUSTOM_COMMAND_showVideo = 3018;\nvar passageID = 1;\nfor (var i = 1; i < 9999; i++) {\n    if (!imageLayerPassageData[i]) {\n        passageID = i;\n        break;\n    }\n}\npreviewWin.insertCustomCMD(PLUGIN_CUSTOM_COMMAND_showVideo, {\n    video: value,\n    passageID: passageID,\n    dpX: Math.floor(inImageLayerX),\n    dpY: Math.floor(inImageLayerY)\n}, -3, true);\npreviewWin.changeLayer(1);\n",
+        "tsCode": "/**\n * 图像层通道数据\n */\ndeclare var imageLayerPassageData: any[];\n/**\n * 小类别 0-无 1-图片 2-音频 3-界面 4-视频 5-动画 6-自定义格式文件 7-立绘 \n */\ndeclare var classID:number;\n/**\n * 值 \n * 图片/音频/自定义格式文件 = 路径:string;\n * 界面/动画/立绘 = 编号:number;\n */\ndeclare var value:any;\n/**\n * 拖拽至图像层的坐标\n */\ndeclare var inImageLayerX: number;\ndeclare var inImageLayerY: number;\n/**\n * 预览窗口\n */\ndeclare var previewWin: {\n    /**\n     * 新增指令 默认是默认值，如果有写入参数的话则以参数为准 varNameValue\n     * @param customID 自定义ID\n     * @param varNameValue 额外的变量值，如存在则优先使用该值，否则使用自定义编辑器中的默认值，如 {dpX:100,dpY:200}\n     * @param selectedIndex [可选] 默认值=-2  -3=当前选中（之后） -2=当前选中（之前） -1=最尾端 0-N=自定义 \n     * @param refreshPreViewArea [可选] 默认值=true 刷新预览区\n     */\n    insertCustomCMD(customID: number, varNameValue: any, selectedIndex?: number, refreshPreViewArea?: boolean): Command;\n    /**\n     * 新增加系统指令\n     * @param cmdID 系统指令ID\n     * @param params 参数\n     * @param selectedIndex [可选] 默认值=-2 默认值=-2  -3=当前选中（之后） -2=当前选中（之前） -1=最尾端 0-N=自定义 \n     * @param refreshPreViewArea [可选] 默认值=false 刷新预览区\n     */\n    insertSystemCMD(cmdID: number, params: any[], selectedIndex?: number, refreshPreViewArea?: boolean): Command;\n    /**\n     * 更改显示层\n     * @param selectedIndex 0-界面层 1-图像层\n     */\n    changeLayer(selectedIndex: number):void;\n}\n//------------------------------------------------------------------------------------------------------\n// 编写资源对应的插入指令逻辑\n//------------------------------------------------------------------------------------------------------\n// 对应的指令\nvar PLUGIN_CUSTOM_COMMAND_showVideo: number = 3018;\n// 加载贴图，存在的话则以该贴图原始尺寸插入对应的指令\n// 获取空的通道\nvar passageID = 1;\nfor (var i = 1; i < 9999; i++) {\n    if (!imageLayerPassageData[i]) {\n        passageID = i;\n        break;\n    }\n}\n// 插入代码\npreviewWin.insertCustomCMD(PLUGIN_CUSTOM_COMMAND_showVideo, {\n    video: value,\n    passageID: passageID,\n    dpX: Math.floor(inImageLayerX),\n    dpY: Math.floor(inImageLayerY)\n}, -3, true);\n// 切换为图像层\npreviewWin.changeLayer(1);"
+    }
+]

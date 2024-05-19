@@ -1,0 +1,133 @@
+{
+    "root": {
+        "children": [
+            {
+                "id": "51316633045_0.11517022124885523",
+                "condition": [],
+                "type": "UIBitmap",
+                "name": "图片",
+                "x": 564,
+                "y": 330,
+                "width": 472,
+                "height": 240,
+                "opacity": 1,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": true,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": false,
+                "showOnEditor": true,
+                "hasCommand": [],
+                "isOpen": true,
+                "image": "asset/image/picture/control/uilistBg.png",
+                "grid9": "0,0,0,0,0",
+                "flip": null,
+                "isTile": false,
+                "pivotType": 0
+            },
+            {
+                "id": "51698664353_0.8649440401794284",
+                "condition": [],
+                "type": "UIButton",
+                "name": "按钮",
+                "x": 747,
+                "y": 511,
+                "width": 96,
+                "height": 26,
+                "opacity": 1,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": true,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": false,
+                "showOnEditor": true,
+                "hasCommand": [
+                    true
+                ],
+                "isOpen": true,
+                "label": "关闭",
+                "image1": "asset/image/picture/control/btn_normal.png",
+                "grid9img1": "0,0,0,0,0",
+                "image2": "asset/image/picture/control/btn_over.png",
+                "grid9img2": "0,0,0,0,0",
+                "image3": "asset/image/picture/control/btn_click.png",
+                "grid9img3": "0,0,0,0,0",
+                "fontSize": 16,
+                "color": "#ffffff",
+                "overColor": "#ffffff",
+                "clickColor": "#ffffff",
+                "bold": true,
+                "italic": false,
+                "smooth": true,
+                "align": 1,
+                "valign": 1,
+                "letterSpacing": 2,
+                "font": "Source_Han_Sans",
+                "textDx": 0,
+                "textDy": 0,
+                "textStroke": 0,
+                "textStrokeColor": "#000000"
+            },
+            {
+                "id": "51698682206_0.6632534120854165",
+                "condition": [],
+                "type": "UIString",
+                "name": "文本",
+                "x": 626,
+                "y": 376,
+                "width": 332,
+                "height": 70,
+                "opacity": 1,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": false,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": false,
+                "showOnEditor": true,
+                "hasCommand": [],
+                "isOpen": true,
+                "text": "尝试创建自己的界面并动态的添加到你想要出现的剧情位置",
+                "fontSize": 24,
+                "color": "#000000",
+                "bold": false,
+                "italic": false,
+                "smooth": true,
+                "align": 0,
+                "valign": 0,
+                "leading": 4,
+                "letterSpacing": 1,
+                "font": "Source_Han_Sans",
+                "wordWrap": true,
+                "overflow": 0,
+                "shadowEnabled": false,
+                "shadowColor": "#000000",
+                "shadowDx": 1,
+                "shadowDy": 1,
+                "stroke": 0,
+                "strokeColor": "#000000",
+                "onChangeFragEvent": null
+            }
+        ]
+    },
+    "id": 3001,
+    "instanceClassName": "",
+    "hasRootCommand": []
+}

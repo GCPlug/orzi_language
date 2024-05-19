@@ -1,0 +1,73 @@
+{
+    "root": {
+        "children": [
+            {
+                "id": "77067786023_0.5378080141801087",
+                "condition": [],
+                "type": "UIBitmap",
+                "name": "界面背景",
+                "x": 0,
+                "y": 0,
+                "width": 1600,
+                "height": 900,
+                "opacity": 1,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": true,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": false,
+                "showOnEditor": true,
+                "hasCommand": [],
+                "isOpen": true,
+                "image": "asset/image/picture/other/Black.png",
+                "grid9": "3,3,3,3,0",
+                "flip": null,
+                "isTile": false,
+                "pivotType": 0
+            },
+            {
+                "id": "51724784523_0.17374835426532353",
+                "condition": [],
+                "type": "UIAnimation",
+                "name": "加载动画",
+                "x": 1534,
+                "y": 844,
+                "width": 192,
+                "height": 192,
+                "opacity": 1,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": true,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": false,
+                "showOnEditor": true,
+                "hasCommand": [],
+                "isOpen": true,
+                "animationID": 1,
+                "scaleNumberX": 1,
+                "scaleNumberY": 1,
+                "aniFrame": 1,
+                "playFps": 20,
+                "playType": 2,
+                "showHitEffect": true,
+                "silentMode": false
+            }
+        ]
+    },
+    "id": 2002,
+    "instanceClassName": "",
+    "hasRootCommand": [],
+    "lock": true
+}

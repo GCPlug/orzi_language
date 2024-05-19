@@ -1,0 +1,33 @@
+{
+    "list": {
+        "1": [
+            null,
+            "加载动画",
+            "跳过标志",
+            "界面组件焦点选中效果"
+        ]
+    },
+    "type": {
+        "1": "系统",
+        "16": "插件"
+    },
+    "typeTreeNode": {
+        "isDirectory": true,
+        "children": [
+            {
+                "id": 1,
+                "name": "加载动画",
+                "children": [],
+                "isOpen": true
+            },
+            {
+                "id": 2,
+                "name": "跳过标志",
+                "children": []
+            }
+        ],
+        "isOpen": true,
+        "name": "动画"
+    },
+    "dataShowMode": 0
+}

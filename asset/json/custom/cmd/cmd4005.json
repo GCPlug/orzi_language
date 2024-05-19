@@ -1,0 +1,19 @@
+{
+    "compAutoOrderLimitHeight": 0,
+    "id": 4005,
+    "blockList": [
+        {
+            "name": "开始游戏",
+            "blockAttrs": [],
+            "blockCondition": [],
+            "blockHeight": 35,
+            "autoOrder": true,
+            "cmdColor": "#59acff",
+            "hideBlockTitle": false,
+            "cmdIcon": "asset/image/command/eP_icon_StartGame_blue.png"
+        }
+    ],
+    "isCustomPhraseDesc": false,
+    "compAutoOrder": false,
+    "fastModifyAttribute": false
+}

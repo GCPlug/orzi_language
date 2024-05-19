@@ -1,0 +1,12 @@
+{
+    "blockList": [
+        {
+            "name": "玩家属性",
+            "blockAttrs": [],
+            "blockCondition": [],
+            "blockHeight": 360,
+            "autoOrder": true,
+            "hideBlockTitle": false
+        }
+    ]
+}

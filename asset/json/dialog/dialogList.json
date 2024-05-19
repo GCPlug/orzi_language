@@ -1,0 +1,57 @@
+{
+    "list": [
+        null,
+        "图片头像框",
+        "立绘头像框",
+        "无背景对话框:下",
+        "无背景对话框:中",
+        "无背景对话框:上",
+        "大段文本",
+        "大段文本：无背景"
+    ],
+    "typeTreeNode": {
+        "isDirectory": true,
+        "children": [
+            {
+                "id": 1,
+                "name": "图片头像框",
+                "children": []
+            },
+            {
+                "id": 2,
+                "name": "立绘头像框",
+                "children": [],
+                "isOpen": true
+            },
+            {
+                "id": 3,
+                "name": "无对话框:下",
+                "children": [],
+                "isOpen": true
+            },
+            {
+                "id": 4,
+                "name": "无对话框:中",
+                "children": []
+            },
+            {
+                "id": 5,
+                "name": "无对话框:上",
+                "children": []
+            },
+            {
+                "id": 6,
+                "name": "大段文本",
+                "children": []
+            },
+            {
+                "id": 7,
+                "name": "大段文本:无框",
+                "children": []
+            }
+        ],
+        "isOpen": true,
+        "name": "对话框样式"
+    },
+    "dataShowMode": 0
+}

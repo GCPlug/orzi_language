@@ -1,0 +1,70 @@
+{
+    "root": {
+        "children": [
+            {
+                "id": "51050742446_0.6127957094513128",
+                "condition": [],
+                "type": "UIBitmap",
+                "name": "cg",
+                "x": 6,
+                "y": 6,
+                "width": 301,
+                "height": 185,
+                "opacity": 1,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": true,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": true,
+                "showOnEditor": true,
+                "hasCommand": [],
+                "isOpen": true,
+                "image": "asset/image/picture/control/uicomboboxbg.png",
+                "grid9": "5,5,5,5,0",
+                "flip": null,
+                "isTile": false,
+                "pivotType": 0
+            },
+            {
+                "id": "77067825360_0.11733840714090427",
+                "condition": [],
+                "type": "UIBitmap",
+                "name": "档案背景",
+                "x": 0,
+                "y": 0,
+                "width": 314,
+                "height": 197,
+                "opacity": 1,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": true,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": false,
+                "showOnEditor": true,
+                "hasCommand": [],
+                "isOpen": true,
+                "image": "asset/image/picture/control/uilistover2.png",
+                "grid9": "0,0,0,0,0",
+                "flip": null,
+                "isTile": false,
+                "pivotType": 0
+            }
+        ]
+    },
+    "id": 1003,
+    "instanceClassName": "",
+    "hasRootCommand": [],
+    "lock": true
+}

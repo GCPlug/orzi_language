@@ -1,0 +1,60 @@
+{
+    "compAutoOrderLimitHeight": 0,
+    "id": 14,
+    "blockList": [
+        {
+            "name": "设置列表焦点",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "107244812436_0.8992978873370561",
+                        "varName": "list",
+                        "varType": 5,
+                        "compData": {
+                            "compType": 46,
+                            "compParam": {
+                                "typeMode": 0
+                            }
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "激活列表",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [],
+                    "y": 20,
+                    "x": 20,
+                    "width": 500,
+                    "height": 32
+                }
+            ],
+            "blockCondition": [],
+            "blockHeight": 77,
+            "autoOrder": true,
+            "hideBlockTitle": false,
+            "cmdColor": "#fff04c"
+        }
+    ],
+    "isCustomPhraseDesc": true,
+    "customPhraseDescTS": "// [#GAME_THE_PHRASE_ATTRS_IS_THE_NAME_OF_THE_CUSTOM_PHRASE]\n// [#GAME_FOR_THE_CUSTOM_MODULE_FUNCTION_OF_THE_DATA_NAME]\n// [#GAME_GETTYPEDATALISTNAME_TYPEID_NUMBER_DATAID_NUMBER_STRING]\n// [#GAME_FUNCTION_TO_GET_A_CUSTOM_GAME_NUMERICAL_DESCRIPTION]getCustomGameNumber(customGameNumber: any[]):string;\n// [#GAME_GETS_A_FUNCTION_TO_CUSTOMIZE_THE_GAME_STRING_DESCRIPTION]：getCustomGameString(customGameString: any[]):string;\n// [#GAME_FUNCTION_TO_GET_A_CUSTOM_GAME_SWITCH_DESCRIPTION]：getCustomGameSwitch(customGameSwitch: any[]):string;\n// -- typeID ：0-[#GAME_THE_GLOBAL_VARIABLE] 1-[#GAME_THE_GLOBAL_SWITCH] 2-[#GAME_GLOBAL_STRING] 3-[#GAME_THE_PLAYER_VARIABLE] 4-[#GAME_PLAYERS_TO_SWITCH] 5-[#GAME_PLAYER_STRING]\n//           ：[#GAME_6_SCENE_LIST_7_SCENE_OBJECT_PROTOTYPE_LIST_8]\n//           ：[#GAME_13_EVENT_LIBRARY_LIST_14_DIALOG_BOX_LIST_15]\n//           ：[#GAME_20_CUSTOM_INSTRUCTION_LIST_21_CUSTOM_BEHAVIOR_LIST_22]\nlet uiID = attrs.list.uiID;\n`「${uiID}-${getTypeDataListName(17, uiID)}」.${attrs.list.compName}`;",
+    "customPhraseDescJS": "var uiID = attrs.list.uiID;\n\"\\u300C\" + uiID + \"-\" + getTypeDataListName(17, uiID) + \"\\u300D.\" + attrs.list.compName;\n"
+}

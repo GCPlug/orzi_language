@@ -1,0 +1,28 @@
+{
+    "list": [
+        null,
+        "界面",
+        "系统",
+        "模块",
+        "世界"
+    ],
+    "k1": "0.46222485082593057-1599738077625",
+    "typeTreeNode": {
+        "isDirectory": true,
+        "children": [
+            {
+                "id": 1,
+                "name": "界面",
+                "children": []
+            },
+            {
+                "id": 2,
+                "name": "系统",
+                "children": []
+            }
+        ],
+        "isOpen": true,
+        "name": "条件"
+    },
+    "dataShowMode": 0
+}

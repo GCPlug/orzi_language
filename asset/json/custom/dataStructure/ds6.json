@@ -1,0 +1,204 @@
+{
+    "compAutoOrderLimitHeight": 0,
+    "id": 6,
+    "blockList": [
+        {
+            "name": "gameKeyboard",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "89518024208_0.9929641525711341",
+                        "varName": "gameKey",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 2,
+                            "compParam": {
+                                "items": "上,下,左,右,A,B,X,Y,START,BACK,L1,L2,R1,R2",
+                                "showIndex": false
+                            }
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "键位",
+                        "onlyConfig": false,
+                        "preview": true,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 15,
+                    "width": 120,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "89518024700_0.29826977955323275",
+                        "varName": "keyCode1",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 27,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "值1",
+                        "onlyConfig": false,
+                        "preview": true,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 140,
+                    "width": 160,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "89518373844_0.42565495135698783",
+                        "varName": "keyCode2",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 27,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "值2",
+                        "onlyConfig": false,
+                        "preview": true,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 310,
+                    "width": 160,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "89518718532_0.8902401356606939",
+                        "varName": "keyCode3",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 27,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "值3",
+                        "onlyConfig": false,
+                        "preview": true,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 480,
+                    "width": 160,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "89518702838_0.08375095919163877",
+                        "varName": "keyCode4",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 27,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "值4",
+                        "onlyConfig": false,
+                        "preview": true,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 650,
+                    "width": 160,
+                    "height": 32
+                }
+            ],
+            "blockCondition": [],
+            "blockHeight": 50,
+            "autoOrder": true,
+            "hideBlockTitle": false
+        }
+    ],
+    "varName": "gameKeyboard"
+}

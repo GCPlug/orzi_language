@@ -1,0 +1,191 @@
+{
+    "compAutoOrderLimitHeight": 0,
+    "id": 2,
+    "blockList": [
+        {
+            "name": "等待玩家输入文本",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "42750841751_0.7637689700671215",
+                        "varName": "inputUI",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 5,
+                            "compParam": {}
+                        },
+                        "defaultValue": "8",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "界面内的可输入文本组件名字必须是input,而关闭界面即可视为提交",
+                        "alias": "弹出的界面",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": false,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 15,
+                    "width": 370,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "42751317345_0.8284247410455201",
+                        "varName": "defText",
+                        "varType": 1,
+                        "compData": {
+                            "compType": 9,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "默认文本",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": false,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "52239559085_0.6078129335285596",
+                            "value": 0,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 45,
+                    "x": 15,
+                    "width": 288,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "52239646251_0.415165137716486",
+                        "varName": "defTextVarID",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 8,
+                            "compParam": {}
+                        },
+                        "defaultValue": "1",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "默认文本",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": false,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "52239559085_0.6078129335285596",
+                            "value": 1,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 45,
+                    "x": 15,
+                    "width": 288,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "52239559085_0.6078129335285596",
+                        "varName": "useVar",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 2,
+                            "compParam": {
+                                "items": "常量,字符串",
+                                "showIndex": false
+                            }
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "模式",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": false,
+                        "titleWidth": 0,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 46,
+                    "x": 307,
+                    "width": 78,
+                    "height": 32
+                }
+            ],
+            "blockCondition": [],
+            "blockHeight": 85,
+            "autoOrder": true,
+            "cmdColor": "#fff04c",
+            "hideBlockTitle": true,
+            "cmdIcon": "asset/image/command/eP_icon_Input_yellow.png"
+        }
+    ],
+    "isCustomPhraseDesc": true,
+    "customPhraseDescTS": "// 根据属性名称值编写自定义短语描述，如：\"我的短语是\"+attrs.xxx\n// 使用下拉框组件的变量attrs.xxx有对应的attrs.xxxItems的属性以便获得标签名集合\n// 获取自定义模块的数据名称的函数：getModuleDataName(moduleID:number,dataID:number):string;\n// 获取各种列表内数据名称的函数：getTypeDataListName(typeID: number, dataID: number):string;\n// -- typeID ：0-全局变量 1-全局开关 2-全局字符串 3-玩家变量 4-玩家开关 5-玩家字符串\n//           ：6-场景列表 7-场景对象模型列表 8-图块列表 9-行走图列表 10-行走图动作列表 11-立绘列表 12-立绘表情列表\n//           ：13-公共事件 14-对话框列表 15-动画列表 16-动画信号列表 17-界面列表 18-数据结构列表 19-自定义模块列表\n//           ：20-自定义命令列表 21-自定义行为列表 22-自动元件列表 23-行走图部件列表 24-立绘部件列表\nvar str = \"\";\nstr += `弹出的界面：[${attrs.inputUI}-${getTypeDataListName(17, attrs.inputUI)}]`;\nif ((attrs.useVar==0 && attrs.defText) || attrs.useVar==1) {\n    str += \" 默认：\" + (attrs.useVar==1 ? `「${attrs.defTextVarID}-${getTypeDataListName(5, attrs.defTextVarID)}」` : attrs.defText);\n}\nstr;",
+    "customPhraseDescJS": "var str = \"\";\nstr += \"\\u5F39\\u51FA\\u7684\\u754C\\u9762\\uFF1A[\" + attrs.inputUI + \"-\" + getTypeDataListName(17, attrs.inputUI) + \"]\";\nif ((attrs.useVar == 0 && attrs.defText) || attrs.useVar == 1) {\n    str += \" 默认：\" + (attrs.useVar == 1 ? \"\\u300C\" + attrs.defTextVarID + \"-\" + getTypeDataListName(5, attrs.defTextVarID) + \"\\u300D\" : attrs.defText);\n}\nstr;\n",
+    "compAutoOrder": false,
+    "fastModifyAttribute": true
+}

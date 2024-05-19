@@ -1,0 +1,39 @@
+{
+    "list": {
+        "1": [
+            null,
+            "街道",
+            "房间",
+            "操场",
+            "",
+            "",
+            ""
+        ]
+    },
+    "type": {
+        "1": "CG"
+    },
+    "typeTreeNode": {
+        "isDirectory": true,
+        "children": [
+            {
+                "id": 1,
+                "name": "背景",
+                "children": []
+            },
+            {
+                "id": 2,
+                "name": "房间",
+                "children": []
+            },
+            {
+                "id": 3,
+                "name": "校园",
+                "children": []
+            }
+        ],
+        "isOpen": true,
+        "name": "CG鉴赏"
+    },
+    "dataShowMode": 0
+}

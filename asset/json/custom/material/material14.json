@@ -1,0 +1,101 @@
+{
+    "compAutoOrderLimitHeight": 0,
+    "id": 14,
+    "blockList": [
+        {
+            "name": "未命名块",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "51322346125_0.42680375460871045",
+                        "varName": "t",
+                        "varType": 1,
+                        "compData": {
+                            "compType": 41,
+                            "compParam": {
+                                "loopType": true,
+                                "timeType": 1
+                            }
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "时间过渡",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": false,
+                        "titleWidth": 50,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 15,
+                    "width": 200,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "51322351859_0.989871946552112",
+                        "varName": "timeScale",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 1,
+                            "compParam": {
+                                "minLimit": 0.0001,
+                                "maxLimit": 2,
+                                "tickValue": 0.0001,
+                                "limitInteger": false,
+                                "lockTextLimit": true
+                            }
+                        },
+                        "defaultValue": "1",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "花屏速度",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 50,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [],
+                    "y": 45,
+                    "x": 15,
+                    "width": 200,
+                    "height": 32
+                }
+            ],
+            "blockCondition": [],
+            "blockHeight": 85,
+            "autoOrder": true
+        }
+    ],
+    "customShader": "//======================================================================================================\n// SYSTEM START 该段注释由系统自动生成，请勿删改\n//======================================================================================================\n//------------------------------------------------------------------------------------------------------\n// 固定参数\n//------------------------------------------------------------------------------------------------------\n// varying vec2 v_texcoord; //  原始贴图UV坐标\n// uniform sampler2D texture; // 原始贴图\n// uniform float alpha; // 当前对象实际渲染的透明度\n//------------------------------------------------------------------------------------------------------\n// 该材质的自定义参数 判定该变量存在的宏：MU材质编号_变量名称\n//------------------------------------------------------------------------------------------------------\n// uniform float mu14_t; // MU14_t 时间过渡\n// uniform float mu14_timeScale; // MU14_timeScale 花屏速度\n//------------------------------------------------------------------------------------------------------\n// shader 代码规则：\n// 1.由于多材质合并shader代码运行，函数名必须以mf${材质ID}_开头以避免函数名称冲突，如 mf14_myFunc\n// 2.入口函数vec4 mf${材质ID}_main 如 vec4 mf14_main(){return gl_FragColor;}\n// 3.原图采样坐标获取：vec2 texCoord = getInRangeTextureCoord(v_texcoord);\n// 4.原图采样：vec4 color = getTextureColor(texCoord);\n// 5.关于自定义贴图的坐标信息：自定义贴图可能是图集中的一部分，提供了相关信息（mu材质编号_变量名_UVInfo）\n//   相对于0~1的坐标系提供了图集的映射信息 vec4 [UV宽度缩放比例, UV高度缩放比例, UV水平偏移量, UV垂直偏移量]\n// 6.变量宏（可用于判定该变量是否满足出现条件）：#ifdef MU材质编号_变量名称、#else、#endif\n// 7.系统宏 IN_GC_EDITOR=是否在编辑器中运行\n// 8.语法：C语言 更多资料请参考GLSL Shader\n//======================================================================================================\n// SYSTEM END\n//======================================================================================================\nfloat mf14_sat(float t){\n   return clamp(t, 0.0, 1.0);\n}\n\nvec2 mf14_sat(vec2 t){\n   return clamp(t, 0.0, 1.0);\n}\n\nfloat mf14_remap(float t, float a, float b){\n    return mf14_sat((t-a)/(b-a));\n}\n\nfloat mf14_linterp(float t) {\n\treturn mf14_sat(1.0 - abs(2.0*t - 1.0));\n}\n\nvec3 mf14_spectrum_offset(float t) {\n\tvec3 ret;\n\tfloat lo = step(t,0.5);\n\tfloat hi = 1.0 - lo;\n\tfloat w = mf14_linterp(mf14_remap(t, 1.0 / 6.0, 5.0 / 6.0));\n\tfloat neg_w = 1.0 - w;\n\tret = vec3(lo,1.0,hi) * vec3(neg_w, w, neg_w);\n\treturn pow(ret, vec3(1.0 / 2.2, 1.0 / 2.2, 1.0 / 2.2));\n}\n\nfloat mf14_rand(vec2 n) {\n\treturn (sin(dot(vec2(n.x *mu14_timeScale, n.y *mu14_timeScale), vec2(12.9898, 78.233))));\n}\n\nfloat mf14_srand(vec2 n) {\n\treturn mf14_rand(n) * 2.0 - 1.0;\n}\n\nfloat mf14_mytrunc(float x, float num_levels){\n\treturn floor(x*num_levels) / num_levels;\n}\n\nvec2 mf14_mytrunc(vec2 x, float num_levels){\n\treturn floor(x*num_levels) / num_levels;\n}\n\nfloat mf14_fmod(float a, float b){\n    return a - floor(a / b) * b;\n}\n\nvec4 mf14_main(){\n\tvec2 texCoord = getInRangeTextureCoord(v_texcoord);\n\tvec4 c;\n\tfloat aspect = 1.0;\n\tvec2 uv = vec2(1.0,1.0);\n\tfloat time = mf14_fmod(mu14_t, 32.0); \n\tfloat GLITCH = 10.1;\n\tfloat gnm = mf14_sat(GLITCH);\n\tfloat rnd0 = mf14_rand(mf14_mytrunc(vec2(time, time), 6.0));\n\tfloat r0 = mf14_sat((1.0 - gnm)*0.7 + rnd0);\n\tfloat rnd1 = mf14_rand(vec2(mf14_mytrunc(texCoord.x, 10.0 * r0), time));\n\tfloat r1 = 0.5 - 0.5 * gnm + rnd1;\n\tr1 = 1.0 - max(0.0, ((r1<1.0) ? r1 : 0.9999999));\n\tfloat rnd2 = mf14_rand(vec2(mf14_mytrunc(texCoord.y, 40.0 * r1), time)); \n\tfloat r2 = mf14_sat(rnd2);\n\tfloat rnd3 = mf14_rand(vec2(mf14_mytrunc(texCoord.y, 10.0 * r0), time));\n\tfloat r3 = (1.0 - mf14_sat(rnd3 + 0.8)) - 0.1;\n\tfloat pxrnd = mf14_rand(texCoord + time);\n\tfloat ofs = 0.05 * r2 * GLITCH * (rnd0 > 0.5 ? 1.0 : -1.0);\n\tofs += 0.5 * pxrnd * ofs;\n\tfloat y = texCoord.y;\n\ty += 0.1 * r3 * GLITCH;\n\t//新的原始贴图UV坐标\n\tvec2 new_texcoord = vec2(texCoord.x,y);\n\t\n\tconst int NUM_SAMPLES = 10;\n\tconst float RCP_NUM_SAMPLES_F = 1.0 / float(NUM_SAMPLES);\n\n\tvec4 sum = vec4(0.0, 0.0, 0.0, 0.0);\n    vec3 wsum = vec3(0.0, 0.0, 0.0);\n\n\tfor(float j = 0.0;j < float(NUM_SAMPLES); ++j){\n\t\tfloat t = j * RCP_NUM_SAMPLES_F;\n\t\tnew_texcoord.x = mf14_sat(new_texcoord.x + ofs * t);\n\t\tvec4 samplecol = getTextureColor(new_texcoord); \n\t\tvec3 s = mf14_spectrum_offset(t);\n\t\tsamplecol.rgb = samplecol.rgb * s;\n\t\tsum += samplecol;\n\t\twsum += s;\n\t}\n\n\tsum.rgb /= wsum;\n\tsum.a *= RCP_NUM_SAMPLES_F;\n\tc.a = sum.a;\n\tc.rgb = sum.rgb;\n\tc.rgb = c.rgb;\n\n    return c;\n}",
+    "shaderSize": false
+}

@@ -1,0 +1,19 @@
+{
+    "compAutoOrderLimitHeight": 0,
+    "id": 1002,
+    "blockList": [
+        {
+            "name": "显示全部对话文本",
+            "blockAttrs": [],
+            "blockCondition": [],
+            "blockHeight": 35,
+            "autoOrder": true,
+            "hideBlockTitle": false,
+            "cmdColor": "#59acff",
+            "cmdIcon": "asset/image/command/eP_icon_Text_blue.png"
+        }
+    ],
+    "isCustomPhraseDesc": false,
+    "compAutoOrder": false,
+    "fastModifyAttribute": false
+}

@@ -1,0 +1,57 @@
+{
+    "compAutoOrderLimitHeight": 0,
+    "id": 4001,
+    "blockList": [
+        {
+            "name": "全屏设置",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "51004823216_0.7870287660533613",
+                        "varName": "fullScreen",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "全屏化",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 15,
+                    "width": 137,
+                    "height": 32
+                }
+            ],
+            "blockCondition": [],
+            "blockHeight": 50,
+            "autoOrder": true,
+            "cmdColor": "#59acff",
+            "hideBlockTitle": true,
+            "cmdIcon": "asset/image/command/eP_icon_LargeScreen_blue.png"
+        }
+    ],
+    "isCustomPhraseDesc": false,
+    "compAutoOrder": false,
+    "fastModifyAttribute": false
+}

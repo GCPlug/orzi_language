@@ -1,0 +1,421 @@
+{
+    "compAutoOrderLimitHeight": 650,
+    "id": 3015,
+    "blockList": [
+        {
+            "name": "目标类别",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "49825113823_0.7745949272019663",
+                        "varName": "targetType",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 2,
+                            "compParam": {
+                                "items": "图像层,指定的图像编号,指定的界面,界面层,全画面",
+                                "showIndex": false
+                            }
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "目标类型",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 15,
+                    "width": 235,
+                    "height": 32
+                }
+            ],
+            "blockCondition": [],
+            "blockHeight": 50,
+            "autoOrder": true,
+            "cmdColor": "#ffa64c",
+            "hideBlockTitle": true,
+            "cmdIcon": "asset/image/command/eP_icon_ChangeMaterial_warmyellow.png"
+        },
+        {
+            "name": "图像",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "49897660694_0.39897478951731946",
+                        "varName": "passageIDUseVar",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "使用变量作为编号的图片无法预览",
+                        "alias": "使用变量指定编号",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 15,
+                    "width": 145,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49897660694_0.6399331644068169",
+                        "varName": "passageID",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 0,
+                            "compParam": {
+                                "lowerLimit": 1,
+                                "upperLimit": 10000,
+                                "stepValue": 1,
+                                "limitInteger": true,
+                                "lockTextLimit": true,
+                                "xDragEnabled": true,
+                                "yDragEnabled": true
+                            }
+                        },
+                        "defaultValue": "1",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "通过编号管理该显示对象：\\n1-相同的编号只允许显示一个显示对象\\n2-可通过编号来操控该显示对象",
+                        "alias": "编号",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "49897660694_0.39897478951731946",
+                            "value": false,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 45,
+                    "x": 15,
+                    "width": 235,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49897660694_0.0946225960666689",
+                        "varName": "passageIDVar",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 6,
+                            "compParam": {
+                                "lowerLimit": 1,
+                                "upperLimit": 10000,
+                                "stepValue": 1,
+                                "limitInteger": true,
+                                "lockTextLimit": true,
+                                "xDragEnabled": true,
+                                "yDragEnabled": true
+                            }
+                        },
+                        "defaultValue": "1",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "通过编号管理该显示对象：\\n1-相同的编号只允许显示一个显示对象\\n2-可通过编号来操控该显示对象",
+                        "alias": "编号",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "49897660694_0.39897478951731946",
+                            "value": true,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 45,
+                    "x": 15,
+                    "width": 235,
+                    "height": 32
+                }
+            ],
+            "blockCondition": [
+                {
+                    "attrID": "49825113823_0.7745949272019663",
+                    "value": 1,
+                    "isExpression": false,
+                    "jsCode": null,
+                    "tsCode": null,
+                    "codeName": null
+                }
+            ],
+            "blockHeight": 90,
+            "autoOrder": true,
+            "hideBlockTitle": true
+        },
+        {
+            "name": "界面",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "49897706791_0.8101580703633997",
+                        "varName": "objectUseVar",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "界面使用变量",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 45,
+                    "x": 15,
+                    "width": 109,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49897693777_0.31957312098050794",
+                        "varName": "uiID",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 5,
+                            "compParam": {}
+                        },
+                        "defaultValue": "1",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "界面",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "49897706791_0.8101580703633997",
+                            "value": false,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 10,
+                    "x": 15,
+                    "width": 235,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49897693777_0.39600212789547196",
+                        "varName": "uiVar",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 6,
+                            "compParam": {}
+                        },
+                        "defaultValue": "1",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "界面",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "49897706791_0.8101580703633997",
+                            "value": true,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 10,
+                    "x": 15,
+                    "width": 235,
+                    "height": 32
+                }
+            ],
+            "blockCondition": [
+                {
+                    "attrID": "49825113823_0.7745949272019663",
+                    "value": 2,
+                    "isExpression": false,
+                    "jsCode": null,
+                    "tsCode": null,
+                    "codeName": null
+                }
+            ],
+            "blockHeight": 85,
+            "autoOrder": true,
+            "hideBlockTitle": true
+        },
+        {
+            "name": "材质",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "49904671869_0.1506235712026469",
+                        "varName": "materialData",
+                        "varType": 5,
+                        "compData": {
+                            "compType": 43,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "材质",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 0,
+                    "x": 0,
+                    "width": 381,
+                    "height": 412
+                }
+            ],
+            "blockCondition": [],
+            "blockHeight": 431,
+            "autoOrder": true,
+            "hideBlockTitle": true
+        }
+    ],
+    "fastModifyAttribute": true,
+    "isCustomPhraseDesc": true,
+    "cmdPreviewTS": "//------------------------------------------------------------------------------------------------------\r\n// 编辑器预览窗口运行时提供的系统变量\r\n// 关于预览的流程：\r\n// -- 1.imageLayerPassageClear 每已使用的通道x每已使用的指令\r\n// -- 2.runCommand 每个指令按顺序执行一遍\r\n// -- 3.imageLayerPassageStart 每已使用的通道x每已使用的指令\r\n// 关于播放的流程\r\n// -- 1.imageLayerPassageClear 每已使用的通道x每已使用的指令\r\n// -- 2.runCommand 每个指令按顺序播放\r\n//------------------------------------------------------------------------------------------------------\r\n/**\r\n * 当前自定义指令的编号\r\n */\r\ndeclare var commandID: number;\r\n/**\r\n * 图像层通道数据\r\n */\r\ndeclare var imageLayerPassageData: any[];\r\n/**\r\n * 游戏层（包含图像层和界面层）\r\n */\r\ndeclare var gameLayer: GameImageLayer;\r\n/**\r\n * 图像层显示对象容器\r\n */\r\ndeclare var imageLayer: GameImageLayer;\r\n/**\r\n * 界面层显示对象容器\r\n */\r\ndeclare var uiLayer: GameSprite;\r\n/**\r\n * 预览窗口\r\n */\r\ndeclare var previewWin: {\r\n    /**\r\n     * 清理全部事件指令产生的预览效果\r\n     */\r\n    clearData: Function;\r\n    /**\r\n     * 设置数据，刷新预览效果直到当前选中的指令行\r\n     */\r\n    setData: Function;\r\n    /**\r\n     * 当前选中的指令\r\n     */\r\n    currentSelectCmd: Command;\r\n    /**\r\n     * 视图区域是否右键移动过\r\n     */\r\n    viewAreaRightMouseMove: boolean;\r\n    /**\r\n     * 允许显示全部对象\r\n     */\r\n    allowAllDisplayObject: boolean;\r\n    /**\r\n     * 对象操作工具\r\n     */\r\n    operateObjectTool: {\r\n        // 刷新对象操作工具，比如来自其他地方更改了对象的位置或尺寸等，可使用该函数刷新\r\n        refresh: Function,\r\n        // 选中显示对象\r\n        selectObjects: (sp: GameSprite[]) => void,\r\n        // 需要排除缩放和旋转工具的对象\r\n        addExcludeOperactionObject: (sp: GameSprite) => void\r\n    }\r\n    /**\r\n     * 选中事件指令\r\n     * @param cmd 事件指令\r\n     * @param sendEvent 派发事件 默认=false 派发事件会刷新属性栏、预览窗口等\r\n     */\r\n    selectCmdMessageByCmd(cmd: Command, sendEvent?: boolean);\r\n    /**\r\n     * 修改指令属性\r\n     * @param cmd 需要修改的指令\r\n     * @param varName 参数变量名称\r\n     * @param newValue 新的值\r\n     */\r\n    modifyCommandParam: (cmd: Command, varName: string, newValue: any) => void;\r\n    /**\r\n     * 新增指令 默认是默认值，如果有写入参数的话则以参数为准 varNameValue\r\n     * @param customID 自定义ID\r\n     * @param varNameValue 额外的变量值，如存在则优先使用该值，否则使用自定义编辑器中的默认值，如 {dpX:100,dpY:200}\r\n     * @param selectedIndex [可选] 默认值=-2  -3=当前选中（之后） -2=当前选中（之前） -1=最尾端 0-N=自定义 \r\n     * @param refreshPreViewArea [可选] 默认值=true 刷新预览区\r\n     */\r\n    insertCustomCMD(customID: number, varNameValue: any, selectedIndex?: number, refreshPreViewArea?: boolean): Command;\r\n    /**\r\n     * 更改显示层\r\n     * @param selectedIndex 0-界面层 1-图像层\r\n     */\r\n    changeLayer(selectedIndex: number): void;\r\n    /**\r\n     * 创建菜单\r\n     * var menuData:any[] = [\r\n               {\r\n                   label:\"重命名\",\r\n                   splitLine:false,// 是否显示分割线\r\n                   children:[], // 存放和本身这个对象是一样的格式\r\n                   execute:\"functionName\", // 点击后执行的方法名称\r\n                   shortcutKey:\"\", //显示的快捷键名称\r\n                   menuHotKey:\"\", //实际作用的快捷键名称 对应Laya.KeyBoard的值 如A\r\n                   enabled:true, // 是否可用，不填写表示true\r\n                   visible:true, // 是否显示，不填写表示true\r\n                   selected:true, // 如果存在则以打钩的形式选择此项\r\n                   group:\"myGroupName\" // 配合selected，如若存在则同组单选\r\n               }\r\n           ];\r\n     * @param menuData 菜单数据\r\n     * @param x 全局坐标X\r\n     * @param y 全局坐标Y\r\n     * @param executeDomain 函数作用域\r\n     */\r\n    createMenu(menuData: any[], x: number, y: number, executeDomain: any);\r\n}\r\n/**\r\n * 材质相关的数据\r\n * -- 单一材质编辑器储存的数据：[{ materials: [] },{ materials: [] }] index表示通道\r\n */\r\ndeclare class materialPassageData {\r\n    // ====> system 必要项\r\n    /**\r\n     * 通道编号\r\n     */\r\n    passageID: number;\r\n    /**\r\n     * 类别，一般用于区分显示对象，如图片、动画、立绘、界面都是属于不同的类别\r\n     */\r\n    type: string;\r\n    /**\r\n     * 记录关联的指令\r\n     */\r\n    cmd: Command;\r\n    /**\r\n     * 当通道覆盖时调用的函数，以便清理掉。如显示了2号图片或移动了2号图片，再次显示2号图片时会清理掉此前显示的图片或移动行为\r\n     */\r\n    onCoverPassage: Function;\r\n\r\n    // ====> custom 自定义属性\r\n    stages: { materials: any[] }[][]; // 图像层 [第一维-指令][第二维-材质通道]\r\n    uiLayers: { materials: any[] }[][]; // 界面层\r\n    screens: { materials: any[] }[][]; // 全画面\r\n    imagePassages: { passageID: number, materialSetting: { materials: any[] }[], recordTargetPassageData: any }[]; // 指定的图像\r\n    uis: { uiID: number, materialSetting: { materials: any[] }[] }[]; // 指定的界面\r\n}\r\nvar passageType = \"gcMaterial\";\r\n//------------------------------------------------------------------------------------------------------\r\n// [everyone used command] 逐指令行目执行\r\n//------------------------------------------------------------------------------------------------------\r\n/**\r\n * 逐指令执行：对应事件下按照从上至下的顺序逐行执行，如果是该自定义指令时则会执行该函数\r\n * 该函数用于编辑器预览和播放，如果分歧面板中筛选不经过的事件指令则不会执行该函数。\r\n * 比如事件页中有3个该指令，则按照顺序执行3次该函数\r\n * @param cmdParams 指令的自定义参数数据，根据用户设定值\r\n * @param cmd 对应的指令对象\r\n * @param isPlayMode 是否是播放模式，否则是普通的预览模式\r\n */\r\nfunction runCommand(cmdParams: ThisCommandParams, cmd: Command, isPlayMode: boolean) {\r\n    // -- 图像层的场合 通道编号大于界面的编号以便 imageLayerPassageStart 时在界面之后\r\n    var passageID = 2000001;\r\n    // -- 获取通道数据\r\n    var passageData: materialPassageData = imageLayerPassageData[passageID];\r\n    // -- 获取储存的通道，没有的话则新建\r\n    if (!passageData) {\r\n        passageData = imageLayerPassageData[passageID] = {\r\n            stages: [],\r\n            uiLayers: [],\r\n            screens: [],\r\n            imagePassages: [],\r\n            uis: []\r\n        } as any;\r\n    }\r\n    passageData.passageID = passageID;\r\n    passageData.cmd = cmd;\r\n    passageData.type = passageType;\r\n    // 材质数据设置，格式：[{ materials: [] },{ materials: [] }]  渲染用的materialData不更改，其他数组等容器复制\r\n    var materialData = [];\r\n    for (var i = 0; i < cmdParams.materialData.length; i++) {\r\n        var md = { materials: cmdParams.materialData[i].materials.concat() };\r\n        materialData.push(md);\r\n    }\r\n\r\n    // 将需要增加的材质添加至列表中\r\n    // -- 图像层\r\n    if (cmdParams.targetType == 0) {\r\n        passageData.stages.push(materialData);\r\n    }\r\n    // -- 指定的图像编号\r\n    else if (cmdParams.targetType == 1) {\r\n        if (!cmdParams.passageIDUseVar) {\r\n            var imagePassageID = cmdParams.passageID;\r\n            // 设置显示对象通道的覆盖函数\r\n            var displayObjectPasageData = imageLayerPassageData[imagePassageID];\r\n            if (displayObjectPasageData) {\r\n                // 存在该通道的情况才追加\r\n                var materialRenderPassageData = { passageID: imagePassageID, materialSetting: materialData, recordTargetPassageData: displayObjectPasageData }\r\n                passageData.imagePassages.push(materialRenderPassageData);\r\n            }\r\n        }\r\n    }\r\n    // -- 指定的界面\r\n    else if (cmdParams.targetType == 2) {\r\n        if (!cmdParams.objectUseVar) {\r\n            var uiID = cmdParams.uiID;\r\n            var uiPassageID = 1000000 + cmdParams.uiID;\r\n            var displayObjectPasageData = imageLayerPassageData[uiPassageID];\r\n            if (displayObjectPasageData) {\r\n                passageData.uis.push({ uiID: uiID, materialSetting: materialData });\r\n            }\r\n        }\r\n    }\r\n    // -- 界面层\r\n    else if (cmdParams.targetType == 3) {\r\n        passageData.uiLayers.push(materialData);\r\n    }\r\n    // -- 全画面\r\n    else if (cmdParams.targetType == 4) {\r\n        passageData.screens.push(materialData);\r\n    }\r\n\r\n    // 播放\r\n    if (isPlayMode) {\r\n        if (cmdParams.targetType == 0) {\r\n            addMaterialToLayer(materialData, imageLayer);\r\n        }\r\n        // -- 指定的图像编号\r\n        else if (cmdParams.targetType == 1) {\r\n            var imagePassageID = cmdParams.passageID;\r\n            var imagePassageInfos = { passageID: imagePassageID, materialSetting: materialData };\r\n            var targetDisplayObjectPassage = imageLayerPassageData[imagePassageInfos.passageID];\r\n            if (!targetDisplayObjectPassage || !targetDisplayObjectPassage.displayObject) return;\r\n            // 遍历所有的通道\r\n            for (var p = 0; p < imagePassageInfos.materialSetting.length; p++) {\r\n                var materialSetting = imagePassageInfos.materialSetting[p];\r\n                // 遍历所有的材质\r\n                for (var s = 0; s < materialSetting.materials.length; s++) {\r\n                    var mData: MaterialData = materialSetting.materials[s];\r\n                    mData.____timeInfo = {};\r\n                    var m = targetDisplayObjectPassage.displayObject.getMaterialByID(mData.id, p);\r\n                    // 如果已存在的话需要移除掉，替换新的同ID材质\r\n                    if (m) targetDisplayObjectPassage.displayObject.removeMaterial(mData, p);\r\n                    targetDisplayObjectPassage.displayObject.addMaterial(mData, p);\r\n                    targetDisplayObjectPassage.displayObject.setMaterialDirty();\r\n                    // targetDisplayObjectPassage.displayObject.doRepaint();\r\n                }\r\n            }\r\n        }\r\n        // -- 指定的界面\r\n        else if (cmdParams.targetType == 2) {\r\n            var uiID = cmdParams.uiID;\r\n            var uiPassageInfos = { uiID: uiID, materialSetting: materialData };\r\n            var targetPassageID = 1000000 + uiPassageInfos.uiID;\r\n            var targetDisplayObjectPassage = imageLayerPassageData[targetPassageID];\r\n            if (!targetDisplayObjectPassage || !targetDisplayObjectPassage.displayObject) return;\r\n            // 遍历所有的通道\r\n            for (var p = 0; p < uiPassageInfos.materialSetting.length; p++) {\r\n                var materialSetting = uiPassageInfos.materialSetting[p];\r\n                // 遍历所有的材质\r\n                for (var s = 0; s < materialSetting.materials.length; s++) {\r\n                    var mData: MaterialData = materialSetting.materials[s];\r\n                    mData.____timeInfo = {};\r\n                    var m = targetDisplayObjectPassage.displayObject.getMaterialByID(mData.id, p);\r\n                    // 如果已存在的话需要移除掉，替换新的同ID材质\r\n                    if (m) targetDisplayObjectPassage.displayObject.removeMaterial(mData, p);\r\n                    targetDisplayObjectPassage.displayObject.addMaterial(mData, p);\r\n                    targetDisplayObjectPassage.displayObject.setMaterialDirty();\r\n                    // targetDisplayObjectPassage.displayObject.doRepaint();\r\n\r\n                }\r\n            }\r\n\r\n        }\r\n        // -- 界面层\r\n        else if (cmdParams.targetType == 3) {\r\n            addMaterialToLayer(materialData, uiLayer);\r\n        }\r\n        // -- 全画面\r\n        else if (cmdParams.targetType == 4) {\r\n            addMaterialToLayer(materialData, gameLayer);\r\n        }\r\n    }\r\n    function addMaterialToLayer(materialData: any[], layer: GameSprite) {\r\n        var stageInfos = materialData;\r\n        // 遍历所有的通道\r\n        for (var p = 0; p < stageInfos.length; p++) {\r\n            var stageInfo = stageInfos[p];\r\n            // 遍历所有的材质\r\n            for (var s = 0; s < stageInfo.materials.length; s++) {\r\n                var mData: MaterialData = stageInfo.materials[s];\r\n                mData.____timeInfo = {};\r\n                var m = layer.getMaterialByID(mData.id, p);\r\n                // 如果已存在的话需要移除掉，替换新的同ID材质\r\n                if (m) layer.removeMaterial(mData, p);\r\n                layer.addMaterial(mData, p);\r\n            }\r\n        }\r\n    }\r\n}\r\n//------------------------------------------------------------------------------------------------------\r\n// 属性面板修改：当修改该指令的属性时，只会执行该指令对应的「指令源」的这些函数\r\n// 如A指令来自自定义指令32号，每次通过属性面板快速修改A指令的参数b时，则会执行32号指令的下面2个函数\r\n// [current used command] \r\n//------------------------------------------------------------------------------------------------------\r\n/**\r\n * 当属性面板中的属性修改前\r\n * @param cmd 对应的指令\r\n * @param cmdParams 对应指令的参数 \r\n * @param varName 修改的属性名\r\n */\r\nfunction onCommandAttributeBeforeChange(cmd: Command, cmdParams: ThisCommandParams, varName: string, compOnChangeParam: any) {\r\n    // 修改了通道的话，清理\r\n    if (varName != \"materialData\" || compOnChangeParam == 1) {\r\n        previewWin.clearData();\r\n    }\r\n}\r\n/**\r\n * 当属性面板中的属性修改后\r\n * @param cmd 对应的指令\r\n * @param cmdParams 对应指令的参数 \r\n * @param varName 修改的属性名\r\n * @param newValue 修改后的值\r\n */\r\nfunction onCommandAttributeChange(cmd: Command, cmdParams: ThisCommandParams, varName: string, newValue: any, compOnChangeParam: any) {\r\n    // 修改了通道的话 compOnChangeParam==1 表示如删除材质/添加材质等需要刷新的操作\r\n    if (varName != \"materialData\" || compOnChangeParam == 1) {\r\n        previewWin.setData(false);\r\n        return;\r\n    }\r\n    // 修改材质参数后刷新（仅修改已有材质的参数）\r\n    // -- 画面\r\n    var targetSp: GameSprite;\r\n    if (cmdParams.targetType == 0) {\r\n        targetSp = imageLayer;\r\n    }\r\n    // -- 指定的图像编号\r\n    else if (cmdParams.targetType == 1) {\r\n        if (!cmdParams.passageIDUseVar) {\r\n            var imagePassageID = cmdParams.passageID;\r\n            var passageData: any = imageLayerPassageData[imagePassageID];\r\n            if (passageData) targetSp = passageData.displayObject;\r\n        }\r\n    }\r\n    // -- 指定的界面\r\n    else if (cmdParams.targetType == 2) {\r\n        if (!cmdParams.objectUseVar) {\r\n            var uiID = cmdParams.uiID;\r\n            var passageData: any = imageLayerPassageData[uiID + 1000000];\r\n            if (passageData) targetSp = passageData.displayObject;\r\n        }\r\n    }\r\n    // -- 界面层\r\n    else if (cmdParams.targetType == 3) {\r\n        targetSp = uiLayer;\r\n    }\r\n    // -- 全画面\r\n    else if (cmdParams.targetType == 4) {\r\n        targetSp = gameLayer;\r\n    }\r\n    if (targetSp) {\r\n        targetSp.setMaterialDirty();\r\n    }\r\n}\r\n//------------------------------------------------------------------------------------------------------\r\n// 对象操作工具\r\n// [everyone used command type] 遍历每个执行过的自定义指令类别\r\n//------------------------------------------------------------------------------------------------------\r\n/**\r\n * 当操作工具移动对象时\r\n * @param realSelObjs 选中的对象\r\n */\r\nfunction imageLayerOnToolsChangePostion(realSelObjs: GameSprite[]): void {\r\n\r\n}\r\n/**\r\n * 当操作工具缩放时\r\n * @param realSelObjs 选中的对象\r\n */\r\nfunction imageLayerOnToolsChangeSize(realSelObjs: GameSprite[]) {\r\n\r\n}\r\n/**\r\n * 当操作工具旋转时\r\n * @param realSelObjs 选中的对象\r\n */\r\nfunction imageLayerOnToolsChangeRotation(realSelObjs: GameSprite[]) {\r\n\r\n}\r\n/**\r\n * 当操作工具开始操作时\r\n */\r\nfunction imageLayerOnToolsChangeStart(realSelObjs: GameSprite[]) {\r\n\r\n}\r\n/**\r\n * 当操作工具结束操作时\r\n */\r\nfunction imageLayerOnToolsChangeEnd(realSelObjs: GameSprite[]) {\r\n\r\n}\r\n/**\r\n * 当操作工具选中对象时\r\n */\r\nfunction imageLayerOnToolsSelectObject(realSelObjs: GameSprite[]) {\r\n\r\n}\r\n//------------------------------------------------------------------------------------------------------\r\n// 图像层相关 遍历每个已使用的通道，每个已使用的通道再遍历已使用的指令，调用下面的函数\r\n// [everyone passage] x [everyone used command type]\r\n//------------------------------------------------------------------------------------------------------\r\n/**\r\n * 清理函数：每次刷新前调用此函数进行清理\r\n * @param passageID 通道\r\n * @param passageData 通道储存的数据\r\n */\r\nfunction imageLayerPassageClear(passageID: number, passageData: materialPassageData) {\r\n    if (passageData.type == passageType) {\r\n        // -- 清理图像层的材质\r\n        imageLayer.clearMaterials();\r\n        // -- 清理指定图像通道的材质\r\n        for (var i = 0; i < passageData.imagePassages.length; i++) {\r\n            var imagePassageInfo = passageData.imagePassages[i];\r\n            var targetPassageID = imagePassageInfo.passageID;\r\n            var targetPassageData: any = imageLayerPassageData[targetPassageID];\r\n            if (targetPassageData && targetPassageData.displayObject) {\r\n                (targetPassageData.displayObject as GameSprite).clearMaterials();\r\n            }\r\n        }\r\n        // -- 清理指定编号的界面的\r\n        for (var i = 0; i < passageData.uis.length; i++) {\r\n            var uiPassageInfo = passageData.uis[i];\r\n            var targetUIID = uiPassageInfo.uiID;\r\n            var targetPassageID = 1000000 + targetUIID;\r\n            var targetPassageData: any = imageLayerPassageData[targetPassageID];\r\n            if (targetPassageData && targetPassageData.displayObject) {\r\n                (targetPassageData.displayObject as GameSprite).clearMaterials();\r\n            }\r\n        }\r\n        // -- 清理界面层的材质\r\n        uiLayer.clearMaterials();\r\n        // -- 清理全画面\r\n        gameLayer.clearMaterials();\r\n        // 清理记录\r\n        passageData.stages = [];\r\n        passageData.uiLayers = [];\r\n        passageData.screens = [];\r\n        passageData.imagePassages = [];\r\n        passageData.uis = [];\r\n    }\r\n}\r\n/**\r\n * 开始函数\r\n * @param passageID 通道\r\n * @param passageData 通道储存的数据\r\n */\r\nfunction imageLayerPassageStart(passageID: number, passageData: materialPassageData) {\r\n    if (passageData.type == passageType) {\r\n        passageData.onCoverPassage = imageLayerPassageClear;// v0.985 upgrader\r\n        // -- 图像层\r\n        addMaterialToLayer(passageData.stages, imageLayer);\r\n        // -- 指定的图像\r\n        for (var i = 0; i < passageData.imagePassages.length; i++) {\r\n            var imagePassageInfos = passageData.imagePassages[i];\r\n            var targetDisplayObjectPassage = imageLayerPassageData[imagePassageInfos.passageID];\r\n            // 不存在目标通道的话\r\n            if (!targetDisplayObjectPassage || !targetDisplayObjectPassage.displayObject) continue;\r\n            // 目标通道不是我记录的通道的话（比如先使用材质，然后通道又重置了）\r\n            if (targetDisplayObjectPassage != imagePassageInfos.recordTargetPassageData) continue;\r\n            // 遍历所有的通道\r\n            for (var p = 0; p < imagePassageInfos.materialSetting.length; p++) {\r\n                var materialSetting = imagePassageInfos.materialSetting[p];\r\n                // 遍历所有的材质\r\n                for (var s = 0; s < materialSetting.materials.length; s++) {\r\n                    var mData: MaterialData = materialSetting.materials[s];\r\n                    mData.____timeInfo = {};\r\n                    var m = targetDisplayObjectPassage.displayObject.getMaterialByID(mData.id, p);\r\n                    // 如果已存在的话需要移除掉，替换新的同ID材质\r\n                    if (m) targetDisplayObjectPassage.displayObject.removeMaterial(mData, p);\r\n                    targetDisplayObjectPassage.displayObject.addMaterial(mData, p);\r\n                    targetDisplayObjectPassage.displayObject.setMaterialDirty();\r\n                    // targetDisplayObjectPassage.displayObject.doRepaint();\r\n                }\r\n            }\r\n        }\r\n        // -- 指定的界面\r\n        for (var i = 0; i < passageData.uis.length; i++) {\r\n            var uiPassageInfos = passageData.uis[i];\r\n            var targetPassageID = 1000000 + uiPassageInfos.uiID;\r\n            var targetDisplayObjectPassage = imageLayerPassageData[targetPassageID];\r\n            if (!targetDisplayObjectPassage || !targetDisplayObjectPassage.displayObject) continue;\r\n            // 遍历所有的通道\r\n            for (var p = 0; p < uiPassageInfos.materialSetting.length; p++) {\r\n                var materialSetting = uiPassageInfos.materialSetting[p];\r\n                // 遍历所有的材质\r\n                for (var s = 0; s < materialSetting.materials.length; s++) {\r\n                    var mData: MaterialData = materialSetting.materials[s];\r\n                    mData.____timeInfo = {};\r\n                    var m = targetDisplayObjectPassage.displayObject.getMaterialByID(mData.id, p);\r\n                    // 如果已存在的话需要移除掉，替换新的同ID材质\r\n                    if (m) targetDisplayObjectPassage.displayObject.removeMaterial(mData, p);\r\n                    targetDisplayObjectPassage.displayObject.addMaterial(mData, p);\r\n                    targetDisplayObjectPassage.displayObject.setMaterialDirty();\r\n                    // targetDisplayObjectPassage.displayObject.doRepaint();\r\n\r\n                }\r\n            }\r\n        }\r\n        // -- 界面层\r\n        addMaterialToLayer(passageData.uiLayers, uiLayer);\r\n        // -- 全画面\r\n        addMaterialToLayer(passageData.screens, gameLayer);\r\n    }\r\n    function addMaterialToLayer(passageDatas: { materials: any[] }[][], layer: GameSprite) {\r\n        for (var i = 0; i < passageDatas.length; i++) {\r\n            var stageInfos = passageDatas[i];\r\n            // 遍历所有的通道\r\n            for (var p = 0; p < stageInfos.length; p++) {\r\n                var stageInfo = stageInfos[p];\r\n                // 遍历所有的材质\r\n                for (var s = 0; s < stageInfo.materials.length; s++) {\r\n                    var mData: MaterialData = stageInfo.materials[s];\r\n                    mData.____timeInfo = {};\r\n                    var m = layer.getMaterialByID(mData.id, p);\r\n                    // 如果已存在的话需要移除掉，替换新的同ID材质\r\n                    if (m) layer.removeMaterial(mData, p);\r\n                    layer.addMaterial(mData, p);\r\n                }\r\n            }\r\n        }\r\n        layer.setMaterialDirty();\r\n    }\r\n}\r\n//------------------------------------------------------------------------------------------------------\r\n// \r\n//------------------------------------------------------------------------------------------------------\r\n",
+    "cmdPreviewJS": "var passageType = \"gcMaterial\";\nfunction runCommand(cmdParams, cmd, isPlayMode) {\n    var passageID = 2000001;\n    var passageData = imageLayerPassageData[passageID];\n    if (!passageData) {\n        passageData = imageLayerPassageData[passageID] = {\n            stages: [],\n            uiLayers: [],\n            screens: [],\n            imagePassages: [],\n            uis: []\n        };\n    }\n    passageData.passageID = passageID;\n    passageData.cmd = cmd;\n    passageData.type = passageType;\n    var materialData = [];\n    for (var i = 0; i < cmdParams.materialData.length; i++) {\n        var md = { materials: cmdParams.materialData[i].materials.concat() };\n        materialData.push(md);\n    }\n    if (cmdParams.targetType == 0) {\n        passageData.stages.push(materialData);\n    }\n    else if (cmdParams.targetType == 1) {\n        if (!cmdParams.passageIDUseVar) {\n            var imagePassageID = cmdParams.passageID;\n            var displayObjectPasageData = imageLayerPassageData[imagePassageID];\n            if (displayObjectPasageData) {\n                var materialRenderPassageData = { passageID: imagePassageID, materialSetting: materialData, recordTargetPassageData: displayObjectPasageData };\n                passageData.imagePassages.push(materialRenderPassageData);\n            }\n        }\n    }\n    else if (cmdParams.targetType == 2) {\n        if (!cmdParams.objectUseVar) {\n            var uiID = cmdParams.uiID;\n            var uiPassageID = 1000000 + cmdParams.uiID;\n            var displayObjectPasageData = imageLayerPassageData[uiPassageID];\n            if (displayObjectPasageData) {\n                passageData.uis.push({ uiID: uiID, materialSetting: materialData });\n            }\n        }\n    }\n    else if (cmdParams.targetType == 3) {\n        passageData.uiLayers.push(materialData);\n    }\n    else if (cmdParams.targetType == 4) {\n        passageData.screens.push(materialData);\n    }\n    if (isPlayMode) {\n        if (cmdParams.targetType == 0) {\n            addMaterialToLayer(materialData, imageLayer);\n        }\n        else if (cmdParams.targetType == 1) {\n            var imagePassageID = cmdParams.passageID;\n            var imagePassageInfos = { passageID: imagePassageID, materialSetting: materialData };\n            var targetDisplayObjectPassage = imageLayerPassageData[imagePassageInfos.passageID];\n            if (!targetDisplayObjectPassage || !targetDisplayObjectPassage.displayObject)\n                return;\n            for (var p = 0; p < imagePassageInfos.materialSetting.length; p++) {\n                var materialSetting = imagePassageInfos.materialSetting[p];\n                for (var s = 0; s < materialSetting.materials.length; s++) {\n                    var mData = materialSetting.materials[s];\n                    mData.____timeInfo = {};\n                    var m = targetDisplayObjectPassage.displayObject.getMaterialByID(mData.id, p);\n                    if (m)\n                        targetDisplayObjectPassage.displayObject.removeMaterial(mData, p);\n                    targetDisplayObjectPassage.displayObject.addMaterial(mData, p);\n                    targetDisplayObjectPassage.displayObject.setMaterialDirty();\n                }\n            }\n        }\n        else if (cmdParams.targetType == 2) {\n            var uiID = cmdParams.uiID;\n            var uiPassageInfos = { uiID: uiID, materialSetting: materialData };\n            var targetPassageID = 1000000 + uiPassageInfos.uiID;\n            var targetDisplayObjectPassage = imageLayerPassageData[targetPassageID];\n            if (!targetDisplayObjectPassage || !targetDisplayObjectPassage.displayObject)\n                return;\n            for (var p = 0; p < uiPassageInfos.materialSetting.length; p++) {\n                var materialSetting = uiPassageInfos.materialSetting[p];\n                for (var s = 0; s < materialSetting.materials.length; s++) {\n                    var mData = materialSetting.materials[s];\n                    mData.____timeInfo = {};\n                    var m = targetDisplayObjectPassage.displayObject.getMaterialByID(mData.id, p);\n                    if (m)\n                        targetDisplayObjectPassage.displayObject.removeMaterial(mData, p);\n                    targetDisplayObjectPassage.displayObject.addMaterial(mData, p);\n                    targetDisplayObjectPassage.displayObject.setMaterialDirty();\n                }\n            }\n        }\n        else if (cmdParams.targetType == 3) {\n            addMaterialToLayer(materialData, uiLayer);\n        }\n        else if (cmdParams.targetType == 4) {\n            addMaterialToLayer(materialData, gameLayer);\n        }\n    }\n    function addMaterialToLayer(materialData, layer) {\n        var stageInfos = materialData;\n        for (var p = 0; p < stageInfos.length; p++) {\n            var stageInfo = stageInfos[p];\n            for (var s = 0; s < stageInfo.materials.length; s++) {\n                var mData = stageInfo.materials[s];\n                mData.____timeInfo = {};\n                var m = layer.getMaterialByID(mData.id, p);\n                if (m)\n                    layer.removeMaterial(mData, p);\n                layer.addMaterial(mData, p);\n            }\n        }\n    }\n}\nfunction onCommandAttributeBeforeChange(cmd, cmdParams, varName, compOnChangeParam) {\n    if (varName != \"materialData\" || compOnChangeParam == 1) {\n        previewWin.clearData();\n    }\n}\nfunction onCommandAttributeChange(cmd, cmdParams, varName, newValue, compOnChangeParam) {\n    if (varName != \"materialData\" || compOnChangeParam == 1) {\n        previewWin.setData(false);\n        return;\n    }\n    var targetSp;\n    if (cmdParams.targetType == 0) {\n        targetSp = imageLayer;\n    }\n    else if (cmdParams.targetType == 1) {\n        if (!cmdParams.passageIDUseVar) {\n            var imagePassageID = cmdParams.passageID;\n            var passageData = imageLayerPassageData[imagePassageID];\n            if (passageData)\n                targetSp = passageData.displayObject;\n        }\n    }\n    else if (cmdParams.targetType == 2) {\n        if (!cmdParams.objectUseVar) {\n            var uiID = cmdParams.uiID;\n            var passageData = imageLayerPassageData[uiID + 1000000];\n            if (passageData)\n                targetSp = passageData.displayObject;\n        }\n    }\n    else if (cmdParams.targetType == 3) {\n        targetSp = uiLayer;\n    }\n    else if (cmdParams.targetType == 4) {\n        targetSp = gameLayer;\n    }\n    if (targetSp) {\n        targetSp.setMaterialDirty();\n    }\n}\nfunction imageLayerOnToolsChangePostion(realSelObjs) {\n}\nfunction imageLayerOnToolsChangeSize(realSelObjs) {\n}\nfunction imageLayerOnToolsChangeRotation(realSelObjs) {\n}\nfunction imageLayerOnToolsChangeStart(realSelObjs) {\n}\nfunction imageLayerOnToolsChangeEnd(realSelObjs) {\n}\nfunction imageLayerOnToolsSelectObject(realSelObjs) {\n}\nfunction imageLayerPassageClear(passageID, passageData) {\n    if (passageData.type == passageType) {\n        imageLayer.clearMaterials();\n        for (var i = 0; i < passageData.imagePassages.length; i++) {\n            var imagePassageInfo = passageData.imagePassages[i];\n            var targetPassageID = imagePassageInfo.passageID;\n            var targetPassageData = imageLayerPassageData[targetPassageID];\n            if (targetPassageData && targetPassageData.displayObject) {\n                targetPassageData.displayObject.clearMaterials();\n            }\n        }\n        for (var i = 0; i < passageData.uis.length; i++) {\n            var uiPassageInfo = passageData.uis[i];\n            var targetUIID = uiPassageInfo.uiID;\n            var targetPassageID = 1000000 + targetUIID;\n            var targetPassageData = imageLayerPassageData[targetPassageID];\n            if (targetPassageData && targetPassageData.displayObject) {\n                targetPassageData.displayObject.clearMaterials();\n            }\n        }\n        uiLayer.clearMaterials();\n        gameLayer.clearMaterials();\n        passageData.stages = [];\n        passageData.uiLayers = [];\n        passageData.screens = [];\n        passageData.imagePassages = [];\n        passageData.uis = [];\n    }\n}\nfunction imageLayerPassageStart(passageID, passageData) {\n    if (passageData.type == passageType) {\n        passageData.onCoverPassage = imageLayerPassageClear;\n        addMaterialToLayer(passageData.stages, imageLayer);\n        for (var i = 0; i < passageData.imagePassages.length; i++) {\n            var imagePassageInfos = passageData.imagePassages[i];\n            var targetDisplayObjectPassage = imageLayerPassageData[imagePassageInfos.passageID];\n            if (!targetDisplayObjectPassage || !targetDisplayObjectPassage.displayObject)\n                continue;\n            if (targetDisplayObjectPassage != imagePassageInfos.recordTargetPassageData)\n                continue;\n            for (var p = 0; p < imagePassageInfos.materialSetting.length; p++) {\n                var materialSetting = imagePassageInfos.materialSetting[p];\n                for (var s = 0; s < materialSetting.materials.length; s++) {\n                    var mData = materialSetting.materials[s];\n                    mData.____timeInfo = {};\n                    var m = targetDisplayObjectPassage.displayObject.getMaterialByID(mData.id, p);\n                    if (m)\n                        targetDisplayObjectPassage.displayObject.removeMaterial(mData, p);\n                    targetDisplayObjectPassage.displayObject.addMaterial(mData, p);\n                    targetDisplayObjectPassage.displayObject.setMaterialDirty();\n                }\n            }\n        }\n        for (var i = 0; i < passageData.uis.length; i++) {\n            var uiPassageInfos = passageData.uis[i];\n            var targetPassageID = 1000000 + uiPassageInfos.uiID;\n            var targetDisplayObjectPassage = imageLayerPassageData[targetPassageID];\n            if (!targetDisplayObjectPassage || !targetDisplayObjectPassage.displayObject)\n                continue;\n            for (var p = 0; p < uiPassageInfos.materialSetting.length; p++) {\n                var materialSetting = uiPassageInfos.materialSetting[p];\n                for (var s = 0; s < materialSetting.materials.length; s++) {\n                    var mData = materialSetting.materials[s];\n                    mData.____timeInfo = {};\n                    var m = targetDisplayObjectPassage.displayObject.getMaterialByID(mData.id, p);\n                    if (m)\n                        targetDisplayObjectPassage.displayObject.removeMaterial(mData, p);\n                    targetDisplayObjectPassage.displayObject.addMaterial(mData, p);\n                    targetDisplayObjectPassage.displayObject.setMaterialDirty();\n                }\n            }\n        }\n        addMaterialToLayer(passageData.uiLayers, uiLayer);\n        addMaterialToLayer(passageData.screens, gameLayer);\n    }\n    function addMaterialToLayer(passageDatas, layer) {\n        for (var i = 0; i < passageDatas.length; i++) {\n            var stageInfos = passageDatas[i];\n            for (var p = 0; p < stageInfos.length; p++) {\n                var stageInfo = stageInfos[p];\n                for (var s = 0; s < stageInfo.materials.length; s++) {\n                    var mData = stageInfo.materials[s];\n                    mData.____timeInfo = {};\n                    var m = layer.getMaterialByID(mData.id, p);\n                    if (m)\n                        layer.removeMaterial(mData, p);\n                    layer.addMaterial(mData, p);\n                }\n            }\n        }\n        layer.setMaterialDirty();\n    }\n}\n",
+    "compAutoOrder": true,
+    "name": "更改材质",
+    "customPhraseDescTS": "// 根据属性名称值编写自定义短语描述，如：\"我的短语是\"+attrs.xxx\n// 使用下拉框组件的变量attrs.xxx有对应的attrs.xxxItems的属性以便获得标签名集合\n// 获取自定义模块的数据名称的函数：getModuleDataName(moduleID:number,dataID:number):string;\n// 获取各种列表内数据名称的函数：getTypeDataListName(typeID: number, dataID: number):string;\n// -- typeID ：0-全局变量 1-全局开关 2-全局字符串 3-玩家变量 4-玩家开关 5-玩家字符串\n//           ：6-场景列表 7-场景对象模型列表 8-图块列表 9-行走图列表 10-行走图动作列表 11-立绘列表 12-立绘表情列表\n//           ：13-公共事件 14-对话框列表 15-动画列表 16-动画信号列表 17-界面列表 18-数据结构列表 19-自定义模块列表\n//           ：20-自定义命令列表 21-自定义行为列表 22-自动元件列表 23-行走图部件列表 24-立绘部件列表\nvar str = ``;\nif (attrs.targetType == 1) {\n    var passageIDStr = attrs.passageIDUseVar ? `@${attrs.passageIDVar}-${getTypeDataListName(3, attrs.passageIDVar)}` : attrs.passageID;\n    str += `图像编号【${passageIDStr}】`;\n}\nelse if (attrs.targetType == 2) {\n    var objStr = attrs.objectUseVar ? `@${attrs.uiVar}-${getTypeDataListName(3, attrs.uiVar)}` : `${attrs.uiID}-${getTypeDataListName(17, attrs.uiID)}`;\n    str += `界面「${objStr} 」`;\n}\nelse {\n    str += attrs.targetTypeItems[attrs.targetType];\n}\nvar mNameArr = [];\nif (attrs.materialData) {\n    for (var i in attrs.materialData) {\n        var m = attrs.materialData[i]\n        if (m && m.materials) {\n            for (var s = 0; s < m.materials.length; s++) {\n                var mData = m.materials[s];\n                var name = getTypeDataListName(25, mData.id);\n                mNameArr.push(`${mData.id}-${name}`);\n            }\n        }\n    }\n}\nif (mNameArr.length > 0) {\n    str += `：\\n` + mNameArr.join(\"\\n\");\n}\nstr;",
+    "customPhraseDescJS": "var str = \"\";\nif (attrs.targetType == 1) {\n    var passageIDStr = attrs.passageIDUseVar ? \"@\" + attrs.passageIDVar + \"-\" + getTypeDataListName(3, attrs.passageIDVar) : attrs.passageID;\n    str += \"\\u56FE\\u50CF\\u7F16\\u53F7\\u3010\" + passageIDStr + \"\\u3011\";\n}\nelse if (attrs.targetType == 2) {\n    var objStr = attrs.objectUseVar ? \"@\" + attrs.uiVar + \"-\" + getTypeDataListName(3, attrs.uiVar) : attrs.uiID + \"-\" + getTypeDataListName(17, attrs.uiID);\n    str += \"\\u754C\\u9762\\u300C\" + objStr + \" \\u300D\";\n}\nelse {\n    str += attrs.targetTypeItems[attrs.targetType];\n}\nvar mNameArr = [];\nif (attrs.materialData) {\n    for (var i in attrs.materialData) {\n        var m = attrs.materialData[i];\n        if (m && m.materials) {\n            for (var s = 0; s < m.materials.length; s++) {\n                var mData = m.materials[s];\n                var name = getTypeDataListName(25, mData.id);\n                mNameArr.push(mData.id + \"-\" + name);\n            }\n        }\n    }\n}\nif (mNameArr.length > 0) {\n    str += \"\\uFF1A\\n\" + mNameArr.join(\"\\n\");\n}\nstr;\n"
+}

@@ -1,0 +1,261 @@
+{
+    "list": {
+        "1": [
+            null,
+            "我的事件1"
+        ],
+        "15": [
+            null,
+            "启动游戏",
+            "档案初始化",
+            "新的档案-开始",
+            "新的档案-完成",
+            "读取档案-开始",
+            "读取档案-完成",
+            "读取档案-失败",
+            "储存档案-成功",
+            "储存档案-失败",
+            "进入场景",
+            "离开场景",
+            "对话-开始",
+            "对话-结束",
+            "文本逐字播放",
+            "文本播放完成",
+            "语音播放完毕",
+            "等待玩家操作",
+            "玩家操作完毕",
+            ""
+        ],
+        "16": [
+            null,
+            "当对话播放完毕时处理",
+            "菜单-显示存档界面",
+            "快进文本",
+            "关闭窗口界面",
+            "菜单-显示读档界面",
+            "菜单-快速显示文本和打开历史回忆",
+            "菜单-自动播放切换",
+            "菜单-显示设置界面",
+            "菜单-退出游戏",
+            "菜单-快进切换"
+        ]
+    },
+    "type": {
+        "1": "",
+        "2": "",
+        "13": "",
+        "15": "模板预设",
+        "16": "模板预设"
+    },
+    "typeTreeNode": {
+        "isDirectory": true,
+        "children": [
+            {
+                "isDirectory": true,
+                "children": [
+                    {
+                        "id": 14001,
+                        "name": "启动游戏",
+                        "children": []
+                    },
+                    {
+                        "isDirectory": true,
+                        "children": [
+                            {
+                                "id": 14002,
+                                "name": "档案初始化",
+                                "children": []
+                            },
+                            {
+                                "id": 14003,
+                                "name": "新的档案-开始",
+                                "children": []
+                            },
+                            {
+                                "id": 14004,
+                                "name": "新的档案-完成",
+                                "children": []
+                            },
+                            {
+                                "id": 14005,
+                                "name": "读取档案-开始",
+                                "children": []
+                            },
+                            {
+                                "id": 14006,
+                                "name": "读取档案-完成",
+                                "children": []
+                            },
+                            {
+                                "id": 14007,
+                                "name": "读取档案-失败",
+                                "children": []
+                            },
+                            {
+                                "id": 14008,
+                                "name": "储存档案-成功",
+                                "children": []
+                            },
+                            {
+                                "id": 14009,
+                                "name": "储存档案-失败",
+                                "children": []
+                            }
+                        ],
+                        "isOpen": true,
+                        "name": "游戏档案",
+                        "id": null
+                    },
+                    {
+                        "isDirectory": true,
+                        "children": [
+                            {
+                                "id": 14010,
+                                "name": "进入场景",
+                                "children": []
+                            },
+                            {
+                                "id": 14011,
+                                "name": "离开场景",
+                                "children": []
+                            }
+                        ],
+                        "isOpen": true,
+                        "name": "场景事件",
+                        "id": null
+                    },
+                    {
+                        "isDirectory": true,
+                        "children": [
+                            {
+                                "id": 14012,
+                                "name": "对话-开始",
+                                "children": []
+                            },
+                            {
+                                "id": 14013,
+                                "name": "对话-结束",
+                                "children": []
+                            },
+                            {
+                                "id": 14014,
+                                "name": "文本逐字播放",
+                                "children": []
+                            },
+                            {
+                                "id": 14015,
+                                "name": "文本播放完成",
+                                "children": []
+                            },
+                            {
+                                "id": 14016,
+                                "name": "语音播放完毕",
+                                "children": []
+                            },
+                            {
+                                "id": 14017,
+                                "children": [],
+                                "isOpen": true,
+                                "name": "等待玩家操作"
+                            },
+                            {
+                                "id": 14018,
+                                "children": [],
+                                "isOpen": true,
+                                "name": "玩家操作完毕"
+                            }
+                        ],
+                        "isOpen": true,
+                        "name": "对话处理",
+                        "id": null
+                    },
+                    {
+                        "isDirectory": true,
+                        "children": [
+                            {
+                                "id": 15001,
+                                "name": "当对话播放完毕时处理",
+                                "children": []
+                            },
+                            {
+                                "id": 15003,
+                                "name": "快进文本",
+                                "children": []
+                            },
+                            {
+                                "id": 15004,
+                                "name": "关闭窗口界面",
+                                "children": []
+                            },
+                            {
+                                "id": 15002,
+                                "children": [],
+                                "isOpen": true,
+                                "name": "菜单-显示存档界面"
+                            },
+                            {
+                                "id": 15005,
+                                "children": [],
+                                "isOpen": true,
+                                "name": "菜单-显示读档界面"
+                            },
+                            {
+                                "id": 15006,
+                                "children": [],
+                                "isOpen": true,
+                                "name": "菜单-快速显示文本和打开历史回忆"
+                            },
+                            {
+                                "id": 15007,
+                                "children": [],
+                                "isOpen": true,
+                                "name": "菜单-自动播放切换"
+                            },
+                            {
+                                "id": 15008,
+                                "children": [],
+                                "isOpen": true,
+                                "name": "菜单-显示设置界面"
+                            },
+                            {
+                                "id": 15009,
+                                "children": [],
+                                "isOpen": true,
+                                "name": "菜单-退出游戏"
+                            },
+                            {
+                                "id": 15010,
+                                "children": [],
+                                "isOpen": true,
+                                "name": "菜单-快进切换"
+                            }
+                        ],
+                        "isOpen": true,
+                        "name": "通用",
+                        "id": null
+                    }
+                ],
+                "isOpen": false,
+                "name": "系统事件",
+                "id": null
+            },
+            {
+                "isDirectory": true,
+                "children": [
+                    {
+                        "id": 1,
+                        "children": [],
+                        "isOpen": true,
+                        "name": "我的事件1"
+                    }
+                ],
+                "isOpen": true,
+                "name": "我的事件",
+                "id": null
+            }
+        ],
+        "isOpen": true,
+        "name": "[#GAME_THE_EVENT_STORE]"
+    },
+    "dataShowMode": 1
+}

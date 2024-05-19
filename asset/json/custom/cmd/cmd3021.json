@@ -1,0 +1,177 @@
+{
+    "compAutoOrderLimitHeight": 0,
+    "id": 3021,
+    "blockList": [
+        {
+            "name": "等待视频播放完成",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "140948686732_0.7609311538629526",
+                        "varName": "passageID",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 0,
+                            "compParam": {
+                                "lowerLimit": 1,
+                                "upperLimit": 10000,
+                                "stepValue": 1,
+                                "limitInteger": true,
+                                "lockTextLimit": true,
+                                "xDragEnabled": true,
+                                "yDragEnabled": true
+                            }
+                        },
+                        "defaultValue": "1",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "通过编号管理该显示对象：\\n1-相同的编号只允许显示一个显示对象\\n2-可通过编号来操控该显示对象",
+                        "alias": "编号",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "140948753911_0.7326897192056352",
+                            "value": 0,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 10,
+                    "x": 10,
+                    "width": 300,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "140948686732_0.6809173959813664",
+                        "varName": "passageIDVar",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 6,
+                            "compParam": {
+                                "lowerLimit": 1,
+                                "upperLimit": 10000,
+                                "stepValue": 1,
+                                "limitInteger": true,
+                                "lockTextLimit": true,
+                                "xDragEnabled": true,
+                                "yDragEnabled": true
+                            }
+                        },
+                        "defaultValue": "1",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "通过编号管理该显示对象：\\n1-相同的编号只允许显示一个显示对象\\n2-可通过编号来操控该显示对象",
+                        "alias": "编号",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "140948753911_0.7326897192056352",
+                            "value": 1,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 10,
+                    "x": 10,
+                    "width": 300,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "140948753911_0.7326897192056352",
+                        "varName": "varType",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 2,
+                            "compParam": {
+                                "items": "常量,变量",
+                                "showIndex": false
+                            }
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "模式",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": false,
+                        "titleWidth": 0,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 316,
+                    "width": 130,
+                    "height": 32
+                }
+            ],
+            "blockCondition": [],
+            "blockHeight": 70,
+            "autoOrder": true,
+            "hideBlockTitle": true,
+            "cmdColor": "#09f74f"
+        }
+    ],
+    "isCustomPhraseDesc": true,
+    "compAutoOrder": false,
+    "fastModifyAttribute": true,
+    "customPhraseDescTS": "// 根据属性名称值编写自定义短语描述，如：\"我的短语是\"+attrs.xxx\n// 使用下拉框组件的变量attrs.xxx有对应的attrs.xxxItems的属性以便获得标签名集合\n// 获取自定义模块的数据名称的函数：getModuleDataName(moduleID:number,dataID:number):string;\n// 获取各种列表内数据名称的函数：getTypeDataListName(typeID: number, dataID: number):string;\n// 获取自定义游戏数值描述的函数：getCustomGameNumber(customGameNumber: any[]):string;\n// 获取自定义游戏字符串描述的函数：getCustomGameString(customGameString: any[]):string;\n// 获取自定义游戏开关描述的函数：：getCustomGameSwitch(customGameSwitch: any[]):string;\n// -- typeID ：0-全局变量 1-全局开关 2-全局字符串 3-玩家变量 4-玩家开关 5-玩家字符串\n//           ：6-场景列表 7-场景对象原型列表 8-图块列表 9-行走图列表 10-行走图动作列表 11-立绘列表 12-立绘表情列表\n//           ：13-事件库列表 14-对话框列表 15-动画列表 16-动画信号列表 17-界面列表 18-数据结构列表 19-自定义模块列表\n//           ：20-自定义指令列表 21-自定义行为列表 22-自动元件列表 23-行走图部件列表 24-立绘部件列表 25-材质列表 26-场景对象模块\nif (attrs.varType == 0) {\n    `编号「${attrs.passageID}」`;\n}\nelse {\n    `编号「@${attrs.passageIDVar}-${getTypeDataListName(3, attrs.passageIDVar)}」`;\n}",
+    "customPhraseDescJS": "if (attrs.varType == 0) {\n    \"\\u7F16\\u53F7\\u300C\" + attrs.passageID + \"\\u300D\";\n}\nelse {\n    \"\\u7F16\\u53F7\\u300C@\" + attrs.passageIDVar + \"-\" + getTypeDataListName(3, attrs.passageIDVar) + \"\\u300D\";\n}\n",
+    "cmdPreviewTS": "//------------------------------------------------------------------------------------------------------\n// 编辑器预览窗口运行时提供的系统变量\n// 关于预览的流程：\n// -- 1.imageLayerPassageClear 每已使用的通道x每已使用的指令\n// -- 2.runCommand 每个指令按顺序执行一遍\n// -- 3.imageLayerPassageStart 每已使用的通道x每已使用的指令\n// 关于播放的流程\n// -- 1.imageLayerPassageClear 每已使用的通道x每已使用的指令\n// -- 2.runCommand 每个指令按顺序播放\n//------------------------------------------------------------------------------------------------------\n/**\n * 当前自定义指令的编号\n */\ndeclare var commandID: number;\n/**\n * 图像层通道数据\n */\ndeclare var imageLayerPassageData: any[];\n/**\n * 游戏层显示对象容器（包含界面层与图像层）\n */\ndeclare var gameLayer: GameSprite;\n/**\n * 图像层显示对象容器\n */\ndeclare var imageLayer: GameImageLayer;\n/**\n * 界面层显示对象容器\n */\ndeclare var uiLayer: GameSprite;\n/**\n * 预览窗口\n */\ndeclare var previewWin: {\n    /**\n     * 清理全部事件指令产生的预览效果\n     */\n    clearData: Function;\n    /**\n     * 设置数据，刷新预览效果直到当前选中的指令行\n     */\n    setData: Function;\n    /**\n     * 当前选中的指令\n     */\n    currentSelectCmd: Command;\n    /**\n     * 当前选中的事件页\n     */\n    currentCommandPage: CommandPage;\n    /**\n     * 视图区域是否右键移动过\n     */\n    viewAreaRightMouseMove: boolean;\n    /**\n     * 允许显示全部对象\n     */\n    allowAllDisplayObject: boolean;\n    /**\n     * 播放指令时候等待（开启后将一直处于等待状态，直到关闭后继续执行）\n     */\n    playUpdateWait: boolean;\n    /**\n     * 对象操作工具\n     */\n    operateObjectTool: {\n        // 刷新对象操作工具，比如来自其他地方更改了对象的位置或尺寸等，可使用该函数刷新\n        refresh: Function;\n        // 选中对象\n        selectObjects: (sp: GameSprite[]) => void;\n        // 需要排除缩放和旋转工具的对象\n        addExcludeOperactionObject: (sp: GameSprite) => void\n    }\n    /**\n     * 图像层镜头操作工具\n     * onChange(changeType:number,cameraX:number,cameraY:number,cameraZ:number,cameraRotation:number)\n     */\n    openCameraTools: (onChange: Function) => void;\n    /**\n     * 刷新图像层镜头工具，根据当前镜头值\n     */\n    refreshCameraTools: Function;\n    /**\n     * 选中事件指令\n     * @param cmd 事件指令\n     * @param sendEvent 派发事件 默认=false 派发事件会刷新属性栏、预览窗口等\n     */\n    selectCmdMessageByCmd(cmd: Command, sendEvent?: boolean);\n    /**\n     * 修改指令属性\n     * @param cmd 需要修改的指令\n     * @param varName 参数变量名称\n     * @param newValue 新的值\n     */\n    modifyCommandParam: (cmd: Command, varName: string, newValue: any) => void;\n    /**\n     * 新增指令 默认是默认值，如果有写入参数的话则以参数为准 varNameValue\n     * @param customID 自定义ID\n     * @param varNameValue 额外的变量值，如存在则优先使用该值，否则使用自定义编辑器中的默认值，如 {dpX:100,dpY:200}\n     * @param selectedIndex [可选] 默认值=-2  -3=当前选中（之后） -2=当前选中（之前） -1=最尾端 0-N=自定义 \n     * @param refreshPreViewArea [可选] 默认值=true 刷新预览区\n     */\n    insertCustomCMD(customID: number, varNameValue: any, selectedIndex?: number, refreshPreViewArea?: boolean): Command;\n    /**\n     * 新增加系统指令\n     * @param cmdID 系统指令ID\n     * @param params 参数\n     * @param selectedIndex [可选] 默认值=-2 默认值=-2  -3=当前选中（之后） -2=当前选中（之前） -1=最尾端 0-N=自定义 \n     * @param refreshPreViewArea [可选] 默认值=false 刷新预览区\n     */\n    insertSystemCMD(cmdID: number, params: any[], selectedIndex?: number, refreshPreViewArea?: boolean): Command;\n    /**\n     * 更改显示层\n     * @param selectedIndex 0-界面层 1-图像层\n     */\n    changeLayer(selectedIndex: number): void;\n    /**\n     * 创建菜单\n     * var menuData:any[] = [\n               {\n                   label:\"重命名\",\n                   splitLine:false,// 是否显示分割线\n                   children:[], // 存放和本身这个对象是一样的格式\n                   execute:\"functionName\", // 点击后执行的方法名称\n                   shortcutKey:\"\", //显示的快捷键名称\n                   menuHotKey:\"\", //实际作用的快捷键名称 对应Laya.KeyBoard的值 如A\n                   enabled:true, // 是否可用，不填写表示true\n                   visible:true, // 是否显示，不填写表示true\n                   selected:true, // 如果存在则以打钩的形式选择此项\n                   group:\"myGroupName\" // 配合selected，如若存在则同组单选\n               }\n           ];\n     * @param menuData 菜单数据\n     * @param x 全局坐标X\n     * @param y 全局坐标Y\n     * @param executeDomain 函数作用域\n     */\n    createMenu(menuData: any[], x: number, y: number, executeDomain: any);\n}\n/**\n * 编辑器预览接口\n */\ndeclare var editor: Editor;\n//------------------------------------------------------------------------------------------------------\n// 通道数据\n//------------------------------------------------------------------------------------------------------\ndeclare class VideoPassageData {\n    // ====> system 必要项\n    /**\n     * 通道编号\n     */\n    passageID: number;\n    /**\n     * 类别，一般用于区分显示对象，如图片、动画、立绘、界面都是属于不同的类别\n     */\n    type: string;\n    /**\n     * 记录关联的指令\n     */\n    cmd: Command;\n    /**\n     * 当通道覆盖时调用的函数，以便清理掉。如显示了2号图片或移动了号图片，再次显示2号图片时会清理掉此前显示的图片或移动行为\n     */\n    onCoverPassage: Function;\n\n    // ====> custom 自定义属性\n    passageIDUseVar: boolean;\n    timeFunc: Function;\n    video: string;\n    displayObject: UIVideo;\n    displayObjectFromShow: boolean; // 区分显示对象来源，是否来自显示对象，否则来自移动对象\n    dpX: number;\n    dpY: number;\n    dpZ: number;\n    dpWidth: number;\n    dpHeight: number;\n    rotation: number;\n    opacity: number;\n    flip: boolean;\n    objectUseVar: boolean;\n\n    playType: number;\n    muted: boolean;\n    loop: boolean;\n    volume: number;\n    currentTime: number;\n\n    lastImageCmdParams: ThisCommandParams; // 记录上一个关联的指令的参数\n}\n//------------------------------------------------------------------------------------------------------\n// 自定义变量\n//------------------------------------------------------------------------------------------------------\nvar passageType = \"gcVideo\";\n//------------------------------------------------------------------------------------------------------\n// [everyone used command type] 开始和结束\n//------------------------------------------------------------------------------------------------------\n/**\n  * 开始时事件\n  */\nfunction customCommandStart(): void {\n    trace(\"开始\")\n}\n/**\n  * 结束时事件\n  */\nfunction customCommandEnd(): void {\n    trace(\"结束\")\n}\n//------------------------------------------------------------------------------------------------------\n// [everyone used command] 逐指令行目执行\n//------------------------------------------------------------------------------------------------------\n/**\n * 逐指令执行：对应事件下按照从上至下的顺序逐行执行，如果是该自定义指令时则会执行该函数\n * 该函数用于编辑器预览和播放，如果分歧面板中筛选不经过的事件指令则不会执行该函数。\n * 比如事件页中有3个该指令，则按照顺序执行3次该函数\n * @param cmdParams 指令的自定义参数数据，根据用户设定值\n * @param cmd 对应的指令对象\n * @param isPlayMode 是否是播放模式，否则是普通的预览模式\n */\nfunction runCommand(cmdParams: ThisCommandParams, cmd: Command, isPlayMode: boolean) {\n    // -- 使用变量作为通道的话忽略预览效果\n    if (cmdParams.varType == 1) {\n        return;\n    }\n    // -- 获取通道数据\n    var passageData: VideoPassageData = imageLayerPassageData[cmdParams.passageID];\n    // 初始化\n    previewWin.playUpdateWait = false;\n    // 播放模式的情况\n    if (isPlayMode) {\n        // 没有该通道或通道储存类型不匹配或无显示对象的话则忽略掉\n        if (!passageData || passageData.type != passageType || !passageData.displayObject) return;\n        // 暂停\n        previewWin.playUpdateWait = true;\n        let a = passageData.displayObject as UIVideo;\n        // 未加载完成时先加载\n        if (isNaN(a.duration)) {\n            a.once(EventObject.LOADED, this, () => {\n                a.once(EventObject.COMPLETE, this, () => {\n                    previewWin.playUpdateWait = false;\n                }, []);\n            });\n        }\n        else if (a.isPlaying) {\n            // 等待播放完成后继续执行\n            a.once(EventObject.COMPLETE, this, () => {\n                previewWin.playUpdateWait = false;\n            }, []);\n        }\n        else {\n            previewWin.playUpdateWait = false;\n        }\n    }\n}\n/**\n * 编辑器内预览播放时预加载\n * @param onFin 加载完成后回调\n * @param cmdParams 指令的自定义参数数据，根据用户设定值\n */\nfunction inEditorPlayPreload(onFin: Function, cmdParams: ThisCommandParams) {\n    // 当加载完成后调用回调\n    onFin.apply(this);\n}\n//------------------------------------------------------------------------------------------------------\n// 属性面板修改：当修改该指令的属性时，只会执行该指令对应的「指令源」的这些函数\n// 如A指令来自自定义指令32号，每次通过属性面板快速修改A指令的参数b时，则会执行32号指令的下面2个函数\n// [current used command] \n//------------------------------------------------------------------------------------------------------\n/**\n * 当属性面板中的属性修改前\n * @param cmd 对应的指令\n * @param cmdParams 对应指令的参数 \n * @param varName 修改的属性名\n */\nfunction onCommandAttributeBeforeChange(cmd: Command, cmdParams: ThisCommandParams, varName: string) {\n\n}\n/**\n * 当属性面板中的属性修改后\n * @param cmd 对应的指令\n * @param cmdParams 对应指令的参数 \n * @param varName 修改的属性名\n * @param newValue 修改后的值\n */\nfunction onCommandAttributeChange(cmd: Command, cmdParams: ThisCommandParams, varName: string, value: any) {\n\n}\n//------------------------------------------------------------------------------------------------------\n// 对象操作工具\n// [everyone used command type] 遍历每个执行过的自定义指令类别\n//------------------------------------------------------------------------------------------------------\n/**\n * 当操作工具移动对象时\n * @param realSelObjs 选中的对象\n */\nfunction imageLayerOnToolsChangePostion(realSelObjs: GameSprite[]): void {\n\n}\n/**\n * 当操作工具缩放时\n * @param realSelObjs 选中的对象\n */\nfunction imageLayerOnToolsChangeSize(realSelObjs: GameSprite[]) {\n\n}\n/**\n * 当操作工具旋转时\n * @param realSelObjs 选中的对象\n */\nfunction imageLayerOnToolsChangeRotation(realSelObjs: GameSprite[]) {\n\n}\n/**\n * 当操作工具开始操作时\n */\nfunction imageLayerOnToolsChangeStart(realSelObjs: GameSprite[]) {\n\n}\n/**\n * 当操作工具结束操作时\n */\nfunction imageLayerOnToolsChangeEnd(realSelObjs: GameSprite[]) {\n\n}\n/**\n * 当操作工具选中对象时\n */\nfunction imageLayerOnToolsSelectObject(realSelObjs: GameSprite[]) {\n\n}\n//------------------------------------------------------------------------------------------------------\n// 图像层相关 遍历每个已使用的通道，每个已使用的通道再遍历已使用的指令，调用下面的函数\n// [everyone passage] x [everyone used command type]\n//------------------------------------------------------------------------------------------------------\n/**\n * 清理函数：每次刷新前调用此函数进行清理\n * @param passageID 通道\n * @param passageData 通道储存的数据\n */\nfunction imageLayerPassageClear(passageID: number, passageData: VideoPassageData) {\n    // -- 该通道数据是当前指令的话\n    if (passageData.type == passageType) {\n\n    }\n}\n/**\n * 开始函数\n * @param passageID 通道\n * @param passageData 通道储存的数据\n */\nfunction imageLayerPassageStart(passageID: number, passageData: VideoPassageData) {\n    // -- 该通道数据是当前指令的话\n    if (passageData.type == passageType) {\n\n    }\n}",
+    "cmdPreviewJS": "var passageType = \"gcVideo\";\nfunction customCommandStart() {\n    trace(\"开始\");\n}\nfunction customCommandEnd() {\n    trace(\"结束\");\n}\nfunction runCommand(cmdParams, cmd, isPlayMode) {\n    var _this = this;\n    if (cmdParams.varType == 1) {\n        return;\n    }\n    var passageData = imageLayerPassageData[cmdParams.passageID];\n    previewWin.playUpdateWait = false;\n    if (isPlayMode) {\n        if (!passageData || passageData.type != passageType || !passageData.displayObject)\n            return;\n        previewWin.playUpdateWait = true;\n        var a_1 = passageData.displayObject;\n        if (isNaN(a_1.duration)) {\n            a_1.once(EventObject.LOADED, this, function () {\n                a_1.once(EventObject.COMPLETE, _this, function () {\n                    previewWin.playUpdateWait = false;\n                }, []);\n            });\n        }\n        else if (a_1.isPlaying) {\n            a_1.once(EventObject.COMPLETE, this, function () {\n                previewWin.playUpdateWait = false;\n            }, []);\n        }\n        else {\n            previewWin.playUpdateWait = false;\n        }\n    }\n}\nfunction inEditorPlayPreload(onFin, cmdParams) {\n    onFin.apply(this);\n}\nfunction onCommandAttributeBeforeChange(cmd, cmdParams, varName) {\n}\nfunction onCommandAttributeChange(cmd, cmdParams, varName, value) {\n}\nfunction imageLayerOnToolsChangePostion(realSelObjs) {\n}\nfunction imageLayerOnToolsChangeSize(realSelObjs) {\n}\nfunction imageLayerOnToolsChangeRotation(realSelObjs) {\n}\nfunction imageLayerOnToolsChangeStart(realSelObjs) {\n}\nfunction imageLayerOnToolsChangeEnd(realSelObjs) {\n}\nfunction imageLayerOnToolsSelectObject(realSelObjs) {\n}\nfunction imageLayerPassageClear(passageID, passageData) {\n    if (passageData.type == passageType) {\n    }\n}\nfunction imageLayerPassageStart(passageID, passageData) {\n    if (passageData.type == passageType) {\n    }\n}\n"
+}

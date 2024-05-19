@@ -1,0 +1,17 @@
+{
+    "compAutoOrderLimitHeight": 0,
+    "id": 4008,
+    "blockList": [
+        {
+            "name": "返回标题界面",
+            "blockAttrs": [],
+            "blockCondition": [],
+            "blockHeight": 35,
+            "autoOrder": true,
+            "cmdColor": "#59acff",
+            "hideBlockTitle": false,
+            "cmdIcon": "asset/image/command/eP_icon_BackTitle_blue.png"
+        }
+    ],
+    "isCustomPhraseDesc": false
+}

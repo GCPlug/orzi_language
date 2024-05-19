@@ -1,0 +1,248 @@
+{
+    "list": {
+        "1": [
+            null,
+            "标题界面",
+            "读档界面",
+            "对话菜单",
+            "历史回忆",
+            "存档界面",
+            "系统设置",
+            "文本输入界面",
+            "数字输入界面",
+            "密码输入界面",
+            "游戏结束界面",
+            "CG鉴赏",
+            "CG鉴赏大图",
+            "提示框",
+            "音乐鉴赏",
+            "通用背景"
+        ],
+        "2": [
+            null,
+            "档案Item",
+            "历史回忆Item",
+            "图片鉴赏Item",
+            "音乐鉴赏Item",
+            "",
+            "",
+            "",
+            "按钮选中效果样式1",
+            "按钮选中效果样式2",
+            "按钮选中效果样式3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "设置_Item1",
+            "设置_Item2",
+            ""
+        ],
+        "3": [
+            null,
+            "启动载入界面",
+            "新游戏载入界面",
+            "读档载入界面",
+            "场景载入界面",
+            "返回标题时过渡界面",
+            "打开界面载入"
+        ],
+        "4": [
+            null,
+            "我的界面示例",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "16": [
+            null,
+            ""
+        ]
+    },
+    "type": {
+        "1": "主要界面",
+        "2": "零碎部件",
+        "3": "过场界面",
+        "4": "自定义",
+        "16": "插件"
+    },
+    "typeTreeNode": {
+        "isDirectory": true,
+        "children": [
+            {
+                "isDirectory": true,
+                "children": [
+                    {
+                        "id": 1,
+                        "name": "标题界面",
+                        "children": []
+                    },
+                    {
+                        "id": 2,
+                        "name": "读档界面",
+                        "children": []
+                    },
+                    {
+                        "id": 3,
+                        "name": "对话菜单",
+                        "children": []
+                    },
+                    {
+                        "id": 4,
+                        "name": "历史回忆",
+                        "children": []
+                    },
+                    {
+                        "id": 5,
+                        "name": "存档界面",
+                        "children": [],
+                        "isOpen": true
+                    },
+                    {
+                        "id": 6,
+                        "name": "系统设置",
+                        "children": []
+                    },
+                    {
+                        "id": 7,
+                        "name": "文本输入界面",
+                        "children": []
+                    },
+                    {
+                        "id": 8,
+                        "name": "数字输入界面",
+                        "children": []
+                    },
+                    {
+                        "id": 9,
+                        "name": "密码输入界面",
+                        "children": []
+                    },
+                    {
+                        "id": 10,
+                        "name": "游戏结束界面",
+                        "children": []
+                    },
+                    {
+                        "id": 11,
+                        "name": "CG鉴赏",
+                        "children": [],
+                        "isOpen": true
+                    },
+                    {
+                        "id": 12,
+                        "name": "CG鉴赏大图",
+                        "children": []
+                    },
+                    {
+                        "id": 13,
+                        "name": "提示框",
+                        "children": []
+                    },
+                    {
+                        "id": 14,
+                        "children": [],
+                        "isOpen": true,
+                        "name": "音乐鉴赏"
+                    }
+                ],
+                "isOpen": true,
+                "name": "主要界面",
+                "id": null
+            },
+            {
+                "isDirectory": true,
+                "children": [
+                    {
+                        "id": 15,
+                        "children": [],
+                        "isOpen": true,
+                        "name": "通用背景"
+                    },
+                    {
+                        "id": 1001,
+                        "name": "档案Item",
+                        "children": []
+                    },
+                    {
+                        "id": 1002,
+                        "name": "历史回忆Item",
+                        "children": []
+                    },
+                    {
+                        "id": 1003,
+                        "name": "图片鉴赏Item",
+                        "children": []
+                    },
+                    {
+                        "id": 1004,
+                        "name": "音乐鉴赏Item",
+                        "children": []
+                    }
+                ],
+                "isOpen": true,
+                "name": "零碎部件",
+                "id": null
+            },
+            {
+                "isDirectory": true,
+                "children": [
+                    {
+                        "id": 2001,
+                        "name": "启动载入界面",
+                        "children": [],
+                        "isOpen": true
+                    },
+                    {
+                        "id": 2002,
+                        "name": "新游戏载入界面",
+                        "children": []
+                    },
+                    {
+                        "id": 2003,
+                        "name": "读档载入界面",
+                        "children": []
+                    },
+                    {
+                        "id": 2004,
+                        "name": "场景载入界面",
+                        "children": []
+                    },
+                    {
+                        "id": 2005,
+                        "name": "返回标题时过渡界面",
+                        "children": []
+                    },
+                    {
+                        "id": 2006,
+                        "name": "打开界面载入",
+                        "children": []
+                    }
+                ],
+                "isOpen": true,
+                "name": "过场界面",
+                "id": null
+            },
+            {
+                "isDirectory": true,
+                "children": [
+                    {
+                        "id": 3001,
+                        "name": "我的界面示例",
+                        "children": []
+                    }
+                ],
+                "isOpen": true,
+                "name": "我的界面",
+                "id": null
+            }
+        ],
+        "isOpen": true,
+        "name": "界面"
+    },
+    "dataShowMode": 0
+}

@@ -1,0 +1,234 @@
+{
+    "compAutoOrderLimitHeight": 0,
+    "id": 4,
+    "blockList": [
+        {
+            "name": "鼠标事件",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "42616483455_0.4639772550758601",
+                        "varName": "type",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 2,
+                            "compParam": {
+                                "items": "永久,执行一次,调用该命令时执行的事件完毕为止",
+                                "showIndex": false
+                            }
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "生命周期",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": false,
+                        "titleWidth": 70,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 15,
+                    "width": 300,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "42616489134_0.7730466615484748",
+                        "varName": "mouseType",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 2,
+                            "compParam": {
+                                "items": "鼠标左键按下,鼠标左键弹起,鼠标左键点击,鼠标左键双击,鼠标右键按下,鼠标右键弹起,鼠标右键点击,鼠标滚轮滚动,鼠标移动",
+                                "showIndex": false
+                            }
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "鼠标",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": false,
+                        "titleWidth": 70,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 45,
+                    "x": 15,
+                    "width": 300,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "42616655343_0.8231014458198378",
+                        "varName": "eventPage",
+                        "varType": 1,
+                        "compData": {
+                            "compType": 35,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "执行",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": false,
+                        "titleWidth": 70,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [],
+                    "y": 80,
+                    "x": 15,
+                    "width": 300,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "42875522865_0.10960228539938566",
+                        "varName": "recordListen",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "记录监听到指定的字符串变量中，以便可通过「取消鼠标事件」来取消该鼠标监听",
+                        "alias": "记录监听",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 320,
+                    "width": 83,
+                    "height": 32
+                }
+            ],
+            "blockCondition": [],
+            "blockHeight": 120,
+            "autoOrder": true,
+            "cmdColor": "#59acff",
+            "hideBlockTitle": true,
+            "cmdIcon": "asset/image/command/eP_icon_Mouse_blue.png"
+        },
+        {
+            "name": "记录监听",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "50865172217_0.9666233269585383",
+                        "varName": "recordListenVar",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 8,
+                            "compParam": {}
+                        },
+                        "defaultValue": "1",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "记录至",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 15,
+                    "width": 328,
+                    "height": 32
+                }
+            ],
+            "blockCondition": [
+                {
+                    "attrID": "42875522865_0.10960228539938566",
+                    "value": true,
+                    "isExpression": false,
+                    "jsCode": null,
+                    "tsCode": null,
+                    "codeName": null
+                }
+            ],
+            "blockHeight": 50,
+            "autoOrder": true,
+            "hideBlockTitle": false
+        }
+    ],
+    "isCustomPhraseDesc": true,
+    "customPhraseDescTS": "// 根据属性名称值编写自定义短语描述，如：\"我的短语是\"+attrs.xxx\n// 使用下拉框组件的变量attrs.xxx有对应的attrs.xxxItems的属性以便获得标签名集合\n// 获取自定义模块的数据名称的函数：getModuleDataName(moduleID:number,dataID:number):string;\n// 获取各种列表内数据名称的函数：getTypeDataListName(typeID: number, dataID: number):string;\n// -- typeID ：0-全局变量 1-全局开关 2-全局字符串 3-玩家变量 4-玩家开关 5-玩家字符串\n//           ：6-场景列表 7-场景对象模型列表 8-图块列表 9-行走图列表 10-行走图动作列表 11-立绘列表 12-立绘表情列表\n//           ：13-公共事件 14-对话框列表 15-动画列表 16-动画信号列表 17-界面列表 18-数据结构列表 19-自定义模块列表\n//           ：20-自定义命令列表 21-自定义行为列表 22-自动元件列表 23-行走图部件列表 24-立绘部件列表\nvar onlyInScene = attrs.onlyInScene ? \"场景上-\" : \"\";\nvar str = `「${attrs.typeItems[attrs.type]}」当「${onlyInScene}${attrs.mouseTypeItems[attrs.mouseType]}」时` + \"执行：【\" + getFeDataMessage()+\"】\";\nif (attrs.recordListen) {\n    str += ` 监听标识「${attrs.recordListenVar}-${getTypeDataListName(5, attrs.recordListenVar)}」`\n}\nstr;\nfunction getFeDataMessage() {\n    if (!attrs.eventPage) return \"无\";\n    var startIdx = attrs.eventPage.indexOf(String.fromCharCode(5));\n    var feName = attrs.eventPage.substr(0, startIdx);\n    return feName ? feName : \"未命名片段事件\";\n}",
+    "customPhraseDescJS": "var onlyInScene = attrs.onlyInScene ? \"场景上-\" : \"\";\nvar str = (\"\\u300C\" + attrs.typeItems[attrs.type] + \"\\u300D\\u5F53\\u300C\" + onlyInScene + attrs.mouseTypeItems[attrs.mouseType] + \"\\u300D\\u65F6\") + \"执行：【\" + getFeDataMessage() + \"】\";\nif (attrs.recordListen) {\n    str += \" \\u76D1\\u542C\\u6807\\u8BC6\\u300C\" + attrs.recordListenVar + \"-\" + getTypeDataListName(5, attrs.recordListenVar) + \"\\u300D\";\n}\nstr;\nfunction getFeDataMessage() {\n    if (!attrs.eventPage)\n        return \"无\";\n    var startIdx = attrs.eventPage.indexOf(String.fromCharCode(5));\n    var feName = attrs.eventPage.substr(0, startIdx);\n    return feName ? feName : \"未命名片段事件\";\n}\n",
+    "fastModifyAttribute": false
+}

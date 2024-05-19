@@ -1,0 +1,156 @@
+{
+    "compAutoOrderLimitHeight": 0,
+    "id": 1,
+    "blockList": [
+        {
+            "name": "预加载",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "42010122135_0.24848401267879283",
+                        "varName": "preloadAssets",
+                        "varType": 3,
+                        "compData": {
+                            "compType": 1003,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": true,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": true,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "预加载资源",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable": true
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 15,
+                    "width": 758,
+                    "height": 312
+                },
+                {
+                    "attr": {
+                        "id": "42275874449_0.28161324216600425",
+                        "varName": "isShowLoadingUI",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "可以指定一个加载界面进行绑定以便显示加载中的效果",
+                        "alias": "显示加载界面",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable": true
+                    },
+                    "attrConditions": [],
+                    "y": 325,
+                    "x": 15,
+                    "width": 200,
+                    "height": 32
+                }
+            ],
+            "blockCondition": [],
+            "blockHeight": 360,
+            "autoOrder": true,
+            "hideBlockTitle": true,
+            "cmdColor": "#ffa64c",
+            "cmdIcon": "asset/image/command/eP_icon_Loading_orange.png"
+        },
+        {
+            "name": "进度界面绑定",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "89373056551_0.6675733013666014",
+                        "varName": "bindingUI",
+                        "varType": 5,
+                        "compData": {
+                            "compType": 46,
+                            "compParam": {
+                                "typeMode": 1
+                            }
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "选择一个用于显示预加载进度的组件并确定赋值的属性名称，进度范围0-100（如滑块组件的值-value）",
+                        "alias": "加载组件",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 15,
+                    "width": 550,
+                    "height": 32
+                }
+            ],
+            "blockCondition": [
+                {
+                    "attrID": "42275874449_0.28161324216600425",
+                    "value": true,
+                    "isExpression": false,
+                    "jsCode": null,
+                    "tsCode": null,
+                    "codeName": null
+                }
+            ],
+            "blockHeight": 50,
+            "autoOrder": true,
+            "cmdColor": "#FFFFFF",
+            "hideBlockTitle": false
+        }
+    ],
+    "isCustomPhraseDesc": true,
+    "customPhraseDescTS": "// 根据属性名称值编写自定义短语描述，如：\"我的短语是\"+attrs.xxx\n// 使用下拉框组件的变量attrs.xxx有对应的attrs.xxxItems的属性以便获得标签名集合\n// 获取自定义模块的数据名称的函数：getModuleDataName(moduleID:number,dataID:number):string;\n// 获取各种列表内数据名称的函数：getTypeDataListName(typeID: number, dataID: number):string;\n// -- typeID ：0-全局变量 1-全局开关 2-全局字符串 3-玩家变量 4-玩家开关 5-玩家字符串\n//           ：6-场景列表 7-场景对象模型列表 8-图块列表 9-行走图列表 10-行走图动作列表 11-立绘列表 12-立绘表情列表\n//           ：13-公共事件 14-对话框列表 15-动画列表 16-动画信号列表 17-界面列表 18-数据结构列表 19-自定义模块列表\n//           ：20-自定义命令列表 21-自定义行为列表 22-自动元件列表 23-行走图部件列表 24-立绘部件列表\nvar typeFuncs = [-1, -1, 9, 11, 15, 17, 14];\nvar str = \"\";\n// 显示加载界面\nif (attrs.isShowLoadingUI && attrs.bindingUI) {\n    let uiInfo = '0--/--';\n    if (attrs.bindingUI.uiID > 0) {\n        let uiName = attrs.bindingUI.uiID + \"-\" + getTypeDataListName(17, attrs.bindingUI.uiID);\n        uiInfo = uiName + \".\" + attrs.bindingUI.compName + \".\" + attrs.bindingUI.varName;\n    }\n    str += `显示进度：「${uiInfo}」`;\n}\nelse {\n    str += \"静默加载\"\n}\n\nfor (var i = 0; i < attrs.preloadAssets.length; i++) {\n    var preloadAsset = attrs.preloadAssets[i];\n    var funcID = typeFuncs[preloadAsset.assetType];\n    var assetValue = preloadAsset[\"asset\" + preloadAsset.assetType];\n    if (funcID != -1) {\n        var assetName = `${assetValue}-${getTypeDataListName(funcID, assetValue)}`;\n    }\n    else {\n        assetName = assetValue;\n    }\n    if (preloadAsset.assetType < 7) {\n        str += \"\\n\" + preloadAsset.assetTypeItems[preloadAsset.assetType] + \":「\" + assetName + \"」\";\n    }\n    else {\n        str += \"\\n「\" + preloadAsset.assetTypeItems[preloadAsset.assetType] + \"」\";\n    }\n}\nstr;",
+    "customPhraseDescJS": "var typeFuncs = [-1, -1, 9, 11, 15, 17, 14];\nvar str = \"\";\nif (attrs.isShowLoadingUI && attrs.bindingUI) {\n    var uiInfo = '0--/--';\n    if (attrs.bindingUI.uiID > 0) {\n        var uiName = attrs.bindingUI.uiID + \"-\" + getTypeDataListName(17, attrs.bindingUI.uiID);\n        uiInfo = uiName + \".\" + attrs.bindingUI.compName + \".\" + attrs.bindingUI.varName;\n    }\n    str += \"\\u663E\\u793A\\u8FDB\\u5EA6\\uFF1A\\u300C\" + uiInfo + \"\\u300D\";\n}\nelse {\n    str += \"静默加载\";\n}\nfor (var i = 0; i < attrs.preloadAssets.length; i++) {\n    var preloadAsset = attrs.preloadAssets[i];\n    var funcID = typeFuncs[preloadAsset.assetType];\n    var assetValue = preloadAsset[\"asset\" + preloadAsset.assetType];\n    if (funcID != -1) {\n        var assetName = assetValue + \"-\" + getTypeDataListName(funcID, assetValue);\n    }\n    else {\n        assetName = assetValue;\n    }\n    if (preloadAsset.assetType < 7) {\n        str += \"\\n\" + preloadAsset.assetTypeItems[preloadAsset.assetType] + \":「\" + assetName + \"」\";\n    }\n    else {\n        str += \"\\n「\" + preloadAsset.assetTypeItems[preloadAsset.assetType] + \"」\";\n    }\n}\nstr;\n",
+    "compAutoOrder": false,
+    "fastModifyAttribute": false
+}

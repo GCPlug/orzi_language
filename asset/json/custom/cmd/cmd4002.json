@@ -1,0 +1,58 @@
+{
+    "compAutoOrderLimitHeight": 0,
+    "id": 4002,
+    "blockList": [
+        {
+            "name": "对话功能菜单",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "88234376447_0.4251404510074315",
+                        "varName": "displayDialogBtns",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 2,
+                            "compParam": {
+                                "items": "ON,OFF",
+                                "showIndex": false
+                            }
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "显示对话功能菜单",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 15,
+                    "width": 250,
+                    "height": 32
+                }
+            ],
+            "blockCondition": [],
+            "blockHeight": 50,
+            "autoOrder": true,
+            "cmdColor": "#59acff",
+            "hideBlockTitle": true,
+            "cmdIcon": "asset/image/command/eP_icon_SkipText_blue-1.png"
+        }
+    ],
+    "isCustomPhraseDesc": false
+}

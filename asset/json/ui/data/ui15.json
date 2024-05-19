@@ -1,0 +1,266 @@
+{
+    "root": {
+        "children": [
+            {
+                "id": "86845273372_0.019668939103383742",
+                "condition": [],
+                "type": "UIRoot",
+                "name": "溢出隐藏容器",
+                "x": 0,
+                "y": 0,
+                "width": 1600,
+                "height": 900,
+                "opacity": 1,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": true,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": false,
+                "showOnEditor": true,
+                "hasCommand": [],
+                "isOpen": true,
+                "enabledLimitView": true,
+                "scrollShowType": 0,
+                "hScrollBar": "asset/image/picture/control/hscroll_bar.png",
+                "hScrollBg": "asset/image/picture/control/hscroll_bg.png",
+                "vScrollBar": "asset/image/picture/control/vscroll_bar.png",
+                "vScrollBg": "asset/image/picture/control/vscroll_bg.png",
+                "scrollWidth": 16,
+                "slowmotionType": 2,
+                "enabledWheel": false,
+                "hScrollValue": 0,
+                "vScrollValue": 0,
+                "children": [
+                    {
+                        "id": "86845244630_0.4224582139424089",
+                        "condition": [],
+                        "type": "UIBitmap",
+                        "name": "白色底色",
+                        "x": 0,
+                        "y": 0,
+                        "width": 1600,
+                        "height": 900,
+                        "opacity": 1,
+                        "blend": 0,
+                        "rotation": 0,
+                        "show": true,
+                        "mouseEventEnabledData": true,
+                        "materialData": [
+                            {
+                                "materials": []
+                            }
+                        ],
+                        "mouseEventEnabledInEditor": true,
+                        "lock": false,
+                        "showOnEditor": true,
+                        "hasCommand": [],
+                        "isOpen": true,
+                        "image": "asset/image/picture/control/uibitmap.png",
+                        "grid9": "0,0,0,0,0",
+                        "flip": null,
+                        "isTile": false,
+                        "pivotType": 0
+                    },
+                    {
+                        "id": "86845244630_0.9482990182421536",
+                        "condition": [],
+                        "type": "UIBitmap",
+                        "name": "装饰背面底色1",
+                        "x": 270,
+                        "y": 0,
+                        "width": 1330,
+                        "height": 900,
+                        "opacity": 0.8,
+                        "blend": 0,
+                        "rotation": 0,
+                        "show": true,
+                        "mouseEventEnabledData": true,
+                        "materialData": [
+                            {
+                                "materials": []
+                            }
+                        ],
+                        "mouseEventEnabledInEditor": true,
+                        "lock": false,
+                        "showOnEditor": true,
+                        "hasCommand": [],
+                        "isOpen": true,
+                        "image": "asset/image/picture/ui/menu/settingBg4.png",
+                        "grid9": "0,0,0,641,1",
+                        "flip": null,
+                        "isTile": false,
+                        "pivotType": 0
+                    },
+                    {
+                        "id": "86845244630_0.9147018738079309",
+                        "condition": [],
+                        "type": "UIBitmap",
+                        "name": "装饰背面底色2",
+                        "x": 266,
+                        "y": 0,
+                        "width": 247,
+                        "height": 540,
+                        "opacity": 0.8,
+                        "blend": 0,
+                        "rotation": 0,
+                        "show": true,
+                        "mouseEventEnabledData": true,
+                        "materialData": [
+                            {
+                                "materials": []
+                            }
+                        ],
+                        "mouseEventEnabledInEditor": true,
+                        "lock": false,
+                        "showOnEditor": true,
+                        "hasCommand": [],
+                        "isOpen": true,
+                        "image": "asset/image/picture/ui/menu/settingBg3.png",
+                        "grid9": "0,0,0,0,0",
+                        "flip": null,
+                        "isTile": false,
+                        "pivotType": 0
+                    },
+                    {
+                        "id": "86845244630_0.6444222610780959",
+                        "condition": [],
+                        "type": "UIBitmap",
+                        "name": "读取存档底色",
+                        "x": -70,
+                        "y": 24,
+                        "width": 574,
+                        "height": 878,
+                        "opacity": 1,
+                        "blend": 0,
+                        "rotation": 0,
+                        "show": true,
+                        "mouseEventEnabledData": true,
+                        "materialData": [
+                            {
+                                "materials": []
+                            }
+                        ],
+                        "mouseEventEnabledInEditor": true,
+                        "lock": false,
+                        "showOnEditor": true,
+                        "hasCommand": [],
+                        "isOpen": true,
+                        "image": "asset/image/picture/ui/menu/settingBg6.png",
+                        "grid9": "0,0,0,0,0",
+                        "flip": null,
+                        "isTile": false,
+                        "pivotType": 0
+                    },
+                    {
+                        "id": "86845244630_0.961312618473241",
+                        "condition": [],
+                        "type": "UIBitmap",
+                        "name": "底部场景",
+                        "x": 0,
+                        "y": 0,
+                        "width": 1600,
+                        "height": 900,
+                        "opacity": 0.1,
+                        "blend": 0,
+                        "rotation": 0,
+                        "show": true,
+                        "mouseEventEnabledData": true,
+                        "materialData": [
+                            {
+                                "materials": [
+                                    {
+                                        "id": 3,
+                                        "strength": 2.01,
+                                        "enable": true,
+                                        "____timeInfo": {},
+                                        "useTime": false,
+                                        "time": ""
+                                    }
+                                ]
+                            }
+                        ],
+                        "mouseEventEnabledInEditor": false,
+                        "lock": false,
+                        "showOnEditor": true,
+                        "hasCommand": [],
+                        "isOpen": true,
+                        "image": "asset/image/picture/ui/menu/settingBg1.png",
+                        "grid9": "0,0,0,0,0",
+                        "flip": null,
+                        "isTile": false,
+                        "pivotType": 0
+                    },
+                    {
+                        "id": "86845244630_0.638162844695704",
+                        "condition": [],
+                        "type": "UIBitmap",
+                        "name": "装饰背面线条",
+                        "x": 0,
+                        "y": -1,
+                        "width": 1602,
+                        "height": 902,
+                        "opacity": 0.15,
+                        "blend": 0,
+                        "rotation": 0,
+                        "show": true,
+                        "mouseEventEnabledData": true,
+                        "materialData": [
+                            {
+                                "materials": []
+                            }
+                        ],
+                        "mouseEventEnabledInEditor": true,
+                        "lock": false,
+                        "showOnEditor": true,
+                        "hasCommand": [],
+                        "isOpen": true,
+                        "image": "asset/image/picture/ui/menu/settingBg2.png",
+                        "grid9": "0,0,0,0,0",
+                        "flip": null,
+                        "isTile": false,
+                        "pivotType": 0
+                    },
+                    {
+                        "id": "86845244630_0.7597277868691861",
+                        "condition": [],
+                        "type": "UIBitmap",
+                        "name": "装饰白色透明底色",
+                        "x": 0,
+                        "y": 0,
+                        "width": 1602,
+                        "height": 60,
+                        "opacity": 0.2,
+                        "blend": 0,
+                        "rotation": 0,
+                        "show": true,
+                        "mouseEventEnabledData": true,
+                        "materialData": [
+                            {
+                                "materials": []
+                            }
+                        ],
+                        "mouseEventEnabledInEditor": true,
+                        "lock": false,
+                        "showOnEditor": true,
+                        "hasCommand": [],
+                        "isOpen": true,
+                        "image": "asset/image/picture/control/uibitmap.png",
+                        "grid9": "0,0,0,0,0",
+                        "flip": null,
+                        "isTile": false,
+                        "pivotType": 0
+                    }
+                ]
+            }
+        ]
+    },
+    "id": 15,
+    "instanceClassName": "",
+    "hasRootCommand": []
+}

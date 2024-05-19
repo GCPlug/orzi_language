@@ -1,0 +1,138 @@
+{
+    "list": {
+        "1": [
+            null,
+            "黑发女生",
+            "白发女生",
+            "",
+            "",
+            "黑发女生-半身",
+            "白发女生-半身",
+            "",
+            "",
+            null
+        ],
+        "2": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "3": [
+            null,
+            null,
+            null
+        ],
+        "12": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        ]
+    },
+    "type": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "16": "插件"
+    },
+    "typeTreeNode": {
+        "isDirectory": true,
+        "children": [
+            {
+                "isDirectory": true,
+                "children": [
+                    {
+                        "id": 1,
+                        "name": "黑发女生",
+                        "children": []
+                    },
+                    {
+                        "id": 2,
+                        "name": "白发女生",
+                        "children": []
+                    },
+                    {
+                        "id": 3,
+                        "name": "黑发男生",
+                        "children": []
+                    },
+                    {
+                        "id": 4,
+                        "name": "黄发男生",
+                        "children": [],
+                        "isOpen": true
+                    }
+                ],
+                "isOpen": true,
+                "name": "全身立绘",
+                "id": null
+            },
+            {
+                "isDirectory": true,
+                "children": [
+                    {
+                        "id": 5,
+                        "children": [],
+                        "isOpen": true,
+                        "name": "黑发女生-半身"
+                    },
+                    {
+                        "id": 6,
+                        "children": [],
+                        "isOpen": true,
+                        "name": "白发女生-半身"
+                    },
+                    {
+                        "id": 7,
+                        "children": [],
+                        "isOpen": true,
+                        "name": "黑发男生-半身"
+                    },
+                    {
+                        "id": 8,
+                        "children": [],
+                        "isOpen": true,
+                        "name": "黄发男生-半身"
+                    }
+                ],
+                "isOpen": true,
+                "name": "半身立绘",
+                "id": null
+            }
+        ],
+        "isOpen": true,
+        "name": "立绘"
+    },
+    "dataShowMode": 0
+}

@@ -1,0 +1,17 @@
+{
+    "compAutoOrderLimitHeight": 0,
+    "id": 1003,
+    "blockList": [
+        {
+            "name": "跳过对话中途等待操作",
+            "blockAttrs": [],
+            "blockCondition": [],
+            "blockHeight": 35,
+            "autoOrder": true,
+            "hideBlockTitle": false,
+            "cmdColor": "#59acff",
+            "cmdIcon": "asset/image/command/eP_icon_SkipWait_blue.png"
+        }
+    ],
+    "isCustomPhraseDesc": false
+}

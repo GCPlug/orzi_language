@@ -1,0 +1,98 @@
+{
+    "root": {
+        "children": [
+            {
+                "id": "51047230898_0.14104951387821751",
+                "condition": [],
+                "type": "UIString",
+                "name": "music",
+                "x": 10,
+                "y": 0,
+                "width": 700,
+                "height": 40,
+                "opacity": 1,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": false,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": true,
+                "showOnEditor": true,
+                "hasCommand": [],
+                "isOpen": true,
+                "text": "名字",
+                "fontSize": 18,
+                "color": "#ffffff",
+                "bold": true,
+                "italic": false,
+                "smooth": false,
+                "align": 0,
+                "valign": 1,
+                "leading": 0,
+                "letterSpacing": 0,
+                "font": "Source_Han_Sans",
+                "wordWrap": true,
+                "overflow": 0,
+                "shadowEnabled": null,
+                "shadowColor": "#000000",
+                "shadowDx": 1,
+                "shadowDy": 1,
+                "stroke": 0,
+                "strokeColor": "#000000"
+            },
+            {
+                "id": "86512066860_0.8977906333593428",
+                "condition": [],
+                "type": "UIString",
+                "name": "musicSelected",
+                "x": 10,
+                "y": 0,
+                "width": 970,
+                "height": 40,
+                "opacity": 1,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": false,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": true,
+                "showOnEditor": true,
+                "hasCommand": [],
+                "isOpen": true,
+                "text": "名字",
+                "fontSize": 18,
+                "color": "#04eaff",
+                "bold": true,
+                "italic": false,
+                "smooth": false,
+                "align": 0,
+                "valign": 1,
+                "leading": 0,
+                "letterSpacing": 0,
+                "font": "Source_Han_Sans",
+                "wordWrap": true,
+                "overflow": 0,
+                "shadowEnabled": null,
+                "shadowColor": "#000000",
+                "shadowDx": 1,
+                "shadowDy": 1,
+                "stroke": 0,
+                "strokeColor": "#000000"
+            }
+        ]
+    },
+    "id": 1004,
+    "instanceClassName": "",
+    "hasRootCommand": [],
+    "lock": true
+}

@@ -1,0 +1,21 @@
+{
+    "preLayer": [
+        {
+            "varName": "avatar",
+            "type": 1,
+            "idList": [
+                1
+            ],
+            "isPreView": true,
+            "inEditorShowMode": 0,
+            "moduleID": 0
+        }
+    ],
+    "varAttributes": [],
+    "attrConditions": [],
+    "presetModules": [],
+    "serverInstanceClassName": "GameServerSceneObject",
+    "clientInstanceClassName": "GameClientSceneObject",
+    "id": 0,
+    "sysInitCommonModelData": true
+}

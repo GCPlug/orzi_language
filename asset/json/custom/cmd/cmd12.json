@@ -1,0 +1,716 @@
+{
+    "compAutoOrderLimitHeight": 0,
+    "id": 12,
+    "blockList": [
+        {
+            "name": "设置按钮焦点",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "43116786368_0.23178410671608396",
+                        "varName": "uiID",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 5,
+                            "compParam": {}
+                        },
+                        "defaultValue": "1",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "界面",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 50,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "43116889650_0.018569816468136047",
+                            "value": 0,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 10,
+                    "x": 15,
+                    "width": 255,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "43117015271_0.2081558338356242",
+                        "varName": "uiIDVarID",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 6,
+                            "compParam": {}
+                        },
+                        "defaultValue": "1",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "界面",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 50,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "43116889650_0.018569816468136047",
+                            "value": 1,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 12,
+                    "x": 15,
+                    "width": 255,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "43116889650_0.018569816468136047",
+                        "varName": "useVar",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 2,
+                            "compParam": {
+                                "items": "常量,变量",
+                                "showIndex": false
+                            }
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": false,
+                        "titleWidth": 0,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 275,
+                    "width": 107,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "43117085030_0.4123983693617099",
+                        "varName": "isAutoFocus",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "自动选择根容器的第一层子节点中的所有按钮组件作为按键焦点集",
+                        "alias": "自动焦点模式",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [],
+                    "y": 45,
+                    "x": 15,
+                    "width": 100,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "43117219727_0.38599060748568337",
+                        "varName": "isAddButton",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "额外追加按钮",
+                        "alias": "追加按钮",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 45,
+                    "x": 136,
+                    "width": 92,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "43117233536_0.8263175172410291",
+                        "varName": "isExcludeButton",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "可用于排除通过自动焦点模式获得的按钮",
+                        "alias": "排除按钮",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [],
+                    "y": 45,
+                    "x": 266,
+                    "width": 102,
+                    "height": 32
+                }
+            ],
+            "blockCondition": [],
+            "blockHeight": 85,
+            "autoOrder": true,
+            "hideBlockTitle": true,
+            "cmdColor": "#fff04c",
+            "cmdIcon": "asset/image/command/eP_icon_ButtonFocus_yellow.png"
+        },
+        {
+            "name": "追加的按钮组件",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "43117582494_0.7141452782530264",
+                        "varName": "addButtons",
+                        "varType": 1,
+                        "compData": {
+                            "compType": 9,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 3,
+                        "arrayMode": true,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "追加的按钮组件名称",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 15,
+                    "width": 430,
+                    "height": 220
+                }
+            ],
+            "blockCondition": [
+                {
+                    "attrID": "43117219727_0.38599060748568337",
+                    "value": true,
+                    "isExpression": false,
+                    "jsCode": null,
+                    "tsCode": null,
+                    "codeName": null
+                }
+            ],
+            "blockHeight": 240,
+            "autoOrder": true,
+            "cmdColor": "#FFFFFF",
+            "hideBlockTitle": false
+        },
+        {
+            "name": "排除的按钮",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "43117822585_0.22839272131408905",
+                        "varName": "excludeButtons",
+                        "varType": 1,
+                        "compData": {
+                            "compType": 9,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": true,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "排除的按钮组件名称",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 15,
+                    "width": 430,
+                    "height": 220
+                }
+            ],
+            "blockCondition": [
+                {
+                    "attrID": "43117233536_0.8263175172410291",
+                    "value": true,
+                    "isExpression": false,
+                    "jsCode": null,
+                    "tsCode": null,
+                    "codeName": null
+                }
+            ],
+            "blockHeight": 240,
+            "autoOrder": true,
+            "cmdColor": "#FFFFFF",
+            "hideBlockTitle": false
+        },
+        {
+            "name": "选中时皮肤设定",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "43122778565_0.23059761478282237",
+                        "varName": "selEffectUI",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 5,
+                            "compParam": {}
+                        },
+                        "defaultValue": "1008",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "系统根据选定的界面，创建其下的组件作为按钮焦点时的皮肤",
+                        "alias": "皮肤",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": false,
+                        "titleWidth": 50,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 15,
+                    "width": 256,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "43123033690_0.3095368621419785",
+                        "varName": "useFocusAnimation",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "1",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "使用系统预先设置好的焦点皮肤动画效果。",
+                        "alias": "使用焦点皮肤动画",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 285,
+                    "width": 137,
+                    "height": 32
+                }
+            ],
+            "blockCondition": [],
+            "blockHeight": 50,
+            "autoOrder": true,
+            "hideBlockTitle": false,
+            "cmdColor": "#FFFFFF"
+        },
+        {
+            "name": "快速设置焦点",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "57900429419_0.2996340688410737",
+                        "varName": "setSelectedIndex",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "设置焦点索引",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 15,
+                    "width": 102,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "57900444568_0.6265545155866081",
+                        "varName": "selectedIndex",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 0,
+                            "compParam": {}
+                        },
+                        "defaultValue": "0",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "索引",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "57900429419_0.2996340688410737",
+                            "value": true,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 10,
+                    "x": 161,
+                    "width": 101,
+                    "height": 32
+                }
+            ],
+            "blockCondition": [],
+            "blockHeight": 50,
+            "autoOrder": true,
+            "hideBlockTitle": false
+        },
+        {
+            "name": "快速退出焦点",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "43180391950_0.9875223532686348",
+                        "varName": "shortcutKeyExit",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "在通常情况下勾选该选项后，当系统按键Back被按下时会退出当前焦点\\n如果使用系统的退出焦点方式与你的界面逻辑有所冲突，请尝试自行通过按键/鼠标事件制作退出焦点的功能",
+                        "alias": "允许使用快捷键退出当前焦点",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 15,
+                    "width": 176,
+                    "height": 32
+                }
+            ],
+            "blockCondition": [],
+            "blockHeight": 50,
+            "autoOrder": true,
+            "hideBlockTitle": false,
+            "cmdColor": "#FFFFFF"
+        },
+        {
+            "name": "退出焦点设置",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "57603068825_0.9125473096569985",
+                        "varName": "whenExitBackLastFocus",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "当退出时选中上一次的焦点",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 15,
+                    "width": 175,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "57603068825_0.5581866770833697",
+                        "varName": "whenExitEvent",
+                        "varType": 1,
+                        "compData": {
+                            "compType": 35,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "执行事件",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 248,
+                    "width": 226,
+                    "height": 32
+                }
+            ],
+            "blockCondition": [
+                {
+                    "attrID": "43180391950_0.9875223532686348",
+                    "value": true,
+                    "isExpression": false,
+                    "jsCode": null,
+                    "tsCode": null,
+                    "codeName": null
+                }
+            ],
+            "blockHeight": 50,
+            "autoOrder": true,
+            "hideBlockTitle": true
+        }
+    ],
+    "isCustomPhraseDesc": true,
+    "customPhraseDescTS": "// 根据属性名称值编写自定义短语描述，如：\"我的短语是\"+attrs.xxx\n// 使用下拉框组件的变量attrs.xxx有对应的attrs.xxxItems的属性以便获得标签名集合\n// 获取自定义模块的数据名称的函数：getModuleDataName(moduleID:number,dataID:number):string;\n// 获取各种列表内数据名称的函数：getTypeDataListName(typeID: number, dataID: number):string;\n// -- typeID ：0-全局变量 1-全局开关 2-全局字符串 3-玩家变量 4-玩家开关 5-玩家字符串\n//           ：6-场景列表 7-场景对象模型列表 8-图块列表 9-行走图列表 10-行走图动作列表 11-立绘列表 12-立绘表情列表\n//           ：13-公共事件 14-对话框列表 15-动画列表 16-动画信号列表 17-界面列表 18-数据结构列表 19-自定义模块列表\n//           ：20-自定义命令列表 21-自定义行为列表 22-自动元件列表 23-行走图部件列表 24-立绘部件列表\nvar str = \"\";\nif (attrs.useVar == 1) {\n    str += `[${attrs.uiIDVarID}-${getTypeDataListName(3, attrs.uiIDVarID)}]`;\n}\nelse {\n    str += `[${attrs.uiID}-${getTypeDataListName(17, attrs.uiID)}]`;\n}\nif(attrs.isAutoFocus){\n    str += `「自动焦点模式」`;\n}\nif(attrs.isAddButton){\n    str += `「追加按钮${attrs.addButtons.length}个」`;\n}\nif(attrs.isExcludeButton){\n    str += `「排除按钮${attrs.excludeButtons.length}个」`;\n}\nif(attrs.isAddButton || attrs.isExcludeButton)str +=\"\\n\";\nstr += `[焦点皮肤:${attrs.selEffectUI}-${getTypeDataListName(17, attrs.selEffectUI)}]`;\nif(attrs.useFocusAnimation){\n    str += `「使用焦点皮肤动画」`;\n}\nif(attrs.shortcutKeyExit){\n    str += `「允许使用快捷键关闭该界面」`;\n}\nif(attrs.whenExitBackLastFocus){\n    str += `「当关闭时选中上一次的焦点」`;\n}\nstr;",
+    "customPhraseDescJS": "var str = \"\";\nif (attrs.useVar == 1) {\n    str += \"[\" + attrs.uiIDVarID + \"-\" + getTypeDataListName(3, attrs.uiIDVarID) + \"]\";\n}\nelse {\n    str += \"[\" + attrs.uiID + \"-\" + getTypeDataListName(17, attrs.uiID) + \"]\";\n}\nif (attrs.isAutoFocus) {\n    str += \"\\u300C\\u81EA\\u52A8\\u7126\\u70B9\\u6A21\\u5F0F\\u300D\";\n}\nif (attrs.isAddButton) {\n    str += \"\\u300C\\u8FFD\\u52A0\\u6309\\u94AE\" + attrs.addButtons.length + \"\\u4E2A\\u300D\";\n}\nif (attrs.isExcludeButton) {\n    str += \"\\u300C\\u6392\\u9664\\u6309\\u94AE\" + attrs.excludeButtons.length + \"\\u4E2A\\u300D\";\n}\nif (attrs.isAddButton || attrs.isExcludeButton)\n    str += \"\\n\";\nstr += \"[\\u7126\\u70B9\\u76AE\\u80A4:\" + attrs.selEffectUI + \"-\" + getTypeDataListName(17, attrs.selEffectUI) + \"]\";\nif (attrs.useFocusAnimation) {\n    str += \"\\u300C\\u4F7F\\u7528\\u7126\\u70B9\\u76AE\\u80A4\\u52A8\\u753B\\u300D\";\n}\nif (attrs.shortcutKeyExit) {\n    str += \"\\u300C\\u5141\\u8BB8\\u4F7F\\u7528\\u5FEB\\u6377\\u952E\\u5173\\u95ED\\u8BE5\\u754C\\u9762\\u300D\";\n}\nif (attrs.whenExitBackLastFocus) {\n    str += \"\\u300C\\u5F53\\u5173\\u95ED\\u65F6\\u9009\\u4E2D\\u4E0A\\u4E00\\u6B21\\u7684\\u7126\\u70B9\\u300D\";\n}\nstr;\n"
+}

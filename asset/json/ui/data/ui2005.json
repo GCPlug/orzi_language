@@ -1,0 +1,39 @@
+{
+    "root": {
+        "children": [
+            {
+                "id": "77067754311_0.014502003644233152",
+                "condition": [],
+                "type": "UIBitmap",
+                "name": "界面背景",
+                "x": 0,
+                "y": 0,
+                "width": 1600,
+                "height": 900,
+                "opacity": 1,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": true,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": false,
+                "showOnEditor": true,
+                "hasCommand": [],
+                "isOpen": true,
+                "image": "asset/image/picture/other/Black.png",
+                "grid9": "3,3,3,3,0",
+                "flip": null,
+                "isTile": false,
+                "pivotType": 0
+            }
+        ]
+    },
+    "id": 2005,
+    "hasRootCommand": [],
+    "lock": true
+}

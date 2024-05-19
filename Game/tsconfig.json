@@ -1,0 +1,62 @@
+{
+    "compilerOptions": {
+        "target": "ES5",
+        "declaration": true,
+        "declarationMap": true,
+        "sourceMap": true,
+        "skipLibCheck": true,
+        "composite": true,
+        "allowJs": true,
+        "lib": [
+            "DOM",
+            "ES2015"
+        ],
+        "outFile": "../out/Game.js"
+    },
+    "gamecreatorTSConfig": {
+        "filesAutoManage": true,
+        "referencesAutoManage": false
+    },
+    "files": [
+        "game/custom/CustomCommand1.ts",
+        "game/custom/CustomCommand2.ts",
+        "game/custom/CustomCondition.ts",
+        "game/custom/CustomGameNumber.ts",
+        "game/custom/CustomGameString.ts",
+        "game/project/controller/Controller.ts",
+        "game/project/controller/GamepadControl.ts",
+        "game/project/ui/manager/FocusButtonsManager.ts",
+        "game/project/ui/manager/GUI_Manager.ts",
+        "game/project/ui/manager/GUI_SaveFileManager.ts",
+        "game/project/ui/UIExtend.ts",
+        "game/project/utils/GCGamepad.ts",
+        "game/project/utils/ProjectUtils.ts",
+        "game/project/ProjectGame.ts",
+        "game/GameGate.ts",
+        "game/GCMain.ts",
+        "GCplug/orzi_language/Command.ts",
+        "GCplug/orzi_language/Data.ts",
+        "GCplug/orzi_language/Language.ts",
+        "system/CustomCommandParams.ts",
+        "system/CustomConditionParams.ts",
+        "system/CustomGameNumberParams.ts",
+        "system/CustomGameStringParams.ts",
+        "system/CustomModuleRuntime.ts",
+        "system/DataStructureRuntime.ts",
+        "system/GameAttributeRuntime.ts",
+        "system/MaterialRuntime.ts",
+        "game/project/ProjectPlayer.ts",
+        "system/SceneObjectModels.ts",
+        "system/UIRuntime.ts",
+        "game/project/ui/GUI_CG.ts",
+        "game/project/ui/GUI_DialogLog.ts",
+        "game/project/ui/GUI_Load.ts",
+        "game/project/ui/GUI_MusicAppreciation.ts",
+        "game/project/ui/GUI_Save.ts",
+        "game/project/ui/GUI_Setting.ts"
+    ],
+    "include": [
+        "../GameCreatorLib/**/*.d.ts",
+        "./GCplug/**/*.ts"
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "compAutoOrderLimitHeight": 0,
+    "id": 2001,
+    "blockList": [
+        {
+            "name": "未命名块",
+            "blockAttrs": [],
+            "blockCondition": [],
+            "blockHeight": 300,
+            "autoOrder": true,
+            "hideBlockTitle": false,
+            "cmdColor": "#FFFFFF"
+        }
+    ],
+    "isCustomPhraseDesc": false
+}

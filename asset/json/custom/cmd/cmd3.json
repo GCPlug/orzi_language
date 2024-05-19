@@ -1,0 +1,677 @@
+{
+    "compAutoOrderLimitHeight": 0,
+    "id": 3,
+    "blockList": [
+        {
+            "name": "按键事件",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "42612293498_0.480752728811654",
+                        "varName": "type",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 2,
+                            "compParam": {
+                                "items": "永久,执行一次,当前事件页执行完毕前",
+                                "showIndex": true
+                            }
+                        },
+                        "defaultValue": "0",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "生命周期",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 55,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 15,
+                    "width": 230,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "43114340537_0.8908961983320582",
+                        "varName": "isMulKey",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 2,
+                            "compParam": {
+                                "items": "单按键,多按键,系统按键（单）,系统按键（多）",
+                                "showIndex": false
+                            }
+                        },
+                        "defaultValue": "0",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": false,
+                        "titleWidth": 0,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 248,
+                    "width": 130,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "51692867073_0.6443640385999863",
+                        "varName": "recordListen",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "记录监听到指定的字符串变量中，以便可通过「取消按键事件」来取消该按键监听",
+                        "alias": "记录监听",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 382,
+                    "width": 83,
+                    "height": 32
+                }
+            ],
+            "blockCondition": [],
+            "blockHeight": 50,
+            "autoOrder": true,
+            "cmdColor": "#59acff",
+            "hideBlockTitle": true,
+            "cmdIcon": "asset/image/command/eP_icon_Keyboard_blue.png"
+        },
+        {
+            "name": "单按键模式",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "43114858493_0.09543223886965402",
+                        "varName": "key",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 27,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "按键",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": false,
+                        "titleWidth": 60,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "43114340537_0.8908961983320582",
+                            "value": 0,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 10,
+                    "x": 15,
+                    "width": 250,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "57883028646_0.2982354273966177",
+                        "varName": "systemKey",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 2,
+                            "compParam": {
+                                "items": "上,下,左,右,A,B,X,Y,START,BACK,L1,L2,R1,R2",
+                                "showIndex": false
+                            }
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "系统按键",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": false,
+                        "titleWidth": 60,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "43114340537_0.8908961983320582",
+                            "value": 2,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 10,
+                    "x": 15,
+                    "width": 250,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "43114858493_0.3171744305791697",
+                        "varName": "evType",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 2,
+                            "compParam": {
+                                "items": "按下时,弹起时,未能按下时",
+                                "showIndex": false
+                            }
+                        },
+                        "defaultValue": "0",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "类别",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": false,
+                        "titleWidth": 0,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 270,
+                    "width": 193,
+                    "height": 32
+                }
+            ],
+            "blockCondition": [
+                {
+                    "attrID": null,
+                    "value": null,
+                    "isExpression": true,
+                    "jsCode": "attrs.isMulKey == 0 || attrs.isMulKey == 2;\n",
+                    "tsCode": "// 根据属性名称值编写条件表达式（目前支持选择框和复选框），如： (attrs.xxx>5 && attrs.yyy<=10) || attrs.zzz==6;\r\nattrs.isMulKey == 0 || attrs.isMulKey == 2",
+                    "codeName": "单按键"
+                }
+            ],
+            "blockHeight": 50,
+            "autoOrder": true,
+            "cmdColor": "#FFFFFF",
+            "hideBlockTitle": false
+        },
+        {
+            "name": "多按键模式",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "43114873548_0.23450080376522942",
+                        "varName": "evType2",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 2,
+                            "compParam": {
+                                "items": "按下时,弹起时",
+                                "showIndex": false
+                            }
+                        },
+                        "defaultValue": "0",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "类别",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": false,
+                        "titleWidth": 0,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 267,
+                    "x": 15,
+                    "width": 120,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "43114653398_0.8881147052471978",
+                        "varName": "keys",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 27,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 3,
+                        "arrayMode": true,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "以下任何按键",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "43114340537_0.8908961983320582",
+                            "value": 1,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 10,
+                    "x": 15,
+                    "width": 373,
+                    "height": 252
+                },
+                {
+                    "attr": {
+                        "id": "57883649884_0.7324924597224358",
+                        "varName": "systemKeys",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 2,
+                            "compParam": {
+                                "items": "上,下,左,右,A,B,X,Y,START,BACK,L1,L2,R1,R2",
+                                "showIndex": false
+                            }
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 3,
+                        "arrayMode": true,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "以下任何系统按键",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "43114340537_0.8908961983320582",
+                            "value": 3,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 10,
+                    "x": 15,
+                    "width": 373,
+                    "height": 252
+                }
+            ],
+            "blockCondition": [
+                {
+                    "attrID": null,
+                    "value": null,
+                    "isExpression": true,
+                    "jsCode": "attrs.isMulKey == 1 || attrs.isMulKey == 3;\n",
+                    "tsCode": "// 根据属性名称值编写条件表达式（目前支持选择框和复选框），如： (attrs.xxx>5 && attrs.yyy<=10) || attrs.zzz==6;\r\nattrs.isMulKey == 1 || attrs.isMulKey == 3",
+                    "codeName": "多按键"
+                }
+            ],
+            "blockHeight": 300,
+            "autoOrder": true,
+            "cmdColor": "#FFFFFF"
+        },
+        {
+            "name": "组合键设定",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "43116389200_0.5571849278665717",
+                        "varName": "CTRL",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 15,
+                    "width": 58,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "43116402659_0.5042655137768752",
+                        "varName": "SHIFT",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 80,
+                    "width": 62,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "43116419156_0.632745028317159",
+                        "varName": "ALT",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 150,
+                    "width": 51,
+                    "height": 32
+                }
+            ],
+            "blockCondition": [
+                {
+                    "attrID": null,
+                    "value": null,
+                    "isExpression": true,
+                    "jsCode": "attrs.isMulKey <= 1;\n",
+                    "tsCode": "// 根据属性名称值编写条件表达式（目前支持选择框和复选框），如： (attrs.xxx>5 && attrs.yyy<=10) || attrs.zzz==6;\r\nattrs.isMulKey <= 1;",
+                    "codeName": "普通按键"
+                }
+            ],
+            "blockHeight": 50,
+            "autoOrder": true,
+            "cmdColor": "#FFFFFF"
+        },
+        {
+            "name": "执行的事件",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "42612627174_0.578758902506004",
+                        "varName": "eventPage",
+                        "varType": 1,
+                        "compData": {
+                            "compType": 35,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "执行",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": false,
+                        "titleWidth": 50,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 15,
+                    "width": 250,
+                    "height": 32
+                }
+            ],
+            "blockCondition": [],
+            "blockHeight": 50,
+            "autoOrder": true,
+            "cmdColor": "#FFFFFF",
+            "hideBlockTitle": false
+        },
+        {
+            "name": "记录监听",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "51693260347_0.8762158613518642",
+                        "varName": "recordListenVar",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 8,
+                            "compParam": {}
+                        },
+                        "defaultValue": "1",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "记录至",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 15,
+                    "width": 328,
+                    "height": 32
+                }
+            ],
+            "blockCondition": [
+                {
+                    "attrID": "51692867073_0.6443640385999863",
+                    "value": true,
+                    "isExpression": false,
+                    "jsCode": null,
+                    "tsCode": null,
+                    "codeName": null
+                }
+            ],
+            "blockHeight": 50,
+            "autoOrder": true,
+            "hideBlockTitle": false
+        }
+    ],
+    "isCustomPhraseDesc": true,
+    "customPhraseDescTS": "// 根据属性名称值编写自定义短语描述，如：\"我的短语是\"+attrs.xxx\n// 使用下拉框组件的变量attrs.xxx有对应的attrs.xxxItems的属性以便获得标签名集合\n// 获取自定义模块的数据名称的函数：getModuleDataName(moduleID:number,dataID:number):string;\n// 获取各种列表内数据名称的函数：getTypeDataListName(typeID: number, dataID: number):string;\n// -- typeID ：0-全局变量 1-全局开关 2-全局字符串 3-玩家变量 4-玩家开关 5-玩家字符串\n//           ：6-场景列表 7-场景对象模型列表 8-图块列表 9-行走图列表 10-行走图动作列表 11-立绘列表 12-立绘表情列表\n//           ：13-公共事件 14-对话框列表 15-动画列表 16-动画信号列表 17-界面列表 18-数据结构列表 19-自定义模块列表\n//           ：20-自定义命令列表 21-自定义行为列表 22-自动元件列表 23-行走图部件列表 24-立绘部件列表\nvar str = `「${attrs.typeItems[attrs.type]}」当`;\n// --- \nif (attrs.isMulKey <= 1) {\n    if (attrs.CTRL) str += \"CTRL+\"\n    if (attrs.SHIFT) str += \"SHIFT+\"\n    if (attrs.ALT) str += \"ALT+\"\n}\nstr += \"「\";\nvar evType = \"\";\nif (attrs.isMulKey == 1) {\n    var keyNames = [];\n    for (var i = 0; i < attrs.keys.length; i++) {\n        keyNames.push(getKeyName(attrs.keys[i]));\n    }\n    str += keyNames.join(\"/\");\n    evType = attrs.evType2Items[attrs.evType2];\n}\nelse if (attrs.isMulKey == 0) {\n    str += getKeyName(attrs.key);\n    evType = attrs.evTypeItems[attrs.evType];\n}\nelse if (attrs.isMulKey == 2) {\n    str += attrs.systemKeyItems[attrs.systemKey];\n    evType = attrs.evTypeItems[attrs.evType];\n}\nelse if (attrs.isMulKey == 3) {\n    var keyNames = [];\n    for (var i = 0; i < attrs.systemKeys.length; i++) {\n        var sysKey = attrs.systemKeys[i];\n        keyNames.push(attrs.systemKeyItems[sysKey]);\n    }\n    str += keyNames.join(\"/\");\n    evType = attrs.evType2Items[attrs.evType2];\n}\n\nstr += \"」\" + evType;\nstr += \"执行：【\" + getFeDataMessage() + \"】\";\nif (attrs.recordListen) {\n    str += ` 监听标识「${attrs.recordListenVar}-${getTypeDataListName(5, attrs.recordListenVar)}」`\n}\nstr;\n\nfunction getKeyName(keyCode: number) {\n    for (var k in Keyboard) {\n        if (Keyboard[k] == keyCode) {\n            return `${k}`;\n        }\n    }\n    return \"--/--\";\n}\nfunction getFeDataMessage() {\n    if (!attrs.eventPage) return \"无\";\n    var startIdx = attrs.eventPage.indexOf(String.fromCharCode(5));\n    var feName = attrs.eventPage.substr(0, startIdx);\n    return feName ? feName : \"未命名片段事件\";\n}",
+    "customPhraseDescJS": "var str = \"\\u300C\" + attrs.typeItems[attrs.type] + \"\\u300D\\u5F53\";\nif (attrs.isMulKey <= 1) {\n    if (attrs.CTRL)\n        str += \"CTRL+\";\n    if (attrs.SHIFT)\n        str += \"SHIFT+\";\n    if (attrs.ALT)\n        str += \"ALT+\";\n}\nstr += \"「\";\nvar evType = \"\";\nif (attrs.isMulKey == 1) {\n    var keyNames = [];\n    for (var i = 0; i < attrs.keys.length; i++) {\n        keyNames.push(getKeyName(attrs.keys[i]));\n    }\n    str += keyNames.join(\"/\");\n    evType = attrs.evType2Items[attrs.evType2];\n}\nelse if (attrs.isMulKey == 0) {\n    str += getKeyName(attrs.key);\n    evType = attrs.evTypeItems[attrs.evType];\n}\nelse if (attrs.isMulKey == 2) {\n    str += attrs.systemKeyItems[attrs.systemKey];\n    evType = attrs.evTypeItems[attrs.evType];\n}\nelse if (attrs.isMulKey == 3) {\n    var keyNames = [];\n    for (var i = 0; i < attrs.systemKeys.length; i++) {\n        var sysKey = attrs.systemKeys[i];\n        keyNames.push(attrs.systemKeyItems[sysKey]);\n    }\n    str += keyNames.join(\"/\");\n    evType = attrs.evType2Items[attrs.evType2];\n}\nstr += \"」\" + evType;\nstr += \"执行：【\" + getFeDataMessage() + \"】\";\nif (attrs.recordListen) {\n    str += \" \\u76D1\\u542C\\u6807\\u8BC6\\u300C\" + attrs.recordListenVar + \"-\" + getTypeDataListName(5, attrs.recordListenVar) + \"\\u300D\";\n}\nstr;\nfunction getKeyName(keyCode) {\n    for (var k in Keyboard) {\n        if (Keyboard[k] == keyCode) {\n            return \"\" + k;\n        }\n    }\n    return \"--/--\";\n}\nfunction getFeDataMessage() {\n    if (!attrs.eventPage)\n        return \"无\";\n    var startIdx = attrs.eventPage.indexOf(String.fromCharCode(5));\n    var feName = attrs.eventPage.substr(0, startIdx);\n    return feName ? feName : \"未命名片段事件\";\n}\n",
+    "compAutoOrder": false,
+    "fastModifyAttribute": false
+}

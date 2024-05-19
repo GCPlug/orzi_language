@@ -1,0 +1,18 @@
+{
+    "compAutoOrderLimitHeight": 0,
+    "id": 4011,
+    "blockList": [
+        {
+            "name": "关闭游戏窗口",
+            "blockAttrs": [],
+            "blockCondition": [],
+            "blockHeight": 35,
+            "autoOrder": true,
+            "hideBlockTitle": false,
+            "cmdColor": "#59acff",
+            "cmdIcon": "asset/image/command/eP_icon_CloseGame_blue.png"
+        }
+    ],
+    "isCustomPhraseDesc": false,
+    "fastModifyAttribute": false
+}

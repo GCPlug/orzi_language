@@ -1,0 +1,409 @@
+{
+    "root": {
+        "children": [
+            {
+                "id": "86847067665_0.9323281056678125",
+                "condition": [],
+                "type": "UIGUI",
+                "name": "通用背景",
+                "x": 0,
+                "y": 0,
+                "width": 0,
+                "height": 0,
+                "opacity": 1,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": true,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": false,
+                "showOnEditor": true,
+                "hasCommand": [],
+                "isOpen": true,
+                "guiID": 15,
+                "instanceClassName": ""
+            },
+            {
+                "id": "77057436688_0.25452359965027416",
+                "condition": [],
+                "type": "UIRoot",
+                "name": "GC鉴赏标题容器",
+                "x": 0,
+                "y": 42,
+                "width": 374,
+                "height": 64,
+                "opacity": 1,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": true,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": false,
+                "showOnEditor": true,
+                "hasCommand": [],
+                "isOpen": true,
+                "enabledLimitView": null,
+                "scrollShowType": 2,
+                "hScrollBar": "asset/image/picture/control/hscroll_bar.png",
+                "hScrollBg": "asset/image/picture/control/hscroll_bg.png",
+                "vScrollBar": "asset/image/picture/control/vscroll_bar.png",
+                "vScrollBg": "asset/image/picture/control/vscroll_bg.png",
+                "scrollWidth": 16,
+                "slowmotionType": 0,
+                "enabledWheel": true,
+                "hScrollValue": 0,
+                "vScrollValue": 0,
+                "children": [
+                    {
+                        "id": "77057436688_0.7745555872662666",
+                        "condition": [],
+                        "type": "UIBitmap",
+                        "name": "底色",
+                        "x": 0,
+                        "y": 0,
+                        "width": 374,
+                        "height": 64,
+                        "opacity": 0.9,
+                        "blend": 0,
+                        "rotation": 0,
+                        "show": true,
+                        "mouseEventEnabledData": true,
+                        "materialData": [
+                            {
+                                "materials": []
+                            }
+                        ],
+                        "mouseEventEnabledInEditor": true,
+                        "lock": false,
+                        "showOnEditor": true,
+                        "hasCommand": [],
+                        "isOpen": true,
+                        "image": "asset/image/picture/ui/menu/settingBg5.png",
+                        "grid9": "0,0,0,0,0",
+                        "flip": null,
+                        "isTile": false,
+                        "pivotType": 0
+                    },
+                    {
+                        "id": "77057436688_0.49604963958776316",
+                        "condition": [],
+                        "type": "UIBitmap",
+                        "name": "装饰图案",
+                        "x": 41,
+                        "y": 9,
+                        "width": 151,
+                        "height": 50,
+                        "opacity": 1,
+                        "blend": 0,
+                        "rotation": 0,
+                        "show": true,
+                        "mouseEventEnabledData": true,
+                        "materialData": [
+                            {
+                                "materials": []
+                            }
+                        ],
+                        "mouseEventEnabledInEditor": true,
+                        "lock": false,
+                        "showOnEditor": true,
+                        "hasCommand": [],
+                        "isOpen": true,
+                        "image": "asset/image/picture/ui/title/element_4.png",
+                        "grid9": "0,0,0,0,0",
+                        "flip": null,
+                        "isTile": false,
+                        "pivotType": 0
+                    },
+                    {
+                        "id": "77057436689_0.23960000550582694",
+                        "condition": [],
+                        "type": "UIString",
+                        "name": "CG鉴赏标题",
+                        "x": 93,
+                        "y": 18,
+                        "width": 206,
+                        "height": 30,
+                        "opacity": 1,
+                        "blend": 0,
+                        "rotation": 0,
+                        "show": true,
+                        "mouseEventEnabledData": false,
+                        "materialData": [
+                            {
+                                "materials": []
+                            }
+                        ],
+                        "mouseEventEnabledInEditor": true,
+                        "lock": false,
+                        "showOnEditor": true,
+                        "hasCommand": [],
+                        "isOpen": true,
+                        "text": "CG鉴赏",
+                        "fontSize": 30,
+                        "color": "#ffffff",
+                        "bold": true,
+                        "italic": false,
+                        "smooth": true,
+                        "align": 0,
+                        "valign": 0,
+                        "leading": 0,
+                        "letterSpacing": 2,
+                        "font": "Source_Han_Sans",
+                        "wordWrap": true,
+                        "overflow": 0,
+                        "shadowEnabled": null,
+                        "shadowColor": "#000000",
+                        "shadowDx": 1,
+                        "shadowDy": 1,
+                        "stroke": 3,
+                        "strokeColor": "#333333",
+                        "onChangeFragEvent": null
+                    }
+                ]
+            },
+            {
+                "id": "86847330552_0.741948205856644",
+                "condition": [],
+                "type": "UIBitmap",
+                "name": "界面背景框",
+                "x": 60,
+                "y": 145,
+                "width": 1480,
+                "height": 650,
+                "opacity": 0.5,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": true,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": false,
+                "showOnEditor": true,
+                "hasCommand": [],
+                "isOpen": true,
+                "image": "asset/image/picture/ui/menu/settingBg7.png",
+                "grid9": "50,50,50,50,0",
+                "flip": null,
+                "isTile": false,
+                "pivotType": 0
+            },
+            {
+                "id": "86847330552_0.7575524174750219",
+                "condition": [],
+                "type": "UIBitmap",
+                "name": "档案背景",
+                "x": 75,
+                "y": 157,
+                "width": 1464,
+                "height": 632,
+                "opacity": 1,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": true,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": false,
+                "showOnEditor": true,
+                "hasCommand": [],
+                "isOpen": true,
+                "image": "asset/image/picture/control/uilistover.png",
+                "grid9": "50,50,50,50,0",
+                "flip": null,
+                "isTile": false,
+                "pivotType": 0
+            },
+            {
+                "id": "77057489414_0.5413245254296335",
+                "condition": [],
+                "type": "UIList",
+                "name": "cgList",
+                "x": 105,
+                "y": 185,
+                "width": 1410,
+                "height": 570,
+                "opacity": 1,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": true,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": true,
+                "showOnEditor": true,
+                "hasCommand": [],
+                "isOpen": true,
+                "itemModelGUI": 1003,
+                "previewSize": 13,
+                "selectEnable": true,
+                "repeatX": 4,
+                "itemWidth": 314,
+                "itemHeight": 197,
+                "spaceX": 39,
+                "spaceY": 25,
+                "scrollShowType": 2,
+                "hScrollBar": "asset/image/picture/control/hscroll_bar.png",
+                "hScrollBg": "asset/image/picture/control/hscroll_bg.png",
+                "vScrollBar": "asset/image/picture/control/vscroll_bar.png",
+                "vScrollBg": "asset/image/picture/control/vscroll_bg.png",
+                "scrollWidth": 10,
+                "selectImageURL": "asset/image/picture/control/uicombobox.png",
+                "selectImageGrid9": "10,10,10,20,0",
+                "selectedImageAlpha": 1,
+                "selectedImageOnTop": true,
+                "overImageURL": "",
+                "overImageGrid9": "0,0,0,0,0",
+                "overImageAlpha": 0,
+                "overImageOnTop": true,
+                "overSelectMode": true,
+                "slowmotionType": 0
+            },
+            {
+                "id": "86847368184_0.9238976927740452",
+                "condition": [],
+                "type": "UIRoot",
+                "name": "关闭界面容器",
+                "x": 1425,
+                "y": 825,
+                "width": 164,
+                "height": 41,
+                "opacity": 1,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": true,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": false,
+                "showOnEditor": true,
+                "hasCommand": [
+                    true
+                ],
+                "isOpen": true,
+                "enabledLimitView": null,
+                "scrollShowType": 2,
+                "hScrollBar": "asset/image/picture/control/hscroll_bar.png",
+                "hScrollBg": "asset/image/picture/control/hscroll_bg.png",
+                "vScrollBar": "asset/image/picture/control/vscroll_bar.png",
+                "vScrollBg": "asset/image/picture/control/vscroll_bg.png",
+                "scrollWidth": 16,
+                "slowmotionType": 0,
+                "enabledWheel": true,
+                "hScrollValue": 0,
+                "vScrollValue": 0,
+                "children": [
+                    {
+                        "id": "86847368184_0.03940906231037333",
+                        "condition": [],
+                        "type": "UIBitmap",
+                        "name": "图案",
+                        "x": 0,
+                        "y": -2,
+                        "width": 46,
+                        "height": 46,
+                        "opacity": 1,
+                        "blend": 0,
+                        "rotation": 0,
+                        "show": true,
+                        "mouseEventEnabledData": true,
+                        "materialData": [
+                            {
+                                "materials": []
+                            }
+                        ],
+                        "mouseEventEnabledInEditor": true,
+                        "lock": false,
+                        "showOnEditor": true,
+                        "hasCommand": [],
+                        "isOpen": true,
+                        "image": "asset/image/picture/ui/menu/close.png",
+                        "grid9": "0,0,0,0,0",
+                        "flip": null,
+                        "isTile": false,
+                        "pivotType": 0
+                    },
+                    {
+                        "id": "86847368185_0.7313259084083266",
+                        "condition": [],
+                        "type": "UIString",
+                        "name": "关闭",
+                        "x": 55,
+                        "y": 6,
+                        "width": 106,
+                        "height": 30,
+                        "opacity": 1,
+                        "blend": 0,
+                        "rotation": 0,
+                        "show": true,
+                        "mouseEventEnabledData": false,
+                        "materialData": [
+                            {
+                                "materials": []
+                            }
+                        ],
+                        "mouseEventEnabledInEditor": true,
+                        "lock": false,
+                        "showOnEditor": true,
+                        "hasCommand": [],
+                        "isOpen": true,
+                        "text": "关闭",
+                        "fontSize": 32,
+                        "color": "#ffffff",
+                        "bold": true,
+                        "italic": false,
+                        "smooth": true,
+                        "align": 0,
+                        "valign": 0,
+                        "leading": 0,
+                        "letterSpacing": 2,
+                        "font": "Source_Han_Sans",
+                        "wordWrap": true,
+                        "overflow": 0,
+                        "shadowEnabled": null,
+                        "shadowColor": "#000000",
+                        "shadowDx": 1,
+                        "shadowDy": 1,
+                        "stroke": 3,
+                        "strokeColor": "#333333",
+                        "onChangeFragEvent": null
+                    }
+                ]
+            }
+        ]
+    },
+    "id": 11,
+    "instanceClassName": "GUI_CG",
+    "hasRootCommand": [
+        null,
+        null,
+        null,
+        true
+    ],
+    "lock": true
+}
