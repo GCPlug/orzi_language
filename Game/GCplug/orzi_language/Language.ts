@@ -59,9 +59,10 @@ module Orzi_Tools {
             /** 重写UI显示 */
             let _gameUIShowTemp = GameUI.show;
             GameUI.show = function (uiID, ...args) {
+                let ui = _gameUIShowTemp.apply(this, arguments);
                 // 显示前先刷新语言
                 Orzi_Tools.Language.refreshShowLanguage();
-                return _gameUIShowTemp.apply(this, arguments);
+                return ui;
             }
 
             this.__isInit = true;
@@ -122,9 +123,13 @@ module Orzi_Tools {
                 const components = GameUI.getAllCompChildren(ui, true);
                 for (const compID in components.keyValue) {
                     const component = components.keyValue[compID];
-                    if (component.type === 'UIList') {
+                    if (component.type === 'UITabBox') {
                         if ((component.__orzi_language_temp__ !== component.items) && (Orzi_Tools.Language.getText(component.__orzi_language_temp__) !== Orzi_Tools.Language.getText(component.items))) component.__orzi_language_temp__ = component.items;
                         if (component.items !== Orzi_Tools.Language.getText(component.__orzi_language_temp__)) component.items = Orzi_Tools.Language.getText(component.__orzi_language_temp__);
+                    }
+                    if (component.type === 'UIButton') {
+                        if ((component.__orzi_language_temp__ !== component.label) && (Orzi_Tools.Language.getText(component.__orzi_language_temp__) !== Orzi_Tools.Language.getText(component.label))) component.__orzi_language_temp__ = component.label;
+                        if (component.label !== Orzi_Tools.Language.getText(component.__orzi_language_temp__)) component.label = Orzi_Tools.Language.getText(component.__orzi_language_temp__);
                     }
                     if (component.type === 'UIString') {
                         if ((component.__orzi_language_temp__ !== component.text) && (Orzi_Tools.Language.getText(component.__orzi_language_temp__) !== Orzi_Tools.Language.getText(component.text))) component.__orzi_language_temp__ = component.text;
