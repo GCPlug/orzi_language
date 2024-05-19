@@ -23,7 +23,7 @@ module Orzi_Tools {
         /** 当前语言 */
         local: string;
         /** 语言包 */
-        private packages: Record<string, Record<string, string>> = {};
+        packages: Record<string, Record<string, string>> = {};
 
         constructor() {
             if ((Config as any).language === 1) this.local = 'zhTW';
@@ -46,14 +46,14 @@ module Orzi_Tools {
             (GameDialog as any).showDialog = function (dialogID, head, name, speed, comicSceneObjectIndex, msg, submitCallback, audio, exp, nameColor, changeData, dialogMaterialEnabled) {
                 if (name) name = Language.getText(name);
                 if (msg) msg = Language.getText(msg);
-                _showDialogTemp.apply(this, arguments);
+                return _showDialogTemp.apply(this, arguments);
             };
 
             (GameDialog as any).showOption = function (dialogID, options, isShowOptionWithLastDialog, defaultIndex, cancelIndex, hideIndexs) {
                 for (let i = 0; i < options.length; i++) {
                     options[i] = Language.getText(options[i]);
                 }
-                _showOptionTemp.apply(this, arguments);
+                return _showOptionTemp.apply(this, arguments);
             };
 
             this.__isInit = true;
@@ -95,10 +95,10 @@ module Orzi_Tools {
             if (Language.instance.packages[cl] === undefined) cl = (WorldData.orzi_language_packages && WorldData.orzi_language_packages.length) ? WorldData.orzi_language_packages[0] : 'zhCN';
             Language.instance.local = cl;
             (window as any).__orzi_language_local__ = cl;
-            EventUtils.happen(Orzi_Tools.Language.instance, Orzi_Tools.Language.EVENT_ON_CHANGE_LANGUAGE);
+            EventUtils.happen(Orzi_Tools.Language.instance.packages, Orzi_Tools.Language.EVENT_ON_CHANGE_LANGUAGE);
             if (os.platform === 2) {
                 FileUtils.save(cl, this.path + '_local.txt', Callback.New(() => {
-                    console.log('orzi_language_local is saved!', cl);
+                    trace('orzi_language_local is saved!', cl);
                 }, this), true);
             } else {
                 LocalStorage.setItem('__orzi_language_local__', cl);
@@ -112,38 +112,20 @@ module Orzi_Tools {
 
         /** 重置语言包 */
         static resetPackages() {
-            if (os.platform === 2) {
-                FileUtils.getDirectoryListing(this.path, Callback.New((list: Orzi_Tools.Language.FileObjectType[]) => {
-                    // Language.instance.packages = {zhCN: {}, en: {}}; // 重置
-                    Language.instance.packages = {}; // 重置
-                    WorldData.orzi_language_packages.forEach(v => {
-                        Language.instance.packages[v] = {};
-                    })
-                    if (list) {
-                        list.forEach((v) => {
-                            if (v.fileName.indexOf('.json') != -1) {
-                                let name = v.fileName.split('.')[0];
-                                AssetManager.loadJson(v.localPath, Callback.New((data) => {
-                                    if (data) Language.instance.packages[name] = data;
-                                }, this))
-                            }
-                        })
+            Language.instance.packages = {}; // 重置
+            WorldData.orzi_language_packages.forEach(v => {
+                Language.instance.packages[v] = {};
+                FileUtils.exists(this.path + v + '.json', Callback.New((is_exit) => {
+                    if (is_exit) {
+                        AssetManager.loadJson(this.path + v + '.json', Callback.New((data) => {
+                            if (data) Language.instance.packages[v] = data;
+                        }, this))
                     }
                 }, this))
-            } else {
-                Language.instance.packages = {}; // 重置
-                WorldData.orzi_language_packages.forEach(v => {
-                    FileUtils.exists(this.path + v + '.json', Callback.New((is_exit) => {
-                        if (is_exit) {
-                            AssetManager.loadJson(this.path + v + '.json', Callback.New((data) => {
-                                if (data) Language.instance.packages[v] = data;
-                            }, this))
-                        }
-                    }, this))
-                })
-            }
+            })
         }
 
+        /** 获取所有文本 */
         static getAllText(json: any, strs: Set<string>) {
             if (Array.isArray(json)) {
                 for (let i = 0; i < json.length; i++) {
@@ -170,18 +152,79 @@ module Orzi_Tools {
             return str.replace(/_ol\[\[([\s\S]*?)\]\]ol_/g, '$1');
         }
 
-        static save(_arr: Set<string>) {
-            for (const c in Language.instance.packages) {
-                let _data = Language.instance.packages[c];
-                _arr.forEach(v => {
-                    if (!_data[v]) {
-                        _data[v] = v;
+        /** 备份 */
+        static backup() {
+            return new Promise((resolve, reject) => {
+                let _num = 0;
+                for (const c in Language.instance.packages) _num ++;
+                for (const c in Language.instance.packages) {
+                    FileUtils.exists(Language.path + c + '.json', Callback.New(is_exit => {
+                        if (is_exit) {
+                            let _date = new Date();
+                            let _time = [_date.getFullYear(), _date.getMonth()+1, _date.getDate(), _date.getHours(), _date.getMinutes(), _date.getSeconds()].join('_');
+                            FileUtils.cloneFile(Language.path + c + '.json', Language.path + c + '_' + _time + '.json', Callback.New(() => {
+                                trace(`orzi_language:${c} is backuped! Save time: ${_time}`);
+                                _num--;
+                                if (_num <= 0) resolve(true);
+                            }, this))
+                        }
+                        _num--;
+                        if (_num <= 0) resolve(true);
+                    }, this))
+                }
+            });
+        }
+
+        /** 保存 */
+        static save(_arr: Set<string>, type: number = 0) {
+            this.backup().then(() => {
+                for (const c in Language.instance.packages) {
+                    let _data = Language.instance.packages[c];
+                    _arr.forEach(v => {
+                        if (!_data[v]) {
+                            _data[v] = v;
+                        }
+                    })
+                    if (type === 1) {
+                        // 保存为 json
+                        FileUtils.save(_data, Language.path + c + '.json', Callback.New(() => {
+                            trace(`orzi_language:${c} is saved!`)
+                        }, this), true)
+                    } else {
+                        // 保存为 csv
+                        let _text = '';
+                        for (const k in _data) {
+                            _text += k + "\t" + _data[k] + "\n";
+                        }
+                        FileUtils.save(_text, Language.path + c + '.csv', Callback.New(() => {
+                            trace(`orzi_language:${c} is saved!`)
+                        }, this), true)
                     }
+                }
+            })
+        }
+
+        /**
+         * 获取所有文件文本并保存
+         * @param type 0 为 csv， 1 为 json
+         */
+        static getAllTextAndSave(type: number = 0) {
+            type = 1;
+            let _arr: Set<string> = new Set();
+            FileUtils.getAllChildFiles('asset/json', Callback.New((list: Orzi_Tools.Language.FileObjectType[]) => {
+                if (!list) return;
+                let _num = list.length;
+                list.forEach((v) => {
+                    if (v.fileName.indexOf('.json') !== -1) {
+                        AssetManager.loadJson(v.localPath, Callback.New((data) => {
+                            if (data) Orzi_Tools.Language.getAllText(data, _arr);
+                            _num--;
+                            if (_num <= 0) Orzi_Tools.Language.save(_arr, type);
+                        }, this))
+                    } else _num--;
                 })
-                FileUtils.save(_data, Language.path + c + '.json', Callback.New(() => {
-                    trace(`orzi_language:${c} is saved!`)
-                }, this), true)
-            }
+                if (_num <= 0) Orzi_Tools.Language.save(_arr, type);
+            }, this))
         }
 
     }
@@ -190,50 +233,31 @@ module Orzi_Tools {
 
 EventUtils.addEventListenerFunction(ClientWorld, ClientWorld.EVENT_INITED, () => {
     Orzi_Tools.Language.init();
-    console.log('orzi_language is running!', WorldData.orzi_language_packages, Orzi_Tools.Language.instance.local);
-    if (os.platform === 2) {
-        let _timer = setTimeout(() => {
+    trace('orzi_language is running!', WorldData.orzi_language_packages, Orzi_Tools.Language.instance.local);
+    
+    // 加载顺序问题，延迟一下
+    let _timer = setTimeout(() => {
+        if (os.platform === 2) {
             AssetManager.loadText(Orzi_Tools.Language.path + '_local.txt', Callback.New((data) => {
                 if (data) Orzi_Tools.Language.setLanguage(JSON.parse(data));
             }, this));
-            clearTimeout(_timer);
-        }, 300);
-    } else {
-        // 网页端加载问题，延迟一下
-        let _timer = setTimeout(() => {
+        } else {
             let _local = LocalStorage.getItem('__orzi_language_local__');
             if (_local) Orzi_Tools.Language.setLanguage(_local);
-            clearTimeout(_timer);
-        }, 300);
-    }
-    if (Config.EDIT_MODE || !Config.RELEASE_GAME) {
-        let _arr: Set<string> = new Set();
-        FileUtils.getAllChildFiles('asset/json', Callback.New((list: Orzi_Tools.Language.FileObjectType[]) => {
-            if (!list) return;
-            let _num = list.length;
-            list.forEach((v) => {
-                if (v.fileName.indexOf('.json') !== -1) {
-                    AssetManager.loadJson(v.localPath, Callback.New((data) => {
-                        if (data) Orzi_Tools.Language.getAllText(data, _arr);
-                        _num--;
-                        if (_num <= 0) Orzi_Tools.Language.save(_arr);
-                    }, this))
-                } else _num--;
-            })
-            if (_num <= 0) Orzi_Tools.Language.save(_arr);
-        }, this))
-    }
+        }
+        clearTimeout(_timer);
+    }, 300);
 
     /** 重写监听 */
     Object.defineProperty(UIString.prototype, "text", {
         get: function () {
             if (!this.__orzi_language_watching__) {
-                Orzi_Tools.Language.__watcher.push(() => {
+                this.__orzi_language_watching__ = true;
+                EventUtils.addEventListenerFunction(Orzi_Tools.Language.instance.packages, Orzi_Tools.Language.EVENT_ON_CHANGE_LANGUAGE, () => {
                     if (this._tf && GameUtils.getVarID(this.text) === 0) {
                         this.text = Orzi_Tools.Language.getText(this.__orzi_language_temp__);
                     } else this.text = this.__orzi_language_temp__;
-                });
-                this.__orzi_language_watching__ = true;
+                }, this)
             }
             return this._tf.text;
         },
@@ -296,10 +320,10 @@ EventUtils.addEventListenerFunction(ClientWorld, ClientWorld.EVENT_INITED, () =>
     Object.defineProperty(UITabBox.prototype, "items", {
         get: function () {
             if (!this.__orzi_language_watching__) {
-                Orzi_Tools.Language.__watcher.push(() => {
-                    this.items = Orzi_Tools.Language.getText(this.__orzi_language_temp__);
-                });
                 this.__orzi_language_watching__ = true;
+                EventUtils.addEventListenerFunction(Orzi_Tools.Language.instance.packages, Orzi_Tools.Language.EVENT_ON_CHANGE_LANGUAGE, () => {
+                    this.items = Orzi_Tools.Language.getText(this.__orzi_language_temp__);
+                }, this)
             }
             return this._items;
         },

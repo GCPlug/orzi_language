@@ -3,7 +3,7 @@
  */
 module CommandExecute {
     /**
-     * 自定义命令执行 1表示对应1号命令
+     * 切换语言
      * @param commandPage 事件页
      * @param cmd 当前的事件命令
      * @param trigger 触发器
@@ -13,5 +13,15 @@ module CommandExecute {
      */
     export function customCommand_15012(commandPage: CommandPage, cmd: Command, trigger: CommandTrigger, triggerPlayer: ClientPlayer, playerInput: any[], p: CustomCommandParams_15012): void {
         Orzi_Tools.Language.setLanguage(p.local as any);
+    }
+
+    /** 获取当前所有文本并保存 */
+    export function customCommand_15017(commandPage: CommandPage, cmd: Command, trigger: CommandTrigger, triggerPlayer: ClientPlayer, playerInput: any[], p: CustomCommandParams_15017): void {
+        Orzi_Tools.Language.getAllTextAndSave(1);
+    }
+
+    /** 备份语言 */
+    export function customCommand_15018(commandPage: CommandPage, cmd: Command, trigger: CommandTrigger, triggerPlayer: ClientPlayer, playerInput: any[], p: CustomCommandParams_15018): void {
+        Orzi_Tools.Language.backup();
     }
 }
