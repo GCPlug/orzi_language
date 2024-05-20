@@ -1,13 +1,15 @@
 {
     "compAutoOrderLimitHeight": 0,
-    "id": 6,
+    "id": 2,
     "blockList": [
         {
             "name": "未命名块",
             "blockAttrs": [],
             "blockCondition": [],
             "blockHeight": 300,
-            "autoOrder": true
+            "autoOrder": true,
+            "hideBlockTitle": false
         }
-    ]
+    ],
+    "varName": "OrziLanguage"
 }

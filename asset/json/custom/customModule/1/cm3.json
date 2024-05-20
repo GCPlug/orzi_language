@@ -2,9 +2,7 @@
     "attrs": {
         "CGs": {
             "varType": 7,
-            "value": [
-                "asset/image/picture/background/Playground.png"
-            ],
+            "value": [],
             "copy": false
         }
     },

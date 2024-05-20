@@ -38,7 +38,7 @@ class CustomGameNumberParams_5 {
     normalNumber: number; // = 0; 常用数值
 }
 /**
-* 自定义游戏数值 6-多语言-是否为开发环境
+* 自定义游戏数值 6-
 */
 class CustomGameNumberParams_6 {
 }

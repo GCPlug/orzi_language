@@ -945,7 +945,7 @@
                     "attr": {
                         "id": "158566183379_0.6757727024699267",
                         "varName": "orzi_language_packages",
-                        "varType": 1,
+                        "varType": 4,
                         "compData": {
                             "compType": 9,
                             "compParam": {}
@@ -953,8 +953,8 @@
                         "defaultValue": "",
                         "hideMode": false,
                         "useCommand": false,
-                        "onlyPointTo": false,
-                        "moduleID": 1,
+                        "onlyPointTo": true,
+                        "moduleID": 2,
                         "dataStructureID": 1,
                         "arrayMode": true,
                         "arrayLength": 100,

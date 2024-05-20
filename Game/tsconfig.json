@@ -35,7 +35,7 @@
         "game/GameGate.ts",
         "game/GCMain.ts",
         "GCplug/orzi_language/Command.ts",
-        "GCplug/orzi_language/Data.ts",
+        "GCplug/orzi_language/Judge.ts",
         "GCplug/orzi_language/Language.ts",
         "system/CustomCommandParams.ts",
         "system/CustomConditionParams.ts",

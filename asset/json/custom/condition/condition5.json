@@ -1,60 +1,21 @@
 {
     "compAutoOrderLimitHeight": 0,
-    "id": 15002,
+    "id": 5,
     "blockList": [
         {
-            "name": "调试相关",
+            "name": "多语言",
             "blockAttrs": [
                 {
                     "attr": {
-                        "id": "158566841206_0.26394216035512597",
+                        "id": "158654766559_0.9766936213461417",
                         "varName": "type",
                         "varType": 0,
                         "compData": {
                             "compType": 2,
                             "compParam": {
-                                "items": "获取所有文本并保存,备份语言包",
+                                "items": "当前是否为开发环境,当前语言是否为",
                                 "showIndex": true
                             }
-                        },
-                        "defaultValue": "0",
-                        "hideMode": false,
-                        "useCommand": false,
-                        "onlyPointTo": false,
-                        "moduleID": 1,
-                        "dataStructureID": 1,
-                        "arrayMode": false,
-                        "arrayLength": 100,
-                        "arrayAllowDelete": false,
-                        "arrayAllowSwap": false,
-                        "arrayAllowUpdate": false,
-                        "accessMode": 1,
-                        "syncMode": 0,
-                        "attrTips": "",
-                        "alias": "指令",
-                        "onlyConfig": false,
-                        "preview": false,
-                        "autoTitleWidth": false,
-                        "titleWidth": 50,
-                        "eyeShow": true,
-                        "lockBlock": false,
-                        "enumEnable_get": true,
-                        "enumEnable_set": true
-                    },
-                    "attrConditions": [],
-                    "y": 15,
-                    "x": 15,
-                    "width": 260,
-                    "height": 32
-                },
-                {
-                    "attr": {
-                        "id": "158667802514_0.6451582052570521",
-                        "varName": "isClearHTML",
-                        "varType": 2,
-                        "compData": {
-                            "compType": 15,
-                            "compParam": {}
                         },
                         "defaultValue": "",
                         "hideMode": false,
@@ -69,8 +30,47 @@
                         "arrayAllowUpdate": false,
                         "accessMode": 1,
                         "syncMode": 0,
-                        "attrTips": "如果去除HTML标签，若文本中出现多种颜色，文本将会被分割为多条",
-                        "alias": "是否去除html标签",
+                        "attrTips": "",
+                        "alias": "判断类型",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [],
+                    "y": 20,
+                    "x": 30,
+                    "width": 250,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "158654814409_0.9625095100555334",
+                        "varName": "judgeLanguage",
+                        "varType": 4,
+                        "compData": {
+                            "compType": 1004,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": true,
+                        "moduleID": 2,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "判断语言",
                         "onlyConfig": false,
                         "preview": false,
                         "autoTitleWidth": true,
@@ -82,8 +82,8 @@
                     },
                     "attrConditions": [
                         {
-                            "attrID": "158566841206_0.26394216035512597",
-                            "value": 0,
+                            "attrID": "158654766559_0.9766936213461417",
+                            "value": 1,
                             "isExpression": false,
                             "jsCode": null,
                             "tsCode": null,
@@ -92,18 +92,14 @@
                     ],
                     "y": 20,
                     "x": 300,
-                    "width": 200,
+                    "width": 250,
                     "height": 32
                 }
             ],
             "blockCondition": [],
-            "blockHeight": 60,
-            "autoOrder": true,
-            "cmdColor": "#ff536a",
-            "hideBlockTitle": true
+            "blockHeight": 300,
+            "autoOrder": true
         }
     ],
-    "isCustomPhraseDesc": true,
-    "customPhraseDescTS": "// 根据属性名称值编写自定义短语描述，如：\"我的短语是\"+attrs.xxx\n// 使用下拉框组件的变量attrs.xxx有对应的attrs.xxxItems的属性以便获得标签名集合\n// 获取自定义模块的数据名称的函数：getModuleDataName(moduleID:number,dataID:number):string;\n// 获取各种列表内数据名称的函数：getTypeDataListName(typeID: number, dataID: number):string;\n// 获取自定义游戏数值描述的函数：getCustomGameNumber(customGameNumber: any[]):string;\n// 获取自定义游戏字符串描述的函数：getCustomGameString(customGameString: any[]):string;\n// 获取自定义游戏开关描述的函数：：getCustomGameSwitch(customGameSwitch: any[]):string;\n// -- typeID ：0-全局变量 1-全局开关 2-全局字符串 3-玩家变量 4-玩家开关 5-玩家字符串\n//           ：6-场景列表 7-场景对象原型列表 8-图块列表 9-行走图列表 10-行走图动作列表 11-立绘列表 12-立绘表情列表\n//           ：13-事件库列表 14-对话框列表 15-动画列表 16-动画信号列表 17-界面列表 18-数据结构列表 19-自定义模块列表\n//           ：20-自定义指令列表 21-自定义行为列表 22-自动元件列表 23-行走图部件列表 24-立绘部件列表 25-材质列表 26-场景对象模块\n`${attrs.typeItems[attrs.type]}`",
-    "customPhraseDescJS": "\"\" + attrs.typeItems[attrs.type];\n"
+    "isCustomPhraseDesc": false
 }

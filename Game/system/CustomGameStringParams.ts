@@ -32,7 +32,7 @@ class CustomGameStringParams_5 {
     type: number; // = 0; 类别
 }
 /**
-* 自定义游戏字符串 6-多语言-当前语言
+* 自定义游戏字符串 6-
 */
 class CustomGameStringParams_6 {
 }

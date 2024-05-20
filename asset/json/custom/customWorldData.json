@@ -500,11 +500,11 @@
             "copy": false
         },
         "orzi_language_packages": {
-            "varType": 7,
+            "varType": 6,
             "value": [
-                "zhCN",
-                "zhTW",
-                "en"
+                1,
+                2,
+                3
             ],
             "copy": false
         }

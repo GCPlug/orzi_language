@@ -30,3 +30,10 @@ class CustomConditionParams_3 {
 class CustomConditionParams_4 {
     worldData: CustomCompData; // 世界设定的布尔值属性
 }
+/**
+* 自定义条件 5-多语言
+*/
+class CustomConditionParams_5 {
+    type: number; // = 0; 判断类型
+    judgeLanguage: number; // = 0; 判断语言
+}

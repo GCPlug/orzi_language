@@ -2,10 +2,7 @@
     "attrs": {
         "CGs": {
             "varType": 7,
-            "value": [
-                "asset/image/picture/titles/Title_1.png",
-                "asset/image/picture/titles/Title_2.png"
-            ],
+            "value": [],
             "copy": false
         }
     },
