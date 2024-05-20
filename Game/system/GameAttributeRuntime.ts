@@ -18,7 +18,7 @@ class WorldData {
     static keyboards: DataStructure_gameKeyboard[]; // = [];
     static word_gamepadInput: string; // = ""; 请按下游戏手柄键位
     static word_keyboardInput: string; // = ""; 请输入键盘键位
-    static orzi_language_packages: string[]; // = [];
+    static orzi_language_packages: number[]; // = [];
 }
 class PlayerData {
     sceneObject: SceneObject;

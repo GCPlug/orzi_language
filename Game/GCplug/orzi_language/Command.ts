@@ -12,7 +12,8 @@ module CommandExecute {
      * @param p 自定义命令参数 1表示对应1号命令的参数
      */
     export function customCommand_15001(commandPage: CommandPage, cmd: Command, trigger: CommandTrigger, triggerPlayer: ClientPlayer, playerInput: any[], p: CustomCommandParams_15001): void {
-        Orzi_Tools.Language.setLanguage(p.local as any);
+        if (p.local && p.local > 0)
+            Orzi_Tools.Language.setLanguage(GameData.getModuleData(Orzi_Tools.Language.PLUGIN_MODULE_TYPE_OrziLanguage, p.local).name as any);
     }
 
     /** 调试指令 */
