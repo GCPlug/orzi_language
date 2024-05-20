@@ -12,4 +12,5 @@ class Module_CG {
 class Module_OrziLanguage {
     id: number;
     name: string;
+    __: number; // = 0; 占位符
 }

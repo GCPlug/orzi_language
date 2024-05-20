@@ -1,0 +1,65 @@
+{
+    "compAutoOrderLimitHeight": 0,
+    "id": 2,
+    "blockList": [
+        {
+            "name": "多语言",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "158653382413_0.11943304868263827",
+                        "varName": "__",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 0,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "占位符",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": null,
+                            "value": null,
+                            "isExpression": true,
+                            "jsCode": "false;\n",
+                            "tsCode": "// 根据属性名称值编写条件表达式（目前支持选择框和复选框），如： (attrs.xxx>5 && attrs.yyy<=10) || attrs.zzz==6;\r\nfalse",
+                            "codeName": "条件表达式脚本："
+                        }
+                    ],
+                    "y": 20,
+                    "x": 30,
+                    "width": 300,
+                    "height": 32
+                }
+            ],
+            "blockCondition": [],
+            "blockHeight": 80,
+            "autoOrder": true,
+            "hideBlockTitle": true
+        }
+    ],
+    "singleType": false,
+    "varName": "OrziLanguage"
+}
