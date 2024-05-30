@@ -19,7 +19,6 @@ module CommandExecute {
     /** 调试指令 */
     export function customCommand_15002(commandPage: CommandPage, cmd: Command, trigger: CommandTrigger, triggerPlayer: ClientPlayer, playerInput: any[], p: CustomCommandParams_15002): void {
         if (Orzi_Tools.Language.getIsDev()) {
-            console.log('------>', p.saveType, p.isClearHTML)
             if (p.type === 0) Orzi_Tools.Language.getAllTextAndSave(p.saveType === 1 ? 1 : 0, p.isClearHTML);
             else Orzi_Tools.Language.backup();
         }
