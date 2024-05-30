@@ -160,6 +160,24 @@ module Orzi_Tools {
                     if (is_exit) {
                         AssetManager.loadJson(this.path + languageName + '.json', Callback.New((data) => {
                             if (data) Language.instance.packages[languageName] = data;
+                            AssetManager.disposeJson(this.path + languageName + '.json');
+                            FileUtils.exists(this.path + languageName + '.csv', Callback.New((is_exit) => {
+                                if (is_exit) {
+                                    AssetManager.loadText(this.path + languageName + '.csv', Callback.New((csvData) => {
+                                        if (csvData) Language.instance.packages[languageName] = Object.assign(Language.instance.packages[languageName] || {}, Language.getCsvJson(csvData));
+                                        AssetManager.disposeText(this.path + languageName + '.csv');
+                                    }, this))
+                                }
+                            }, this))
+                        }, this))
+                    } else {
+                        FileUtils.exists(this.path + languageName + '.csv', Callback.New((is_exit) => {
+                            if (is_exit) {
+                                AssetManager.loadText(this.path + languageName + '.csv', Callback.New((csvData) => {
+                                    if (csvData) Language.instance.packages[languageName] = Language.getCsvJson(csvData);
+                                    AssetManager.disposeText(this.path + languageName + '.csv');
+                                }, this))
+                            }
                         }, this))
                     }
                 }, this))
@@ -260,13 +278,24 @@ module Orzi_Tools {
                 let _date = new Date();
                 let _time = [_date.getFullYear(), _date.getMonth() + 1, _date.getDate(), _date.getHours(), _date.getMinutes(), _date.getSeconds()].join('_');
                 let _backupPath = Language.path + `backup/${_time}`;
-                for (const c in Language.instance.packages) _num++;
+                for (const c in Language.instance.packages) _num+=2; // json 和 csv 两个文件
                 FileUtils.createDirectoryForce(_backupPath, Callback.New((success: boolean, path: string) => {
                     for (const c in Language.instance.packages) {
                         FileUtils.exists(Language.path + c + '.json', Callback.New(is_exit => {
                             if (is_exit) {
                                 FileUtils.cloneFile(Language.path + c + '.json', _backupPath + '/' + c + '.json', Callback.New((success: boolean, fromPath: string, toPath: string) => {
-                                    trace(`orzi_language:${c} is backuped! Save time: ${_time}`);
+                                    trace(`orzi_language:${c}.json is backuped! Save time: ${_time}`);
+                                    _num--;
+                                    if (_num <= 0) resolve(true);
+                                }, this))
+                            }
+                            _num--;
+                            if (_num <= 0) resolve(true);
+                        }, this))
+                        FileUtils.exists(Language.path + c + '.csv', Callback.New(is_exit => {
+                            if (is_exit) {
+                                FileUtils.cloneFile(Language.path + c + '.csv', _backupPath + '/' + c + '.csv', Callback.New((success: boolean, fromPath: string, toPath: string) => {
+                                    trace(`orzi_language:${c}.csv is backuped! Save time: ${_time}`);
                                     _num--;
                                     if (_num <= 0) resolve(true);
                                 }, this))
@@ -282,7 +311,7 @@ module Orzi_Tools {
         /**
          * 保存
          * @param _arr 语言包Set组
-         * @param type [type=0] 0 为 csv，1 为 json
+         * @param type [type=0] 0 为 json 为 csv
          */
         static save(_arr: Set<string>, type: number = 0) {
             this.backup().then(() => {
@@ -295,30 +324,115 @@ module Orzi_Tools {
                         }
                     })
                     if (type === 1) {
-                        // 保存为 json
-                        FileUtils.save(_data, Language.path + c + '.json', Callback.New(() => {
-                            trace(`orzi_language:${c} is saved!`)
-                        }, this), true)
-                    } else {
                         // 保存为 csv
                         let _text = '';
                         for (const k in _data) {
-                            _text += k + "\t" + _data[k] + "\n";
+                            if (k) _text += this.toCsvStr(k) + ',' + this.toCsvStr(_data[k]) + "\n";
                         }
-                        FileUtils.save(_text, Language.path + c + '.csv', Callback.New(() => {
-                            trace(`orzi_language:${c} is saved!`)
+                        (FileUtils.save as any)(_text, Language.path + c + '.csv', Callback.New(() => {
+                            trace(`orzi_language:${c}.csv is saved!`)
+                        }, this), false, false)
+                    } else {
+                        // 保存为 json
+                        FileUtils.save(_data, Language.path + c + '.json', Callback.New(() => {
+                            trace(`orzi_language:${c}.json is saved!`)
                         }, this), true)
                     }
                 }
             })
         }
 
+        static toCsvStr(str: string) {
+            if (str.indexOf('"') > -1 || str.indexOf(",") > -1 || str.indexOf("\n") > -1 || str.indexOf("\r") > -1){
+                str = `"${str.replace(/"/g, '""')}"`;
+            }
+            return str;
+        }
+
+        /** csv表格转json */
+        static getCsvJson(csv: string) {
+            let _data = {};
+            let arr = this.getCsvStr(csv);
+            for (let i = 0; i < arr.length; i++) {
+                if (!arr[i][0]) continue;
+                let _t = '';
+                for (let k = 1; k < arr[i].length; k++) {
+                    if (arr[i][k]) {
+                        _t = arr[i][k];
+                        break;
+                    }
+                }
+                _data[arr[i][0]] = _t;
+            }
+            return _data;
+        }
+
+        static getCsvStr(str: string) {
+            let _arr = [];
+            if (typeof str != "string") { return _arr; }
+            let tr = [];
+            _arr.push(tr);
+            let t = ""
+            for (let i = 0; i < str.length; i++) {
+                let c = str[i];
+                if (c === '"') {
+                    i += 1;
+                    for (; i < str.length; i++) {
+                        if (str[i] === '"') {
+                            if (str[i + 1] == '"') {
+                                t += '"';
+                                i++;
+                            } else {
+                                i++;
+                                break;
+                            }
+                        } else t += str[i];
+                    }
+                    tr.push(t);
+                    t = "";
+        
+                    for (; i < str.length; i++) {
+                        if (str[i] == " ") {
+                        } else if (str[i] == ",") {
+                            i -= 1;
+                            break;
+                        } else if (str[i] == "\n" || str[i] == "\r") {
+                            i -= 1;
+                            break;
+                        } else {
+                            console.log("Error");
+                        }
+                    }
+                } else if (c === ",") {
+                    tr.push(t);
+                    t = "";
+                } else if (c === "\n" || c === "\r") {
+                    if (t != "") {
+                        tr.push(t);
+                        t = "";
+                    }
+                    for (; i < str.length; i++) {
+                        if (str[i] === "\n" || str[i] === "\r") {
+        
+                        } else {
+                            i--;
+                            break;
+                        }
+                    }
+                    _arr.push(tr = []);
+                } else {
+                    t += c;
+                }
+            }
+            if (t !== "") tr.push(t);
+            return _arr;
+        }
+
         /**
          * 获取所有文件文本并保存
-         * @param type 0 为 csv， 1 为 json
+         * @param type 1 为 json, 0 为 csv
          */
         static getAllTextAndSave(type: number = 0, isClearHTML: boolean = false) {
-            type = 1;
             let _arr: Set<string> = new Set();
             FileUtils.getAllChildFiles('asset/json', Callback.New((list: Orzi_Tools.Language.FileObjectType[]) => {
                 if (!list) return;
@@ -328,6 +442,7 @@ module Orzi_Tools {
                         AssetManager.loadJson(v.localPath, Callback.New((data) => {
                             if (data) Orzi_Tools.Language.getAllText(data, _arr, isClearHTML);
                             _num--;
+                            AssetManager.disposeJson(v.localPath);
                             if (_num <= 0) Orzi_Tools.Language.save(_arr, type);
                         }, this))
                     } else _num--;

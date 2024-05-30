@@ -853,5 +853,6 @@ class CustomCommandParams_15001 {
 */
 class CustomCommandParams_15002 {
     type: number; // = 0; 指令
+    saveType: number; // = 0; 保存文件
     isClearHTML: boolean; // = false; 是否去除html标签
 }
