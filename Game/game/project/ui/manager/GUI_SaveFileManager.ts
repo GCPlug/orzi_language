@@ -8,6 +8,10 @@ class GUI_SaveFileManager {
      */
     static currentSveFileIndexInfo: { indexInfo: SaveFileListCustomData, id: number, now: number };
     /**
+     * 游戏内读档重启方式直接进入档案的标识符
+     */
+    static onceInSceneLoadGameSign = "gc_game_" + window.location.href;
+    /**
      * 已读档后的自定义数据
      */
     private static currentSaveFileCustomData: any;
@@ -76,6 +80,16 @@ class GUI_SaveFileManager {
         // 读取中的情况不再能够读取
         if (GUI_SaveFileManager.isLoading) return;
         GUI_SaveFileManager.isLoading = true;
+        // 如果已在游戏内的话则进行一次性重启读档
+        if (WorldData.fileReload && Game.currentScene != ClientScene.EMPTY) {
+            if (SinglePlayerGame.getSaveInfoByID(id) == null) return;
+            GameCommand.startCommonCommand(14005, [], Callback.New(() => {
+                // 直接读档的场合
+                LocalStorage.setJSON(GUI_SaveFileManager.onceInSceneLoadGameSign, { id: id });
+                window.location.reload();
+            }, this));
+            return;
+        }
         // 读取存档时清理下玩家输入状态
         GameCommand.isNeedPlayerInput = false;
         // 读取存档，失败的话调用失败时事件处理

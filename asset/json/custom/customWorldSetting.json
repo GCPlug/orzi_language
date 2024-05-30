@@ -663,6 +663,131 @@
             "autoOrder": true
         },
         {
+            "name": "内存优化",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "159222681340_0.918968211254191",
+                        "varName": "fileReload",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "读档时以重启游戏的方式读取，该方式可清除当前的游戏内存，但玩家需要等待更长的时间。\\n原理：重启游戏，跳过标题界面并静默读取游戏档案。",
+                        "alias": "读档时强制重启游戏",
+                        "onlyConfig": true,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [],
+                    "y": 17,
+                    "x": 15,
+                    "width": 200,
+                    "height": 20
+                },
+                {
+                    "attr": {
+                        "id": "159222934324_0.9818862813649949",
+                        "varName": "optimizeHelp",
+                        "varType": 1,
+                        "compData": {
+                            "compType": 32,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "\\n-- 可利用指令「静默重载」来实现静默重启游戏，以便清除当前内存并重启游戏回到当前的进度。\\n-- 可利用指令「卸载资源」来卸载不再使用的「预加载资源」。\\n-- 可利用指令「卸载界面」来销毁不再使用的界面（「关闭界面」只是临时隐藏界面，而「卸载界面」后再次「显示界面」则会重新加载该界面）\\n-- 使用「立绘」时如果一个人物表情动作过多请根据使用场景将该人物拆分多个版本，否则将会一次性加载所有的表情动作\\n-- 请尽量使用合适尺寸的图片，尺寸越大占用的内存和显存则越大，比如2048x2048的一张图片占用16MB，4096x4096的一张图片占用64MB\\n-- 请在正式发布游戏前使用低端机型测试游戏，以避免低端机型用户在游玩时出现卡顿、闪退、黑屏等现象。\\n-- 请充分了解各插件的功效和弊端并合理使用，游戏可能因为某个作者的插件导致内存占用过高、性能下降、报错等问题。\\n-- 在进入新场景时系统会预加载「进入场景」事件的相关资源（引用+1），而离开该场景时会卸载（引用-1）。\\n--「显示图片」时引用计数+1，「消除图像」时引用计数-1，所以请在不适用该图像时确保调用「消除图像」\\n-- 可在游戏内使用CTRL+ALT+K呼出资源查看器，以便自己根据当前资源利用情况来优化游戏。(系统根据「资源引用计数」定期清理不再使用的资源)\\n-- 正式发售的游戏若非确定问题来源于游戏引擎，请勿将游戏内的问题直接归结为游戏引擎问题。",
+                        "alias": "『→优化指南←』",
+                        "onlyConfig": true,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [],
+                    "y": 20,
+                    "x": 569,
+                    "width": 200,
+                    "height": 20
+                },
+                {
+                    "attr": {
+                        "id": "159228237846_0.02714907075437578",
+                        "varName": "disposeInterval",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 0,
+                            "compParam": {}
+                        },
+                        "defaultValue": "60",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "单位：秒\\n系统会定期清理「引用计数」为0的资源，将其卸载而不再占用内存和显存空间（可使用CTRL+ALT+K查看资源引用情况）",
+                        "alias": "系统自动释放资源时间",
+                        "onlyConfig": true,
+                        "preview": false,
+                        "autoTitleWidth": false,
+                        "titleWidth": 200,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 227,
+                    "width": 280,
+                    "height": 32
+                }
+            ],
+            "blockCondition": [],
+            "blockHeight": 55,
+            "autoOrder": true
+        },
+        {
             "name": "按键与焦点",
             "blockAttrs": [
                 {

@@ -95,4 +95,28 @@ declare class UIListItemData {
      * 是否是隐藏节点（即父系节点可能被关闭了）
      */
     get isHideNode(): boolean;
+    /**
+     * 优化模式变量：数据所在位置（列表刷新排列位置时设置）
+     */
+    x: number;
+    /**
+     * 优化模式变量：数据所在位置（列表刷新排列位置时设置）
+     */
+    y: number;
+    /**
+     * 优化模式变量：是否显示（可见范围外则不显示）
+     */
+    visible: boolean;
+    /**
+     * 自定义尺寸，开启后需要设置width和height来决定宽和高
+     */
+    customSize: boolean;
+    /**
+     * 自定义尺寸-宽
+     */
+    width: number;
+    /**
+     * 自定义尺寸-高
+     */
+    height: number;
 }

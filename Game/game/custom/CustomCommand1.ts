@@ -18,10 +18,13 @@ module CommandExecute {
     export function customCommand_1(commandPage: CommandPage, cmd: Command, trigger: CommandTrigger, triggerPlayer: ClientPlayer, playerInput: any[], p: CustomCommandParams_1): void {
         // 如果不存在预加载则忽略掉
         if (p.preloadAssets.length == 0) return;
-        // 暂停当前触发线的事件推进，当加载资源完毕时再继续执行
-        trigger.pause = true;
-        // 推进一行，以便下次执行时执行下一行事件
-        trigger.offset(1);
+        // 加载资源需要暂停
+        if (p.type == 0) {
+            // 暂停当前触发线的事件推进，当加载资源完毕时再继续执行
+            trigger.pause = true;
+            // 推进一行，以便下次执行时执行下一行事件
+            trigger.offset(1);
+        }
         let g = getAssetValues;
         // 图集
         let imageArr = g(0);
@@ -42,51 +45,58 @@ module CommandExecute {
                 }
             }
         }
-        // 如果需要显示加载界面的话则打开界面
-        if (p.isShowLoadingUI && p.bindingUI && p.bindingUI.uiID) {
-            // 该界面本身要加载（使用了自动释放模式的预载入，所以会自动清空此次预加载的引用）
-            AssetManager.preLoadUIAsset(p.bindingUI.uiID, Callback.New(() => {
-                let loadingUI = GameUI.show(p.bindingUI.uiID)
-                doLoadAsset.apply(this, [loadingUI]);
-            }, this), true, true, true);
-        }
-        else {
-            doLoadAsset.apply(this);
-        }
-        // 加载完毕时处理
-        function onLoadComplete(displayProgressComp: UIBase) {
-            setProgressUI.apply(this, [displayProgressComp, 100]);
-            Callback.New(() => {
-                if (p.isShowLoadingUI && p.bindingUI) GameUI.dispose(p.bindingUI.uiID);
-                CommandPage.executeEvent(trigger);
-            }, this).delayRun(100);
-        }
-        // 加载资源
-        function doLoadAsset(loadingUI: UIRoot) {
-            // 如果存在需要显示加载进度效果的话则准备显示
-            let displayProgressComp: UIBase = null;
-            if (loadingUI && p.bindingUI && p.bindingUI.uiID && p.bindingUI.compName && p.bindingUI.varName) {
-                displayProgressComp = loadingUI[p.bindingUI.compName];
-                if (!displayProgressComp) {
-                    trace(`预载入事件参数错误，找不到组件：${p.bindingUI.compName}`);
-                }
+        // 【加载资源】
+        if (p.type == 0) {
+            // 如果需要显示加载界面的话则打开界面
+            if (p.isShowLoadingUI && p.bindingUI && p.bindingUI.uiID) {
+                // 该界面本身要加载（使用了自动释放模式的预载入，所以会自动清空此次预加载的引用）
+                AssetManager.preLoadUIAsset(p.bindingUI.uiID, Callback.New(() => {
+                    let loadingUI = GameUI.show(p.bindingUI.uiID)
+                    doLoadAsset.apply(this, [loadingUI]);
+                }, this), true, true, true);
+            }
+            else {
+                doLoadAsset.apply(this);
+            }
+            // 加载完毕时处理
+            function onLoadComplete(displayProgressComp: UIBase) {
+                setProgressUI.apply(this, [displayProgressComp, 100]);
+                Callback.New(() => {
+                    if (p.isShowLoadingUI && p.bindingUI) GameUI.dispose(p.bindingUI.uiID);
+                    CommandPage.executeEvent(trigger);
+                }, this).delayRun(100);
             }
             // 加载资源
-            AssetManager.batchPreLoadAsset(Callback.New(() => {
-                if (hasFont) {
-                    AssetManager.preloadFonts(Callback.New(onLoadComplete, this, [displayProgressComp]));
+            function doLoadAsset(loadingUI: UIRoot) {
+                // 如果存在需要显示加载进度效果的话则准备显示
+                let displayProgressComp: UIBase = null;
+                if (loadingUI && p.bindingUI && p.bindingUI.uiID && p.bindingUI.compName && p.bindingUI.varName) {
+                    displayProgressComp = loadingUI[p.bindingUI.compName];
+                    if (!displayProgressComp) {
+                        trace(`预载入事件参数错误，找不到组件：${p.bindingUI.compName}`);
+                    }
                 }
-                else {
-                    onLoadComplete.apply(this, [displayProgressComp]);
-                }
-            }, this, [1, true]),
-                Callback.New((current: number, count: number) => {
-                    // 若存在字体文件
-                    if (hasFont) count += 1;
-                    // 显示加载进度效果
-                    let progressStr = Math.floor(current * 100 / count).toString();
-                    setProgressUI.apply(this, [displayProgressComp, progressStr]);
-                }, this), imageArr, [], g(2), g(3), g(4), g(5), [], g(1), g(6));
+                // 加载资源
+                AssetManager.batchPreLoadAsset(Callback.New(() => {
+                    if (hasFont) {
+                        AssetManager.preloadFonts(Callback.New(onLoadComplete, this, [displayProgressComp]));
+                    }
+                    else {
+                        onLoadComplete.apply(this, [displayProgressComp]);
+                    }
+                }, this, [1, true]),
+                    Callback.New((current: number, count: number) => {
+                        // 若存在字体文件
+                        if (hasFont) count += 1;
+                        // 显示加载进度效果
+                        let progressStr = Math.floor(current * 100 / count).toString();
+                        setProgressUI.apply(this, [displayProgressComp, progressStr]);
+                    }, this), imageArr, [], g(2), g(3), g(4), g(5), [], g(1), g(6));
+            }
+        }
+        // 【卸载资源】
+        else {
+            AssetManager.batchDisposeAsset(imageArr, [], g(2), g(3), g(4), g(5), [], g(1), g(6));
         }
         // 根据资源类别筛选数组
         function getAssetValues(assetType: number): any[] {
@@ -462,6 +472,26 @@ module CommandExecute {
         let dialogBtnsUI = GameUI.get(3);
         if (dialogBtnsUI != Game.layer.uiLayer.getChildAt(Game.layer.uiLayer.numChildren - 1)) return;
         GameDialog.skipWaitPlayerOperation();
+    }
+    /**
+     * 静默重载
+     */
+    export function customCommand_1004(commandPage: CommandPage, cmd: Command, trigger: CommandTrigger, triggerPlayer: ClientPlayer, playerInput: any[], p: CustomCommandParams_1004): void {
+        let saveID = p.saveID;
+        // 命令偏移一行，以便下次恢复执行时执行下一行而不是本行
+        trigger.offset(1);
+        GUI_SaveFileManager.saveFile(saveID, false, Callback.New(() => {
+            LocalStorage.setJSON(GUI_SaveFileManager.onceInSceneLoadGameSign, { id: saveID });
+            let blackSp = new Sprite();
+            blackSp.graphics.drawRect(0, 0, stage.width, stage.height, p.color);
+            blackSp.alpha = 0;
+            stage.addChild(blackSp);
+            Tween.to(blackSp, { alpha: 1 }, p.time * 1000, null, Callback.New(() => { window.location.reload(); }, this));
+            Tween.to(GameAudio, { bgmVolume: 0 }, p.time * 1000);
+
+        }, this), true);
+        // 暂停必须放在存档后面，否则存档将正在执行的该事件暂停状态也一起保存了
+        trigger.pause = true;
     }
     //------------------------------------------------------------------------------------------------------
     // 系统

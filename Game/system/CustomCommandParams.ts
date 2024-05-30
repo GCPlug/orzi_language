@@ -2,11 +2,12 @@
  * 该文件为GameCreator编辑器自动生成的代码，请勿修改
  */
 /**
-* 自定义指令 1-预加载资源
+* 自定义指令 1-预加载和卸载资源
 */
 class CustomCommandParams_1 {
     preloadAssets: DataStructure_preloadAsset[]; // = [];
     isShowLoadingUI: boolean; // = false; 显示加载界面
+    type: number; // = 0;
     bindingUI: { uiID: number, compName:string, compID:string, varName:string }; // 加载组件
 }
 /**
@@ -171,6 +172,19 @@ class CustomCommandParams_1002 {
 * 自定义指令 1003-跳过对话中途等待操作
 */
 class CustomCommandParams_1003 {
+}
+/**
+* 自定义指令 1004-静默重载
+*/
+class CustomCommandParams_1004 {
+    saveID: number; // = 237; 存档位置
+    color: string; // = "#000000"; 过渡颜色
+    time: number; // = 0.5; 过渡时间
+}
+/**
+* 自定义指令 1005-
+*/
+class CustomCommandParams_1005 {
 }
 /**
 * 自定义指令 2001-
@@ -681,6 +695,18 @@ class CustomCommandParams_3021 {
     passageID: number; // = 1; 编号
     passageIDVar: number; // = 1; 编号
     varType: number; // = 0; 模式
+}
+/**
+* 自定义指令 3022-卸载界面
+*/
+class CustomCommandParams_3022 {
+    showType: number; // = 0; 层级
+    passageID: number; // = 1; 编号
+    passageIDVar: number; // = 1; 编号
+    uiID: number; // = 1; 界面
+    uiVar: number; // = 1; 界面
+    passageIDUseVar: boolean; // = false; 编号使用变量
+    objectUseVar: boolean; // = false; 界面使用变量
 }
 /**
 * 自定义指令 4001-全屏设置

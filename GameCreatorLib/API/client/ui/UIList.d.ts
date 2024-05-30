@@ -129,6 +129,13 @@ declare class UIList extends UIRoot {
      */
     static setKeyDown(keyCode: number): void;
     /**
+     * 优化模式 默认值=false
+     * 不会生成所有的item显示对象，而只生成可见范围内的装载位，在滚动显示时根据当前情况再将数据安装到对应的装载位上
+     * -- 如需要启用，请在设置item前设置该参数为true
+     * -- 该模式下使用通过索引getItemUI获取的装载位并不是固定的
+     */
+    optimizationMode: boolean;
+    /**
      * 鼠标悬停则作为选中效果（默认是悬停效果）默认值=false
      */
     overSelectMode: boolean;

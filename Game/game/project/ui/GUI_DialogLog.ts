@@ -4,10 +4,18 @@
  */
 class GUI_DialogLog extends GUI_4 {
     /**
+     * 记录项参考
+     */
+    private testItemUI: GUI_1002;
+    private testItemUIHeight: number;
+    /**
      * 构造函数
      */
     constructor() {
         super();
+        this.testItemUI = new GUI_1002;
+        this.testItemUIHeight = this.testItemUI.dialogContent.height;
+        this.dialogRecordList.optimizationMode = true;
         this.on(EventObject.DISPLAY, this, this.refreshList);
         this.dialogRecordList.onCreateItem = Callback.New(this.onCreateItem, this);
     }
@@ -49,6 +57,14 @@ class GUI_DialogLog extends GUI_4 {
             item.dialogContent = dialogRecordInfo.dialogContent;
             item.data = dialogRecordInfo;
             a.push(item);
+            // 测试高度，如果超出则设置为自定义模式，增加高度
+            this.testItemUI.dialogContent.text = dialogRecordInfo.dialogContent;
+            let realHeight = this.testItemUI.dialogContent.textHeight;
+            if (this.testItemUIHeight < realHeight) {
+                item.customSize = true;
+                item.width = this.dialogRecordList.itemWidth;
+                item.height = this.dialogRecordList.itemHeight + (realHeight - this.testItemUIHeight);
+            }
         }
         this.dialogRecordList.items = a;
         // 滚动到最底下

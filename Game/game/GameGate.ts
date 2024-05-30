@@ -63,6 +63,20 @@ class GameGate {
         // 启动LIST内置按键和焦点功能
         UIList.SINGLE_FOCUS_MODE = WorldData.hotkeyEnabled && WorldData.focusEnabled;
         UIList.KEY_BOARD_ENABLED = WorldData.hotkeyEnabled && WorldData.hotKeyListEnabled;
+        // 卸载资源设定
+        AssetManager.disposeInterval = WorldData.disposeInterval * 1000;
+        // 直接读档的场合
+        let onceLoadGame = LocalStorage.getJSON(GUI_SaveFileManager.onceInSceneLoadGameSign);
+        if (onceLoadGame && onceLoadGame.id != null && SinglePlayerGame.getSaveInfoByID(onceLoadGame.id)) {
+            // 移除一次读档的操作
+            LocalStorage.removeItem(GUI_SaveFileManager.onceInSceneLoadGameSign);
+            // 读取存档，失败的话调用失败时事件处理
+            GUI_SaveFileManager.currentSveFileIndexInfo = SinglePlayerGame.getSaveInfoByID(onceLoadGame.id);
+            GUI_SaveFileManager.loadFile(onceLoadGame.id, Callback.New((success: boolean) => {
+                if (!success) GameCommand.startCommonCommand(14007);
+            }, this));
+            return;
+        }
         // 启动的场景设定
         Config["BORN"].sceneID = WorldData.bornScene;
         // 启动事件
@@ -101,7 +115,9 @@ class GameGate {
                 // 移除上一个场景
                 Game.layer.sceneLayer.removeChildren();
                 // 卸载进入场景前预加载的资源，减少引用计数
-                if (inNewSceneState == 0) AssetManager.disposeScene(lastScene.id);
+                if (inNewSceneState == 0 || inNewSceneState == 2) {
+                    AssetManager.disposeScene(lastScene.id);
+                }
                 // 卸载当前场景
                 lastScene.dispose();
                 Game.currentScene = null;

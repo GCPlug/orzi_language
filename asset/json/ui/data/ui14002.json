@@ -1,0 +1,166 @@
+{
+    "root": {
+        "children": [
+            {
+                "id": "158867157022_0.46959793254381865",
+                "condition": [],
+                "type": "UIBitmap",
+                "name": "图片",
+                "x": 0,
+                "y": 0,
+                "width": 100,
+                "height": 100,
+                "opacity": 1,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": true,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": false,
+                "showOnEditor": true,
+                "hasCommand": [],
+                "isOpen": true,
+                "image": "asset/image/picture/other/Black.png",
+                "grid9": "0,0,0,0,0",
+                "flip": false,
+                "isTile": false,
+                "pivotType": 0,
+                "children": [
+                    {
+                        "id": "158879894718_0.9927198094257412",
+                        "condition": [],
+                        "type": "UIRoot",
+                        "name": "imageSprite",
+                        "x": 0,
+                        "y": 0,
+                        "width": 100,
+                        "height": 100,
+                        "opacity": 1,
+                        "blend": 0,
+                        "rotation": 0,
+                        "show": true,
+                        "mouseEventEnabledData": true,
+                        "materialData": [
+                            {
+                                "materials": []
+                            }
+                        ],
+                        "mouseEventEnabledInEditor": true,
+                        "lock": true,
+                        "showOnEditor": true,
+                        "hasCommand": [],
+                        "isOpen": true,
+                        "enabledLimitView": false,
+                        "scrollShowType": 2,
+                        "hScrollBar": "",
+                        "hScrollBg": "",
+                        "vScrollBar": "",
+                        "vScrollBg": "",
+                        "scrollWidth": 16,
+                        "slowmotionType": 0,
+                        "enabledWheel": true,
+                        "hScrollValue": 0,
+                        "vScrollValue": 0
+                    }
+                ]
+            },
+            {
+                "id": "158867393737_0.6549308077381155",
+                "condition": [],
+                "type": "UIString",
+                "name": "url",
+                "x": 110,
+                "y": 10,
+                "width": 1200,
+                "height": 30,
+                "opacity": 1,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": false,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": true,
+                "showOnEditor": true,
+                "hasCommand": [],
+                "isOpen": true,
+                "text": "【3】asset/abc.png",
+                "fontSize": 22,
+                "color": "#ffffff",
+                "bold": true,
+                "italic": false,
+                "smooth": true,
+                "align": 0,
+                "valign": 0,
+                "leading": 0,
+                "letterSpacing": 0,
+                "font": "Source_Han_Sans",
+                "wordWrap": true,
+                "overflow": 0,
+                "shadowEnabled": false,
+                "shadowColor": "#000000",
+                "shadowDx": 1,
+                "shadowDy": 1,
+                "stroke": 0,
+                "strokeColor": "#000000"
+            },
+            {
+                "id": "158867579729_0.8742694144477972",
+                "condition": [],
+                "type": "UIString",
+                "name": "sizeText",
+                "x": 130,
+                "y": 55,
+                "width": 1200,
+                "height": 30,
+                "opacity": 1,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": false,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": true,
+                "showOnEditor": true,
+                "hasCommand": [],
+                "isOpen": true,
+                "text": ">>> 125.06MB",
+                "fontSize": 22,
+                "color": "#ffffff",
+                "bold": true,
+                "italic": false,
+                "smooth": true,
+                "align": 0,
+                "valign": 0,
+                "leading": 0,
+                "letterSpacing": 0,
+                "font": "Source_Han_Sans",
+                "wordWrap": true,
+                "overflow": 0,
+                "shadowEnabled": false,
+                "shadowColor": "#000000",
+                "shadowDx": 1,
+                "shadowDy": 1,
+                "stroke": 0,
+                "strokeColor": "#000000"
+            }
+        ]
+    },
+    "id": 14002,
+    "hasRootCommand": [],
+    "instanceClassName": "",
+    "lock": true
+}

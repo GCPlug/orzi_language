@@ -189,6 +189,7 @@
         "animationHelper6": 0,
         "animationHelper_AllowIntoLayer": 0,
         "animationHelper_allowDuplicateTypes": 0,
+        "privewHitEffect": true,
         "sceneObjectModelSetting": false
     }
 }

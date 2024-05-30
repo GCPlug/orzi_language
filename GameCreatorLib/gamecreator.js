@@ -44567,7 +44567,7 @@ function _getAttributeFromParentPages(attribute) {
     }
     return result;
 }
-;if (typeof top === "undefined") {
+if (typeof top === "undefined") {
     top = this;
 }
 var mainDomain_gcide_common = _getAttributeFromParentPages('gcide_common');
@@ -45787,7 +45787,7 @@ var CommandPage = (function () {
         return null;
     };
     CommandPage.getFeDataName = function (feData) {
-        if (feData || typeof feData == "string") {
+        if (feData && typeof feData == "string") {
             var startIdx = feData.indexOf(String.fromCharCode(5));
             if (startIdx == -1)
                 return "";
@@ -56976,6 +56976,19 @@ var ClientScene = (function (_super) {
         this.displayObject.scaleX = this.camera.scaleX;
         this.displayObject.scaleY = this.camera.scaleY;
         var rect = this.camera.viewPort;
+        var camera = this.camera;
+        var viewW = this.width * camera.scaleX;
+        var viewH = this.height * camera.scaleY;
+        if (!Config.EDIT_MODE) {
+            if (viewW < Config.WINDOW_WIDTH) {
+                rect.width = Config.WINDOW_WIDTH;
+                isLimit = false;
+            }
+            if (viewH < Config.WINDOW_HEIGHT) {
+                rect.height = Config.WINDOW_HEIGHT;
+                isLimit = false;
+            }
+        }
         if (this.displayObject.scaleX != 1 || this.displayObject.scaleY != 1) {
             rect = rect.clone();
             var sw = (1 / this.displayObject.scaleX) * rect.width - rect.width;
@@ -59442,7 +59455,7 @@ var GameSprite = (function (_super) {
         var _this_1 = this;
         if (passage === void 0) { passage = 0; }
         Callback.CallLaterBeforeRender(function () {
-            var pass = _this_1.getMaterialPassage(passage, true);
+            var pass = _this_1.materialPassArr[passage];
             if (!pass || !pass.shaderData)
                 return;
             for (var i in materialValues) {
@@ -66406,6 +66419,8 @@ getset(false, UIComponent.UIBase.prototype, 'visible', function () {
                 _this_1.width = _this_1._contentWidth = 100;
                 _this_1.height = _this_1._contentHeight = 100;
             }
+            _this_1._vScrollBar.tick = 0.00001;
+            _this_1._hScrollBar.tick = 0.00001;
             _this_1._vScrollBar.max = 100;
             _this_1._vScrollBar.min = 0;
             _this_1._hScrollBar.max = 100;
@@ -66715,8 +66730,8 @@ getset(false, UIComponent.UIBase.prototype, 'visible', function () {
                 if (!hScrollEnabled || !ClientMain.shiftKey) {
                     if (this._contentHeight - this.scrollWidth <= this.height)
                         return;
-                    var px = Math.max(this._contentHeight * 0.01 * Math.abs(e.delta), 20);
-                    var per = Math.max(px * 100 / this._contentHeight, 1);
+                    var px = Math.min(Math.max(this._contentHeight * 0.01 * Math.abs(e.delta), 10), 50);
+                    var per = px * 100 / this._contentHeight;
                     this._vScrollBar.value -= per * float;
                 }
             }
@@ -66724,8 +66739,8 @@ getset(false, UIComponent.UIBase.prototype, 'visible', function () {
                 if (!vScrollEnabled || ClientMain.shiftKey) {
                     if (this._contentWidth - this.scrollWidth <= this.width)
                         return;
-                    var px = Math.max(this._contentWidth * 0.01 * Math.abs(e.delta), 20);
-                    var per = Math.max(px * 100 / this._contentWidth, 1);
+                    var px = Math.min(Math.max(this._contentWidth * 0.01 * Math.abs(e.delta), 10), 50);
+                    var per = px * 100 / this._contentWidth;
                     this._hScrollBar.value -= per * float;
                 }
             }
@@ -70934,7 +70949,7 @@ var GameDialog = (function (_super) {
     GameDialog.showDialog = function (dialogID, head, name, speed, comicSceneObjectIndex, msg, submitCallback, audio, exp, nameColor, changeData, dialogMaterialEnabled) {
         if (submitCallback === void 0) { submitCallback = null; }
         if (dialogMaterialEnabled === void 0) { dialogMaterialEnabled = true; }
-        GameDialog.currentDialogInfo = [0, dialogID, head, name, speed, comicSceneObjectIndex, msg, null, audio, exp, nameColor, changeData];
+        GameDialog.currentDialogInfo = [0, dialogID, head, name, speed, comicSceneObjectIndex, msg, null, audio, exp, nameColor, changeData, dialogMaterialEnabled];
         GameDialog.currentDialogSign = ObjectUtils.getInstanceID();
         var dialog = GameDialog.getDialog(dialogID);
         dialog.dialogMaterialEnabled = dialogMaterialEnabled;
@@ -70944,6 +70959,14 @@ var GameDialog = (function (_super) {
         }
         dialog.dialogText.visible = dialog.nameText.visible = dialog.headBox.visible = dialog.dialogBox.visible = true;
         dialog.optionBox.visible = false;
+        if (!changeData)
+            changeData = {};
+        if (changeData.showOptionWithLastDialog) {
+            GameDialog.showOptionWithLastDialog = changeData.showOptionWithLastDialog;
+        }
+        if (changeData.showOptionWithLastDialogParams) {
+            GameDialog.showOptionWithLastDialogParams = changeData.showOptionWithLastDialogParams;
+        }
         GameDialog.lastDialog = dialog;
         GameDialog.lastDialog.playing = true;
         GameDialog.lastComicSceneObjectIndex = comicSceneObjectIndex;
@@ -70968,6 +70991,10 @@ var GameDialog = (function (_super) {
             GameDialog.showOptionWithLastDialogParams = [defaultIndex, cancelIndex, hideIndexs];
             if (!dialog.playing && dialog.hasSkip) {
                 GameDialog.showOption(dialog.id, options, true, defaultIndex, cancelIndex, hideIndexs);
+            }
+            if (GameDialog.currentDialogInfo[11]) {
+                GameDialog.currentDialogInfo[11].showOptionWithLastDialog = GameDialog.showOptionWithLastDialog;
+                GameDialog.currentDialogInfo[11].showOptionWithLastDialogParams = GameDialog.showOptionWithLastDialogParams;
             }
             return dialog;
         }
@@ -73353,7 +73380,8 @@ var GameImageLayer = (function (_super) {
         if (spInfo) {
             var displayObject = spInfo.displayObject;
             displayObject.removeSelf();
-            if (displayObject instanceof GCAnimation || displayObject instanceof UIComponent.UIAvatar || displayObject instanceof UIComponent.UIBitmap ||
+            if (displayObject instanceof GCAnimation ||
+                displayObject instanceof UIComponent.UIAvatar || displayObject instanceof UIComponent.UIBitmap || displayObject instanceof UIComponent.UIAnimation ||
                 (displayObject instanceof UIComponent.GUI_BASE && displayObject.useDPCoord)) {
                 displayObject.dispose();
             }
@@ -75382,6 +75410,11 @@ AnimationLayer.typeClsMap[AnimationItemType.Image] = AnimationImageLayer;
             _this_1.subitemIndentation = 20;
             _this_1._previewSize = 5;
             _this_1.cancelSelectedIndex = -1;
+            _this_1.optimizationItemUI = [];
+            _this_1.optimizationItemUIMap = {};
+            _this_1.optimizationItemUIPool = [];
+            _this_1.maxEx = 0;
+            _this_1.maxEy = 0;
             _this_1.className = "UIList";
             _this_1._contentArea = new GameSprite();
             _this_1._overImageBox = new GameSprite();
@@ -75529,7 +75562,7 @@ AnimationLayer.typeClsMap[AnimationItemType.Image] = AnimationImageLayer;
                 if (Config.EDIT_MODE) {
                     EUIRoot.dataBaseWindow.win7.off(EUIWindowUI.EVENT_GUI_DATA_SYNC_COMPLETE, this, this.onItemUIChange);
                 }
-                this.clearItems();
+                this.clearItems(true);
                 this._overImage.dispose();
                 this._overImage = null;
                 this._overImageBox.dispose();
@@ -75742,8 +75775,8 @@ AnimationLayer.typeClsMap[AnimationItemType.Image] = AnimationImageLayer;
             var itemLen = this._itemSize;
             var itemColumnNum = Math.min(itemLen, this.repeatX);
             var itemRowNum = Math.ceil(itemLen / this.repeatX);
-            var maxW = (itemColumnNum * this.itemWidth) + Math.max(itemColumnNum - 1, 0) * this.spaceX;
-            var maxH = (itemRowNum * this.itemHeight) + Math.max(itemRowNum - 1, 0) * this.spaceY;
+            var maxW = (itemColumnNum * this.itemWidth) + Math.max(itemColumnNum - 1, 0) * this.spaceX + this.maxEx;
+            var maxH = (itemRowNum * this.itemHeight) + Math.max(itemRowNum - 1, 0) * this.spaceY + this.maxEy;
             return { maxW: maxW, maxH: maxH };
         };
         Object.defineProperty(UIList.prototype, "selectedImage", {
@@ -76050,11 +76083,31 @@ AnimationLayer.typeClsMap[AnimationItemType.Image] = AnimationImageLayer;
             }
             return false;
         };
-        UIList.prototype.clearItems = function () {
-            for (var i = 0; i < this._contentArea.numChildren; i++) {
-                var item = this._contentArea.getChildAt(i);
-                item.dispose();
-                i--;
+        UIList.prototype.clearItems = function (dispose) {
+            if (dispose === void 0) { dispose = false; }
+            if (this.thisItemsOptimizationMode) {
+                if (dispose) {
+                    var allItemUIArr = this.optimizationItemUI.concat(this.optimizationItemUIPool);
+                    for (var i_22 = 0; i_22 < allItemUIArr.length; i_22++) {
+                        var itemUI = allItemUIArr[i_22];
+                        itemUI.dispose();
+                    }
+                    this.optimizationItemUIPool.length = this.optimizationItemUI.length = 0;
+                }
+                else {
+                    for (var i_23 = 0; i_23 < this.optimizationItemUI.length; i_23++) {
+                        var itemUI = this.optimizationItemUI[i_23];
+                        this.freeOptimizationItemUI(itemUI);
+                    }
+                    this.optimizationItemUI.length = 0;
+                }
+            }
+            else {
+                for (var i_24 = 0; i_24 < this._contentArea.numChildren; i_24++) {
+                    var item = this._contentArea.getChildAt(i_24);
+                    item.dispose();
+                    i_24--;
+                }
             }
         };
         Object.defineProperty(UIList.prototype, "items", {
@@ -76067,6 +76120,11 @@ AnimationLayer.typeClsMap[AnimationItemType.Image] = AnimationImageLayer;
                 var lastSelectedIndex = this.selectedIndex;
                 this.clearItems();
                 this._items = [];
+                this.thisItemsOptimizationMode = this.optimizationMode;
+                if (this.thisItemsOptimizationMode) {
+                    this.off(UIComponent.UIRoot.SCROLL, this, this.onListScroll);
+                    this.on(UIComponent.UIRoot.SCROLL, this, this.onListScroll);
+                }
                 if (Config.EDIT_MODE || this._itemModelClass) {
                     this.checkDeepLoopAndReset(this._itemModelGUI);
                     var len = v.length;
@@ -76079,15 +76137,19 @@ AnimationLayer.typeClsMap[AnimationItemType.Image] = AnimationImageLayer;
                         for (var s = 0; s < childrenlen; s++) {
                             var data = nodeChildren[s];
                             this._items.push(data);
-                            var ui;
+                            var ui = null;
                             if (Config.EDIT_MODE) {
                                 ui = this._itemModelClass ? new this._itemModelClass(false, this._itemModelGUI) : GameUI.load(this.itemModelGUI, true);
                             }
                             else {
-                                ui = new this._itemModelClass(false, this._itemModelGUI);
+                                if (!this.thisItemsOptimizationMode) {
+                                    ui = new this._itemModelClass(false, this._itemModelGUI);
+                                }
                             }
-                            this._contentArea.addChild(ui);
-                            this.itemInit(ui, data, itemIndex);
+                            if (ui) {
+                                this._contentArea.addChild(ui);
+                                this.itemInit(ui, data, itemIndex);
+                            }
                             itemIndex++;
                         }
                     }
@@ -76115,22 +76177,53 @@ AnimationLayer.typeClsMap[AnimationItemType.Image] = AnimationImageLayer;
                 return;
             if (index < 0)
                 return;
-            var ui = this._contentArea.getChildAt(index);
-            if (!ui)
+            var lastItemData = this._items[index];
+            if (!lastItemData)
                 return;
-            this._items[index] = itemData;
-            ui.offAll();
-            this.itemInit(ui, itemData, index);
+            var ui = this.getItemUI(index);
+            if (this.thisItemsOptimizationMode) {
+                itemData.x = lastItemData.x;
+                itemData.y = lastItemData.y;
+                var needReOrder = void 0;
+                if (!itemData.customSize || itemData.width == null || itemData.height == null) {
+                    itemData.width = lastItemData.width;
+                    itemData.height = lastItemData.height;
+                    needReOrder = false;
+                }
+                else {
+                    needReOrder = true;
+                }
+                this._items[index] = itemData;
+                if (ui) {
+                    this.itemInit(ui, itemData, index, false);
+                }
+                if (needReOrder)
+                    this.refreshOrder();
+            }
+            else {
+                if (!ui)
+                    return;
+                this._items[index] = itemData;
+                ui.offAll();
+                this.itemInit(ui, itemData, index);
+            }
         };
         UIList.prototype.addItem = function (itemData, index) {
             if (index === void 0) { index = -1; }
             var data = itemData;
             var itemIndex = index == -1 ? this._items.length : Math.max(0, Math.min(index, this._items.length));
             this._items.splice(itemIndex, 0, data);
-            var ui = new this._itemModelClass(false, this._itemModelGUI);
-            this._contentArea.addChildAt(ui, itemIndex);
-            this.itemInit(ui, data, itemIndex);
-            this.refreshOrder();
+            if (this.thisItemsOptimizationMode) {
+                this.clearItems();
+                this.refreshOrder();
+                return this.getItemUI(index);
+            }
+            else {
+                var ui = new this._itemModelClass(false, this._itemModelGUI);
+                this._contentArea.addChildAt(ui, itemIndex);
+                this.itemInit(ui, data, itemIndex);
+                this.refreshOrder();
+            }
             return ui;
         };
         UIList.prototype.removeItem = function (itemData) {
@@ -76142,8 +76235,14 @@ AnimationLayer.typeClsMap[AnimationItemType.Image] = AnimationImageLayer;
             if (index < 0 || index >= this.items.length)
                 return;
             var d = this._items[index];
-            this._contentArea.removeChildAt(index);
+            var itemUI = this.getItemUI(index);
             this._items.splice(index, 1);
+            if (this.thisItemsOptimizationMode) {
+                this.clearItems();
+            }
+            else {
+                itemUI.dispose();
+            }
             this.refreshOrder();
             return d;
         };
@@ -76156,66 +76255,86 @@ AnimationLayer.typeClsMap[AnimationItemType.Image] = AnimationImageLayer;
                 return;
             var ui = this.getItemUI(itemIndex);
             var data = this.items[itemIndex];
-            this._contentArea.setChildIndex(ui, toIndex);
             ArrayUtils.setIndex(this.items, data, toIndex);
+            if (this.thisItemsOptimizationMode) {
+                this.clearItems();
+            }
+            else {
+                this._contentArea.setChildIndex(ui, toIndex);
+            }
             this.refreshOrder();
             return true;
         };
         UIList.prototype.getItemUI = function (index) {
-            if (index < 0 || index >= this._contentArea.numChildren)
-                return null;
-            return this._contentArea.getChildAt(index);
+            if (this.thisItemsOptimizationMode) {
+                return this.optimizationItemUIMap[index];
+            }
+            else {
+                if (index < 0 || index >= this._contentArea.numChildren)
+                    return null;
+                return this._contentArea.getChildAt(index);
+            }
         };
-        UIList.prototype.itemInit = function (ui, data, index) {
-            var _this_1 = this;
+        UIList.prototype.itemInit = function (ui, data, index, isNewItemUI) {
+            if (isNewItemUI === void 0) { isNewItemUI = true; }
             if (!ui)
                 return;
             ui.data = data;
-            ui.hitArea = new Rectangle(0, 0, this.itemWidth, this.itemHeight);
+            if (this.thisItemsOptimizationMode) {
+                ui.hitArea = new Rectangle(0, 0, data.width, data.height);
+            }
+            else {
+                ui.hitArea = new Rectangle(0, 0, this.itemWidth, this.itemHeight);
+            }
             var enent = EventObject.MOUSE_DOWN;
             if (os.platform == 4 || os.platform == 3) {
                 enent = EventObject.MOUSE_UP;
             }
-            ui.on(EventObject.MOUSE_OVER, this, function (index, ui, data) {
-                index = _this_1.items.indexOf(data);
-                if (_this_1.overSelectMode) {
-                    _this_1.selectedIndex = index;
-                }
-                if (!_this_1.overSelectMode || _this_1.overIndex != index) {
-                    _this_1._overItem = ui;
-                    _this_1.overIndex = index;
-                }
-            }, [index, ui, data]);
-            ui.on(EventObject.MOUSE_OUT, this, function (ui) {
-                _this_1._overItem = null;
-                _this_1.overIndex = -1;
-            }, [ui]);
-            ui.on(enent, this, function (ui, data, index) {
-                if (_this_1.selectedItem == data) {
-                    _this_1.event(UIList.ITEM_CLICK);
-                    return;
-                }
-                _this_1.selectedItem = data;
-                if (!UIList.SINGLE_FOCUS_MODE)
-                    UIList.focus = _this_1;
-            }, [ui, data, index]);
-            ui.on(EventObject.DOUBLE_CLICK, this, function (ui, data, index) {
-                if (!data || data.numChildren == 0)
-                    return;
-                index = _this_1.items.indexOf(data);
-                data.isOpen = !data.isOpen;
-                _this_1.refreshOrder();
-                _this_1.event(UIList.OPEN_STATE_CHANGE, [ui, data, index]);
-            }, [ui, data, index]);
-            this.refreshItem(data);
+            ui.off(EventObject.MOUSE_OVER, this, this.onItemUIMouseOver);
+            ui.on(EventObject.MOUSE_OVER, this, this.onItemUIMouseOver, [index, ui, data]);
+            ui.off(EventObject.MOUSE_OUT, this, this.onItemUIMouseOver);
+            ui.on(EventObject.MOUSE_OUT, this, this.onItemUIMouseOut, [ui]);
+            ui.off(enent, this, this.onItemUIMouseDown);
+            ui.on(enent, this, this.onItemUIMouseDown, [ui, data, index]);
+            ui.off(EventObject.DOUBLE_CLICK, this, this.onItemUIDoubleClick);
+            ui.on(EventObject.DOUBLE_CLICK, this, this.onItemUIDoubleClick, [ui, data, index]);
+            this.refreshItem(ui, data, isNewItemUI);
             this.event(UIList.ITEM_CREATE, [ui, data, index]);
-            this.onCreateItem && this.onCreateItem.runWith([ui, data, index]);
+            this.onCreateItem && this.onCreateItem.runWith([ui, data, index, isNewItemUI]);
         };
-        UIList.prototype.refreshItem = function (item) {
-            var idx = this.items.indexOf(item);
-            if (idx == -1)
+        UIList.prototype.onItemUIMouseOver = function (index, ui, data) {
+            index = this.items.indexOf(data);
+            if (this.overSelectMode) {
+                this.selectedIndex = index;
+            }
+            if (!this.overSelectMode || this.overIndex != index) {
+                this._overItem = ui;
+                this.overIndex = index;
+            }
+        };
+        UIList.prototype.onItemUIMouseOut = function (ui) {
+            this._overItem = null;
+            this.overIndex = -1;
+        };
+        UIList.prototype.onItemUIMouseDown = function (ui, data, index) {
+            if (this.selectedItem == data) {
+                this.event(UIList.ITEM_CLICK);
                 return;
-            var ui = this._contentArea.getChildAt(idx);
+            }
+            this.selectedItem = data;
+            if (!UIList.SINGLE_FOCUS_MODE)
+                UIList.focus = this;
+        };
+        UIList.prototype.onItemUIDoubleClick = function (ui, data, index) {
+            if (!data || data.numChildren == 0)
+                return;
+            index = this.items.indexOf(data);
+            data.isOpen = !data.isOpen;
+            this.refreshOrder();
+            this.event(UIList.OPEN_STATE_CHANGE, [ui, data, index]);
+        };
+        UIList.prototype.refreshItem = function (ui, item, isNewItemUI) {
+            if (isNewItemUI === void 0) { isNewItemUI = true; }
             var uiNames = item.uiNames;
             for (var i = 0; i < uiNames.length; i++) {
                 var attrName = uiNames[i];
@@ -76337,11 +76456,7 @@ AnimationLayer.typeClsMap[AnimationItemType.Image] = AnimationImageLayer;
             this.__forceChange = false;
         };
         UIList.prototype.refreshSelectedImagePos = function () {
-            if (this.selectedIndex < 0 || this.selectedIndex >= this._contentArea.numChildren) {
-                this._selectedImageBox.visible = false;
-                return;
-            }
-            var ui = this._contentArea.getChildAt(this.selectedIndex);
+            var ui = this.getItemUI(this.selectedIndex);
             if (!ui) {
                 this._selectedImageBox.visible = false;
                 return;
@@ -76351,11 +76466,7 @@ AnimationLayer.typeClsMap[AnimationItemType.Image] = AnimationImageLayer;
             this._selectedImageBox.y = ui.y;
         };
         UIList.prototype.refreshOverImagePos = function () {
-            if (this.overIndex < 0 || this.overIndex >= this._contentArea.numChildren) {
-                this._overImageBox.visible = false;
-                return;
-            }
-            var ui = this._contentArea.getChildAt(this.overIndex);
+            var ui = this.getItemUI(this.overIndex);
             if (!ui) {
                 this._overImageBox.visible = false;
                 return;
@@ -76365,8 +76476,20 @@ AnimationLayer.typeClsMap[AnimationItemType.Image] = AnimationImageLayer;
             this._overImageBox.y = ui.y;
         };
         UIList.prototype.refreshOrder = function () {
+            if (this.thisItemsOptimizationMode) {
+                this.refreshOrderOptimizationMode();
+            }
+            else {
+                this.refreshOrderAll();
+            }
+        };
+        UIList.prototype.refreshOrderAll = function () {
             var len = this._contentArea.numChildren;
             this._itemSize = 0;
+            var eX = 0, eY = 0;
+            var currentYIndex = 0;
+            var maxEx = 0;
+            var maxEy = 0;
             for (var i = 0, s = 0; i < len; i++) {
                 var ui = this._contentArea.getChildAt(i);
                 var data = ui.data;
@@ -76376,13 +76499,30 @@ AnimationLayer.typeClsMap[AnimationItemType.Image] = AnimationImageLayer;
                 }
                 this._itemSize++;
                 ui.visible = true;
-                ui.x = (s % this.repeatX) * (this._itemWidth + this._spaceX) + data.depth * this.subitemIndentation;
-                ui.y = Math.floor(s / this.repeatX) * (this._itemHeight + this._spaceY);
+                var xIndex = (s % this.repeatX);
+                var yIndex = Math.floor(s / this.repeatX);
+                if (currentYIndex != yIndex) {
+                    maxEy += eY;
+                    eX = eY = 0;
+                    currentYIndex = yIndex;
+                }
+                ui.x = xIndex * (this._itemWidth + this._spaceX) + data.depth * this.subitemIndentation + eX;
+                ui.y = yIndex * (this._itemHeight + this._spaceY) + maxEy;
+                if (data.customSize) {
+                    eX += (data.width - this._itemWidth);
+                    if (maxEx < eX)
+                        maxEx = eX;
+                    var _eY = data.height - this._itemHeight;
+                    if (_eY > eY)
+                        eY = _eY;
+                }
                 s++;
             }
+            this.maxEx = maxEx;
+            this.maxEy = maxEy;
             this._overImageBox.visible = s > 0 && this.selectEnable;
-            this._contentArea.width = (this._itemWidth * this.repeatX) + (this._spaceX * this.repeatX - 1);
-            this._contentArea.height = Math.ceil(len / this.repeatX) * this._itemHeight + Math.max(0, Math.ceil(len / this.repeatX) - 1) * this._spaceY;
+            this._contentArea.width = (this._itemWidth * this.repeatX) + (this._spaceX * this.repeatX - 1) + maxEx;
+            this._contentArea.height = Math.ceil(len / this.repeatX) * this._itemHeight + Math.max(0, Math.ceil(len / this.repeatX) - 1) * this._spaceY + maxEy;
             this._overImage.width = this._itemWidth;
             this._overImage.height = this._itemHeight;
             if (this._overItem) {
@@ -76394,9 +76534,184 @@ AnimationLayer.typeClsMap[AnimationItemType.Image] = AnimationImageLayer;
             this.refreshSelectedImagePos();
             this.refresh();
         };
+        UIList.prototype.refreshOrderOptimizationMode = function () {
+            var len = this._items.length;
+            this._itemSize = 0;
+            var eX = 0, eY = 0;
+            var currentYIndex = 0;
+            var maxEx = 0;
+            var maxEy = 0;
+            for (var i = 0, s = 0; i < len; i++) {
+                var data = this._items[i];
+                if (data.isHideNode) {
+                    continue;
+                }
+                this._itemSize++;
+                var xIndex = (s % this.repeatX);
+                var yIndex = Math.floor(s / this.repeatX);
+                if (currentYIndex != yIndex) {
+                    maxEy += eY;
+                    eX = eY = 0;
+                    currentYIndex = yIndex;
+                }
+                data.x = xIndex * (this._itemWidth + this._spaceX) + data.depth * this.subitemIndentation + eX;
+                data.y = yIndex * (this._itemHeight + this._spaceY) + maxEy;
+                if (!data.customSize) {
+                    data.width = this.itemWidth;
+                    data.height = this.itemHeight;
+                }
+                else {
+                    eX += (data.width - this._itemWidth);
+                    if (maxEx < eX)
+                        maxEx = eX;
+                    var _eY = data.height - this._itemHeight;
+                    if (_eY > eY)
+                        eY = _eY;
+                }
+                s++;
+            }
+            this.maxEx = maxEx;
+            this.maxEy = maxEy;
+            this._overImageBox.visible = s > 0 && this.selectEnable;
+            this._contentArea.width = (this._itemWidth * this.repeatX) + (this._spaceX * this.repeatX - 1) + maxEx;
+            this._contentArea.height = Math.ceil(len / this.repeatX) * this._itemHeight + Math.max(0, Math.ceil(len / this.repeatX) - 1) * this._spaceY + maxEy;
+            this._overImage.width = this._itemWidth;
+            this._overImage.height = this._itemHeight;
+            if (this._overItem) {
+                this._overImageBox.x = this._overItem.x;
+                this._overImageBox.y = this._overItem.y;
+            }
+            this._selectedImage.width = this._itemWidth;
+            this._selectedImage.height = this._itemHeight;
+            this.refreshSelectedImagePos();
+            this.refresh();
+            this.refreshOptimizationModeItemUI();
+        };
+        UIList.prototype.refreshOptimizationModeItemUI = function () {
+            var listRect = this.scrollRect;
+            var len = this._items.length;
+            this._itemSize = 0;
+            var showOptimizationItemUIArr = [];
+            var showOptimizationItemUIMap = {};
+            var lastOptimizationItemUIMap = {};
+            for (var i = 0, s = 0; i < len; i++) {
+                var data = this._items[i];
+                if (data.isHideNode) {
+                    continue;
+                }
+                this._itemSize++;
+                var itemRect = new Rectangle(data.x, data.y, data.width, data.height);
+                var dataVisible = listRect.intersects(itemRect);
+                data.visible = dataVisible;
+                if (dataVisible) {
+                    var globalIndex = this._itemSize - 1;
+                    showOptimizationItemUIArr.push({ globalIndex: globalIndex, localIndex: s, data: data });
+                    showOptimizationItemUIMap[globalIndex] = true;
+                    s++;
+                }
+            }
+            for (var i_25 = 0; i_25 < this.optimizationItemUI.length; i_25++) {
+                var itemUI = this.optimizationItemUI[i_25];
+                if (!showOptimizationItemUIMap[itemUI.__listGlobalIndex]) {
+                    this.freeOptimizationItemUI(itemUI);
+                    this.optimizationItemUI.splice(i_25, 1);
+                    i_25--;
+                }
+                else {
+                    lastOptimizationItemUIMap[itemUI.__listGlobalIndex] = true;
+                }
+            }
+            for (var i_26 = 0; i_26 < showOptimizationItemUIArr.length; i_26++) {
+                var o = showOptimizationItemUIArr[i_26];
+                if (lastOptimizationItemUIMap[o.globalIndex]) {
+                    continue;
+                }
+                var newItemUI = this.createOptimizationItemUI(o.globalIndex, o.localIndex, o.data);
+                this._contentArea.addChild(newItemUI);
+                this.optimizationItemUI.push(newItemUI);
+                this.optimizationItemUIMap[o.globalIndex] = newItemUI;
+            }
+        };
+        UIList.prototype.freeOptimizationItemUI = function (itemUI) {
+            delete this.optimizationItemUIMap[itemUI.__listGlobalIndex];
+            itemUI.removeSelf();
+            this.optimizationItemUIPool.push(itemUI);
+        };
+        UIList.prototype.createOptimizationItemUI = function (globalIndex, localIndex, data) {
+            var ui;
+            var isNewItemUI;
+            if (this.optimizationItemUIPool.length > 0) {
+                ui = this.optimizationItemUIPool.shift();
+                isNewItemUI = false;
+            }
+            else {
+                ui = new this._itemModelClass(false, this._itemModelGUI);
+                isNewItemUI = true;
+            }
+            ui.__listGlobalIndex = globalIndex;
+            ui.x = data.x;
+            ui.y = data.y;
+            this.itemInit(ui, data, globalIndex, isNewItemUI);
+            return ui;
+        };
+        UIList.prototype.onListScroll = function () {
+            this.refreshOptimizationModeItemUI();
+        };
+        Object.defineProperty(UIList.prototype, "onChangeFragEvent1", {
+            get: function () {
+                return this._onChangeFragEvent1;
+            },
+            set: function (v) {
+                this._onChangeFragEvent1 = v;
+                if (v) {
+                    this.off(EventObject.CHANGE, this, this.onChange_private1);
+                    this.on(EventObject.CHANGE, this, this.onChange_private1);
+                }
+                else {
+                    this.off(EventObject.CHANGE, this, this.onChange_private1);
+                }
+            },
+            enumerable: false,
+            configurable: true
+        });
+        Object.defineProperty(UIList.prototype, "onChangeFragEvent2", {
+            get: function () {
+                return this._onChangeFragEvent2;
+            },
+            set: function (v) {
+                this._onChangeFragEvent2 = v;
+                if (v) {
+                    this.off(EventObject.CHANGE, this, this.onChange_private2);
+                    this.on(EventObject.CHANGE, this, this.onChange_private2);
+                }
+                else {
+                    this.off(EventObject.CHANGE, this, this.onChange_private2);
+                }
+            },
+            enumerable: false,
+            configurable: true
+        });
+        UIList.prototype.onChange_private1 = function (state) {
+            if (Config.SINGLE_PLAYER_CORE) {
+                if (this.guiRoot && !this.guiRoot.onlyForPreload) {
+                    if (this._onChangeFragEvent1 && state == 0) {
+                        CommandPage.startTriggerFragmentEvent(this._onChangeFragEvent1, Game.player.sceneObject, Game.player.sceneObject);
+                    }
+                }
+            }
+        };
+        UIList.prototype.onChange_private2 = function (state) {
+            if (Config.SINGLE_PLAYER_CORE) {
+                if (this.guiRoot && !this.guiRoot.onlyForPreload) {
+                    if (this._onChangeFragEvent1 && state == 1) {
+                        CommandPage.startTriggerFragmentEvent(this._onChangeFragEvent2, Game.player.sceneObject, Game.player.sceneObject);
+                    }
+                }
+            }
+        };
         UIList.customCompFunctionNames = ["itemModelGUI", "previewSize", "selectEnable", "repeatX", "itemWidth", "itemHeight", "spaceX", "spaceY", "scrollShowType",
             "hScrollBar", "hScrollBg", "vScrollBar", "vScrollBg", "scrollWidth", "selectImageURL", "selectImageGrid9", "selectedImageAlpha", "selectedImageOnTop",
-            "overImageURL", "overImageGrid9", "overImageAlpha", "overImageOnTop", "overSelectMode", "slowmotionType", "length", "selectedIndex", "overIndex", "subitemIndentation"];
+            "overImageURL", "overImageGrid9", "overImageAlpha", "overImageOnTop", "overSelectMode", "slowmotionType", "length", "selectedIndex", "overIndex", "subitemIndentation", "onChangeFragEvent1", "onChangeFragEvent2"];
         UIList.EVENT_FOCUS_CHANGE = "UIListEVENT_FOCUS_CHANGE";
         UIList.OPEN_STATE_CHANGE = "UIList_EVENT_OPEN_STATE_CHANGE";
         UIList.ITEM_CLICK = "UIListITEM_CLICK";

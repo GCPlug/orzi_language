@@ -12,6 +12,8 @@ class WorldData {
     static readonly cancelSE: string; // = ""; 取消
     static readonly disalbeSE: string; // = ""; 禁用
     static readonly dialogSE: string; // = ""; 文本播放音效
+    static readonly fileReload: boolean; // = false; 读档时强制重启游戏
+    static readonly disposeInterval: number; // = 60; 系统自动释放资源时间
     static readonly focusEnabled: boolean; // = false; 使用按钮焦点
     static readonly hotKeyListEnabled: boolean; // = false; 允许按键操作列表
     static readonly uiCompFocusAnimation: number; // = 0; 界面组件焦点动画

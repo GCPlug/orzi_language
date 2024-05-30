@@ -3666,6 +3666,22 @@
                 "name": "[#GAME_HOVER_ITEM_INDEX]",
                 "tips": "",
                 "compType": 0
+            },
+            {
+                "compParam": {},
+                "enable": true,
+                "attribute": "onChangeFragEvent1",
+                "name": "[#GAME_ON_SELECTINDEX_CHANGED]",
+                "tips": "[#GAME_ON_SELECTINDEX_CHANGED_TIPS]",
+                "compType": 35
+            },
+            {
+                "compParam": {},
+                "enable": true,
+                "attribute": "onChangeFragEvent2",
+                "name": "[#GAME_ON_OVERINDEX_CHANGED]",
+                "tips": "[#GAME_ON_OVERINDEX_CHANGED_TIPS]",
+                "compType": 35
             }
         ]
     },

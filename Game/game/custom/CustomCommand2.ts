@@ -689,22 +689,37 @@ module CommandExecute {
      * 关闭界面
      */
     export function customCommand_3012(commandPage: CommandPage, cmd: Command, trigger: CommandTrigger, triggerPlayer: ClientPlayer, playerInput: any[], cp: CustomCommandParams_3012): void {
-        // 获取通道
-        let passageID = cp.passageIDUseVar ? Game.player.variable.getVariable(cp.passageIDVar) : cp.passageID;
-        passageID = MathUtils.int(passageID);
-        // 界面ID
-        let uiID = cp.objectUseVar ? Game.player.variable.getVariable(cp.uiVar) : cp.uiID;
         // -- 图像层的场合
         if (cp.showType == 1) {
+            // 获取通道
+            let passageID = cp.passageIDUseVar ? Game.player.variable.getVariable(cp.passageIDVar) : cp.passageID;
+            passageID = MathUtils.int(passageID);
             passageID = cp.passageIDUseVar ? Game.player.variable.getVariable(cp.passageIDVar) : cp.passageID;
+            GameImageLayer.deletePassage(passageID);
         }
         // -- 界面层的场合
         else {
-            passageID = 1000000 + uiID;
+            let uiID = cp.objectUseVar ? Game.player.variable.getVariable(cp.uiVar) : cp.uiID;
             GameUI.hide(uiID);
         }
-        // 清理通道
-        // GameImageLayer.deletePassage(passageID);
+    }
+    /**
+     * 卸载界面
+     */
+    export function customCommand_3022(commandPage: CommandPage, cmd: Command, trigger: CommandTrigger, triggerPlayer: ClientPlayer, playerInput: any[], cp: CustomCommandParams_3022): void {
+        // -- 图像层的场合
+        if (cp.showType == 1) {
+            // 获取通道
+            let passageID = cp.passageIDUseVar ? Game.player.variable.getVariable(cp.passageIDVar) : cp.passageID;
+            passageID = MathUtils.int(passageID);
+            passageID = cp.passageIDUseVar ? Game.player.variable.getVariable(cp.passageIDVar) : cp.passageID;
+            GameImageLayer.deletePassage(passageID);
+        }
+        // -- 界面层的场合
+        else {
+            let uiID = cp.objectUseVar ? Game.player.variable.getVariable(cp.uiVar) : cp.uiID;
+            GameUI.dispose(uiID);
+        }
     }
     /**
      * 移动界面元件

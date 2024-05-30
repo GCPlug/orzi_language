@@ -87,6 +87,10 @@ declare class AssetManager {
         [url: string]: number;
     };
     /**
+     * 释放资源的间隔ms（当引用计数为0时会延迟清理资源，因为最近可能还会频繁用到） 默认值=6000ms（60秒）
+     */
+    static disposeInterval: number;
+    /**
      * 预加载加载场景资源，如果autoDispose为false的话则需要手动卸载：AssetManager::disposeScene
      * -- 场景的相关JSON文件
      * -- 如勾选预载地图资源：预载入地图资源：图层的图片、图块的图片、BGM、BGS

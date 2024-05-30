@@ -50,6 +50,326 @@
             "86536511876_0.17852529462375544"
         ],
         [
+            0,
+            7,
+            0,
+            [
+                0,
+                1,
+                1,
+                0
+            ],
+            0,
+            0,
+            [
+                0,
+                1,
+                1,
+                0
+            ],
+            0,
+            [
+                1,
+                1,
+                [
+                    0,
+                    0,
+                    1,
+                    1
+                ]
+            ],
+            0,
+            0,
+            [
+                1,
+                1
+            ],
+            "",
+            "",
+            false,
+            null,
+            [
+                7,
+                {
+                    "worldData": {
+                        "type": 0,
+                        "moduleID": 1,
+                        "dataID": 1,
+                        "dataIsUseVar": false,
+                        "dataVarID": 1,
+                        "varID": "159222681340_0.918968211254191",
+                        "varName": "fileReload",
+                        "valueType": 0,
+                        "value": {},
+                        "isCustomModule": false,
+                        "operationType": 0,
+                        "compInfo": {
+                            "uiID": 1,
+                            "type": 0,
+                            "compName": "",
+                            "compID": 0,
+                            "attrs": [],
+                            "varName": ""
+                        },
+                        "selectMode": 0,
+                        "inputModeInfo": {
+                            "mode": 0,
+                            "constName": "",
+                            "varNameIndex": 1,
+                            "typeIndex": 0
+                        },
+                        "isRounded": false,
+                        "compAttrEnable": false
+                    }
+                },
+                [
+                    {
+                        "103266252869_0.4092710689405552": {
+                            "type": 0,
+                            "moduleID": 1,
+                            "dataID": 1,
+                            "dataIsUseVar": false,
+                            "dataVarID": 1,
+                            "varID": "159222681340_0.918968211254191",
+                            "varName": "fileReload",
+                            "valueType": 0,
+                            "value": {},
+                            "isCustomModule": false,
+                            "operationType": 0,
+                            "compInfo": {
+                                "uiID": 1,
+                                "type": 0,
+                                "compName": "",
+                                "compID": 0,
+                                "attrs": [],
+                                "varName": ""
+                            },
+                            "selectMode": 0,
+                            "inputModeInfo": {
+                                "mode": 0,
+                                "constName": "",
+                                "varNameIndex": 1,
+                                "typeIndex": 0
+                            },
+                            "isRounded": false,
+                            "compAttrEnable": false
+                        }
+                    }
+                ]
+            ],
+            null,
+            null,
+            null,
+            null,
+            0,
+            0,
+            [
+                0,
+                {},
+                ""
+            ],
+            [
+                0,
+                {},
+                ""
+            ],
+            {
+                "___cmdID": "159226007577_0.8063177803753325"
+            }
+        ],
+        [
+            10001,
+            {
+                "42010122135_0.24848401267879283": [
+                    {
+                        "assetType": 5,
+                        "asset0": "",
+                        "asset1": "",
+                        "asset2": 0,
+                        "asset3": 0,
+                        "asset4": 0,
+                        "asset5": 4,
+                        "asset6": 0,
+                        "assetTypeItems": [
+                            "图片",
+                            "音频",
+                            "行走图",
+                            "立绘",
+                            "动画",
+                            "界面",
+                            "对话框样式",
+                            "预设字体",
+                            "CG图鉴"
+                        ]
+                    },
+                    {
+                        "assetType": 5,
+                        "asset0": "",
+                        "asset1": "",
+                        "asset2": 1,
+                        "asset3": 1,
+                        "asset4": 1,
+                        "asset5": 3,
+                        "asset6": 1,
+                        "assetTypeItems": [
+                            "图片",
+                            "音频",
+                            "行走图",
+                            "立绘",
+                            "动画",
+                            "界面",
+                            "对话框样式",
+                            "预设字体",
+                            "CG图鉴"
+                        ]
+                    },
+                    {
+                        "assetType": 5,
+                        "asset0": "",
+                        "asset1": "",
+                        "asset2": 1,
+                        "asset3": 1,
+                        "asset4": 1,
+                        "asset5": 5,
+                        "asset6": 1,
+                        "assetTypeItems": [
+                            "图片",
+                            "音频",
+                            "行走图",
+                            "立绘",
+                            "动画",
+                            "界面",
+                            "对话框样式",
+                            "预设字体",
+                            "CG图鉴"
+                        ]
+                    },
+                    {
+                        "assetType": 5,
+                        "asset0": "",
+                        "asset1": "",
+                        "asset2": 1,
+                        "asset3": 1,
+                        "asset4": 1,
+                        "asset5": 7,
+                        "asset6": 1,
+                        "assetTypeItems": [
+                            "图片",
+                            "音频",
+                            "行走图",
+                            "立绘",
+                            "动画",
+                            "界面",
+                            "对话框样式",
+                            "预设字体",
+                            "CG图鉴"
+                        ]
+                    },
+                    {
+                        "assetType": 5,
+                        "asset0": "",
+                        "asset1": "",
+                        "asset2": 1,
+                        "asset3": 1,
+                        "asset4": 1,
+                        "asset5": 8,
+                        "asset6": 1,
+                        "assetTypeItems": [
+                            "图片",
+                            "音频",
+                            "行走图",
+                            "立绘",
+                            "动画",
+                            "界面",
+                            "对话框样式",
+                            "预设字体",
+                            "CG图鉴"
+                        ]
+                    },
+                    {
+                        "assetType": 5,
+                        "asset0": "",
+                        "asset1": "",
+                        "asset2": 1,
+                        "asset3": 1,
+                        "asset4": 1,
+                        "asset5": 9,
+                        "asset6": 1,
+                        "assetTypeItems": [
+                            "图片",
+                            "音频",
+                            "行走图",
+                            "立绘",
+                            "动画",
+                            "界面",
+                            "对话框样式",
+                            "预设字体",
+                            "CG图鉴"
+                        ]
+                    },
+                    {
+                        "assetType": 5,
+                        "asset0": "",
+                        "asset1": "",
+                        "asset2": 1,
+                        "asset3": 1,
+                        "asset4": 1,
+                        "asset5": 6,
+                        "asset6": 1,
+                        "assetTypeItems": [
+                            "图片",
+                            "音频",
+                            "行走图",
+                            "立绘",
+                            "动画",
+                            "界面",
+                            "对话框样式",
+                            "预设字体",
+                            "CG图鉴"
+                        ]
+                    },
+                    {
+                        "assetType": 5,
+                        "asset0": "",
+                        "asset1": "",
+                        "asset2": 1,
+                        "asset3": 1,
+                        "asset4": 1,
+                        "asset5": 2,
+                        "asset6": 1,
+                        "assetTypeItems": [
+                            "图片",
+                            "音频",
+                            "行走图",
+                            "立绘",
+                            "动画",
+                            "界面",
+                            "对话框样式",
+                            "预设字体",
+                            "CG图鉴"
+                        ]
+                    }
+                ],
+                "42275874449_0.28161324216600425": false,
+                "89373056551_0.6675733013666014": {
+                    "uiID": 1
+                }
+            },
+            "159226007577_0.8299221021839758"
+        ],
+        [
+            -1,
+            {
+                "___cmdID": "159226007577_0.2988739388607706"
+            }
+        ],
+        [
+            2,
+            {
+                "___cmdID": "159226007577_0.8508243453825199"
+            }
+        ],
+        [
             40011,
             {
                 "49816072304_0.03131954665076897": 0,
@@ -92,6 +412,7 @@
             30,
             0,
             false,
+            0,
             {
                 "___cmdID": "86536511876_0.2874060399622489"
             }

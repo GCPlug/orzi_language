@@ -1,0 +1,391 @@
+{
+    "compAutoOrderLimitHeight": 220,
+    "id": 3022,
+    "blockList": [
+        {
+            "name": "关闭界面",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "49821564836_0.18023666032094843",
+                        "varName": "showType",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 2,
+                            "compParam": {
+                                "items": "界面层,图像层",
+                                "showIndex": false
+                            }
+                        },
+                        "defaultValue": "0",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "层级",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [],
+                    "y": 10,
+                    "x": 15,
+                    "width": 300,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49821564836_0.05613902618903355",
+                        "varName": "passageID",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 0,
+                            "compParam": {
+                                "lowerLimit": 1,
+                                "upperLimit": 10000,
+                                "stepValue": 1,
+                                "limitInteger": true,
+                                "lockTextLimit": true,
+                                "xDragEnabled": true,
+                                "yDragEnabled": true
+                            }
+                        },
+                        "defaultValue": "1",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "通过编号管理该显示对象：\\n1-相同的编号只允许显示一个显示对象\\n2-可通过编号来操控该显示对象",
+                        "alias": "编号",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "49821564836_0.18023666032094843",
+                            "value": 1,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        },
+                        {
+                            "attrID": "49821586470_0.8966191069628267",
+                            "value": false,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 46,
+                    "x": 15,
+                    "width": 300,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49821564836_0.6578043100778947",
+                        "varName": "passageIDVar",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 6,
+                            "compParam": {
+                                "lowerLimit": 1,
+                                "upperLimit": 10000,
+                                "stepValue": 1,
+                                "limitInteger": true,
+                                "lockTextLimit": true,
+                                "xDragEnabled": true,
+                                "yDragEnabled": true
+                            }
+                        },
+                        "defaultValue": "1",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "通过编号管理该显示对象：\\n1-相同的编号只允许显示一个显示对象\\n2-可通过编号来操控该显示对象",
+                        "alias": "编号",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "49821564836_0.18023666032094843",
+                            "value": 1,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        },
+                        {
+                            "attrID": "49821586470_0.8966191069628267",
+                            "value": true,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 46,
+                    "x": 15,
+                    "width": 300,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49821564836_0.7286666716958285",
+                        "varName": "uiID",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 5,
+                            "compParam": {}
+                        },
+                        "defaultValue": "1",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "界面",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "49821564836_0.18023666032094843",
+                            "value": 0,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        },
+                        {
+                            "attrID": "49821586470_0.5086891336665356",
+                            "value": false,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 46,
+                    "x": 15,
+                    "width": 300,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49821564836_0.40792780858788147",
+                        "varName": "uiVar",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 6,
+                            "compParam": {}
+                        },
+                        "defaultValue": "1",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "界面",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "49821564836_0.18023666032094843",
+                            "value": 0,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        },
+                        {
+                            "attrID": "49821586470_0.5086891336665356",
+                            "value": true,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 46,
+                    "x": 15,
+                    "width": 300,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49821586470_0.8966191069628267",
+                        "varName": "passageIDUseVar",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "使用变量作为编号的图片无法预览",
+                        "alias": "编号使用变量",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "49821564836_0.18023666032094843",
+                            "value": 1,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 82,
+                    "x": 15,
+                    "width": 119,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "49821586470_0.5086891336665356",
+                        "varName": "objectUseVar",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "界面使用变量",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "49821564836_0.18023666032094843",
+                            "value": 0,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 82,
+                    "x": 15,
+                    "width": 109,
+                    "height": 32
+                }
+            ],
+            "blockCondition": [],
+            "blockHeight": 120,
+            "autoOrder": true,
+            "cmdColor": "#ff5151",
+            "hideBlockTitle": true,
+            "cmdIcon": "asset/image/command/eP_icon_ClearUI_yellow.png"
+        }
+    ],
+    "fastModifyAttribute": true,
+    "cmdPreviewTS": "//------------------------------------------------------------------------------------------------------\r\n// 编辑器预览窗口运行时提供的系统变量\r\n// 关于预览的流程：\r\n// -- 1.imageLayerPassageClear 每已使用的通道x每已使用的指令\r\n// -- 2.runCommand 每个指令按顺序执行一遍\r\n// -- 3.imageLayerPassageStart 每已使用的通道x每已使用的指令\r\n// 关于播放的流程\r\n// -- 1.imageLayerPassageClear 每已使用的通道x每已使用的指令\r\n// -- 2.runCommand 每个指令按顺序播放\r\n//------------------------------------------------------------------------------------------------------\r\n/**\r\n * 当前自定义指令的编号\r\n */\r\ndeclare var commandID: number;\r\n/**\r\n * 图像层通道数据\r\n */\r\ndeclare var imageLayerPassageData: any[];\r\n/**\r\n * 图像层显示对象容器\r\n */\r\ndeclare var imageLayer: GameImageLayer;\r\n/**\r\n * 界面层显示对象容器\r\n */\r\ndeclare var uiLayer: GameSprite;\r\n/**\r\n * 预览窗口\r\n */\r\ndeclare var previewWin: {\r\n    /**\r\n     * 清理全部事件指令产生的预览效果\r\n     */\r\n    clearData: Function;\r\n    /**\r\n     * 设置数据，刷新预览效果直到当前选中的指令行\r\n     */\r\n    setData: Function;\r\n    /**\r\n     * 当前选中的指令\r\n     */\r\n    currentSelectCmd: Command;\r\n    /**\r\n     * 视图区域是否右键移动过\r\n     */\r\n    viewAreaRightMouseMove: boolean;\r\n    /**\r\n     * 允许显示全部对象\r\n     */\r\n    allowAllDisplayObject: boolean;\r\n    /**\r\n     * 对象操作工具\r\n     */\r\n    operateObjectTool: {\r\n        // 刷新对象操作工具，比如来自其他地方更改了对象的位置或尺寸等，可使用该函数刷新\r\n        refresh: Function,\r\n        // 选中显示对象\r\n        selectObjects: (sp: GameSprite[]) => void,\r\n        // 需要排除缩放和旋转工具的对象\r\n        addExcludeOperactionObject: (sp: GameSprite) => void\r\n    }\r\n    /**\r\n     * 选中事件指令\r\n     * @param cmd 事件指令\r\n     * @param sendEvent 派发事件 默认=false 派发事件会刷新属性栏、预览窗口等\r\n     */\r\n    selectCmdMessageByCmd(cmd: Command, sendEvent?: boolean);\r\n    /**\r\n     * 修改指令属性\r\n     * @param cmd 需要修改的指令\r\n     * @param varName 参数变量名称\r\n     * @param newValue 新的值\r\n     */\r\n    modifyCommandParam: (cmd: Command, varName: string, newValue: any) => void;\r\n    /**\r\n     * 新增指令 默认是默认值，如果有写入参数的话则以参数为准 varNameValue\r\n     * @param customID 自定义ID\r\n     * @param varNameValue 额外的变量值，如存在则优先使用该值，否则使用自定义编辑器中的默认值，如 {dpX:100,dpY:200}\r\n     * @param selectedIndex [可选] 默认值=-2  -3=当前选中（之后） -2=当前选中（之前） -1=最尾端 0-N=自定义 \r\n     * @param refreshPreViewArea [可选] 默认值=true 刷新预览区\r\n     */\r\n    insertCustomCMD(customID: number, varNameValue: any, selectedIndex?: number, refreshPreViewArea?: boolean): Command;\r\n    /**\r\n     * 更改显示层\r\n     * @param selectedIndex 0-界面层 1-图像层\r\n     */\r\n    changeLayer(selectedIndex: number): void;\r\n    /**\r\n     * 创建菜单\r\n     * var menuData:any[] = [\r\n               {\r\n                   label:\"重命名\",\r\n                   splitLine:false,// 是否显示分割线\r\n                   children:[], // 存放和本身这个对象是一样的格式\r\n                   execute:\"functionName\", // 点击后执行的方法名称\r\n                   shortcutKey:\"\", //显示的快捷键名称\r\n                   menuHotKey:\"\", //实际作用的快捷键名称 对应Laya.KeyBoard的值 如A\r\n                   enabled:true, // 是否可用，不填写表示true\r\n                   visible:true, // 是否显示，不填写表示true\r\n\t\t\t\t   selected:true, // 如果存在则以打钩的形式选择此项\r\n\t\t\t\t   group:\"myGroupName\" // 配合selected，如若存在则同组单选\r\n               }\r\n           ];\r\n     * @param menuData 菜单数据\r\n     * @param x 全局坐标X\r\n     * @param y 全局坐标Y\r\n     * @param executeDomain 函数作用域\r\n     */\r\n    createMenu(menuData: any[], x: number, y: number, executeDomain: any);\r\n}\r\n\r\n//------------------------------------------------------------------------------------------------------\r\n// [everyone used command] 逐指令行目执行\r\n//------------------------------------------------------------------------------------------------------\r\n/**\r\n * 逐指令执行：对应事件下按照从上至下的顺序逐行执行，如果是该自定义指令时则会执行该函数\r\n * 该函数用于编辑器预览和播放，如果分歧面板中筛选不经过的事件指令则不会执行该函数。\r\n * 比如事件页中有3个该指令，则按照顺序执行3次该函数\r\n * @param cmdParams 指令的自定义参数数据，根据用户设定值\r\n * @param cmd 对应的指令对象\r\n * @param isPlayMode 是否是播放模式，否则是普通的预览模式\r\n */\r\nfunction runCommand(cmdParams: ThisCommandParams, cmd: Command, isPlayMode: boolean) {\r\n    // -- 图像层的场合\r\n    if (cmdParams.showType == 1) {\r\n        var passageID = cmdParams.passageID;\r\n        // 使用变量作为通道的话则忽略此指令执行\r\n        if (cmdParams.passageIDUseVar) {\r\n            return;\r\n        }\r\n    }\r\n    // -- 界面层的场合\r\n    else {\r\n        passageID = 1000000 + cmdParams.uiID;\r\n    }\r\n    // -- 获取通道数据\r\n    var passageData: any = imageLayerPassageData[passageID];\r\n    // -- 获取储存的通道，没有的话则新建\r\n    if (isPlayMode) {\r\n        if (passageData) {\r\n            passageData.onCoverPassage && passageData.onCoverPassage.apply(this, [cmdParams.passageID, passageData]);\r\n            // 清除数据重新开始\r\n            passageData = null;\r\n        }\r\n    }\r\n    else {\r\n        if (passageData) {\r\n            delete imageLayerPassageData[passageID];\r\n        }\r\n    }\r\n\r\n}\r\n//------------------------------------------------------------------------------------------------------\r\n// 属性面板修改：当修改该指令的属性时，只会执行该指令对应的「指令源」的这些函数\r\n// 如A指令来自自定义指令32号，每次通过属性面板快速修改A指令的参数b时，则会执行32号指令的下面2个函数\r\n// [current used command] \r\n//------------------------------------------------------------------------------------------------------\r\n/**\r\n * 当属性面板中的属性修改前\r\n * @param cmd 对应的指令\r\n * @param cmdParams 对应指令的参数 \r\n * @param varName 修改的属性名\r\n */\r\nfunction onCommandAttributeBeforeChange(cmd: Command, cmdParams: ThisCommandParams, varName: string) {\r\n    previewWin.clearData();\r\n}\r\n/**\r\n * 当属性面板中的属性修改后\r\n * @param cmd 对应的指令\r\n * @param cmdParams 对应指令的参数 \r\n * @param varName 修改的属性名\r\n * @param newValue 修改后的值\r\n */\r\nfunction onCommandAttributeChange(cmd: Command, cmdParams: ThisCommandParams, varName: string, newValue: any) {\r\n    previewWin.setData(false);\r\n}\r\n//------------------------------------------------------------------------------------------------------\r\n// 对象操作工具\r\n// [everyone used command type] 遍历每个执行过的自定义指令类别\r\n//------------------------------------------------------------------------------------------------------\r\n/**\r\n * 当操作工具移动对象时\r\n * @param realSelObjs 选中的对象\r\n */\r\nfunction imageLayerOnToolsChangePostion(realSelObjs: GameSprite[]): void {\r\n\r\n}\r\n/**\r\n * 当操作工具缩放时\r\n * @param realSelObjs 选中的对象\r\n */\r\nfunction imageLayerOnToolsChangeSize(realSelObjs: GameSprite[]) {\r\n\r\n}\r\n/**\r\n * 当操作工具旋转时\r\n * @param realSelObjs 选中的对象\r\n */\r\nfunction imageLayerOnToolsChangeRotation(realSelObjs: GameSprite[]) {\r\n\r\n}\r\n/**\r\n * 当操作工具开始操作时\r\n */\r\nfunction imageLayerOnToolsChangeStart(realSelObjs: GameSprite[]) {\r\n\r\n}\r\n/**\r\n * 当操作工具结束操作时\r\n */\r\nfunction imageLayerOnToolsChangeEnd(realSelObjs: GameSprite[]) {\r\n\r\n}\r\n/**\r\n * 当操作工具选中对象时\r\n */\r\nfunction imageLayerOnToolsSelectObject(realSelObjs: GameSprite[]) {\r\n\r\n}\r\n//------------------------------------------------------------------------------------------------------\r\n// 图像层相关 遍历每个已使用的通道，每个已使用的通道再遍历已使用的指令，调用下面的函数\r\n// [everyone passage] x [everyone used command type]\r\n//------------------------------------------------------------------------------------------------------\r\n/**\r\n * 清理函数：每次刷新前调用此函数进行清理\r\n * @param passageID 通道\r\n * @param passageData 通道储存的数据\r\n */\r\nfunction imageLayerPassageClear(passageID: number, passageData: any) {\r\n\r\n}\r\n/**\r\n * 开始函数\r\n * @param passageID 通道\r\n * @param passageData 通道储存的数据\r\n */\r\nfunction imageLayerPassageStart(passageID: number, passageData: any) {\r\n\r\n}\r\n",
+    "cmdPreviewJS": "function runCommand(cmdParams, cmd, isPlayMode) {\n    if (cmdParams.showType == 1) {\n        var passageID = cmdParams.passageID;\n        if (cmdParams.passageIDUseVar) {\n            return;\n        }\n    }\n    else {\n        passageID = 1000000 + cmdParams.uiID;\n    }\n    var passageData = imageLayerPassageData[passageID];\n    if (isPlayMode) {\n        if (passageData) {\n            passageData.onCoverPassage && passageData.onCoverPassage.apply(this, [cmdParams.passageID, passageData]);\n            passageData = null;\n        }\n    }\n    else {\n        if (passageData) {\n            delete imageLayerPassageData[passageID];\n        }\n    }\n}\nfunction onCommandAttributeBeforeChange(cmd, cmdParams, varName) {\n    previewWin.clearData();\n}\nfunction onCommandAttributeChange(cmd, cmdParams, varName, newValue) {\n    previewWin.setData(false);\n}\nfunction imageLayerOnToolsChangePostion(realSelObjs) {\n}\nfunction imageLayerOnToolsChangeSize(realSelObjs) {\n}\nfunction imageLayerOnToolsChangeRotation(realSelObjs) {\n}\nfunction imageLayerOnToolsChangeStart(realSelObjs) {\n}\nfunction imageLayerOnToolsChangeEnd(realSelObjs) {\n}\nfunction imageLayerOnToolsSelectObject(realSelObjs) {\n}\nfunction imageLayerPassageClear(passageID, passageData) {\n}\nfunction imageLayerPassageStart(passageID, passageData) {\n}\n",
+    "isCustomPhraseDesc": true,
+    "compAutoOrder": false,
+    "name": "关闭界面",
+    "customPhraseDescTS": "// 根据属性名称值编写自定义短语描述，如：\"我的短语是\"+attrs.xxx\n// 使用下拉框组件的变量attrs.xxx有对应的attrs.xxxItems的属性以便获得标签名集合\n// 获取自定义模块的数据名称的函数：getModuleDataName(moduleID:number,dataID:number):string;\n// 获取各种列表内数据名称的函数：getTypeDataListName(typeID: number, dataID: number):string;\n// -- typeID ：0-全局变量 1-全局开关 2-全局字符串 3-玩家变量 4-玩家开关 5-玩家字符串\n//           ：6-场景列表 7-场景对象模型列表 8-图块列表 9-行走图列表 10-行走图动作列表 11-立绘列表 12-立绘表情列表\n//           ：13-公共事件 14-对话框列表 15-动画列表 16-动画信号列表 17-界面列表 18-数据结构列表 19-自定义模块列表\n//           ：20-自定义命令列表 21-自定义行为列表 22-自动元件列表 23-行走图部件列表 24-立绘部件列表\nvar str = ``;\nif (attrs.showType == 1) {\n    var passageIDStr = attrs.passageIDUseVar ? `@${attrs.passageIDVar}-${getTypeDataListName(3, attrs.passageIDVar)}` : attrs.passageID;\n    str += `编号【${passageIDStr}】`;\n}\nif (attrs.showType == 0) {\n    var objStr = attrs.objectUseVar ? `@${attrs.uiVar}-${getTypeDataListName(3, attrs.uiVar)}` : `${attrs.uiID}-${getTypeDataListName(17, attrs.uiID)}`;\n    str += `「${objStr}」`;\n}\nstr;",
+    "customPhraseDescJS": "var str = \"\";\nif (attrs.showType == 1) {\n    var passageIDStr = attrs.passageIDUseVar ? \"@\" + attrs.passageIDVar + \"-\" + getTypeDataListName(3, attrs.passageIDVar) : attrs.passageID;\n    str += \"\\u7F16\\u53F7\\u3010\" + passageIDStr + \"\\u3011\";\n}\nif (attrs.showType == 0) {\n    var objStr = attrs.objectUseVar ? \"@\" + attrs.uiVar + \"-\" + getTypeDataListName(3, attrs.uiVar) : attrs.uiID + \"-\" + getTypeDataListName(17, attrs.uiID);\n    str += \"\\u300C\" + objStr + \"\\u300D\";\n}\nstr;\n"
+}
