@@ -504,8 +504,24 @@
             "value": [
                 1,
                 2,
-                3
+                3,
+                4
             ],
+            "copy": false
+        },
+        "fileReload": {
+            "varType": 2,
+            "value": false,
+            "copy": false
+        },
+        "disposeInterval": {
+            "varType": 0,
+            "value": 60,
+            "copy": false
+        },
+        "optimizeHelp": {
+            "varType": 1,
+            "value": "",
             "copy": false
         }
     }

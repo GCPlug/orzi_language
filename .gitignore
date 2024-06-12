@@ -4,6 +4,8 @@
 out/
 savedata/
 
+log/
+
 node_modules/
 
 asset/orzi/languages/_local.txt

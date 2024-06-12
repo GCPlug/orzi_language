@@ -12,8 +12,14 @@ module CommandExecute {
      * @param p 自定义命令参数 1表示对应1号命令的参数
      */
     export function customCommand_15001(commandPage: CommandPage, cmd: Command, trigger: CommandTrigger, triggerPlayer: ClientPlayer, playerInput: any[], p: CustomCommandParams_15001): void {
-        if (p.local && p.local > 0)
-            Orzi_Tools.Language.setLanguage(GameData.getModuleData(Orzi_Tools.Language.PLUGIN_MODULE_TYPE_OrziLanguage, p.local).name as any);
+        if (p.local && p.local > 0) {
+            // 获取语言包内容
+            let _data = GameData.getModuleData(Orzi_Tools.Language.PLUGIN_MODULE_TYPE_OrziLanguage, p.local);
+            // 没有就不修改
+            // if (!_data) return; // 不做兼容，没有就直接卡死，不然开发者不知道
+            if (!_data) console.error('语言包设置错误！');
+            Orzi_Tools.Language.setLanguage(_data.name as any);
+        }
     }
 
     /** 调试指令 */

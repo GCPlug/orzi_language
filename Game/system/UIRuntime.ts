@@ -221,6 +221,7 @@ class GUI_6 extends GUI_BASE {
    备份语言包按钮:UIButton;
    切换到中文按钮:UIButton;
    切换到英文按钮:UIButton;
+   切换到111bbb按钮:UIButton;
    constructor(){
       super(6);
    }

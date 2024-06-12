@@ -2349,6 +2349,55 @@
                 "textDy": 0,
                 "textStroke": 0,
                 "textStrokeColor": "#000000"
+            },
+            {
+                "id": "160644813591_0.8593164788197654",
+                "condition": [],
+                "type": "UIButton",
+                "name": "切换到111bbb按钮",
+                "x": 1141,
+                "y": 723,
+                "width": 216,
+                "height": 54,
+                "opacity": 1,
+                "blend": 0,
+                "rotation": 0,
+                "show": true,
+                "mouseEventEnabledData": true,
+                "materialData": [
+                    {
+                        "materials": []
+                    }
+                ],
+                "mouseEventEnabledInEditor": true,
+                "lock": false,
+                "showOnEditor": true,
+                "hasCommand": [
+                    true
+                ],
+                "isOpen": true,
+                "label": "切换到111bbb",
+                "image1": "asset/image/picture/control/btn_normal.png",
+                "grid9img1": "0,0,0,0,0",
+                "image2": "asset/image/picture/control/btn_over.png",
+                "grid9img2": "0,0,0,0,0",
+                "image3": "asset/image/picture/control/btn_click.png",
+                "grid9img3": "0,0,0,0,0",
+                "fontSize": 24,
+                "color": "#ffffff",
+                "overColor": "#ffffff",
+                "clickColor": "#ffffff",
+                "bold": false,
+                "italic": false,
+                "smooth": false,
+                "align": 1,
+                "valign": 1,
+                "letterSpacing": 0,
+                "font": "Source_Han_Sans",
+                "textDx": 0,
+                "textDy": 0,
+                "textStroke": 0,
+                "textStrokeColor": "#000000"
             }
         ]
     },

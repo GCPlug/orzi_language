@@ -99,6 +99,7 @@ module Orzi_Tools {
          * @returns 
          */
         static hasText(key: string) {
+            if (!Language.instance.packages[Language.instance.local]) return false;
             return Language.instance.packages[Language.instance.local][key] !== undefined;
         }
 
@@ -132,6 +133,11 @@ module Orzi_Tools {
                 if ((Config as any).language === 1) cl = 'zhTW';
                 else if ((Config as any).language === 2) cl = 'en';
                 else cl = 'zhCN';
+            } else {
+                if (!Language.instance.packages[cl]) {
+                    console.error('语言包不存在或未生成！', cl);
+                    return;
+                }
             }
             if (Language.instance.packages[cl] === undefined) cl = (WorldData.orzi_language_packages && WorldData.orzi_language_packages.length) ? GameData.getModuleData(Orzi_Tools.Language.PLUGIN_MODULE_TYPE_OrziLanguage, WorldData.orzi_language_packages[0]).name : 'zhCN';
             Language.instance.local = cl;
