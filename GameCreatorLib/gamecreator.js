@@ -44567,7 +44567,7 @@ function _getAttributeFromParentPages(attribute) {
     }
     return result;
 }
-if (typeof top === "undefined") {
+;if (typeof top === "undefined") {
     top = this;
 }
 var mainDomain_gcide_common = _getAttributeFromParentPages('gcide_common');
