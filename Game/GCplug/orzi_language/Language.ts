@@ -128,7 +128,7 @@ module Orzi_Tools {
          * 设置语言
          * @param cl 语言包名
          */
-        static setLanguage(cl: string) {
+        static setLanguage(cl: string, isReload: boolean = false) {
             if (!cl) {
                 if ((Config as any).language === 1) cl = 'zhTW';
                 else if ((Config as any).language === 2) cl = 'en';
@@ -139,15 +139,20 @@ module Orzi_Tools {
                     return;
                 }
             }
+            if (Language.instance.local === cl) return;
             if (Language.instance.packages[cl] === undefined) cl = (WorldData.orzi_language_packages && WorldData.orzi_language_packages.length) ? GameData.getModuleData(Orzi_Tools.Language.PLUGIN_MODULE_TYPE_OrziLanguage, WorldData.orzi_language_packages[0]).name : 'zhCN';
             Language.instance.local = cl;
             EventUtils.happen(Orzi_Tools.Language.instance.packages, Orzi_Tools.Language.EVENT_ON_CHANGE_LANGUAGE);
             if (os.platform === 2) {
                 FileUtils.save(cl, this.path + '_local.txt', Callback.New(() => {
                     trace('orzi_language_local is saved!', cl);
+
+                    if (isReload) location.reload();
                 }, this), true);
             } else {
                 LocalStorage.setItem('__orzi_language_local__', cl);
+
+                if (isReload) location.reload();
             }
             Language.__watcher.forEach((v) => { v() });
         }

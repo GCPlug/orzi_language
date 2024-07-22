@@ -37,6 +37,7 @@
         "GCplug/orzi_language/Command.ts",
         "GCplug/orzi_language/Judge.ts",
         "GCplug/orzi_language/Language.ts",
+        "GCplug/orzi_language/Rewrite.ts",
         "system/CustomCommandParams.ts",
         "system/CustomConditionParams.ts",
         "system/CustomGameNumberParams.ts",

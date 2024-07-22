@@ -523,6 +523,21 @@
             "varType": 1,
             "value": "",
             "copy": false
+        },
+        "orzi_language_isChangeAsset": {
+            "varType": 2,
+            "value": true,
+            "copy": false
+        },
+        "orzi_language_isReload": {
+            "varType": 2,
+            "value": true,
+            "copy": false
+        },
+        "orzi_language_isForceChange": {
+            "varType": 2,
+            "value": false,
+            "copy": false
         }
     }
 }

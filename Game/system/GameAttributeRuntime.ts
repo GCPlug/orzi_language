@@ -21,6 +21,9 @@ class WorldData {
     static word_gamepadInput: string; // = ""; 请按下游戏手柄键位
     static word_keyboardInput: string; // = ""; 请输入键盘键位
     static orzi_language_packages: number[]; // = [];
+    static orzi_language_isChangeAsset: boolean; // = false; 是否修改资源
+    static orzi_language_isForceChange: boolean; // = false; 非电脑平台是否强制使用语言包地址
+    static orzi_language_isReload: boolean; // = false; 切换语言是否刷新
 }
 class PlayerData {
     sceneObject: SceneObject;

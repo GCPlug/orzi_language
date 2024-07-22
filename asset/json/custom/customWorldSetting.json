@@ -1072,7 +1072,7 @@
                         "varName": "orzi_language_packages",
                         "varType": 4,
                         "compData": {
-                            "compType": 9,
+                            "compType": 1004,
                             "compParam": {}
                         },
                         "defaultValue": "",
@@ -1104,6 +1104,142 @@
                     "x": 30,
                     "width": 300,
                     "height": 250
+                },
+                {
+                    "attr": {
+                        "id": "164099186379_0.6290855317527586",
+                        "varName": "orzi_language_isChangeAsset",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "仅修改文字，则无需勾选此项",
+                        "alias": "是否修改资源",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true,
+                        "verticalTitleMode": false
+                    },
+                    "attrConditions": [],
+                    "y": 20,
+                    "x": 350,
+                    "width": 200,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "164100338312_0.7553684956991522",
+                        "varName": "orzi_language_isForceChange",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "勾选后，移动端也将使用语言包地址，如无该资源，则无法加载",
+                        "alias": "非电脑平台是否强制使用语言包地址",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "164099186379_0.6290855317527586",
+                            "value": true,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 70,
+                    "x": 350,
+                    "width": 250,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "164099260327_0.5291231882021015",
+                        "varName": "orzi_language_isReload",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "仅修改文字或配音，则无需勾选此项",
+                        "alias": "切换语言是否刷新",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "164099186379_0.6290855317527586",
+                            "value": true,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 120,
+                    "x": 350,
+                    "width": 200,
+                    "height": 32
                 }
             ],
             "blockCondition": [],

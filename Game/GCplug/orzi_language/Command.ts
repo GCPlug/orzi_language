@@ -18,7 +18,7 @@ module CommandExecute {
             // 没有就不修改
             // if (!_data) return; // 不做兼容，没有就直接卡死，不然开发者不知道
             if (!_data) console.error('语言包设置错误！');
-            Orzi_Tools.Language.setLanguage(_data.name as any);
+            Orzi_Tools.Language.setLanguage(_data.name as any, WorldData.orzi_language_isChangeAsset && WorldData.orzi_language_isReload);
         }
     }
 
