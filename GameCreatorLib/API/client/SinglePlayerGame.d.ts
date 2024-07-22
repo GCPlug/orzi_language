@@ -35,6 +35,11 @@ declare class SinglePlayerGame {
      */
     static EVENT_ON_AFTER_RECOVERY_DATA: string;
     /**
+     * 同步储存模式：存档时保证当前帧打包好存档数据，以便保证不会出现异步储存时数据发生了改变导致储存信息不太正确的问题（但也会更耗时）
+     * 默认值 = true
+     */
+    static syncSaveMode: boolean;
+    /**
      * 存档配置 系统根据该存档配置进行储存一些基础的信息
      * event: boolean; // 事件：存档时记录当前正在执行的事件，在读档时会恢复
      * audioVolume: booean; // 全局音量：BGM/BGS/SE/TS 音量

@@ -996,7 +996,7 @@ declare class EventObject {
      */
     static KEY_DOWN: string;
     /**
-     * 定义 keypress 事件对象的 type 属性值 按键按下一次
+     * 定义 keypress 事件对象的 type 属性值 按键按下一次(字母区分大小写)
      */
     static KEY_PRESS: string;
     /**
