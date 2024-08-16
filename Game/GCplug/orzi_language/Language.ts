@@ -497,13 +497,19 @@ EventUtils.addEventListenerFunction(ClientWorld, ClientWorld.EVENT_INITED, () =>
         __orzi_text_lang_temp.apply(this, arguments);
         // 二者不相等，刷新缓存
         if (Orzi_Tools.Language.getText(this.__orzi_language_temp__) !== Orzi_Tools.Language.getText(this._text)) this.__orzi_language_temp__ = this._text;
+        if (Orzi_Tools.Language.getText(this.__orzi_language_temp_prompt__) !== Orzi_Tools.Language.getText(this._prompt)) this.__orzi_language_temp_prompt__ = this._prompt;
         // 当前语言包没找到，就去找源文本
         if (!Orzi_Tools.Language.hasText(this.__orzi_language_temp__)) this.__orzi_language_temp__ = Orzi_Tools.Language.getOriginText(this.__orzi_language_temp__);
+        if (!Orzi_Tools.Language.hasText(this.__orzi_language_temp_prompt__)) this.__orzi_language_temp_prompt__ = Orzi_Tools.Language.getOriginText(this.__orzi_language_temp_prompt__);
         if (!this.__orzi_language_watching__) {
             this.__orzi_language_watching__ = true;
             EventUtils.addEventListenerFunction(Orzi_Tools.Language.instance.packages, Orzi_Tools.Language.EVENT_ON_CHANGE_LANGUAGE, this.__orzi_language_watch_func__, this);
         }
-        this.text = Orzi_Tools.Language.clearSpan(Orzi_Tools.Language.getText(this.__orzi_language_temp__));
+        if (!this.text && this.prompt) {
+            this.prompt = Orzi_Tools.Language.clearSpan(Orzi_Tools.Language.getText(this.__orzi_language_temp_prompt__));
+        } else {
+            this.text = Orzi_Tools.Language.clearSpan(Orzi_Tools.Language.getText(this.__orzi_language_temp__));
+        }
     }
     // @ts-ignore
     const __orzi_text_destroy_temp = Laya.Text.prototype.destroy;
@@ -514,7 +520,11 @@ EventUtils.addEventListenerFunction(ClientWorld, ClientWorld.EVENT_INITED, () =>
     };
     // @ts-ignore
     Laya.Text.prototype.__orzi_language_watch_func__ = function () {
-        this.text = Orzi_Tools.Language.getText(this.__orzi_language_temp__);
+        if (!this.text && this.prompt) {
+            this.prompt = Orzi_Tools.Language.getText(this.__orzi_language_temp_prompt__);
+        } else {
+            this.text = Orzi_Tools.Language.getText(this.__orzi_language_temp__);
+        }
     }
 
     /** 重写监听 */
