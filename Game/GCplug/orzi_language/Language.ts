@@ -86,9 +86,11 @@ module Orzi_Tools {
 
         private _getOriginText(value: string) {
             for (const p in this.packages) {
-                for (const c in this.packages[p]) {
-                    if (this.packages[p][c] === value || Language.clearSpan(this.packages[p][c]) === Language.clearSpan(value)) return c;
-                }
+                // for (const c in this.packages[p]) {
+                //     if (this.packages[p][c] === value || Language.clearSpan(this.packages[p][c]) === Language.clearSpan(value)) return c;
+                // }
+                let key = Object.keys(this.packages[p]).find(c => this.packages[p][c] === value || Language.clearSpan(this.packages[p][c]) === Language.clearSpan(value));
+                if (key) return key;
             }
             return value;
         }
@@ -545,6 +547,34 @@ EventUtils.addEventListenerFunction(ClientWorld, ClientWorld.EVENT_INITED, () =>
             if (this.items !== Orzi_Tools.Language.getText(this.__orzi_language_temp__)) this.items = Orzi_Tools.Language.getText(this.__orzi_language_temp__);
 
             this.refreshItems();
+        },
+        enumerable: false,
+        configurable: true
+    });
+
+    /** 重写监听 */
+    Object.defineProperty(UIComboBox.prototype, "itemLabels", {
+        get: function () {
+
+            if (!this.__orzi_language_watching__) {
+                this.__orzi_language_watching__ = true;
+                EventUtils.addEventListenerFunction(Orzi_Tools.Language.instance.packages, Orzi_Tools.Language.EVENT_ON_CHANGE_LANGUAGE, () => {
+                    this._itemLabels = Orzi_Tools.Language.getText(this.__orzi_language_temp__);
+                }, this)
+            }
+
+            return this._itemLabels;
+        },
+        set: function (v) {
+            if (v == null)
+                return;
+            this._itemLabels = v;
+
+            if ((this.__orzi_language_temp__ !== this._itemLabels) && (Orzi_Tools.Language.getText(this.__orzi_language_temp__) !== Orzi_Tools.Language.getText(this._itemLabels))) this.__orzi_language_temp__ = this._itemLabels;
+            if (this._itemLabels !== Orzi_Tools.Language.getText(this.__orzi_language_temp__)) this._itemLabels = Orzi_Tools.Language.getText(this.__orzi_language_temp__);
+
+            this._itemLabelArr = v.split(",");
+            this.selectedIndex = this.selectedIndex;
         },
         enumerable: false,
         configurable: true
