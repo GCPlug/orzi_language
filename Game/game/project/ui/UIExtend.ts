@@ -174,8 +174,8 @@ EventUtils.addEventListener(GameDialog, GameDialog.EVENT_DIALOG_START, Callback.
     if (!isOption && !___dialogFromSaveFileData) {
         let d = new DataStructure_dialogRecordInfo();
         d.tsURL = audioURL;
-        d.dialogName = name;
-        d.dialogContent = StringUtils.clearHtmlTag(content).replace(/\[p\d+\]|\[\.=\]|\[\.s\]/g, "");
+        d.dialogName = Orzi_Tools.Language.getOriginText(name);
+        d.dialogContent = Orzi_Tools.Language.getOriginText(StringUtils.clearHtmlTag(content).replace(/\[p\d+\]|\[\.=\]|\[\.s\]/g, ""));
         WorldData.dialogRecords.push(d);
     }
     ___dialogFromSaveFileData = false;
