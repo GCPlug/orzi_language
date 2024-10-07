@@ -28,4 +28,49 @@ EventUtils.addEventListenerFunction(ClientWorld, ClientWorld.EVENT_INITED, () =>
         }
         return url;
     }
+
 }, null);
+
+// 重写字体加载
+// @ts-ignore
+let __orzi_language_fontLoadManager_toLoadFontFile_old__ = FontLoadManager.toLoadFontFile;
+// @ts-ignore
+FontLoadManager.toLoadFontFile = function (font) {
+    let url = font.path;
+    // 字体直接修改
+    let oldUrl = url;
+    let arr: string[] = url.split("asset/");
+    function loadFontFile(local) {
+        // 资源包内的文件
+        let top = arr.shift() + 'asset/orzi/languages/asset/'+local+'/';
+        url = top + arr.join('asset/');
+
+        // 检查是否有该资源
+        FileUtils.exists(url, Callback.New((is_exit) => {
+            if (!is_exit) url = oldUrl;
+
+            // 加载语言包
+            font.path = url;
+            __orzi_language_fontLoadManager_toLoadFontFile_old__(font);
+        }, this))
+    }
+    // 重写资源加载
+    if (arr.length > 1) {
+
+        // 获取当前的语言包
+        let local = Orzi_Tools.Language.instance.local;
+
+        if (os.platform === 2) {
+            AssetManager.loadText(Orzi_Tools.Language.path + '_local.txt', Callback.New((data) => {
+                if (data) local = JSON.parse(data);
+                loadFontFile(local);
+            }, this));
+        } else {
+            let _local = LocalStorage.getItem('__orzi_language_local__');
+            if (_local) local = _local;
+            loadFontFile(local);
+        }
+
+    }
+
+};
