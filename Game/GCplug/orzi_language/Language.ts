@@ -26,6 +26,8 @@ module Orzi_Tools {
         local: string;
         /** 语言包 */
         packages: Record<string, Record<string, string>> = {};
+        /** 是否初始化完成 */
+        isInit: boolean = false;
 
         constructor() {
             if ((Config as any).language === 1) this.local = 'zhTW';
@@ -147,19 +149,35 @@ module Orzi_Tools {
             if (Language.instance.local === cl) return;
             if (Language.instance.packages[cl] === undefined) cl = (WorldData.orzi_language_packages && WorldData.orzi_language_packages.length) ? GameData.getModuleData(Orzi_Tools.Language.PLUGIN_MODULE_TYPE_OrziLanguage, WorldData.orzi_language_packages[0]).name : 'zhCN';
             Language.instance.local = cl;
-            EventUtils.happen(Orzi_Tools.Language.instance.packages, Orzi_Tools.Language.EVENT_ON_CHANGE_LANGUAGE);
+            // 初始化完成
+            Language.instance.isInit = true;
+
+            // 先保存语言包
             if (os.platform === 2) {
                 FileUtils.save(cl, this.path + '_local.txt', Callback.New(() => {
                     trace('orzi_language_local is saved!', cl);
-
-                    if (isReload) location.reload();
+                    _resetText();
                 }, this), true);
             } else {
                 LocalStorage.setItem('__orzi_language_local__', cl);
 
-                if (isReload) location.reload();
+                _resetText();
             }
-            Language.__watcher.forEach((v) => { v() });
+
+            // 重新加载字体
+            function _resetText() {
+                // 如果要刷新，就刷新
+                if (isReload) location.reload();
+                // @ts-ignore
+                FontLoadManager.fontFaceList = {};
+                // @ts-ignore
+                FontLoadManager.loadFontFile(Config.FONTS ? Config.FONTS : [], Callback.New(() => {
+                    EventUtils.happen(Orzi_Tools.Language.instance.packages, Orzi_Tools.Language.EVENT_ON_CHANGE_LANGUAGE);
+
+                    Language.__watcher.forEach((v) => { v() });
+                    
+                }), Language);
+            }
         }
 
         static getPackages() {
@@ -535,6 +553,9 @@ EventUtils.addEventListenerFunction(ClientWorld, ClientWorld.EVENT_INITED, () =>
         } else {
             this.text = Orzi_Tools.Language.getText(this.__orzi_language_temp__);
         }
+        // if (this._getCSSStyle()) {
+        //     this._getCSSStyle().fontFamily = this._getCSSStyle().fontFamily;
+        // }
     }
 
     /** 重写监听 */

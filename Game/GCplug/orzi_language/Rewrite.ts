@@ -37,6 +37,10 @@ let __orzi_language_fontLoadManager_toLoadFontFile_old__ = FontLoadManager.toLoa
 // @ts-ignore
 FontLoadManager.toLoadFontFile = function (font) {
     let url = font.path;
+
+    // 先去除掉带有语言包的路径
+    url = url.replace(/asset\/orzi\/languages\/asset\/(.*?)\/font/g, 'asset/font');
+    
     // 字体直接修改
     let oldUrl = url;
     let arr: string[] = url.split("asset/");
@@ -51,6 +55,7 @@ FontLoadManager.toLoadFontFile = function (font) {
 
             // 加载语言包
             font.path = url;
+
             __orzi_language_fontLoadManager_toLoadFontFile_old__(font);
         }, this))
     }
@@ -60,15 +65,22 @@ FontLoadManager.toLoadFontFile = function (font) {
         // 获取当前的语言包
         let local = Orzi_Tools.Language.instance.local;
 
-        if (os.platform === 2) {
-            AssetManager.loadText(Orzi_Tools.Language.path + '_local.txt', Callback.New((data) => {
-                if (data) local = JSON.parse(data);
-                loadFontFile(local);
-            }, this));
-        } else {
-            let _local = LocalStorage.getItem('__orzi_language_local__');
-            if (_local) local = _local;
+        // 检查是否初始化
+        if (Orzi_Tools.Language.instance.isInit) {
+            // 如果已经加载过了，直接使用
             loadFontFile(local);
+        } else {
+            // 未加载的话，就去文件中找
+            if (os.platform === 2) {
+                AssetManager.loadText(Orzi_Tools.Language.path + '_local.txt', Callback.New((data) => {
+                    if (data) local = JSON.parse(data);
+                    loadFontFile(local);
+                }, this));
+            } else {
+                let _local = LocalStorage.getItem('__orzi_language_local__');
+                if (_local) local = _local;
+                loadFontFile(local);
+            }
         }
 
     }
