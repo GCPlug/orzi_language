@@ -40,7 +40,7 @@ FontLoadManager.toLoadFontFile = function (font) {
 
     // 先去除掉带有语言包的路径
     url = url.replace(/asset\/orzi\/languages\/asset\/(.*?)\/font/g, 'asset/font');
-    
+
     // 字体直接修改
     let oldUrl = url;
     let arr: string[] = url.split("asset/");
