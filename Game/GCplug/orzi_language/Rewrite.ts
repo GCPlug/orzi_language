@@ -29,6 +29,22 @@ EventUtils.addEventListenerFunction(ClientWorld, ClientWorld.EVENT_INITED, () =>
         return url;
     }
 
+
+    // 重写获取字符串变量
+    let __orzi_language_variable_margeDynamicText = Variable.margeDynamicText;
+    Variable.margeDynamicText = function(texts: [number, string | number][], player?: Player, trigger?: CommandTrigger) {
+        // 先翻译一次文本
+        texts = texts.map((item) => {
+            if (typeof item[1] === 'string') {
+                item[1] = Orzi_Tools.Language.getText(item[1]);
+            }
+            return item;
+        });
+        let _str = __orzi_language_variable_margeDynamicText(texts, player, trigger);
+        // 最后再翻译一次
+        return Orzi_Tools.Language.getText(_str);
+    }
+
 }, null);
 
 // 重写字体加载

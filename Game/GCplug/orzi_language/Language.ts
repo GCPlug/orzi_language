@@ -224,13 +224,18 @@ module Orzi_Tools {
          * @param strs 语言包Set组
          */
         static getAllText(json: any, strs: Set<string>, isClearHTML: boolean = false) {
+            let isHasSpan: boolean = false;
             if (Array.isArray(json)) {
                 if (json.length === 8 && json[0] === 4 && typeof json[1] === 'string') {
                     // 大概率是选项文本，追加翻译
                     strs.add(this.ol2str(json[1]));
                 }
                 for (let i = 0; i < json.length; i++) {
-                    this.getAllText(json[i], strs, isClearHTML)
+                    let _isHasSpan = this.getAllText(json[i], strs, isClearHTML);
+                    if (_isHasSpan) {
+                        // 因为这里有span标签，所以可能是对话，那么把名字也加入
+                        if (json[3] && typeof json[3] === 'string') strs.add(this.ol2str(json[3]));
+                    }
                 }
             } else if (typeof json === 'object') {
                 if (json === null) return;
@@ -249,6 +254,7 @@ module Orzi_Tools {
                             strs.add(this.ol2str(_a));
                             return '';
                         });
+                        isHasSpan = true;
                     } else strs.add(this.ol2str(json));
                 }
                 if (this.checkHasSpan(json)) {
@@ -263,9 +269,10 @@ module Orzi_Tools {
                             return '';
                         });
                     } else strs.add(this.ol2str(json));
+                    isHasSpan = true;
                 }
             }
-            return;
+            return isHasSpan;
         }
 
         /**
