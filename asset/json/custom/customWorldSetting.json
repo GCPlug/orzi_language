@@ -1216,7 +1216,7 @@
                         "accessMode": 1,
                         "syncMode": 0,
                         "attrTips": "仅修改文字或配音，则无需勾选此项",
-                        "alias": "切换语言是否刷新",
+                        "alias": "切换语言是否刷新游戏",
                         "onlyConfig": false,
                         "preview": false,
                         "autoTitleWidth": true,
@@ -1237,6 +1237,54 @@
                         }
                     ],
                     "y": 120,
+                    "x": 350,
+                    "width": 200,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "172733289282_0.3665819119547822",
+                        "varName": "orzi_language_isReloadFont",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "仅修改文字或配音，则无需勾选此项",
+                        "alias": "切换语言是否刷新字体",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [
+                        {
+                            "attrID": "164099260327_0.5291231882021015",
+                            "value": false,
+                            "isExpression": false,
+                            "jsCode": null,
+                            "tsCode": null,
+                            "codeName": null
+                        }
+                    ],
+                    "y": 170,
                     "x": 350,
                     "width": 200,
                     "height": 32
