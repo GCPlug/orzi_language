@@ -256,7 +256,14 @@ module Orzi_Tools {
                     let _isHasSpan = this.getAllText(json[i], strs, isClearHTML);
                     if (_isHasSpan) {
                         // 因为这里有span标签，所以可能是对话，那么把名字也加入
-                        if (json[3] && typeof json[3] === 'string') strs.add(this.ol2str(json[3]));
+                        if (json[3] && typeof json[3] === 'string') {
+                            strs.add(this.ol2str(json[3]));
+
+                            // 统计说话者
+                            if (WorldData.orzi_language_isShowStatistics) {
+                                Orzi_Tools.Statistics.names[json[3]] = (Orzi_Tools.Statistics.names[json[3]] || 0) + 1;
+                            }
+                        }
                     }
                 }
             } else if (typeof json === 'object') {
@@ -266,6 +273,18 @@ module Orzi_Tools {
                     this.getAllText(json[key], strs, isClearHTML);
                 }
             } else if (typeof json === 'string') {
+                // 统计对话
+                if (WorldData.orzi_language_isShowStatistics && this.checkHasSpan(json)) {
+                    // 直接清除所有span标签和标识符
+                    json.replace(/<span([\s\S]*?)>([\s\S]*?)<\/span>/g, (match, p1, p2) => {
+                        let _a = p2.replace(/([\s\S]*?)\[(\@|\$)([\s\S]*?)\]/g, (match, _p1, _p2, _p3) => {
+                            Orzi_Tools.Statistics.text += this.ol2str(_p1);
+                            return '';
+                        })
+                        Orzi_Tools.Statistics.text += this.ol2str(_a);
+                        return '';
+                    });
+                }
                 if (this.checkReg(json)) {
                     if (isClearHTML && this.checkHasSpan(json)) {
                         json.replace(/<span([\s\S]*?)>([\s\S]*?)<\/span>/g, (match, p1, p2) => {
@@ -406,6 +425,8 @@ module Orzi_Tools {
                         }, this), true)
                     }
                 }
+                // 显示统计数据
+                if (WorldData.orzi_language_isShowStatistics) Orzi_Tools.Statistics.show();
             })
         }
 
@@ -500,6 +521,8 @@ module Orzi_Tools {
          * @param type 1 为 json, 0 为 csv
          */
         static getAllTextAndSave(type: number = 0, isClearHTML: boolean = false) {
+            // 初始化统计数据
+            Orzi_Tools.Statistics.init();
             let _arr: Set<string> = new Set();
             FileUtils.getAllChildFiles('asset/json', Callback.New((list: Orzi_Tools.Language.FileObjectType[]) => {
                 if (!list) return;
