@@ -42,7 +42,6 @@ module Orzi_Tools {
             this.addShowLine('总对话字数：', this.text.length);
             this.addShowLine('去除符号字数：', this.clearText(this.text).length);
             this.addShowLine('============对话数据统计============');
-            this.addShowLine(this.clearText(this.text));
             this.save();
         }
 
