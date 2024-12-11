@@ -174,16 +174,38 @@ FontLoadManager.toLoadFontFile = function (font) {
     function loadFontFile(local) {
         // 设置字体的当前语言包
         Orzi_Tools.Language.instance.fontLocal = local;
+
         // 资源包内的文件
         let top = arr.shift() + 'asset/orzi/languages/asset/'+local+'/';
         url = top + arr.join('asset/');
-        // 检查是否有该资源
-        FileUtils.exists(url, Callback.New((is_exit) => {
-            if (!is_exit) url = oldUrl;
-            // 加载语言包
-            font.path = url;
-            __orzi_language_fontLoadManager_toLoadFontFile_old__(font);
-        }, this))
+        if (os.platform === 2) {
+            // 电脑端，直接修改
+            // 检查是否有该资源
+            FileUtils.exists(url, Callback.New((is_exit) => {
+                if (!is_exit) url = oldUrl;
+                // 加载语言包
+                font.path = url;
+                __orzi_language_fontLoadManager_toLoadFontFile_old__(font);
+            }, this))
+        } else {
+            // 其他平台，直接加载
+            fetch(url)
+                .then(res => {
+                    if (res.status === 200) {
+                        // 加载成功
+                        font.path = url;
+                        __orzi_language_fontLoadManager_toLoadFontFile_old__(font);
+                    } else {
+                        // 加载失败
+                        font.path = oldUrl;
+                        __orzi_language_fontLoadManager_toLoadFontFile_old__(font);
+                    }
+                })
+                .catch(err => {
+                    font.path = oldUrl;
+                    __orzi_language_fontLoadManager_toLoadFontFile_old__(font);
+                })
+        }
     }
     // 重写资源加载
     if (arr.length > 1) {
