@@ -247,6 +247,15 @@ module Orzi_Tools {
          */
         static getAllText(json: any, strs: Set<string>, isClearHTML: boolean = false) {
             let isHasSpan: boolean = false;
+
+            const matchVar = (str: string) => {
+                let _a = str.replace(/([\s\S]*?)\[(\@|\$)([\s\S]*?)\]/g, (match, _p1, _p2, _p3) => {
+                    strs.add(this.ol2str(_p1));
+                    return '';
+                })
+                strs.add(this.ol2str(_a));
+            }
+
             if (Array.isArray(json)) {
                 if (json.length === 8 && json[0] === 4 && typeof json[1] === 'string') {
                     // 大概率是选项文本，追加翻译
@@ -288,28 +297,20 @@ module Orzi_Tools {
                 if (this.checkReg(json)) {
                     if (isClearHTML && this.checkHasSpan(json)) {
                         json.replace(/<span([\s\S]*?)>([\s\S]*?)<\/span>/g, (match, p1, p2) => {
-                            let _a = p2.replace(/([\s\S]*?)\[(\@|\$)([\s\S]*?)\]/g, (match, _p1, _p2, _p3) => {
-                                strs.add(this.ol2str(_p1));
-                                return '';
-                            })
-                            strs.add(this.ol2str(_a));
+                            matchVar(p2);
                             return '';
                         });
                         isHasSpan = true;
-                    } else strs.add(this.ol2str(json));
+                    } else matchVar(json);
                 }
                 if (this.checkHasSpan(json)) {
                     if (isClearHTML) {
                         json.replace(/<span([\s\S]*?)>([\s\S]*?)<\/span>/g, (match, p1, p2) => {
                             // strs.add(this.ol2str(p2));
-                            let _a = p2.replace(/([\s\S]*?)\[(\@|\$)([\s\S]*?)\]/g, (match, _p1, _p2, _p3) => {
-                                strs.add(this.ol2str(_p1));
-                                return '';
-                            })
-                            strs.add(this.ol2str(_a));
+                            matchVar(p2);
                             return '';
                         });
-                    } else strs.add(this.ol2str(json));
+                    } else matchVar(json);
                     isHasSpan = true;
                 }
             }
