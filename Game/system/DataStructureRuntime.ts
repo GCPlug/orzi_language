@@ -38,3 +38,11 @@ class DataStructure_inputMessage {
     booleanValue: any; // 游戏开关
     stringValue: any; // 游戏字符串
 }
+/**
+ * #15001 字体切换
+ */
+class DataStructure_W26_FontMap {
+    oriFont: string; // = ""; 原字体
+    font: string; // = ""; 现字体
+    fontSizeDt: number; // = 0; 字体大小增量
+}

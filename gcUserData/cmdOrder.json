@@ -171,7 +171,7 @@
             "commandList": [
                 [
                     10001,
-                    "预加载资源",
+                    "预加载和卸载资源",
                     false
                 ],
                 [
@@ -403,7 +403,13 @@
         },
         {
             "typeName": "[#GAME_THE_PLUG-IN_COMMAND]",
-            "commandList": []
+            "commandList": [
+                [
+                    160003,
+                    "字体切换",
+                    false
+                ]
+            ]
         }
     ]
 }

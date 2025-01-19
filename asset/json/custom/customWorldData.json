@@ -543,6 +543,11 @@
             "varType": 2,
             "value": true,
             "copy": false
+        },
+        "orzi_language_isShowStatistics": {
+            "varType": 2,
+            "value": true,
+            "copy": false
         }
     }
 }

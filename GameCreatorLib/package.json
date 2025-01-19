@@ -1,6 +1,6 @@
 {
   "name": "@gamecreator/gamecreatorlib",
-  "version": "0.991.10",
+  "version": "0.991.23",
   "description": "gamecreator运行时",
   "main": "gamecreator.js",
   "types": "index.d.ts",

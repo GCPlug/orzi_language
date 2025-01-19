@@ -145,14 +145,15 @@ EventUtils.addEventListenerFunction(ClientWorld, ClientWorld.EVENT_INITED, () =>
     // 重写获取字符串变量
     let __orzi_language_variable_margeDynamicText = Variable.margeDynamicText;
     Variable.margeDynamicText = function(texts: [number, string | number][], player?: Player, trigger?: CommandTrigger) {
+        let _texts = ObjectUtils.depthClone(texts);
         // 先翻译一次文本
-        texts = texts.map((item) => {
+        _texts = _texts.map((item) => {
             if (typeof item[1] === 'string') {
                 item[1] = Orzi_Tools.Language.getText(item[1]);
             }
             return item;
         });
-        let _str = __orzi_language_variable_margeDynamicText(texts, player, trigger);
+        let _str = __orzi_language_variable_margeDynamicText(_texts, player, trigger);
         // 最后再翻译一次
         return Orzi_Tools.Language.getText(_str);
     }

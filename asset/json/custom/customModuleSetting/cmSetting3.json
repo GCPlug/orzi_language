@@ -1,0 +1,57 @@
+{
+    "compAutoOrderLimitHeight": 0,
+    "id": 3,
+    "blockList": [
+        {
+            "name": "字体切换",
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "171750295737_0.764978159633209",
+                        "varName": "fontMap",
+                        "varType": 3,
+                        "compData": {
+                            "compType": 1003,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 15001,
+                        "arrayMode": true,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "字体映射",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true,
+                        "verticalTitleMode": true
+                    },
+                    "attrConditions": [],
+                    "y": 13,
+                    "x": 21,
+                    "width": 744,
+                    "height": 267
+                }
+            ],
+            "blockCondition": [],
+            "blockHeight": 300,
+            "autoOrder": true,
+            "hideBlockTitle": false
+        }
+    ],
+    "varName": "W26_FontMap",
+    "name": "字体切换"
+}

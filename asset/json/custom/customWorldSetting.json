@@ -1288,6 +1288,46 @@
                     "x": 350,
                     "width": 200,
                     "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "173444098746_0.775597491902579",
+                        "varName": "orzi_language_isShowStatistics",
+                        "varType": 2,
+                        "compData": {
+                            "compType": 15,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "仅修改文字，则无需勾选此项",
+                        "alias": "是否显示统计",
+                        "onlyConfig": false,
+                        "preview": false,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true,
+                        "verticalTitleMode": false
+                    },
+                    "attrConditions": [],
+                    "y": 20,
+                    "x": 600,
+                    "width": 200,
+                    "height": 32
                 }
             ],
             "blockCondition": [],

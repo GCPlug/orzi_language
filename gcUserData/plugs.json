@@ -1,1 +1,44 @@
-[]
+[
+    {
+        "allPlugUseData": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            [
+                3
+            ],
+            [
+                15001
+            ],
+            [],
+            [
+                15003
+            ],
+            [],
+            null,
+            null,
+            [],
+            [
+                {
+                    "filePath": "Game/GCplug/1199/W26_FontMap.ts",
+                    "isServer": false
+                }
+            ],
+            null,
+            null,
+            [],
+            []
+        ],
+        "id": 1199,
+        "name": "字体映射-改变字体",
+        "lastUpdateTime": 1729329803,
+        "author": "woziji00226",
+        "gcver": null
+    }
+]

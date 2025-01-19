@@ -21383,7 +21383,8 @@ if (typeof define === 'function' && define.amd) {
                 Browser.canvas.size(canvasWidth, canvasHeight);
                 var tempContext = Browser.context;
                 var imgData = tempContext.createImageData(canvasWidth, canvasHeight);
-                imgData.data.set(new Uint8ClampedArray(pixels.buffer));
+                var buffer = pixels ? pixels.buffer : new Uint8Array().buffer;
+                imgData.data.set(new Uint8ClampedArray(buffer));
                 htmlCanvas._imgData = imgData;
                 tempContext.putImageData(imgData, 0, 0);
                 context.save();
@@ -44567,7 +44568,7 @@ function _getAttributeFromParentPages(attribute) {
     }
     return result;
 }
-if (typeof top === "undefined") {
+;if (typeof top === "undefined") {
     top = this;
 }
 var mainDomain_gcide_common = _getAttributeFromParentPages('gcide_common');
@@ -46160,6 +46161,8 @@ var Scene = (function () {
     };
     Scene.prototype.setDataGridState = function (index, gridX, gridY, state) {
         var xyData = this.dataLayers[index];
+        if (!xyData)
+            return;
         var xData = xyData[gridX];
         if (!xData)
             xData = xyData[gridX] = [];
@@ -72301,9 +72304,9 @@ var GameImage = (function (_super) {
                     }
                 }
                 else if (dialogType == 1) {
-                    if (o.dialog.currentDialogInfo.length <= 6)
-                        o.dialog.currentDialogInfo.splice(5, 0, []);
-                    if (o.dialog.currentDialogInfo[2] && o.dialog.currentDialogInfo[6]) {
+                    if (o.dialog.currentDialogInfo[2]) {
+                        if (!o.dialog.currentDialogInfo[6])
+                            o.dialog.currentDialogInfo[6] = [];
                         var dialogInfo = o.dialog.currentDialogInfo[6];
                         dialogInfo.shift();
                         dialogInfo[3] = 5;

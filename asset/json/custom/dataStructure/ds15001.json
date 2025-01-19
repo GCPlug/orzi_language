@@ -4,12 +4,131 @@
     "blockList": [
         {
             "name": "未命名块",
-            "blockAttrs": [],
+            "blockAttrs": [
+                {
+                    "attr": {
+                        "id": "171749755399_0.17700818597176338",
+                        "varName": "oriFont",
+                        "varType": 1,
+                        "compData": {
+                            "compType": 9,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "原字体",
+                        "onlyConfig": false,
+                        "preview": true,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [],
+                    "y": 12,
+                    "x": 11,
+                    "width": 200,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "171749784927_0.02499901458340137",
+                        "varName": "font",
+                        "varType": 1,
+                        "compData": {
+                            "compType": 9,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "现字体",
+                        "onlyConfig": false,
+                        "preview": true,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [],
+                    "y": 12,
+                    "x": 220,
+                    "width": 200,
+                    "height": 32
+                },
+                {
+                    "attr": {
+                        "id": "171759405177_0.13061150481794814",
+                        "varName": "fontSizeDt",
+                        "varType": 0,
+                        "compData": {
+                            "compType": 0,
+                            "compParam": {}
+                        },
+                        "defaultValue": "",
+                        "hideMode": false,
+                        "useCommand": false,
+                        "onlyPointTo": false,
+                        "moduleID": 1,
+                        "dataStructureID": 1,
+                        "arrayMode": false,
+                        "arrayLength": 100,
+                        "arrayAllowDelete": false,
+                        "arrayAllowSwap": false,
+                        "arrayAllowUpdate": false,
+                        "accessMode": 1,
+                        "syncMode": 0,
+                        "attrTips": "",
+                        "alias": "字体大小增量",
+                        "onlyConfig": false,
+                        "preview": true,
+                        "autoTitleWidth": true,
+                        "titleWidth": 100,
+                        "eyeShow": true,
+                        "lockBlock": false,
+                        "enumEnable_get": true,
+                        "enumEnable_set": true
+                    },
+                    "attrConditions": [],
+                    "y": 12,
+                    "x": 429,
+                    "width": 200,
+                    "height": 32
+                }
+            ],
             "blockCondition": [],
             "blockHeight": 300,
             "autoOrder": true,
             "hideBlockTitle": false
         }
     ],
-    "varName": ""
+    "varName": "W26_FontMap",
+    "name": "字体切换"
 }

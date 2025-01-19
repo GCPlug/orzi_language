@@ -13,3 +13,11 @@ class Module_OrziLanguage {
     id: number;
     name: string;
 }
+/**
+ * #3 字体切换
+ */
+class Module_W26_FontMap {
+    id: number;
+    name: string;
+    fontMap: DataStructure_W26_FontMap[]; // = [];
+}

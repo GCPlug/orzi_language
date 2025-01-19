@@ -856,3 +856,10 @@ class CustomCommandParams_15002 {
     saveType: number; // = 0; 保存文件
     isClearHTML: boolean; // = false; 是否去除html标签
 }
+/**
+* 自定义指令 15003-字体切换
+*/
+class CustomCommandParams_15003 {
+    fontMap: number; // = 0; 要切换的字体模块
+    restoreOriFont: boolean; // = false; 切换回原字体
+}
