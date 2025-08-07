@@ -64,9 +64,7 @@ EventUtils.addEventListenerFunction(ClientWorld, ClientWorld.EVENT_INITED, () =>
         get: function () {
             if (!this.__orzi_language_watching__) {
                 this.__orzi_language_watching__ = true;
-                EventUtils.addEventListenerFunction(Orzi_Tools.Language.instance.packages, Orzi_Tools.Language.EVENT_ON_CHANGE_LANGUAGE, () => {
-                    this.items = Orzi_Tools.Language.getText(this.__orzi_language_temp__);
-                }, this)
+                EventUtils.addEventListenerFunction(Orzi_Tools.Language.instance.packages, Orzi_Tools.Language.EVENT_ON_CHANGE_LANGUAGE, this.__orzi_language_watch_func__, this)
             }
             return this._items;
         },
@@ -76,11 +74,23 @@ EventUtils.addEventListenerFunction(ClientWorld, ClientWorld.EVENT_INITED, () =>
             if ((this.__orzi_language_temp__ !== this.items) && (Orzi_Tools.Language.getText(this.__orzi_language_temp__) !== Orzi_Tools.Language.getText(this.items))) this.__orzi_language_temp__ = this.items;
             if (this.items !== Orzi_Tools.Language.getText(this.__orzi_language_temp__)) this.items = Orzi_Tools.Language.getText(this.__orzi_language_temp__);
 
+            if (!this.isDisposed) return;
             this.refreshItems();
         },
         enumerable: false,
         configurable: true
     });
+    const __orzi_UITabBox_dispose_temp = UITabBox.prototype.dispose;
+    UITabBox.prototype.dispose = function () {
+        if (this.__orzi_language_watching__) {
+            EventUtils.removeEventListenerFunction(Orzi_Tools.Language.instance.packages, Orzi_Tools.Language.EVENT_ON_CHANGE_LANGUAGE, this.__orzi_language_watch_func__, this);
+        }
+        __orzi_UITabBox_dispose_temp.apply(this, arguments);
+    };
+    // @ts-ignore
+    UITabBox.prototype.__orzi_language_watch_func__ = function () {
+        this.items = Orzi_Tools.Language.getText(this.__orzi_language_temp__);
+    }
 
     /** 重写监听 */
     Object.defineProperty(UIComboBox.prototype, "itemLabels", {
@@ -88,9 +98,7 @@ EventUtils.addEventListenerFunction(ClientWorld, ClientWorld.EVENT_INITED, () =>
 
             if (!this.__orzi_language_watching__) {
                 this.__orzi_language_watching__ = true;
-                EventUtils.addEventListenerFunction(Orzi_Tools.Language.instance.packages, Orzi_Tools.Language.EVENT_ON_CHANGE_LANGUAGE, () => {
-                    this._itemLabels = Orzi_Tools.Language.getText(this.__orzi_language_temp__);
-                }, this)
+                EventUtils.addEventListenerFunction(Orzi_Tools.Language.instance.packages, Orzi_Tools.Language.EVENT_ON_CHANGE_LANGUAGE, this.__orzi_language_watch_func__, this)
             }
 
             return this._itemLabels;
@@ -109,6 +117,17 @@ EventUtils.addEventListenerFunction(ClientWorld, ClientWorld.EVENT_INITED, () =>
         enumerable: false,
         configurable: true
     });
+    const __orzi_UIComboBox_dispose_temp = UIComboBox.prototype.dispose;
+    UIComboBox.prototype.dispose = function () {
+        if (this.__orzi_language_watching__) {
+            EventUtils.removeEventListenerFunction(Orzi_Tools.Language.instance.packages, Orzi_Tools.Language.EVENT_ON_CHANGE_LANGUAGE, this.__orzi_language_watch_func__, this);
+        }
+        __orzi_UIComboBox_dispose_temp.apply(this, arguments);
+    }
+    // @ts-ignore
+    UIComboBox.prototype.__orzi_language_watch_func__ = function () {
+        this._itemLabels = Orzi_Tools.Language.getText(this.__orzi_language_temp__);
+    }
 
 
     // 重写资源加载
