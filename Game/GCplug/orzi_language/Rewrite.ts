@@ -145,6 +145,7 @@ EventUtils.addEventListenerFunction(ClientWorld, ClientWorld.EVENT_INITED, () =>
                 // 资源包内的文件
                 let top = arr.shift() + 'asset/orzi/languages/asset/'+Orzi_Tools.Language.instance.local+'/';
                 url = top + arr.join('asset/');
+                url = decodeURIComponent(url);
 
                 // 仅在电脑端检查是否有该资源
                 if (os.platform === 2) {

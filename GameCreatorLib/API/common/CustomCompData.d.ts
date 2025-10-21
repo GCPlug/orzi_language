@@ -5,6 +5,7 @@
  *  --自定义玩家数据
  *  --自定义场景对象数据
  *  ==自定义场景对象模型数据
+ * Created by JayLen on 2022-06-17 14:25:56.
  */
 declare class CustomCompData {
     /**
@@ -95,4 +96,25 @@ declare class CustomCompData {
      * @param isModule [可选]是否自定义模块,此时target设置为null即可
      */
     static getData(target: any, data: CustomCompData, isModule?: boolean): any
+    /**
+     * 获取超级数值的值
+     * @param v 自定义参数
+     * @param trigger 触发器 默认可省略 默认值=null
+     * @returns 
+     */
+    static getSuperNumber(v: any, trigger?: any): number
+    /**
+     * 获取超级字符串的值
+     * @param v 自定义参数
+     * @param trigger 触发器 默认可省略 默认值=null
+     * @returns 
+     */
+    static getSuperString(v: any, trigger?: any): string
+    /**
+     * 获取超级开关的值
+     * @param v 自定义参数
+     * @param trigger 触发器 默认可省略 默认值=null
+     * @returns 
+     */
+    static getSuperSwitch(v: any, trigger?: any): boolean
 }

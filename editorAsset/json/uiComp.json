@@ -626,6 +626,14 @@
                 "name": "[#GAME_THE_PIVOT_POINT]",
                 "tips": "[#GAME_PIVOT_POINT_(AFFECTING_IMAGE_ROTATION_SCALING)]",
                 "compType": 2
+            },
+            {
+                "compParam": {},
+                "enable": true,
+                "attribute": "isAdaptiveSize",
+                "name": "[#GAME_GAMECREATOR_ADAPTIVE_SIZE]",
+                "tips": "[#GAME_GAMECREATOR_ADAPTIVE_SIZE_SHOW]",
+                "compType": 15
             }
         ],
         "tips": "[#GAME_IMAGE_COMPONENTS]"
@@ -879,6 +887,17 @@
         "icon": "editorAsset/img/UIIcon/c_var.png",
         "name": "[#GAME_NUMERICAL_VARIABLES_NAME]",
         "attributes": [
+            {
+                "compParam": {
+                    "items": "[#GAME_NUMERICAL_VARIABLES],[#GAME_(2)_WEEKS_ORDERS][#GAME_NUMERICAL_VARIABLES]",
+                    "showIndex": false
+                },
+                "enable": true,
+                "attribute": "varMode",
+                "name": "[#GAME_VARIABLE_MODE]",
+                "tips": "[#GAME_VARIABLE_MODE]",
+                "compType": 2
+            },
             {
                 "compParam": {},
                 "enable": true,
@@ -2529,6 +2548,17 @@
         "icon": "editorAsset/img/UIIcon/c_switch.png",
         "name": "[#GAME_SWITCH_NAME]",
         "attributes": [
+            {
+                "compParam": {
+                    "items": "[#GAME_SWITCH],[#GAME_(2)_WEEKS_ORDERS][#GAME_SWITCH]",
+                    "showIndex": false
+                },
+                "enable": true,
+                "attribute": "switchMode",
+                "name": "[#GAME_VARIABLE_MODE]",
+                "tips": "[#GAME_VARIABLE_MODE]",
+                "compType": 2
+            },
             {
                 "enable": true,
                 "attribute": "selected",

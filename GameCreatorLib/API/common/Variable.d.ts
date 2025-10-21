@@ -63,10 +63,10 @@ declare class Variable {
      * 合并动态数据为文本，根据当前变量的情况
      * 比如通过splitDynamicText函数将“我的攻击力是[@v1]”转化为动态数据，然后调用此函数可输出：我的攻击力是156
      * 将动态数据转为普通文本使用了两个函数是为了可用于预处理，以便加快执行速度，比如指令中预编译可以使用splitDynamicText先转化储存，然后运行时只要使用margeDynamicText即可。
-     * @param texts 动态数据
-     * @param player 玩家，[可选] 默认值=null 无需填写（此参数仅适用于网络版）
+     * @param texts 动态数据 [number, string | number][]
+     * @param player 玩家，[可选] 默认值=null 如果是玩家数据需要填入 Game.player
      * @param trigger 触发器，[可选] 默认值=null 如果在指令中执行，需要传入此参数
      * @return 文本
      */
-    static margeDynamicText(texts: [number, string | number][], player?: Player, trigger?: CommandTrigger): string;
+    static margeDynamicText(texts: any, player?: Player, trigger?: CommandTrigger): string;
 }

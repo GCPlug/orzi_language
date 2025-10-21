@@ -76,4 +76,10 @@ declare class ObjectUtils {
      * @param toObjName 指定替换至的对象名
      */
     static redefinedEventFunc(clsName: string, types: string[], toObjName: string): void;
+    /**
+    * 将form的属性克隆给to,排除form中的Function
+    * @param form 
+    * @param to 
+    */
+    static cloneExcludeFunction(form: any, to: any): void;
 }

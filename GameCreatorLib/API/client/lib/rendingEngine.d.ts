@@ -26,6 +26,14 @@ declare class os {
      */
     static get MAX_TEXTURE_SIZE(): number;
     /**
+     * 当min_filter时自动（默认是LINEAR）
+     */
+    static minFilterAuto: boolean;
+    /**
+     * 当max_filter时自动（默认根据配置）
+     */
+    static maxFilterAuto: boolean;
+    /**
      * 添加帧循环，让函数逐帧执行（帧刷）
      * <code>
      * var i =0;
@@ -90,6 +98,7 @@ declare class os {
      *  1-GameCreator App GC-APP
      *  2-PC 电脑端
      *  3-Web/Mobile phone Web 普通网页端（包括移动版）
+     *  4-Android APK（安卓APP）
      * @return
      */
     static get platform(): number;
@@ -148,9 +157,9 @@ declare class os {
      */
     static hideFPS(): void;
     /**
-    * 设备震动（目前仅支持安卓设备）
-    * @param time (number | number[]) number类型表示震动持续时间 number[]类型表示自定义交替的震动、暂停、震动
-    */
+     * 设备震动（目前仅支持安卓设备）
+     * @param time (number | number[]) number类型表示震动持续时间 number[]类型表示自定义交替的震动、暂停、震动
+     */
     static shake(time: number | number[]): void
     /**
      * 设备横屏显示
@@ -160,6 +169,7 @@ declare class os {
      * 设备允许常亮（目前仅支持安卓设备）
      */
     static insomnia: boolean;
+
 }
 /**
  * 【顶级变量】安全环境内的parent，不会因跨域问题导致报错
@@ -687,6 +697,7 @@ declare class HitArea {
  * EventObject.FOCUS 当产生焦点时
  * EventObject.BLUR 当失去焦点时
  * EventObject.RENDER 每帧渲染时
+ * EventObject.AFTER_RENDER 每帧渲染完毕后
  * // 事件监听示例
  * stage.on(EventObject.CLICK,this,this.onClick);
  *
@@ -988,9 +999,14 @@ declare class EventObject {
      */
     static INPUT: string;
     /**
+     * 每帧渲染前派发
      * 定义 render 事件对象的 type 属性值 渲染时事件
      */
     static RENDER: string;
+    /**
+     * 每帧渲染后派发
+     */
+    static AFTER_RENDER: string;
     /**
      * 定义 keydown 事件对象的 type 属性值 按键按下
      */
@@ -1867,7 +1883,7 @@ declare class LocalStorage {
  * AssetManager.loadImage("asset/image/animation/2.png", Callback.New((tex: Texture) => {
  *      var g = new Graphics();
  *      // 取样从图中的256,256中取得128x128尺寸的切图，并显示在50,50的地方
- *      g.fillTexture(tex, 50, 50, 128, 128, "repeat", new Point(256, 256));
+ *      g.fillTexture(tex, 50, 50, 128, 128, "repeat", new Point(-256, -256));
  *      var sp = new Sprite();
  *      sp.graphics = g;
  *      stage.addChild(sp);

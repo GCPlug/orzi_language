@@ -177,6 +177,7 @@ P D83011A4 gI_eye.png
 P 93A7459C gI_filpBoby.png
 P 4CD79ACA gI_folder_1.png
 P 707F647D gI_folder_2.png
+P F1368CC9 gI_folding.png
 P 9732A9EF gI_lda.png
 P 61EA3F80 gI_lefttriangle.png
 P A9E76848 gI_listDraw1.png
@@ -212,6 +213,8 @@ P D42FAC82 gI_triangle_999999.png
 P 2834E039 gI_triangle_d9d9d9.png
 P B8643C8D gI_uda.png
 P F46150B6 gI_uppertriangle.png
+P DEDE3D49 gl_btn213.png
+P FF6F05A3 gl_btn214.png
 P A2D3BC3F head_img.png
 P 9EDA959E hscroll$bar.png
 P 1AB768D4 hscroll$down.png

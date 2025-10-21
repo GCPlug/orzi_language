@@ -1,6 +1,7 @@
 /**
  * 获得场景坐标的自定义组件属性相关数据
  *  --获得场景坐标
+ * Created by JayLen on 2023-02-23 14:25:56.
  */
 declare class SelectedSenceData {
     /**

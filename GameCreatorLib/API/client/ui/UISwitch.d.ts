@@ -11,7 +11,17 @@
  * a.image2 = "asset/image/picture/control/check_selected.png";
  * a.width = 100;
  * a.height = 100;
+ * a.switchMode = 0; // 玩家开关模式
  * a.switchID = "5"; // 绑定5号玩家开关
+ * stage.addChild(a);
+ * 
+ * var a = new UISwitch();
+ * a.image1 = "asset/image/picture/control/check_unselected.png";
+ * a.image2 = "asset/image/picture/control/check_selected.png";
+ * a.width = 100;
+ * a.height = 100;
+ * a.switchMode = 1; // 二周目开关模式
+ * a.switchID = "5"; // 绑定5号二周目开关
  * stage.addChild(a);
  *
  * // 事件监听示例
@@ -20,6 +30,10 @@
  * Created by 黑暗之神KDS on 2019-04-14 22:31:21.
  */
 declare class UISwitch extends UIBase {
+    /**
+     * 变量模式 0-开关 1-二周目开关
+     */
+    switchMode: number;
     /**
      * 指定绑定的玩家开关ID
      */

@@ -10,6 +10,7 @@
  * var a = new UIString();
  * a.text = "kds"; // 固定的文本
  * a.text = "$6"; // 绑定6号玩家字符串变量
+ * a.text = "@6"; // 绑定6号二周目字符串变量
  * stage.addChild(a);
  *
  * // 事件监听示例
@@ -19,12 +20,12 @@
  */
 declare class UIString extends UIBase {
     /**
-     * 文本内容 $5 表示使用5号玩家字符串变量
+     * 文本内容 $6 表示使用6号玩家字符串变量 @6 表示使用6号二周目字符串变量
      */
     text: string;
     /**
      * 设置文本（不派发EventObject.CHANGE事件）
-     * @param v 文本内容 $5 表示使用5号玩家字符串变量
+     * @param v 文本内容 $6 表示使用6号玩家字符串变量 @6 表示使用6号二周目字符串变量
      */
     setTextForce(v: string): void;
     /**

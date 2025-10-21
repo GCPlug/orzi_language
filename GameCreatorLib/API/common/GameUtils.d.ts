@@ -94,6 +94,12 @@ declare class GameUtils {
      */
     static getVarID(value: string): number;
     /**
+    * 根据特定字符串@n来获取n，不符合的返回0
+    * @param value 特殊格式：如@6
+    * @return 变量ID：如6
+    */
+    static getGlobalVarID(value: string): number;
+    /**
      * 检查是否合法的变量名
      * @param varName 变量名称
      * @return [boolean] 是否合法
