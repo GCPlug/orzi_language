@@ -580,22 +580,39 @@ var Callback = (function () {
             map.set(func, { key: key, cb: cb });
         }
     };
-    Callback.CallLaterBeforeRender = function (func, caller, args) {
+    Callback.CallLaterBeforeRender = function (func, caller, args, inRenderImmediatelyExecute) {
         if (args === void 0) { args = null; }
+        if (inRenderImmediatelyExecute === void 0) { inRenderImmediatelyExecute = false; }
         var map = caller["____clks2"];
         if (!map)
             map = caller["____clks2"] = new Dictionary();
+        var isInRender = null;
+        if (inRenderImmediatelyExecute)
+            isInRender = Callback.renderState.frame == __fCount;
         var keyInfo = map.get(func);
+        var key;
         if (keyInfo) {
-            var key = keyInfo.key;
+            key = keyInfo.key;
             var cb = keyInfo.cb;
             cb.args = args;
+            if (isInRender) {
+                delete Callback.beforeRenderFuncs[key];
+                Callback.renderState.events[key] = cb;
+            }
         }
         else {
             key = ObjectUtils.getInstanceID();
             cb = Callback.New(func, caller, args);
             map.set(func, { key: key, cb: cb });
-            Callback.beforeRenderFuncs[key] = cb;
+            if (isInRender) {
+                Callback.renderState.events[key] = cb;
+            }
+            else {
+                Callback.beforeRenderFuncs[key] = cb;
+            }
+        }
+        if (isInRender) {
+            Callback.beforeRenderFuncs[key];
         }
     };
     var _a;
@@ -6205,7 +6222,7 @@ var Laya = window.Laya = (function (window, document) {
             else {
                 for (var i = 0; i < n; ++i) {
                     var e = (ele = (childs[i]));
-                    if(e && e._style) e._style.visible && ele.render(context, x, y);
+                    if (e && e._style) e._style.visible && ele.render(context, x, y);
                 }
             }
         };
@@ -15439,6 +15456,7 @@ var Laya = window.Laya = (function (window, document) {
                 else
                     return;
             }
+            Callback.renderState = {};
             this._renderCount++;
             Render.isFlash && this.repaint();
             if (!this._style.visible) {
@@ -15457,10 +15475,13 @@ var Laya = window.Laya = (function (window, document) {
             if (isFastMode || isDoubleLoop || Render.isConchApp) {
                 Stat.loopCount++;
                 MouseManager.instance.runEvent();
-
+                Callback.renderState.frame = __fCount;
+                let REvents = Callback.renderState.events = []; // Callback[]
                 window.___callbackBeforeRenderFunc();
                 if (!banSendEvent) Laya.stage.event(EventObject.RENDER);
-
+                for (var i in REvents) {
+                    REvents[i].run();
+                }
                 Laya.timer._update();
                 RunDriver.update3DLoop();
                 var scene;
@@ -15815,7 +15836,7 @@ var Laya = window.Laya = (function (window, document) {
             HTMLCanvas.__super.call(this);
             var _$this = this;
             this._source = this;
-            if (type === "2D" || type=="webgl2" || (type === "AUTO" && !Render.isWebGL)) {
+            if (type === "2D" || type == "webgl2" || (type === "AUTO" && !Render.isWebGL)) {
                 this._is2D = true;
                 this._source = canvas || Browser.createElement("canvas");
                 this._w = this._source.width;
@@ -26230,7 +26251,7 @@ if (typeof define === 'function' && define.amd) {
             this._$5__enableMerageInAtlas = true;
             for (var i = 0; i < os.clientSceneLayerImages.length; i++) {
                 let clientSceneLayerImageURL = os.clientSceneLayerImages[i];
-                 if (this._src && typeof this._src == "string" && clientSceneLayerImageURL && typeof clientSceneLayerImageURL == "string" && this._src.indexOf(clientSceneLayerImageURL) + clientSceneLayerImageURL.length == this._src.length) {
+                if (this._src && typeof this._src == "string" && clientSceneLayerImageURL && typeof clientSceneLayerImageURL == "string" && this._src.indexOf(clientSceneLayerImageURL) + clientSceneLayerImageURL.length == this._src.length) {
                     this._$5__enableMerageInAtlas = false;
                     break;
                 }
@@ -53540,6 +53561,8 @@ var CustomCompositeSetting = (function (_super) {
         return _this_1;
     }
     CustomCompositeSetting.isEmpty = function (data, plugType) {
+        if (!data.blockList)
+            return false;
         var list = {
             9: Game.data.customModuleList, 10: Game.data.dataStructureList, 11: Game.data.customBehaviorTypeList,
             12: Game.data.customCommandTypeList, 13: Game.data.customConditionList, 16: Game.data.customDataDisplayList,
@@ -55024,6 +55047,23 @@ var Camera = (function () {
 var AssetManager = (function () {
     function AssetManager() {
     }
+    AssetManager.isEncryptResource = function (ext) {
+        if (this.isImageFile(ext) || this.isDataFile(ext))
+            return true;
+        return false;
+    };
+    AssetManager.isImageFile = function (ext) {
+        return ["jpg", "png", "gif", "jpeg", "dds"].indexOf(ext) != -1;
+    };
+    AssetManager.isAudioFile = function (ext) {
+        return ["mp3", "ogg"].indexOf(ext) != -1;
+    };
+    AssetManager.isVideoFile = function (ext) {
+        return ["mp4"].indexOf(ext) != -1;
+    };
+    AssetManager.isDataFile = function (ext) {
+        return ["json"].indexOf(ext) != -1;
+    };
     AssetManager.preLoadSceneAsset = function (id, complete, syncCallbackWhenAssetExist, autoDispose, prerender) {
         if (complete === void 0) { complete = null; }
         if (syncCallbackWhenAssetExist === void 0) { syncCallbackWhenAssetExist = false; }
@@ -55065,6 +55105,7 @@ var AssetManager = (function () {
                             if (tileIDInt < 0) {
                                 var autoTileData = Game.data.autoTileList.data[-tileIDInt];
                                 if (autoTileData && autoTileData.url) {
+                                    AssetManager.excludeQualityImages.push(autoTileData.url);
                                     imgUrls.push(autoTileData.url);
                                     if (addTo_clientSceneLayerImages)
                                         os.clientSceneLayerImages.push(autoTileData.url);
@@ -55073,6 +55114,7 @@ var AssetManager = (function () {
                             else {
                                 var tileData = Game.data.tileList.data[tileIDInt];
                                 if (tileData && tileData.url) {
+                                    AssetManager.excludeQualityImages.push(tileData.url);
                                     imgUrls.push(tileData.url);
                                     if (addTo_clientSceneLayerImages)
                                         os.clientSceneLayerImages.push(tileData.url);
@@ -55953,7 +55995,7 @@ var AssetManager = (function () {
             complete && (syncCallbackWhenAssetExist ? complete.runWith([asset]) : complete.delayRun(1, null, [asset]));
             return;
         }
-        if (os.platform == 0 && Config.quality != 100 && (type == Loader.IMAGE || type == "image_decrypt")) {
+        if (os.platform == 0 && Config.quality != 100 && (type == Loader.IMAGE || type == "image_decrypt") && url.indexOf("data:image/") != 0 && AssetManager.excludeQualityImages.indexOf(url) < 0 && !os.resourceEncryption) {
             url += "?imageMogr2/thumbnail/!" + Config.quality + "p";
         }
         loader.load(url, Handler.create(this, function (__url, asset) {
@@ -55961,7 +56003,7 @@ var AssetManager = (function () {
                 complete && complete.runWith([null]);
                 return;
             }
-            if (os.platform == 0 && Config.quality != 100 && (type == Loader.IMAGE || type == "image_decrypt")) {
+            if (os.platform == 0 && Config.quality != 100 && (type == Loader.IMAGE || type == "image_decrypt") && __url.indexOf("data:image/") != 0 && AssetManager.excludeQualityImages.indexOf(__url) < 0 && !os.resourceEncryption) {
                 var urls = __url.split("?");
                 if (urls[1] && !loader.getRes(urls[0])) {
                     var sprite = new Sprite();
@@ -55971,6 +56013,7 @@ var AssetManager = (function () {
                     asset = AssetManager.drawToTexture2(sprite, __width, __height);
                     loader.clearRes(urls[0], true);
                     loader.cacheRes(urls[0], asset);
+                    sprite.texture = null;
                     sprite.destroy(true);
                 }
             }
@@ -56011,7 +56054,7 @@ var AssetManager = (function () {
                 AssetManager.addRef(url);
             var asset = loader.getRes(url);
             if (!asset) {
-                if (os.platform == 0 && Config.quality != 100 && (type == Loader.IMAGE || type == "image_decrypt")) {
+                if (os.platform == 0 && Config.quality != 100 && (type == Loader.IMAGE || type == "image_decrypt") && url.indexOf("data:image/") != 0 && AssetManager.excludeQualityImages.indexOf(url) < 0 && !os.resourceEncryption) {
                     loadUrls[i] = url + ("?imageMogr2/thumbnail/!" + Config.quality + "p");
                 }
                 allExist = false;
@@ -56052,7 +56095,7 @@ var AssetManager = (function () {
                 onDisplay.run();
                 if (!asset)
                     continue;
-                if (os.platform == 0 && Config.quality != 100 && (type == Loader.IMAGE || type == "image_decrypt")) {
+                if (os.platform == 0 && Config.quality != 100 && (type == Loader.IMAGE || type == "image_decrypt") && url.indexOf("data:image/") != 0 && AssetManager.excludeQualityImages.indexOf(url) < 0 && !os.resourceEncryption) {
                     var urls = url.split("?");
                     if (urls[1] && !loader.getRes(urls[0])) {
                         var sprite = new Sprite();
@@ -56062,6 +56105,7 @@ var AssetManager = (function () {
                         asset = AssetManager.drawToTexture2(sprite, __width, __height);
                         loader.clearRes(urls[0], true);
                         loader.cacheRes(urls[0], asset);
+                        sprite.texture = null;
                         sprite.destroy(true);
                     }
                 }
@@ -56364,40 +56408,20 @@ var AssetManager = (function () {
             offsetX -= sprite.x;
             offsetY -= sprite.y;
             sprite.scaleY *= -1;
-            var oldSpriteScaleX = sprite.scaleX;
-            var oldSpriteScaleY = sprite.scaleY;
-            var sx = stage.width / os.canvas.width;
-            var sy = stage.height / os.canvas.height;
-            var specialHandle = (sx > 1 || sy > 1) && textureWidth >= os.canvas.width && textureHeight >= os.canvas.height;
-            if (specialHandle) {
-                sprite.scaleY /= sy;
-                sprite.scaleX /= sx;
-                var texSx = textureWidth / stage.width;
-                var texSy = textureHeight / stage.height;
-                sprite.scaleX *= texSx;
-                sprite.scaleY *= texSy;
-            }
+            var oldCanvasWidth = os.canvas.width;
+            var oldCanvasHeight = os.canvas.height;
+            os.canvas.width = Math.max(textureWidth, os.canvas.width) + 10;
+            os.canvas.height = Math.max(textureHeight, os.canvas.height) + 10;
             var renderTarget = RenderTarget2D.create(textureWidth, textureHeight, 0x1908, 0x1401, 0, mipmap, false, minFifter, magFifter);
-            if (specialHandle) {
-                renderTarget.bitmap["_w"] = Math.ceil(sx * stage.width);
-                renderTarget.bitmap["_h"] = Math.ceil(sy * stage.height);
-                renderTarget["_w"] = os.canvas.width * texSx;
-                renderTarget["_h"] = os.canvas.height * texSy;
-            }
             renderTarget.start();
             renderTarget.clear(0.0, 0.0, 0.0, 0.0);
             Render.context.clear();
             RenderSprite.renders[_renderType]._fun(sprite, Render.context, offsetX, RenderState2D.height + offsetY);
-            if (specialHandle) {
-                os.context.viewport(0, 0, os.canvas.width * texSx, os.canvas.height * texSy);
-            }
             Render.context.flush();
             renderTarget.end();
-            if (specialHandle) {
-                sprite.scaleX = oldSpriteScaleX;
-                sprite.scaleY = oldSpriteScaleY;
-            }
             sprite.scaleY *= -1;
+            os.canvas.width = oldCanvasWidth;
+            os.canvas.height = oldCanvasHeight;
             return renderTarget;
         }
     };
@@ -56526,6 +56550,8 @@ var AssetManager = (function () {
         var canvas = htmlCanvas.getCanvas();
         var base64 = canvas.toDataURL("image/png");
         htmlCanvas.dispose();
+        sp.texture = null;
+        sp.destroy(true);
         return base64;
     };
     AssetManager.textureToArrayBuffer = function (texture) {
@@ -56786,6 +56812,7 @@ var AssetManager = (function () {
     AssetManager.disposeInterval = 60000;
     AssetManager.preUIs = [];
     AssetManager.commandPerloadCache = [];
+    AssetManager.excludeQualityImages = [];
     return AssetManager;
 }());
 
@@ -61185,9 +61212,7 @@ var ClientMain = (function () {
         FileUtils.loadJsonFile(url, new Callback(function (cfgJson) {
             ObjectUtils.clone(cfgJson, configObj);
             GameImage.init();
-            _this_1.GCAS_init(function () {
-                SyncTask.taskOver(_this_1.initTask);
-            });
+            SyncTask.taskOver(_this_1.initTask);
             if (Config.RELEASE_GAME && (os.platform == 2 || os.platform == 3 || os.platform == 4)) {
                 var url = Config.GC_CLOUD_PLATFORM + "/index.php/apis/statistics/re";
                 var code = Config.gameSID + "&" + Config.gameProjectName + "&" + Config.templateID + "&" + os.platform;
@@ -61195,116 +61220,6 @@ var ClientMain = (function () {
                 HttpRequest.requestServer({ url: url, gcToken: "", data: { gameCode: gameCode, type: 4 }, method: "post", responseType: "json" });
             }
         }, this));
-    };
-    ClientMain.prototype.GCAS_init = function (onFin) {
-        if (os.platform == 0) {
-            FileUtils.loadJsonFile("index.kdsrpgmd5index", Callback.New(function (md5Index) {
-                if (md5Index == null) {
-                    onFin();
-                    return;
-                }
-                ClientMain.md5Index = md5Index;
-                var o = window["Laya"];
-                o.URL.formatURL = function (url, base) {
-                    url = ClientMain.doMappingURL(url);
-                    if (!url)
-                        return "null path";
-                    if (url.indexOf(":") > 0)
-                        return url;
-                    if (o.URL.customFormat != null)
-                        url = o.URL.customFormat(url, base);
-                    var char1 = url.charAt(0);
-                    if (char1 === ".") {
-                        return o.URL.formatRelativePath((base || o.URL.basePath) + url);
-                    }
-                    else if (char1 === '~') {
-                        return o.URL.rootPath + url.substring(1);
-                    }
-                    else if (char1 === "d") {
-                        if (url.indexOf("data:image") === 0)
-                            return url;
-                    }
-                    else if (char1 === "/") {
-                        return url;
-                    }
-                    return (base || o.URL.basePath) + url;
-                };
-                HttpRequest.prototype.send = function (url, data, method, responseType, headers) {
-                    url = ClientMain.doMappingURL(url);
-                    (method === void 0) && (method = "get");
-                    (responseType === void 0) && (responseType = "text");
-                    this._responseType = responseType;
-                    this._data = null;
-                    var _this = this;
-                    var http = this._http;
-                    http.open(method, url, true);
-                    if (headers) {
-                        for (var i = 0; i < headers.length; i++) {
-                            http.setRequestHeader(headers[i++], headers[i]);
-                        }
-                    }
-                    else if (!Render.isConchApp) {
-                        if (!data || (typeof data == 'string'))
-                            http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                        else
-                            http.setRequestHeader("Content-Type", "application/json");
-                    }
-                    http.responseType = responseType !== "arraybuffer" ? "text" : "arraybuffer";
-                    http.onerror = function (e) {
-                        _this._onError(e);
-                    };
-                    http.onabort = function (e) {
-                        _this._onAbort(e);
-                    };
-                    http.onprogress = function (e) {
-                        _this._onProgress(e);
-                    };
-                    http.onload = function (e) {
-                        _this._onLoad(e);
-                    };
-                    http.send(data);
-                };
-                var _loadFontFile = FontLoadManager.loadFontFile;
-                FontLoadManager.loadFontFile = function (fontList, callBack) {
-                    if (callBack === void 0) { callBack = null; }
-                    for (var i_10 = 0; i_10 < fontList.length; i_10++) {
-                        fontList[i_10].path = ClientMain.doMappingURL(fontList[i_10].path, true);
-                    }
-                    return _loadFontFile.apply(this, [fontList, callBack]);
-                };
-                onFin();
-            }, this));
-        }
-        else {
-            onFin();
-        }
-    };
-    ClientMain.doMappingURL = function (url, isLocal) {
-        if (isLocal === void 0) { isLocal = false; }
-        if (ClientMain.md5Index && url) {
-            var cHead = window.location.origin;
-            var localUrl = void 0;
-            if (isLocal) {
-                localUrl = url;
-            }
-            else {
-                var urlArr = url.split("/asset/");
-                urlArr.shift();
-                localUrl = "asset/" + urlArr.join("");
-            }
-            var wArr = url.split("?");
-            wArr.shift();
-            var tail = "";
-            if (wArr.length > 0) {
-                tail = "?" + wArr.join("?");
-                localUrl = localUrl.split("?")[0];
-            }
-            var fileMappingInfo = ClientMain.md5Index.files[localUrl];
-            if (fileMappingInfo && fileMappingInfo.cloudMappingURL) {
-                url = cHead + "/" + fileMappingInfo.cloudMappingURL + tail;
-            }
-        }
-        return url;
     };
     ClientMain.prototype.loadFontFile = function () {
         if (Config.startupPreloadFonts == null)
@@ -61713,13 +61628,17 @@ var ClientSceneLayer = (function (_super) {
             else {
                 for (var id in Game.data.tileList.data) {
                     var tileData = Game.data.tileList.data[id];
-                    if (tileData && tileData.url)
+                    if (tileData && tileData.url) {
+                        AssetManager.excludeQualityImages.push(tileData.url);
                         urls.push(tileData.url);
+                    }
                 }
                 for (var id in Game.data.autoTileList.data) {
                     var autoTileData = Game.data.autoTileList.data[id];
-                    if (autoTileData && autoTileData.url)
+                    if (autoTileData && autoTileData.url) {
+                        AssetManager.excludeQualityImages.push(autoTileData.url);
                         urls.push(autoTileData.url);
+                    }
                 }
             }
             if (urls.length == 0) {
@@ -63832,8 +63751,8 @@ var AnimationRefObjLayer = (function (_super) {
             frame.rotation = (nf.rotation - pf.rotation) * value + pf.rotation;
             frame.radius = (nf.radius - pf.radius) * value + pf.radius;
             frame.points = [];
-            for (var i_15 = 0; i_15 < pf.points.length; i_15++) {
-                frame.points.push((nf.points[i_15] - pf.points[i_15]) * value + pf.points[i_15]);
+            for (var i_14 = 0; i_14 < pf.points.length; i_14++) {
+                frame.points.push((nf.points[i_14] - pf.points[i_14]) * value + pf.points[i_14]);
             }
             if (pf.type == 3 || pf.type == 4)
                 frame.boundingBox = new Rectangle(getPointsXOrY(true), getPointsXOrY(false), getPointsWOrH(true), getPointsWOrH(false));
@@ -63906,17 +63825,17 @@ var AnimationRefObjLayer = (function (_super) {
                 points = [this.x, this.y, this.x + frameData.width, this.y, this.x + frameData.width, this.y + frameData.height, this.x, this.y + frameData.height];
                 break;
         }
-        for (var i_16 = 0; i_16 < points.length - 1; i_16 += 2) {
-            var point = new Point(points[i_16], points[i_16 + 1]);
-            points1[Math.floor(i_16 / 2)] = point;
+        for (var i_15 = 0; i_15 < points.length - 1; i_15 += 2) {
+            var point = new Point(points[i_15], points[i_15 + 1]);
+            points1[Math.floor(i_15 / 2)] = point;
         }
         var _this = this;
         var get = function (sp) {
             if (!sp || sp == _this.topAnimation)
                 return;
             else {
-                for (var i_17 = 0; i_17 < points1.length; i_17++)
-                    points1[i_17] = _this.transformPoint(points1[i_17], sp);
+                for (var i_16 = 0; i_16 < points1.length; i_16++)
+                    points1[i_16] = _this.transformPoint(points1[i_16], sp);
                 get(sp.parent);
             }
         };
@@ -64295,8 +64214,8 @@ var AnimationRefObjLayer = (function (_super) {
     };
     AnimationRefObjLayer.prototype.drawEllipse = function (x, y, radiusX, radiusY) {
         var points = [];
-        for (var i_18 = 0; i_18 <= 360; i_18++) {
-            var angle = (i_18 * Math.PI) / 180;
+        for (var i_17 = 0; i_17 <= 360; i_17++) {
+            var angle = (i_17 * Math.PI) / 180;
             var cx = x + radiusX * Math.cos(angle);
             var cy = y + radiusY * Math.sin(angle);
             points.push(cx);
@@ -69987,8 +69906,6 @@ getset(false, UIComponent.UIBase.prototype, 'visible', function () {
                 this._videoURL = v;
                 if (!this.videoElement)
                     return;
-                if (os.platform == 0)
-                    v = ClientMain.doMappingURL(v, true);
                 this._metaDataLoaded = false;
                 this.videoElement.src = v;
             },
@@ -70144,8 +70061,8 @@ getset(false, UIComponent.UIBase.prototype, 'visible', function () {
             this.videoTex.bitmap.reloadCanvasData();
             if (this.getMaterialPassLength() > 0) {
                 var materialPassages = this.getAllMaterialDatas();
-                for (var i_19 = 0; i_19 < materialPassages.length; i_19++) {
-                    var ms = materialPassages[i_19];
+                for (var i_18 = 0; i_18 < materialPassages.length; i_18++) {
+                    var ms = materialPassages[i_18];
                     if (ms.materials && ms.materials.length > 0) {
                         this.setMaterialDirty();
                         break;
@@ -70319,7 +70236,9 @@ var Avatar = (function (_super) {
                 return;
             if (v == this.id)
                 return;
+            this.___clearTask();
             this.___disposeAsset();
+            this.avatarList = [];
             this._id = v;
             this._loadIDRD = Math.random();
             this.loadData(v, this._loadIDRD);
@@ -70589,6 +70508,7 @@ var Avatar = (function (_super) {
                 var avatarPart = this.avatarList[i];
                 if (avatarPart == this)
                     continue;
+                this.removeChild(avatarPart);
                 avatarPart.___disposeAsset();
                 avatarPart.__isDisposed = true;
             }
@@ -71055,8 +70975,8 @@ var Avatar = (function (_super) {
                 }
                 this._body.x = -frame.width - frame.x;
                 if (this.currentFrameRefObjs) {
-                    var _loop_2 = function (i_20) {
-                        var helper = this_2.currentFrameRefObjs[i_20];
+                    var _loop_2 = function (i_19) {
+                        var helper = this_2.currentFrameRefObjs[i_19];
                         switch (helper.type) {
                             case 0:
                             case 2:
@@ -71076,11 +70996,11 @@ var Avatar = (function (_super) {
                                     helper.boundingBox.x = -helper.boundingBox.width - helper.boundingBox.x;
                                 break;
                         }
-                        this_2.currentFrameRefObjs[i_20] = helper;
+                        this_2.currentFrameRefObjs[i_19] = helper;
                     };
                     var this_2 = this;
-                    for (var i_20 in this.currentFrameRefObjs) {
-                        _loop_2(i_20);
+                    for (var i_19 in this.currentFrameRefObjs) {
+                        _loop_2(i_19);
                     }
                 }
             }
@@ -71249,12 +71169,12 @@ var Avatar = (function (_super) {
         }
     };
     Avatar.generateAllframeHelper = function (actionListArr, refObjs) {
-        for (var i_21 = 0; i_21 < actionListArr.length; i_21++) {
-            for (var j in actionListArr[i_21].frameImageInfo) {
-                var fra = actionListArr[i_21].frameImageInfo[j];
+        for (var i_20 = 0; i_20 < actionListArr.length; i_20++) {
+            for (var j in actionListArr[i_20].frameImageInfo) {
+                var fra = actionListArr[i_20].frameImageInfo[j];
                 for (var z = 0; z < fra.length; z++) {
                     if (!fra[z].frameHelper)
-                        fra[z].frameHelper = Avatar.generateframeHelper(actionListArr, refObjs, { i: i_21, j: j, z: z });
+                        fra[z].frameHelper = Avatar.generateframeHelper(actionListArr, refObjs, { i: i_20, j: j, z: z });
                 }
             }
         }
@@ -72381,8 +72301,8 @@ var GameDialog = (function (_super) {
             this.playText();
     };
     GameDialog.prototype.clearTextMaterials = function () {
-        for (var i_22 = 0; i_22 < this.playTextLabels.length; i_22++) {
-            this.playTextLabels[i_22].clearMaterials();
+        for (var i_21 = 0; i_21 < this.playTextLabels.length; i_21++) {
+            this.playTextLabels[i_21].clearMaterials();
         }
     };
     GameDialog.prototype.onSelfClick = function (e) {
@@ -76607,25 +76527,25 @@ AnimationLayer.typeClsMap[AnimationItemType.Image] = AnimationImageLayer;
             if (this.thisItemsOptimizationMode) {
                 if (dispose) {
                     var allItemUIArr = this.optimizationItemUI.concat(this.optimizationItemUIPool);
-                    for (var i_23 = 0; i_23 < allItemUIArr.length; i_23++) {
-                        var itemUI = allItemUIArr[i_23];
+                    for (var i_22 = 0; i_22 < allItemUIArr.length; i_22++) {
+                        var itemUI = allItemUIArr[i_22];
                         itemUI.dispose();
                     }
                     this.optimizationItemUIPool.length = this.optimizationItemUI.length = 0;
                 }
                 else {
-                    for (var i_24 = 0; i_24 < this.optimizationItemUI.length; i_24++) {
-                        var itemUI = this.optimizationItemUI[i_24];
+                    for (var i_23 = 0; i_23 < this.optimizationItemUI.length; i_23++) {
+                        var itemUI = this.optimizationItemUI[i_23];
                         this.freeOptimizationItemUI(itemUI);
                     }
                     this.optimizationItemUI.length = 0;
                 }
             }
             else {
-                for (var i_25 = 0; i_25 < this._contentArea.numChildren; i_25++) {
-                    var item = this._contentArea.getChildAt(i_25);
+                for (var i_24 = 0; i_24 < this._contentArea.numChildren; i_24++) {
+                    var item = this._contentArea.getChildAt(i_24);
                     item.dispose();
-                    i_25--;
+                    i_24--;
                 }
             }
         };
@@ -77131,19 +77051,19 @@ AnimationLayer.typeClsMap[AnimationItemType.Image] = AnimationImageLayer;
                     s++;
                 }
             }
-            for (var i_26 = 0; i_26 < this.optimizationItemUI.length; i_26++) {
-                var itemUI = this.optimizationItemUI[i_26];
+            for (var i_25 = 0; i_25 < this.optimizationItemUI.length; i_25++) {
+                var itemUI = this.optimizationItemUI[i_25];
                 if (!showOptimizationItemUIMap[itemUI.__listGlobalIndex]) {
                     this.freeOptimizationItemUI(itemUI);
-                    this.optimizationItemUI.splice(i_26, 1);
-                    i_26--;
+                    this.optimizationItemUI.splice(i_25, 1);
+                    i_25--;
                 }
                 else {
                     lastOptimizationItemUIMap[itemUI.__listGlobalIndex] = true;
                 }
             }
-            for (var i_27 = 0; i_27 < showOptimizationItemUIArr.length; i_27++) {
-                var o = showOptimizationItemUIArr[i_27];
+            for (var i_26 = 0; i_26 < showOptimizationItemUIArr.length; i_26++) {
+                var o = showOptimizationItemUIArr[i_26];
                 if (lastOptimizationItemUIMap[o.globalIndex]) {
                     continue;
                 }
@@ -78531,11 +78451,11 @@ var SinglePlayerGame = (function () {
             return;
         var sceneData = Game.data.sceneList.data[Game.currentScene.id];
         var switchs = [];
-        for (var i_11 = 0; i_11 < Game.currentScene.sceneObjects.length; i_11++) {
-            var so = Game.currentScene.sceneObjects[i_11];
+        for (var i_10 = 0; i_10 < Game.currentScene.sceneObjects.length; i_10++) {
+            var so = Game.currentScene.sceneObjects[i_10];
             if (!so || so == Game.player.sceneObject)
                 continue;
-            switchs[i_11] = so["switchs"];
+            switchs[i_10] = so["switchs"];
         }
         this.sceneDatas[Game.currentScene.id] = { sceneObjectSwitchs: switchs };
     };
@@ -78805,12 +78725,12 @@ var SinglePlayerGame = (function () {
         o.tonal = Game.currentScene.displayObject.getTonal();
         var layerLen = Game.currentScene.getLayerLength();
         var layerInfo = [];
-        for (var i_12 = 0; i_12 < layerLen; i_12++) {
-            var layer = Game.currentScene.getLayer(i_12);
+        for (var i_11 = 0; i_11 < layerLen; i_11++) {
+            var layer = Game.currentScene.getLayer(i_11);
             if (layer == Game.currentScene.displayObject) {
                 continue;
             }
-            layerInfo[i_12] = ClientSceneLayer.getSaveData(layer);
+            layerInfo[i_11] = ClientSceneLayer.getSaveData(layer);
         }
         o.layerInfo = layerInfo;
         return o;
@@ -78844,12 +78764,12 @@ var SinglePlayerGame = (function () {
                 isAllSameLayer = false;
             }
             else {
-                for (var i_13 = 0; i_13 < layerLen; i_13++) {
-                    var layer = Game.currentScene.getLayer(i_13);
+                for (var i_12 = 0; i_12 < layerLen; i_12++) {
+                    var layer = Game.currentScene.getLayer(i_12);
                     if (layer == Game.currentScene.displayObject) {
                         continue;
                     }
-                    var rLayer = layerInfo[i_13];
+                    var rLayer = layerInfo[i_12];
                     if (!rLayer || layer.drawMode != rLayer.drawMode) {
                         isAllSameLayer = false;
                         break;
@@ -78857,12 +78777,12 @@ var SinglePlayerGame = (function () {
                 }
             }
             if (isAllSameLayer) {
-                for (var i_14 = 0; i_14 < layerLen; i_14++) {
-                    var layer = Game.currentScene.getLayer(i_14);
+                for (var i_13 = 0; i_13 < layerLen; i_13++) {
+                    var layer = Game.currentScene.getLayer(i_13);
                     if (layer == Game.currentScene.displayObject) {
                         continue;
                     }
-                    ClientSceneLayer.recoverySaveData(layer, layerInfo[i_14]);
+                    ClientSceneLayer.recoverySaveData(layer, layerInfo[i_13]);
                 }
             }
         }

@@ -79,6 +79,7 @@ declare class Callback {
      * @param func 执行的方法
      * @param caller 作用域
      * @param args [可选] 默认值=null 附带的参数
+     * @param inRenderImmediatelyExecute [可选] 默认值=false 已处于render中执行的环境下，确保在当前渲染时执行而非到下一帧
      */
-    static CallLaterBeforeRender(func: Function, caller: any, args?: any[]): void;
+    static CallLaterBeforeRender(func: Function, caller: any, args?: any[], inRenderImmediatelyExecute?: boolean): void;
 }
